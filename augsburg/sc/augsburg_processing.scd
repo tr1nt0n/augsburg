@@ -34,7 +34,7 @@ SynthDef.new(
 
 		trackedSignal = SoundIn.ar(hardwareInput, inputGain);
 		frequency = Pitch.kr(in:trackedSignal, execFreq: 200.0, minFreq: 220.0, maxFreq: 1760, clar: 1);
-		frequency = SinOsc.ar(frequency);
+		synthSignal = SinOsc.ar(frequency);
 		frequency = Pitch.kr(in:frequency, execFreq: 200.0, minFreq: 220.0, maxFreq: 1760, clar: 1);
 
 		envelope = Amplitude.kr(trackedSignal);
@@ -42,9 +42,9 @@ SynthDef.new(
 		frequencyMultiplier = frequencyMultiplier / 8;
 
 		synthSignal = Formant.ar(
-			fundfreq: frequency * frequencyMultiplier,
-			formfreq: frequency * 3/2,
-			bwfreq: frequency * 9/8
+		fundfreq: frequency * frequencyMultiplier,
+		formfreq: frequency * 3/2,
+		bwfreq: frequency * 9/8
 		);
 
 		// synthSignal = synthSignal * subEnvelope;

@@ -1,0 +1,99 @@
+\documentclass[11pt]{report}
+
+\usepackage[T1]{fontenc}
+\usepackage[papersize={17in, 11in}]{geometry}
+\usepackage{tikz}
+\usepackage{xltxtra,fontspec,xunicode}
+\usetikzlibrary{calc}
+\usepackage{xcolor}
+\usepackage{background}
+\usepackage{contour}
+
+\defaultfontfeatures{Scale=MatchLowercase}
+\setromanfont[Numbers=Uppercase]{Bodoni 72 Book}
+\newlength{\drop}
+\parindent=0pt
+
+\begin{document}
+    \begin{titlepage}
+    
+    \backgroundsetup{scale = 1.7, angle = 0, opacity = 0.2,
+contents = {\includegraphics[width = \paperwidth,
+height = \paperheight, keepaspectratio] {paraphog.jpeg}}}
+
+        \begin{tikzpicture}[remember picture, overlay]
+            \draw[line width = 1.6pt]
+                ($(current page.north west) + (1in,-1in)$)
+                rectangle
+                ($(current page.south east) + (-1in,1in)$);
+            \draw[line width = 0.4pt]
+                ($(current page.north west) + (1in,-1in) + (2.8pt,-2.8pt)$)
+                rectangle
+                ($(current page.south east) + (-1in,1in) + (-2.8pt,2.8pt)$);
+        \end{tikzpicture}
+
+        \drop=0.1\textheight
+        \centering
+
+        \vspace*{8\baselineskip}
+
+        \rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt}
+        \rule{\textwidth}{0.4pt}\\[\baselineskip]
+        \contourlength{0.14em}
+        \begin{center}
+        \contour{white}{
+        {
+            \fontsize{1.7cm}{1em}\selectfont
+          {D A S \hspace{2mm} W U N D E R Z E I C H E N B U C H
+        }
+        }}
+        \rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt}
+        \rule{\textwidth}{1.6pt}\\[\baselineskip]
+        \end{center}
+        
+
+        \vspace*{1\baselineskip}
+        
+         \contourlength{0.06em}
+
+        {
+            \itshape
+            \huge
+            \contour{white}{für}
+        }
+        {
+            \huge
+            \contour{white}{Klavier solo}
+        }
+        {
+            \itshape
+            \huge
+           \contour{white}{und}
+        }
+        {
+            \huge
+            \contour{white}{Elektronik}
+        }
+        
+        \vspace*{15\baselineskip}
+        
+        \contourlength{0.07em}
+        
+        {
+            \huge
+            \contour{white}{T R I N T O N \hspace{2mm} H L Y N N}
+            \par
+        }
+
+        \vspace*{4\baselineskip}
+
+        {
+            \huge
+            \contour{white}{2023 - 2024}
+        }
+
+        \vfill
+       
+
+    \end{titlepage}
+\end{document}
