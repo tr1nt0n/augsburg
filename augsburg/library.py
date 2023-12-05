@@ -6,12 +6,9 @@ import itertools
 import trinton
 import random
 import quicktions
-from abjadext import rmakers
-from abjadext import microtones
 from itertools import cycle
 from augsburg import pitch
-from augsburg import rhythm
-from augsburg import library
+from abjadext import rmakers
 
 # score
 
@@ -41,6 +38,48 @@ def augsburg_score(time_signatures):
     )
 
     return score
+
+
+# sequences
+
+logistic_map = [_ for _ in trinton.logistic_map(x=4, r=3.57, n=9) if _ > 2]
+
+logistic_map = trinton.remove_adjacent(logistic_map)
+
+
+def logistic_map_sequence(index):
+    return trinton.rotated_sequence(logistic_map, index)
+
+
+# notation tools
+
+
+def respell_tuplets(tuplets):
+    for tuplet in tuplets:
+        prolation = tuplet.implied_prolation
+        if prolation.denominator == 3 and prolation.numerator % 2 == 0:
+            rmakers.force_diminution(tuplet)
+        if prolation.denominator == 5 and prolation.numerator % 3 == 0:
+            rmakers.force_augmentation(tuplet)
+        if prolation.denominator == 7 and prolation.numerator % 4 == 0:
+            rmakers.force_augmentation(tuplet)
+        if prolation.denominator == 7 and prolation.numerator % 5 == 0:
+            rmakers.force_augmentation(tuplet)
+        if prolation.denominator == 7 and prolation.numerator % 6 == 0:
+            rmakers.force_diminution(tuplet)
+        if prolation.denominator == 9 and prolation.numerator % 5 == 0:
+            rmakers.force_augmentation(tuplet)
+        if prolation.denominator == 9 and prolation.numerator % 7 == 0:
+            rmakers.force_diminution(tuplet)
+        if prolation.denominator % 9 == 0 and prolation.numerator % 11 == 0:
+            rmakers.force_augmentation(tuplet)
+            tuplet.denominator = 11
+        if prolation.denominator % 10 == 0 and prolation.numerator % 11 == 0:
+            rmakers.force_augmentation(tuplet)
+        if prolation.denominator == 11 and prolation.numerator % 3 == 0:
+            rmakers.force_augmentation(tuplet)
+        if prolation.denominator == 15 and prolation.numerator % 2 == 0:
+            rmakers.force_augmentation(tuplet)
 
 
 # tempi

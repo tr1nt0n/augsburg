@@ -1,7 +1,7 @@
 \version "2.23.81"
 \language english
 #(set-default-paper-size "11x17landscape")
-#(set-global-staff-size 13)
+#(set-global-staff-size 15)
 #(ly:set-option 'relative-includes #t)
 
 \include "../library.ily"
@@ -12,7 +12,7 @@
 afterGraceFraction = #(cons 15 16)
 
 \header {
-    dedication = \markup \fontsize #3 \center-column {\line \override #'(font-name . "Bodoni72 Book Italic") { { gewidmet für } \override #'(font-name . "Bodoni72 Book") { Paula Rocosa Gáñez } } \fontsize #0.25 \with-color #white "."}
+    dedication = \markup \fontsize #3 \center-column {\line \override #'(font-name . "Bodoni72 Book Italic") { { für } \override #'(font-name . "Bodoni72 Book") { Paula Rocosa Gáñez } } \fontsize #0.25 \with-color #white "."}
     title = \markup \override #'(font-name . "Bodoni72 Book") \fontsize #12 \center-column { \line { D A S \hspace #5 W U N D E R Z E I C H E N B U C H } \fontsize #0.01 \with-color #white "."}
     subtitle = \markup \fontsize #5 \center-column { \line { \override #'(font-name . "Bodoni72 Book") { oder, } \override #'(font-name . "Bodoni72 Book Italic") { "\" tres soles llamados \'Paraphog\' \"" } } \fontsize #0.01 \with-color #white "."}
     composer = \markup \override #'(font-name . "Bodoni72") \fontsize #4 {"Trinton Hlynn (*2000)"}
@@ -180,7 +180,7 @@ afterGraceFraction = #(cons 15 16)
 
     \context {
         \Staff
-        fontSize = #-3.5
+        fontSize = #-2.5
         \remove Time_signature_engraver
         \consists Duration_line_engraver
 
@@ -292,7 +292,7 @@ afterGraceFraction = #(cons 15 16)
     bottom-margin = 10\mm
     left-margin = 10\mm
     right-margin = 10\mm
-    top-margin = 25\mm
+    top-margin = 10\mm
 
     oddHeaderMarkup = \markup ""
     evenHeaderMarkup = \markup ""

@@ -9,44 +9,23 @@ from abjadext import rmakers
 from abjadext import microtones
 from augsburg import library
 from augsburg import pitch
-from augsburg import ts
+from augsburg import rhythm
 
 # score
 
-score = library.augsburg_score([(4, 4), (7, 8), (37, 32), (13, 16)])
+score = library.augsburg_score([(5, 4), (11, 8), (9, 8), (4, 4), (13, 16)])
 
-# commands
+# sketches
+
+# alpha rhythm sketch
 
 trinton.make_music(
-    lambda _: trinton.select_target(_, (1, 4)),
-    evans.RhythmHandler(evans.talea([1], 32)),
-    evans.PitchHandler(["g", "e''"]),
-    abjad.beam,
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.Dynamic("ppp"),
-            abjad.StartHairpin("<"),
-            trinton.make_custom_dynamic("sfffffz mp"),
-        ],
-        selector=trinton.select_leaves_by_index([0, 0, -1]),
+    lambda _: trinton.select_target(_, (1, 5)),
+    evans.RhythmHandler(
+        rhythm.rhythm_a(),
     ),
+    trinton.notehead_bracket_command(),
     voice=score["piano 1 voice"],
-)
-trinton.make_music(
-    lambda _: trinton.select_target(_, (1, 4)),
-    evans.RhythmHandler(evans.talea([1], 32)),
-    evans.PitchHandler(["e''", "b''"]),
-    abjad.beam,
-    trinton.linear_attachment_command(
-        attachments=[
-            abjad.Dynamic("ppp"),
-            abjad.StartHairpin("<"),
-            trinton.make_custom_dynamic("sfffffz mp", direction=abjad.UP),
-        ],
-        selector=trinton.select_leaves_by_index([0, 0, -1]),
-        direction=abjad.UP,
-    ),
-    voice=score["piano 3 voice"],
 )
 
 # persist
