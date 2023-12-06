@@ -6,7 +6,7 @@
 \version "2.23.81"
   %! abjad.LilyPondFile._get_format_pieces()
 \language "english"
-\include "/Users/trintonprater/scores/augsburg/augsburg/build/augsburg-stylesheet.ily"
+\include "/Users/trintonprater/scores/augsburg/augsburg/build/section-stylesheet.ily"
 \include "/Users/trintonprater/abjad/abjad/scm/abjad.ily"
   %! abjad.LilyPondFile._get_format_pieces()
 \score

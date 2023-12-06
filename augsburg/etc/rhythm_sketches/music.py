@@ -70,7 +70,7 @@ render_file(
     path="/Users/trintonprater/scores/augsburg/augsburg/etc/rhythm_sketches",
     file_name="_rhythm_sketch",
     includes=[
-        "/Users/trintonprater/scores/augsburg/augsburg/build/augsburg-stylesheet.ily",
+        "/Users/trintonprater/scores/augsburg/augsburg/build/section-stylesheet.ily",
         "/Users/trintonprater/abjad/abjad/scm/abjad.ily",
     ],
 )
