@@ -31,6 +31,8 @@ trinton.make_music(
     beam_meter=True,
 )
 
+# beautifying time signatures
+
 trinton.remove_redundant_time_signatures(score=score)
 
 # persist
