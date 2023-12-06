@@ -52,35 +52,14 @@
                     % OPEN_BRACKETS:
                     \context Voice = "piano 1 voice"
                     {
-                        % OPEN_BRACKETS:
-                        \tweak text #tuplet-number::calc-fraction-text
-                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 7 8) (ly:make-duration 4 0))
-                        \times 8/7
-                        {
-                            r16
-                            c'16
-                            r16
-                            % OPENING:
-                            % COMMANDS:
-                            \override Staff.Stem.stemlet-length = 0.75
-                            c'16
-                            % AFTER:
-                            % START_BEAM:
-                            [
-                            % OPENING:
-                            % COMMANDS:
-                            \revert Staff.Stem.stemlet-length
-                            c'16
-                            % AFTER:
-                            % STOP_BEAM:
-                            ]
-                            r16
-                            c'16
-                        % CLOSE_BRACKETS:
-                        }
-                        c'4
-                        r4
-                        c'4
+                        c'2.
+                        % AFTER:
+                        % SPANNER_STARTS:
+                        ~
+                        c'2
+                        % AFTER:
+                        % SPANNER_STARTS:
+                        ~
                         % OPEN_BRACKETS:
                         \tweak text #tuplet-number::calc-fraction-text
                         \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 10 11) (ly:make-duration 3 0))
@@ -91,88 +70,12 @@
                             \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 7 6) (ly:make-duration 3 0))
                             \times 6/7
                             {
-                                r4.
-                                c'8
-                                r8
-                                c'8
-                                r8
-                            % CLOSE_BRACKETS:
-                            }
-                            % OPEN_BRACKETS:
-                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 2 0))
-                            \times 2/3
-                            {
-                                r2
                                 c'4
-                            % CLOSE_BRACKETS:
-                            }
-                        % CLOSE_BRACKETS:
-                        }
-                        % OPEN_BRACKETS:
-                        \tweak text #tuplet-number::calc-fraction-text
-                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 2 3) (ly:make-duration 3 0))
-                        \times 3/2
-                        {
-                            r8
-                            c'32
-                            r16
-                            c'32
-                        % CLOSE_BRACKETS:
-                        }
-                        r8.
-                        c'16
-                        r8
-                        % OPEN_BRACKETS:
-                        \tweak text #tuplet-number::calc-fraction-text
-                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 7 6) (ly:make-duration 4 0))
-                        \times 6/7
-                        {
-                            r16
-                            c'16
-                            r4
-                            c'16
-                        % CLOSE_BRACKETS:
-                        }
-                        % OPEN_BRACKETS:
-                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 1 0))
-                        \times 2/3
-                        {
-                            % OPEN_BRACKETS:
-                            \tweak text #tuplet-number::calc-fraction-text
-                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 7 8) (ly:make-duration 3 0))
-                            \times 8/7
-                            {
                                 r8
-                                % OPENING:
-                                % COMMANDS:
-                                \override Staff.Stem.stemlet-length = 0.75
-                                c'8
+                                c'2
                                 % AFTER:
-                                % START_BEAM:
-                                [
-                                % OPENING:
-                                % COMMANDS:
-                                \revert Staff.Stem.stemlet-length
-                                c'8
-                                % AFTER:
-                                % STOP_BEAM:
-                                ]
-                                r8
-                                % OPENING:
-                                % COMMANDS:
-                                \override Staff.Stem.stemlet-length = 0.75
-                                c'8
-                                % AFTER:
-                                % START_BEAM:
-                                [
-                                c'8
-                                % OPENING:
-                                % COMMANDS:
-                                \revert Staff.Stem.stemlet-length
-                                c'8
-                                % AFTER:
-                                % STOP_BEAM:
-                                ]
+                                % SPANNER_STARTS:
+                                ~
                             % CLOSE_BRACKETS:
                             }
                             % OPEN_BRACKETS:
@@ -182,30 +85,74 @@
                                 c'4
                                 r4
                                 c'4
+                                % AFTER:
+                                % SPANNER_STARTS:
+                                ~
                             % CLOSE_BRACKETS:
                             }
                         % CLOSE_BRACKETS:
                         }
                         % OPEN_BRACKETS:
                         \tweak text #tuplet-number::calc-fraction-text
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 2 3) (ly:make-duration 3 0))
+                        \times 3/2
+                        {
+                            c'16.
+                            r32
+                            c'16
+                            r32
+                            c'32
+                            % AFTER:
+                            % SPANNER_STARTS:
+                            ~
+                        % CLOSE_BRACKETS:
+                        }
+                        c'8
+                        r16
+                        c'8.
+                        % OPEN_BRACKETS:
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 7 6) (ly:make-duration 4 0))
+                        \times 6/7
+                        {
+                            r16
+                            c'4
+                            r16
+                            c'16
+                            % AFTER:
+                            % SPANNER_STARTS:
+                            ~
+                        % CLOSE_BRACKETS:
+                        }
+                        c'1
+                        % AFTER:
+                        % SPANNER_STARTS:
+                        ~
+                        % OPEN_BRACKETS:
+                        \tweak text #tuplet-number::calc-fraction-text
                         \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 7 8) (ly:make-duration 5 0))
                         \times 8/7
                         {
-                            r16.
+                            c'16
+                            r32
+                            c'16
+                            r32
                             c'32
-                            r16
-                            c'32
+                            % AFTER:
+                            % SPANNER_STARTS:
+                            ~
                         % CLOSE_BRACKETS:
                         }
                         % OPEN_BRACKETS:
                         \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 9 8) (ly:make-duration 5 0))
                         \times 8/9
                         {
-                            r16
                             c'32
-                            r16.
-                            c'32
-                            r16
+                            r32
+                            c'16.
+                            r32
+                            c'16
+                            r32
                         % CLOSE_BRACKETS:
                         }
                         % OPEN_BRACKETS:
@@ -213,8 +160,8 @@
                         \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 4 0))
                         \times 6/5
                         {
-                            c'16
-                            r8.
+                            c'8.
+                            r16
                             c'16
                         % CLOSE_BRACKETS:
                         }

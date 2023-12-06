@@ -187,14 +187,82 @@ def rhythm_a(index=0, stage=1):
 
                 rmakers.force_note(selections)
 
+            if stage > 2:
+                rests = abjad.select.rests(components)
+                rest_groups = abjad.select.group_by_contiguity(rests)
+                for group in rest_groups:
+                    if len(group) == 1:
+                        force_note_group = group
+                    else:
+                        force_note_group = abjad.select.exclude(group, [-1])
+                    rmakers.force_note(force_note_group)
+
+                tuplets = abjad.select.tuplets(components)
+
+                relevant_tuplets = []
+
+                for tuplet in tuplets:
+                    tuplet_contents = abjad.get.contents(tuplet)[1:]
+                    if any(isinstance(item, abjad.Tuplet) for item in tuplet_contents):
+                        pass
+                    else:
+                        relevant_tuplets.append(tuplet)
+
+                for tuplet in relevant_tuplets:
+                    tuplet_pleaves = abjad.select.leaves(tuplet, pitched=True)
+                    tuplet_leaves = abjad.select.leaves(tuplet)
+                    fuse_groups = abjad.select.group_by_contiguity(tuplet_pleaves)
+                    for group in fuse_groups:
+                        abjad.mutate.fuse(group)
+
         tuplets = abjad.select.tuplets(components)
 
-        for tuplet in tuplets:
-            if isinstance(abjad.get.parentage(tuplet).parent, abjad.Tuplet):
+        if stage < 3:
+            for tuplet in tuplets:
+                if isinstance(abjad.get.parentage(tuplet).parent, abjad.Tuplet):
+                    library.respell_tuplets([tuplet])
+                    rmakers.rewrite_rest_filled(tuplet)
+                    rmakers.rewrite_sustained(tuplet)
+                # abjad.beam(tuplet, beam_rests=False)
+                # rmakers.extract_trivial(components)
+
+        else:
+            parent_tuplets = []
+
+            for tuplet in tuplets:
+                tuplet_contents = abjad.get.contents(tuplet)[1:]
+                if any(isinstance(item, abjad.Tuplet) for item in tuplet_contents):
+                    parent_tuplets.append(tuplet)
+
+            for tuplet in parent_tuplets:
+                tuplet_contents = abjad.get.contents(tuplet)[1:]
+                tuplet_pleaves = abjad.select.leaves(tuplet_contents, pitched=True)
+                pleaves_duration = abjad.get.duration(tuplet_pleaves)
+                tuplet_duration = abjad.get.duration(tuplet)
+
+                if pleaves_duration == tuplet_duration:
+                    full_measure = rmakers.tuplet([tuplet_duration], [(1,)])
+                    container = abjad.Container(full_measure)
+                    full_measure = abjad.mutate.eject_contents(container)
+                    abjad.mutate.replace(tuplet, full_measure)
+
+            tuplets = abjad.select.tuplets(components)
+
+            for tuplet in tuplets:
                 library.respell_tuplets([tuplet])
-            rmakers.rewrite_rest_filled(tuplets)
-            rmakers.rewrite_sustained(tuplets)
-            # abjad.beam(tuplet, beam_rests=False)
+                rmakers.rewrite_rest_filled(tuplet)
+                rmakers.rewrite_sustained(tuplet)
+
+            tiable_tuplets = abjad.select.exclude(tuplets, [-1])
+
+            for tuplet in tiable_tuplets:
+                last_leaf = abjad.select.leaf(tuplet, -1)
+                if isinstance(last_leaf, abjad.Rest):
+                    pass
+                else:
+                    next_leaf = abjad.select.with_next_leaf(last_leaf)[-1]
+                    if isinstance(next_leaf, abjad.Note):
+                        abjad.attach(abjad.Tie(), last_leaf)
 
         rmakers.extract_trivial(components)
 

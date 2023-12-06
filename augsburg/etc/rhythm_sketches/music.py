@@ -23,7 +23,7 @@ score = library.augsburg_score([(5, 4), (11, 8), (9, 8), (4, 4), (7, 8)])
 trinton.make_music(
     lambda _: trinton.select_target(_, (1, 5)),
     evans.RhythmHandler(
-        rhythm.rhythm_a(index=1, stage=1),
+        rhythm.rhythm_a(index=1, stage=3),
     ),
     trinton.rewrite_meter_command(),
     trinton.notehead_bracket_command(),
