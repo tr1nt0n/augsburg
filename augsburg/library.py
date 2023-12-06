@@ -61,12 +61,18 @@ def respell_tuplets(tuplets):
             rmakers.force_diminution(tuplet)
         if prolation.denominator == 5 and prolation.numerator % 3 == 0:
             rmakers.force_augmentation(tuplet)
+        if prolation.denominator % 5 == 0 and prolation.numerator % 9 == 0:
+            rmakers.force_diminution(tuplet)
         if prolation.denominator == 7 and prolation.numerator % 4 == 0:
             rmakers.force_augmentation(tuplet)
         if prolation.denominator == 7 and prolation.numerator % 5 == 0:
             rmakers.force_augmentation(tuplet)
         if prolation.denominator == 7 and prolation.numerator % 6 == 0:
             rmakers.force_diminution(tuplet)
+        if prolation.denominator % 2 == 0 and prolation.numerator % 7 == 0:
+            rmakers.force_diminution(tuplet)
+        if prolation.denominator % 3 == 0 and prolation.numerator % 7 == 0:
+            rmakers.force_augmentation(tuplet)
         if prolation.denominator == 9 and prolation.numerator % 5 == 0:
             rmakers.force_augmentation(tuplet)
         if prolation.denominator == 9 and prolation.numerator % 7 == 0:

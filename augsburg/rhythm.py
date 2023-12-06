@@ -12,7 +12,7 @@ from itertools import cycle
 from augsburg import library
 
 
-def rhythm_a(index=0):
+def rhythm_a(index=0, stage=1):
     def rhythm(durations):
         beat_regions = []
         for i, duration in enumerate(durations):
@@ -107,9 +107,6 @@ def rhythm_a(index=0):
 
         library.respell_tuplets(tuplets)
 
-        def check(l):
-            return (len(set(l))) == 1
-
         map_sequence = library.logistic_map_sequence(index=index)
 
         nested_ratios = []
@@ -119,26 +116,85 @@ def rhythm_a(index=0):
             tuplet_tuple = tuple(tuplet_list)
             nested_ratios.append(tuplet_tuple)
 
-        for tuplet in tuplets:
-            tuplet_ties = abjad.select.logical_ties(tuplet)
+        measures = abjad.select.partition_by_durations(
+            components,
+            durations,
+            cyclic=False,
+            fill=abjad.EXACT,
+            in_seconds=False,
+            overhang=False,
+        )
+
+        for i, measure in enumerate(measures):
+            measure_ties = abjad.select.logical_ties(measure)
             tie_durations = [
-                abjad.get.duration(tie, preprolated=True) for tie in tuplet_ties
+                abjad.get.duration(tie, preprolated=True) for tie in measure_ties
             ]
-            if check(tie_durations) == True:
-                pass
-            else:
+            if i % 2 == 1:
                 tuplets = rmakers.tuplet(tie_durations, nested_ratios)
                 rmakers.rewrite_dots(tuplets)
                 rmakers.trivialize(tuplets)
                 rmakers.rewrite_rest_filled(tuplets)
                 rmakers.rewrite_sustained(tuplets)
-                for tie, tuplet in zip(tuplet_ties, tuplets):
+                for tie, tuplet in zip(measure_ties, tuplets):
                     abjad.mutate.replace(tie, tuplet)
+            else:
+                pass
+
+        if stage == 2:
+            tuplets = abjad.select.tuplets(components)
+            for tuplet in tuplets:
+                rmakers.force_rest(abjad.select.leaf(tuplet, 0))
+
+        else:
+            measures = abjad.select.partition_by_durations(
+                components,
+                durations,
+                cyclic=False,
+                fill=abjad.EXACT,
+                in_seconds=False,
+                overhang=False,
+            )
+
+            for i, measure in zip(map_sequence, measures):
+                rmakers.force_rest(abjad.select.logical_ties(measure))
+                ties = abjad.select.logical_ties(measure)
+                pulse_amount = len(ties)
+
+                if i >= pulse_amount:
+                    selections = abjad.select.exclude(ties, [0])
+
+                else:
+                    initial_attack = int(pulse_amount / i)
+
+                    attacks = [initial_attack]
+
+                    multiplier = 2
+
+                    for _ in range(1, i):
+                        attack = int(math.floor(pulse_amount * multiplier / i))
+                        attack = attack - 1
+                        attacks.append(attack)
+                        multiplier += 1
+
+                    attacks = trinton.remove_adjacent(attacks)
+
+                    selector = trinton.patterned_tie_index_selector(
+                        attacks, pulse_amount
+                    )
+
+                    selections = selector(ties)
+
+                rmakers.force_note(selections)
 
         tuplets = abjad.select.tuplets(components)
 
         for tuplet in tuplets:
-            abjad.beam(tuplet)
+            if isinstance(abjad.get.parentage(tuplet).parent, abjad.Tuplet):
+                library.respell_tuplets([tuplet])
+            rmakers.rewrite_rest_filled(tuplets)
+            rmakers.rewrite_sustained(tuplets)
+            # abjad.beam(tuplet, beam_rests=False)
 
         rmakers.extract_trivial(components)
 
