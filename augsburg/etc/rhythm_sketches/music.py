@@ -38,10 +38,9 @@ trinton.make_music(
     evans.RhythmHandler(
         rhythm.rhythm_b(index=0, stage=2, grace=True),
     ),
-    # trinton.rewrite_meter_command(),
     trinton.notehead_bracket_command(),
     voice=score["piano 1 voice"],
-    # beam_meter=True,
+    beam_meter=True,
 )
 
 # beautifying time signatures

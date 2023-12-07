@@ -273,7 +273,7 @@ def rhythm_a(index=0, stage=1):
     return rhythm
 
 
-def rhythm_b(index=0, stage=1, grace=False):
+def rhythm_b(index=0, stage=1, grace=False, grace_selector=None):
     def rhythm(durations):
         if stage == 1:
             talea_durations = [26, 6, 3, 2, 15, 12, 6, 4, 4, 18, 8, 1, 6, 17]
@@ -319,7 +319,10 @@ def rhythm_b(index=0, stage=1, grace=False):
         rmakers.extract_trivial(components)
         components = abjad.mutate.eject_contents(components)
         components = rmakers.wrap_in_time_signature_staff(components, durations)
-        rmakers.rewrite_meter(components)
+        rmakers.unbeam(components)
+
+        for leaf in abjad.select.leaves(components):
+            abjad.override(leaf).Stem.direction = abjad.DOWN
 
         if grace is True:
             if stage > 1:
@@ -329,13 +332,31 @@ def rhythm_b(index=0, stage=1, grace=False):
 
             else:
                 before_grace_amounts = [
-                    _ for _ in library.logistic_map_sequence(index=index) if _ > 8
+                    _ for _ in library.logistic_map_sequence(index=index) if _ < 8
                 ]
 
-            onbeat_grace_amounts = trinton.rotated_sequence(before_grace_amounts, 1)
+            onbeat_grace_amounts = [
+                _ for _ in trinton.rotated_sequence(before_grace_amounts, 1) if _ > 3
+            ]
             after_grace_amounts = trinton.rotated_sequence(before_grace_amounts, 2)
 
-            ties = abjad.select.logical_ties(components)
+            if grace_selector is not None:
+                ties = grace_selector(components)
+                ties = abjad.select.logical_ties(ties)
+
+            else:
+                if stage == 1:
+                    ties = [
+                        _
+                        for _ in abjad.select.logical_ties(components)
+                        if abjad.get.duration(_, preprolated=True)
+                        > abjad.Duration((3, 16))
+                    ]
+
+                else:
+                    ties = abjad.select.logical_ties(components)
+
+            name_count = 1
 
             for (
                 tie,
@@ -363,6 +384,31 @@ def rhythm_b(index=0, stage=1, grace=False):
                 before_grace_container = abjad.BeforeGraceContainer(notes_string)
 
                 abjad.attach(before_grace_container, first_leaf)
+
+                onbeat_durations = [
+                    abjad.Duration(1, 16) for _ in range(1, onbeat_grace_amount)
+                ]
+                grace_name = f"graces {name_count}"
+                first_leaf_of_tie_duration = abjad.get.duration(first_leaf)
+                nested_music = rmakers.note(onbeat_durations)
+                nested_music_logical_ties = abjad.select.logical_ties(nested_music)
+                leaf_denominator = len(nested_music_logical_ties)
+                leaf_duration = first_leaf_of_tie_duration / leaf_denominator
+                onbeat_grace_components = abjad.Container(nested_music)
+                onbeat_grace_components = abjad.mutate.eject_contents(
+                    onbeat_grace_components
+                )
+
+                trinton.on_beat_grace_container(
+                    contents=onbeat_grace_components,
+                    anchor_voice_selection=tie,
+                    leaf_duration=leaf_duration,
+                    do_not_slur=False,
+                    name=grace_name,
+                    font_size=-5.5,
+                )
+
+                name_count += 1
 
                 notes_list = ["c'16" for _ in range(1, after_grace_amount)]
 
@@ -394,12 +440,57 @@ def rhythm_b(index=0, stage=1, grace=False):
 
                     else:
                         abjad.beam(group)
+                        abjad.slur(group)
 
                         start_slash_literal = abjad.LilyPondLiteral(
                             r"\my-hack-slash", site="before"
                         )
 
+                    start_stem_literal = abjad.LilyPondLiteral(
+                        r"\stemUp", site="before"
+                    )
+
+                    stop_stem_literal = abjad.LilyPondLiteral(
+                        r"\stemNeutral", site="after"
+                    )
+
                     abjad.attach(start_slash_literal, group[0])
+                    abjad.attach(start_stem_literal, group[0])
+                    abjad.attach(stop_stem_literal, group[-1])
+
+            onbeat_graces = []
+
+            for leaf in abjad.select.leaves(components):
+                parentage = abjad.get.parentage(leaf).parent
+                if isinstance(parentage, abjad.OnBeatGraceContainer):
+                    onbeat_graces.append(leaf)
+
+            onbeat_graces = abjad.select.group_by_contiguity(onbeat_graces)
+
+            for container in onbeat_graces:
+                abjad.attach(
+                    abjad.LilyPondLiteral(
+                        r"\override Beam.beam-thickness = #0.48", site="before"
+                    ),
+                    container[0],
+                )
+                abjad.attach(
+                    abjad.LilyPondLiteral(r"\revert Beam.thickness", site="after"),
+                    container[-1],
+                )
+
+                abjad.attach(
+                    abjad.LilyPondLiteral(
+                        r"\override Beam.length-fraction = #1", site="before"
+                    ),
+                    container[0],
+                )
+                abjad.attach(
+                    abjad.LilyPondLiteral(
+                        r"\revert Beam.length-fraction", site="after"
+                    ),
+                    container[-1],
+                )
 
         selections = abjad.mutate.eject_contents(components)
 
