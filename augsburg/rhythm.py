@@ -271,3 +271,138 @@ def rhythm_a(index=0, stage=1):
         return selections
 
     return rhythm
+
+
+def rhythm_b(index=0, stage=1, grace=False):
+    def rhythm(durations):
+        if stage == 1:
+            talea_durations = [26, 6, 3, 2, 15, 12, 6, 4, 4, 18, 8, 1, 6, 17]
+            talea_durations = trinton.rotated_sequence(
+                talea_durations, index % len(talea_durations)
+            )
+            talea_denominator = 32
+
+        if stage == 2:
+            root_talea_durations = [8, 7, 6, 5, 4, 3, 2]
+
+            partitioned_talea_durations = abjad.sequence.partition_by_counts(
+                sequence=root_talea_durations,
+                counts=[
+                    2,
+                    3,
+                    2,
+                ],
+                overhang=True,
+            )
+
+            helianthated_durations = baca.sequence.helianthate(
+                partitioned_talea_durations, n=-1, m=1
+            )
+            flattened_talea_durations = abjad.sequence.flatten(helianthated_durations)
+            rotated_talea_durations = trinton.rotated_sequence(
+                flattened_talea_durations, 6
+            )
+            talea_durations = trinton.rotated_sequence(
+                rotated_talea_durations, index % len(rotated_talea_durations)
+            )
+            talea_denominator = 8
+
+        if stage == 3:
+            talea_durations = [1]
+            talea_denominator = 4
+
+        components = rmakers.talea(durations, talea_durations, talea_denominator)
+        components = abjad.Container(components)
+        rmakers.trivialize(components)
+        rmakers.rewrite_rest_filled(components)
+        rmakers.rewrite_sustained(components)
+        rmakers.extract_trivial(components)
+        components = abjad.mutate.eject_contents(components)
+        components = rmakers.wrap_in_time_signature_staff(components, durations)
+        rmakers.rewrite_meter(components)
+
+        if grace is True:
+            if stage > 1:
+                before_grace_amounts = trinton.rotated_sequence(
+                    talea_durations, index % len(talea_durations)
+                )
+
+            else:
+                before_grace_amounts = [
+                    _ for _ in library.logistic_map_sequence(index=index) if _ > 8
+                ]
+
+            onbeat_grace_amounts = trinton.rotated_sequence(before_grace_amounts, 1)
+            after_grace_amounts = trinton.rotated_sequence(before_grace_amounts, 2)
+
+            ties = abjad.select.logical_ties(components)
+
+            for (
+                tie,
+                before_grace_amount,
+                onbeat_grace_amount,
+                after_grace_amount,
+            ) in zip(
+                ties,
+                itertools.cycle(before_grace_amounts),
+                itertools.cycle(onbeat_grace_amounts),
+                itertools.cycle(after_grace_amounts),
+            ):
+                first_leaf = tie[0]
+                last_leaf = tie[-1]
+                first_leaf_duration = abjad.get.duration(first_leaf)
+
+                notes_list = ["c'16" for _ in range(1, before_grace_amount)]
+
+                notes_string = ""
+
+                for note in notes_list:
+                    notes_string = notes_string + note
+                    notes_string = notes_string + ""
+
+                before_grace_container = abjad.BeforeGraceContainer(notes_string)
+
+                abjad.attach(before_grace_container, first_leaf)
+
+                notes_list = ["c'16" for _ in range(1, after_grace_amount)]
+
+                notes_string = ""
+
+                for note in notes_list:
+                    notes_string = notes_string + note
+                    notes_string = notes_string + ""
+
+                after_grace_container = abjad.AfterGraceContainer(notes_string)
+
+                abjad.attach(after_grace_container, last_leaf)
+
+            grace_groups = []
+
+            for leaf in abjad.select.leaves(components):
+                before_grace_container = abjad.get.before_grace_container(leaf)
+                after_grace_container = abjad.get.after_grace_container(leaf)
+                grace_groups.append(before_grace_container)
+                grace_groups.append(after_grace_container)
+
+            for group in grace_groups:
+                if group is not None:
+                    if len(group) == 1:
+                        start_slash_literal = abjad.LilyPondLiteral(
+                            r"""\once \override Flag.stroke-style = #"grace" """,
+                            site="before",
+                        )
+
+                    else:
+                        abjad.beam(group)
+
+                        start_slash_literal = abjad.LilyPondLiteral(
+                            r"\my-hack-slash", site="before"
+                        )
+
+                    abjad.attach(start_slash_literal, group[0])
+
+        selections = abjad.mutate.eject_contents(components)
+
+        return selections
+
+    return rhythm
