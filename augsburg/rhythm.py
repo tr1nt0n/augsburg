@@ -319,21 +319,27 @@ def rhythm_b(index=0, stage=1, grace=False, grace_selector=None):
         rmakers.extract_trivial(components)
         components = abjad.mutate.eject_contents(components)
         components = rmakers.wrap_in_time_signature_staff(components, durations)
+        rmakers.rewrite_meter(components)
         rmakers.unbeam(components)
 
-        for leaf in abjad.select.leaves(components):
-            abjad.override(leaf).Stem.direction = abjad.DOWN
-
         if grace is True:
-            if stage > 1:
+            for leaf in abjad.select.leaves(components):
+                abjad.override(leaf).Stem.direction = abjad.DOWN
+
+            if stage == 1:
+                before_grace_amounts = [
+                    _ for _ in library.logistic_map_sequence(index=index) if _ < 8
+                ]
+
+            if stage == 2:
                 before_grace_amounts = trinton.rotated_sequence(
                     talea_durations, index % len(talea_durations)
                 )
 
-            else:
-                before_grace_amounts = [
-                    _ for _ in library.logistic_map_sequence(index=index) if _ < 8
-                ]
+            if stage == 3:
+                before_grace_amounts = trinton.rotated_sequence(
+                    [2, 3, 4, 5, 6, 7], index % 6
+                )
 
             onbeat_grace_amounts = [
                 _ for _ in trinton.rotated_sequence(before_grace_amounts, 1) if _ > 3

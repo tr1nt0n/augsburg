@@ -13,8 +13,8 @@ from augsburg import rhythm
 
 # score
 
-# score = library.augsburg_score([(5, 4), (11, 8), (9, 8), (4, 4), (7, 8)])
-score = library.augsburg_score([(4, 4), (4, 4), (4, 4), (4, 4)])
+score = library.augsburg_score([(5, 4), (11, 8), (9, 8), (4, 4), (7, 8)])
+# score = library.augsburg_score([(4, 4), (4, 4), (4, 4), (4, 4)])
 
 # sketches
 
@@ -34,13 +34,13 @@ score = library.augsburg_score([(4, 4), (4, 4), (4, 4), (4, 4)])
 # beta rhythm sketch
 
 trinton.make_music(
-    lambda _: trinton.select_target(_, (1, 4)),
+    lambda _: trinton.select_target(_, (2, 5)),
     evans.RhythmHandler(
         rhythm.rhythm_b(index=0, stage=2, grace=True),
     ),
     trinton.notehead_bracket_command(),
     voice=score["piano 1 voice"],
-    beam_meter=True,
+    # beam_meter=True,
 )
 
 # beautifying time signatures
