@@ -20,24 +20,36 @@
         {
             % OPENING:
             % COMMANDS:
-            \time 5/4
-            s1 * 5/4
-            % OPENING:
+            \time 4/4
+            s1 * 1
+            % BEFORE:
             % COMMANDS:
-            \time 11/8
-            s1 * 11/8
-            % OPENING:
-            % COMMANDS:
-            \time 9/8
-            s1 * 9/8
+            \once \override Score.TimeSignature.stencil = ##f
             % OPENING:
             % COMMANDS:
             \time 4/4
             s1 * 1
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
             % OPENING:
             % COMMANDS:
-            \time 7/8
-            s1 * 7/8
+            \time 4/4
+            s1 * 1
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/4
+            s1 * 1
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/4
+            s1 * 1
         % CLOSE_BRACKETS:
         }
         % OPEN_BRACKETS:
@@ -52,877 +64,181 @@
                     % OPEN_BRACKETS:
                     \context Voice = "piano 1 voice"
                     {
-                        s1 * 5/4
                         % OPEN_BRACKETS:
                         <<
                             % OPEN_BRACKETS:
-                            \context Voice = "On_Beat_Grace_Container"
+                            \context Voice = "37 voice temp"
                             {
-                            % OPENING:
-                                % COMMANDS:
-                                  %! abjad.on_beat_grace_container(1)
-                                \set fontSize = #-5.5
-                                % BEFORE:
-                                % COMMANDS:
-                                  %! abjad.on_beat_grace_container(2)
-                                \my-hack-slash
-                                \override Beam.beam-thickness = #0.48
-                                \override Beam.length-fraction = #1
-                                % OPENING:
-                                % COMMANDS:
-                                  %! abjad.on_beat_grace_container(3)
-                                \voiceOne
-                                <
-                                    \tweak font-size 0
-                                    \tweak transparent ##t
-                                    c'
-                                >16 * 4/3
-                                % AFTER:
-                                % START_BEAM:
-                                [
-                                % SPANNER_STARTS:
-                                (
-                                c'16 * 4/3
-                                c'16 * 4/3
-                                % AFTER:
-                                % SPANNER_STOPS:
-                                )
-                                % STOP_BEAM:
-                                ]
-                                % COMMANDS:
-                                \revert Beam.length-fraction
-                                \revert Beam.thickness
-                            % CLOSE_BRACKETS:
-                            }
-                            % OPEN_BRACKETS:
-                            \context Voice = "RhythmMaker.Music Anchor"
-                            {
-                                % BEFORE:
                                 % OPEN_BRACKETS:
-                                \grace {
-                                    % BEFORE:
-                                    % COMMANDS:
-                                    \once \override Flag.stroke-style = #"grace" 
-                                    \stemUp
-                                    c'16
-                                    % AFTER:
-                                    % COMMANDS:
-                                    \stemNeutral
-                                % CLOSE_BRACKETS:
-                                }
-                                % GROB_OVERRIDES:
-                                \once \override Stem.direction = #down
-                                % OPENING:
-                                % COMMANDS:
-                                  %! abjad.on_beat_grace_container(4)
-                                \voiceTwo
-                                \afterGrace
-                                c'4
-                                % AFTER:
-                                % OPEN_BRACKETS:
+                                \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 37 32) (ly:make-duration 5 0))
+                                \times 32/37
                                 {
                                     % BEFORE:
                                     % COMMANDS:
-                                    \my-hack-slash
-                                    \stemUp
-                                    c'16
-                                    % AFTER:
-                                    % START_BEAM:
-                                    [
-                                    % SPANNER_STARTS:
-                                    (
-                                    c'16
-                                    c'16
-                                    c'16
-                                    c'16
-                                    % AFTER:
-                                    % SPANNER_STOPS:
-                                    )
-                                    % STOP_BEAM:
-                                    ]
+                                    \ottava 2
+                                    % OPENING:
                                     % COMMANDS:
-                                    \stemNeutral
+                                    \voiceOne
+                                    g''''4
+                                    g''''4
+                                    g''''4
+                                    g''''4
+                                    g''''8
+                                    % AFTER:
+                                    % SPANNER_STARTS:
+                                    ~
+                                    g''''32
+                                    % AFTER:
+                                    % SPANNER_STARTS:
+                                    ~
+                                % CLOSE_BRACKETS:
+                                }
+                                % OPEN_BRACKETS:
+                                \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 37 32) (ly:make-duration 5 0))
+                                \times 32/37
+                                {
+                                    g''''16.
+                                    g''''4
+                                    g''''4
+                                    g''''4
+                                    g''''4
+                                    g''''16
+                                    % AFTER:
+                                    % SPANNER_STARTS:
+                                    ~
+                                % CLOSE_BRACKETS:
+                                }
+                                % OPEN_BRACKETS:
+                                \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 37 32) (ly:make-duration 5 0))
+                                \times 32/37
+                                {
+                                    g''''8.
+                                    g''''4
+                                    g''''4
+                                    g''''4
+                                    g''''8..
+                                    % AFTER:
+                                    % SPANNER_STARTS:
+                                    ~
+                                % CLOSE_BRACKETS:
+                                }
+                                % OPEN_BRACKETS:
+                                \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 37 32) (ly:make-duration 5 0))
+                                \times 32/37
+                                {
+                                    g''''32
+                                    g''''4
+                                    g''''4
+                                    g''''4
+                                    g''''4
+                                    g''''8
+                                    % AFTER:
+                                    % SPANNER_STARTS:
+                                    ~
+                                % CLOSE_BRACKETS:
+                                }
+                                % OPEN_BRACKETS:
+                                \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 37 32) (ly:make-duration 5 0))
+                                \times 32/37
+                                {
+                                    g''''8
+                                    g''''4
+                                    g''''4
+                                    g''''4
+                                    g''''4
+                                    g''''32
+                                % CLOSE_BRACKETS:
+                                }
+                            % CLOSE_BRACKETS:
+                            }
+                            % OPEN_BRACKETS:
+                            \context Voice = "35 voice"
+                            {
+                                % OPEN_BRACKETS:
+                                \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 35 32) (ly:make-duration 5 0))
+                                \times 32/35
+                                {
+                                    % OPENING:
+                                    % COMMANDS:
+                                    \voiceTwo
+                                    g''''4
+                                    g''''4
+                                    g''''4
+                                    g''''4
+                                    g''''16.
+                                    % AFTER:
+                                    % SPANNER_STARTS:
+                                    ~
+                                % CLOSE_BRACKETS:
+                                }
+                                % OPEN_BRACKETS:
+                                \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 35 32) (ly:make-duration 5 0))
+                                \times 32/35
+                                {
+                                    g''''8
+                                    % AFTER:
+                                    % SPANNER_STARTS:
+                                    ~
+                                    g''''32
+                                    g''''4
+                                    g''''4
+                                    g''''4
+                                    g''''8.
+                                    % AFTER:
+                                    % SPANNER_STARTS:
+                                    ~
+                                % CLOSE_BRACKETS:
+                                }
+                                % OPEN_BRACKETS:
+                                \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 35 32) (ly:make-duration 5 0))
+                                \times 32/35
+                                {
+                                    g''''16
+                                    g''''4
+                                    g''''4
+                                    g''''4
+                                    g''''4
+                                    g''''32
+                                    % AFTER:
+                                    % SPANNER_STARTS:
+                                    ~
+                                % CLOSE_BRACKETS:
+                                }
+                                % OPEN_BRACKETS:
+                                \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 35 32) (ly:make-duration 5 0))
+                                \times 32/35
+                                {
+                                    g''''8..
+                                    g''''4
+                                    g''''4
+                                    g''''4
+                                    g''''8
+                                    % AFTER:
+                                    % SPANNER_STARTS:
+                                    ~
+                                % CLOSE_BRACKETS:
+                                }
+                                % OPEN_BRACKETS:
+                                \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 35 32) (ly:make-duration 5 0))
+                                \times 32/35
+                                {
+                                    g''''8
+                                    g''''4
+                                    g''''4
+                                    g''''4
+                                    g''''8..
+                                    % AFTER:
+                                    % COMMANDS:
+                                    \ottava 0
                                 % CLOSE_BRACKETS:
                                 }
                             % CLOSE_BRACKETS:
                             }
                         % CLOSE_BRACKETS:
                         >>
-                        % OPEN_BRACKETS:
-                        <<
-                            % OPEN_BRACKETS:
-                            \context Voice = "On_Beat_Grace_Container"
-                            {
-                            % OPENING:
-                                % COMMANDS:
-                                  %! abjad.on_beat_grace_container(1)
-                                \set fontSize = #-5.5
-                                % BEFORE:
-                                % COMMANDS:
-                                  %! abjad.on_beat_grace_container(2)
-                                \my-hack-slash
-                                \override Beam.beam-thickness = #0.48
-                                \override Beam.length-fraction = #1
-                                % OPENING:
-                                % COMMANDS:
-                                  %! abjad.on_beat_grace_container(3)
-                                \voiceOne
-                                <
-                                    \tweak font-size 0
-                                    \tweak transparent ##t
-                                    c'
-                                >16 * 2/5
-                                % AFTER:
-                                % START_BEAM:
-                                [
-                                % SPANNER_STARTS:
-                                (
-                                c'16 * 2/5
-                                c'16 * 2/5
-                                c'16 * 2/5
-                                c'16 * 2/5
-                                % AFTER:
-                                % SPANNER_STOPS:
-                                )
-                                % STOP_BEAM:
-                                ]
-                                % COMMANDS:
-                                \revert Beam.length-fraction
-                                \revert Beam.thickness
-                            % CLOSE_BRACKETS:
-                            }
-                            % OPEN_BRACKETS:
-                            \context Voice = "RhythmMaker.Music Anchor"
-                            {
-                                % BEFORE:
-                                % OPEN_BRACKETS:
-                                \grace {
-                                    % BEFORE:
-                                    % COMMANDS:
-                                    \my-hack-slash
-                                    \stemUp
-                                    c'16
-                                    % AFTER:
-                                    % START_BEAM:
-                                    [
-                                    % SPANNER_STARTS:
-                                    (
-                                    c'16
-                                    c'16
-                                    % AFTER:
-                                    % SPANNER_STOPS:
-                                    )
-                                    % STOP_BEAM:
-                                    ]
-                                    % COMMANDS:
-                                    \stemNeutral
-                                % CLOSE_BRACKETS:
-                                }
-                                % GROB_OVERRIDES:
-                                \once \override Stem.direction = #down
-                                % OPENING:
-                                % COMMANDS:
-                                  %! abjad.on_beat_grace_container(4)
-                                \voiceTwo
-                                c'8
-                                % AFTER:
-                                % SPANNER_STARTS:
-                                ~
-                                % BEFORE:
-                                % GROB_OVERRIDES:
-                                \once \override Stem.direction = #down
-                                % OPENING:
-                                \afterGrace
-                                c'4.
-                                % AFTER:
-                                % OPEN_BRACKETS:
-                                {
-                                    % BEFORE:
-                                    % COMMANDS:
-                                    \my-hack-slash
-                                    \stemUp
-                                    c'16
-                                    % AFTER:
-                                    % START_BEAM:
-                                    [
-                                    % SPANNER_STARTS:
-                                    (
-                                    c'16
-                                    c'16
-                                    c'16
-                                    % AFTER:
-                                    % SPANNER_STOPS:
-                                    )
-                                    % STOP_BEAM:
-                                    ]
-                                    % COMMANDS:
-                                    \stemNeutral
-                                % CLOSE_BRACKETS:
-                                }
-                            % CLOSE_BRACKETS:
-                            }
-                        % CLOSE_BRACKETS:
-                        >>
-                        % OPEN_BRACKETS:
-                        <<
-                            % OPEN_BRACKETS:
-                            \context Voice = "On_Beat_Grace_Container"
-                            {
-                            % OPENING:
-                                % COMMANDS:
-                                  %! abjad.on_beat_grace_container(1)
-                                \set fontSize = #-5.5
-                                % BEFORE:
-                                % COMMANDS:
-                                  %! abjad.on_beat_grace_container(2)
-                                \my-hack-slash
-                                \override Beam.beam-thickness = #0.48
-                                \override Beam.length-fraction = #1
-                                % OPENING:
-                                % COMMANDS:
-                                  %! abjad.on_beat_grace_container(3)
-                                \voiceOne
-                                <
-                                    \tweak font-size 0
-                                    \tweak transparent ##t
-                                    c'
-                                >16 * 1/2
-                                % AFTER:
-                                % START_BEAM:
-                                [
-                                % SPANNER_STARTS:
-                                (
-                                c'16 * 1/2
-                                c'16 * 1/2
-                                c'16 * 1/2
-                                % AFTER:
-                                % SPANNER_STOPS:
-                                )
-                                % STOP_BEAM:
-                                ]
-                                % COMMANDS:
-                                \revert Beam.length-fraction
-                                \revert Beam.thickness
-                            % CLOSE_BRACKETS:
-                            }
-                            % OPEN_BRACKETS:
-                            \context Voice = "RhythmMaker.Music Anchor"
-                            {
-                                % BEFORE:
-                                % OPEN_BRACKETS:
-                                \grace {
-                                    % BEFORE:
-                                    % COMMANDS:
-                                    \my-hack-slash
-                                    \stemUp
-                                    c'16
-                                    % AFTER:
-                                    % START_BEAM:
-                                    [
-                                    % SPANNER_STARTS:
-                                    (
-                                    c'16
-                                    c'16
-                                    c'16
-                                    c'16
-                                    % AFTER:
-                                    % SPANNER_STOPS:
-                                    )
-                                    % STOP_BEAM:
-                                    ]
-                                    % COMMANDS:
-                                    \stemNeutral
-                                % CLOSE_BRACKETS:
-                                }
-                                % GROB_OVERRIDES:
-                                \once \override Stem.direction = #down
-                                % OPENING:
-                                % COMMANDS:
-                                  %! abjad.on_beat_grace_container(4)
-                                \voiceTwo
-                                c'8
-                                % AFTER:
-                                % SPANNER_STARTS:
-                                ~
-                                % BEFORE:
-                                % GROB_OVERRIDES:
-                                \once \override Stem.direction = #down
-                                c'2
-                                % AFTER:
-                                % SPANNER_STARTS:
-                                ~
-                                % BEFORE:
-                                % GROB_OVERRIDES:
-                                \once \override Stem.direction = #down
-                                % OPENING:
-                                \afterGrace
-                                c'8
-                                % AFTER:
-                                % OPEN_BRACKETS:
-                                {
-                                    % BEFORE:
-                                    % COMMANDS:
-                                    \once \override Flag.stroke-style = #"grace" 
-                                    \stemUp
-                                    c'16
-                                    % AFTER:
-                                    % COMMANDS:
-                                    \stemNeutral
-                                % CLOSE_BRACKETS:
-                                }
-                            % CLOSE_BRACKETS:
-                            }
-                        % CLOSE_BRACKETS:
-                        >>
-                        % OPEN_BRACKETS:
-                        <<
-                            % OPEN_BRACKETS:
-                            \context Voice = "On_Beat_Grace_Container"
-                            {
-                            % OPENING:
-                                % COMMANDS:
-                                  %! abjad.on_beat_grace_container(1)
-                                \set fontSize = #-5.5
-                                % BEFORE:
-                                % COMMANDS:
-                                  %! abjad.on_beat_grace_container(2)
-                                \my-hack-slash
-                                \override Beam.beam-thickness = #0.48
-                                \override Beam.length-fraction = #1
-                                % OPENING:
-                                % COMMANDS:
-                                  %! abjad.on_beat_grace_container(3)
-                                \voiceOne
-                                <
-                                    \tweak font-size 0
-                                    \tweak transparent ##t
-                                    c'
-                                >16 * 2/3
-                                % AFTER:
-                                % START_BEAM:
-                                [
-                                % SPANNER_STARTS:
-                                (
-                                c'16 * 2/3
-                                c'16 * 2/3
-                                c'16 * 2/3
-                                c'16 * 2/3
-                                c'16 * 2/3
-                                % AFTER:
-                                % SPANNER_STOPS:
-                                )
-                                % STOP_BEAM:
-                                ]
-                                % COMMANDS:
-                                \revert Beam.length-fraction
-                                \revert Beam.thickness
-                            % CLOSE_BRACKETS:
-                            }
-                            % OPEN_BRACKETS:
-                            \context Voice = "RhythmMaker.Music Anchor"
-                            {
-                                % BEFORE:
-                                % OPEN_BRACKETS:
-                                \grace {
-                                    % BEFORE:
-                                    % COMMANDS:
-                                    \my-hack-slash
-                                    \stemUp
-                                    c'16
-                                    % AFTER:
-                                    % START_BEAM:
-                                    [
-                                    % SPANNER_STARTS:
-                                    (
-                                    c'16
-                                    c'16
-                                    c'16
-                                    % AFTER:
-                                    % SPANNER_STOPS:
-                                    )
-                                    % STOP_BEAM:
-                                    ]
-                                    % COMMANDS:
-                                    \stemNeutral
-                                % CLOSE_BRACKETS:
-                                }
-                                % GROB_OVERRIDES:
-                                \once \override Stem.direction = #down
-                                % OPENING:
-                                % COMMANDS:
-                                  %! abjad.on_beat_grace_container(4)
-                                \voiceTwo
-                                c'4
-                                % AFTER:
-                                % SPANNER_STARTS:
-                                ~
-                                % BEFORE:
-                                % GROB_OVERRIDES:
-                                \once \override Stem.direction = #down
-                                % OPENING:
-                                \afterGrace
-                                c'4.
-                                % AFTER:
-                                % OPEN_BRACKETS:
-                                {
-                                    % BEFORE:
-                                    % COMMANDS:
-                                    \my-hack-slash
-                                    \stemUp
-                                    c'16
-                                    % AFTER:
-                                    % START_BEAM:
-                                    [
-                                    % SPANNER_STARTS:
-                                    (
-                                    c'16
-                                    % AFTER:
-                                    % SPANNER_STOPS:
-                                    )
-                                    % STOP_BEAM:
-                                    ]
-                                    % COMMANDS:
-                                    \stemNeutral
-                                % CLOSE_BRACKETS:
-                                }
-                            % CLOSE_BRACKETS:
-                            }
-                        % CLOSE_BRACKETS:
-                        >>
-                        % OPEN_BRACKETS:
-                        <<
-                            % OPEN_BRACKETS:
-                            \context Voice = "On_Beat_Grace_Container"
-                            {
-                            % OPENING:
-                                % COMMANDS:
-                                  %! abjad.on_beat_grace_container(1)
-                                \set fontSize = #-5.5
-                                % BEFORE:
-                                % COMMANDS:
-                                  %! abjad.on_beat_grace_container(2)
-                                \my-hack-slash
-                                \override Beam.beam-thickness = #0.48
-                                \override Beam.length-fraction = #1
-                                % OPENING:
-                                % COMMANDS:
-                                  %! abjad.on_beat_grace_container(3)
-                                \voiceOne
-                                <
-                                    \tweak font-size 0
-                                    \tweak transparent ##t
-                                    c'
-                                >16 * 4/7
-                                % AFTER:
-                                % START_BEAM:
-                                [
-                                % SPANNER_STARTS:
-                                (
-                                c'16 * 4/7
-                                c'16 * 4/7
-                                c'16 * 4/7
-                                c'16 * 4/7
-                                c'16 * 4/7
-                                c'16 * 4/7
-                                % AFTER:
-                                % SPANNER_STOPS:
-                                )
-                                % STOP_BEAM:
-                                ]
-                                % COMMANDS:
-                                \revert Beam.length-fraction
-                                \revert Beam.thickness
-                            % CLOSE_BRACKETS:
-                            }
-                            % OPEN_BRACKETS:
-                            \context Voice = "RhythmMaker.Music Anchor"
-                            {
-                                % BEFORE:
-                                % OPEN_BRACKETS:
-                                \grace {
-                                    % BEFORE:
-                                    % COMMANDS:
-                                    \once \override Flag.stroke-style = #"grace" 
-                                    \stemUp
-                                    c'16
-                                    % AFTER:
-                                    % COMMANDS:
-                                    \stemNeutral
-                                % CLOSE_BRACKETS:
-                                }
-                                % GROB_OVERRIDES:
-                                \once \override Stem.direction = #down
-                                % OPENING:
-                                % COMMANDS:
-                                  %! abjad.on_beat_grace_container(4)
-                                \voiceTwo
-                                \afterGrace
-                                c'4
-                                % AFTER:
-                                % OPEN_BRACKETS:
-                                {
-                                    % BEFORE:
-                                    % COMMANDS:
-                                    \my-hack-slash
-                                    \stemUp
-                                    c'16
-                                    % AFTER:
-                                    % START_BEAM:
-                                    [
-                                    % SPANNER_STARTS:
-                                    (
-                                    c'16
-                                    c'16
-                                    c'16
-                                    c'16
-                                    c'16
-                                    % AFTER:
-                                    % SPANNER_STOPS:
-                                    )
-                                    % STOP_BEAM:
-                                    ]
-                                    % COMMANDS:
-                                    \stemNeutral
-                                % CLOSE_BRACKETS:
-                                }
-                            % CLOSE_BRACKETS:
-                            }
-                        % CLOSE_BRACKETS:
-                        >>
-                        % OPEN_BRACKETS:
-                        <<
-                            % OPEN_BRACKETS:
-                            \context Voice = "On_Beat_Grace_Container"
-                            {
-                            % OPENING:
-                                % COMMANDS:
-                                  %! abjad.on_beat_grace_container(1)
-                                \set fontSize = #-5.5
-                                % BEFORE:
-                                % COMMANDS:
-                                  %! abjad.on_beat_grace_container(2)
-                                \my-hack-slash
-                                \override Beam.beam-thickness = #0.48
-                                \override Beam.length-fraction = #1
-                                % OPENING:
-                                % COMMANDS:
-                                  %! abjad.on_beat_grace_container(3)
-                                \voiceOne
-                                <
-                                    \tweak font-size 0
-                                    \tweak transparent ##t
-                                    c'
-                                >16 * 2/7
-                                % AFTER:
-                                % START_BEAM:
-                                [
-                                % SPANNER_STARTS:
-                                (
-                                c'16 * 2/7
-                                c'16 * 2/7
-                                c'16 * 2/7
-                                c'16 * 2/7
-                                c'16 * 2/7
-                                c'16 * 2/7
-                                % AFTER:
-                                % SPANNER_STOPS:
-                                )
-                                % STOP_BEAM:
-                                ]
-                                % COMMANDS:
-                                \revert Beam.length-fraction
-                                \revert Beam.thickness
-                            % CLOSE_BRACKETS:
-                            }
-                            % OPEN_BRACKETS:
-                            \context Voice = "RhythmMaker.Music Anchor"
-                            {
-                                % BEFORE:
-                                % OPEN_BRACKETS:
-                                \grace {
-                                    % BEFORE:
-                                    % COMMANDS:
-                                    \my-hack-slash
-                                    \stemUp
-                                    c'16
-                                    % AFTER:
-                                    % START_BEAM:
-                                    [
-                                    % SPANNER_STARTS:
-                                    (
-                                    c'16
-                                    % AFTER:
-                                    % SPANNER_STOPS:
-                                    )
-                                    % STOP_BEAM:
-                                    ]
-                                    % COMMANDS:
-                                    \stemNeutral
-                                % CLOSE_BRACKETS:
-                                }
-                                % GROB_OVERRIDES:
-                                \once \override Stem.direction = #down
-                                % OPENING:
-                                % COMMANDS:
-                                  %! abjad.on_beat_grace_container(4)
-                                \voiceTwo
-                                c'8
-                                % AFTER:
-                                % SPANNER_STARTS:
-                                ~
-                                % BEFORE:
-                                % GROB_OVERRIDES:
-                                \once \override Stem.direction = #down
-                                % OPENING:
-                                \afterGrace
-                                c'4
-                                % AFTER:
-                                % OPEN_BRACKETS:
-                                {
-                                    % BEFORE:
-                                    % COMMANDS:
-                                    \my-hack-slash
-                                    \stemUp
-                                    c'16
-                                    % AFTER:
-                                    % START_BEAM:
-                                    [
-                                    % SPANNER_STARTS:
-                                    (
-                                    c'16
-                                    c'16
-                                    c'16
-                                    c'16
-                                    c'16
-                                    c'16
-                                    % AFTER:
-                                    % SPANNER_STOPS:
-                                    )
-                                    % STOP_BEAM:
-                                    ]
-                                    % COMMANDS:
-                                    \stemNeutral
-                                % CLOSE_BRACKETS:
-                                }
-                            % CLOSE_BRACKETS:
-                            }
-                        % CLOSE_BRACKETS:
-                        >>
-                        % OPEN_BRACKETS:
-                        <<
-                            % OPEN_BRACKETS:
-                            \context Voice = "On_Beat_Grace_Container"
-                            {
-                            % OPENING:
-                                % COMMANDS:
-                                  %! abjad.on_beat_grace_container(1)
-                                \set fontSize = #-5.5
-                                % BEFORE:
-                                % COMMANDS:
-                                  %! abjad.on_beat_grace_container(2)
-                                \my-hack-slash
-                                \override Beam.beam-thickness = #0.48
-                                \override Beam.length-fraction = #1
-                                % OPENING:
-                                % COMMANDS:
-                                  %! abjad.on_beat_grace_container(3)
-                                \voiceOne
-                                <
-                                    \tweak font-size 0
-                                    \tweak transparent ##t
-                                    c'
-                                >16 * 2
-                                % AFTER:
-                                % START_BEAM:
-                                [
-                                % SPANNER_STARTS:
-                                (
-                                c'16 * 2
-                                c'16 * 2
-                                c'16 * 2
-                                c'16 * 2
-                                c'16 * 2
-                                % AFTER:
-                                % SPANNER_STOPS:
-                                )
-                                % STOP_BEAM:
-                                ]
-                                % COMMANDS:
-                                \revert Beam.length-fraction
-                                \revert Beam.thickness
-                            % CLOSE_BRACKETS:
-                            }
-                            % OPEN_BRACKETS:
-                            \context Voice = "RhythmMaker.Music Anchor"
-                            {
-                                % BEFORE:
-                                % OPEN_BRACKETS:
-                                \grace {
-                                    % BEFORE:
-                                    % COMMANDS:
-                                    \my-hack-slash
-                                    \stemUp
-                                    c'16
-                                    % AFTER:
-                                    % START_BEAM:
-                                    [
-                                    % SPANNER_STARTS:
-                                    (
-                                    c'16
-                                    c'16
-                                    c'16
-                                    c'16
-                                    c'16
-                                    % AFTER:
-                                    % SPANNER_STOPS:
-                                    )
-                                    % STOP_BEAM:
-                                    ]
-                                    % COMMANDS:
-                                    \stemNeutral
-                                % CLOSE_BRACKETS:
-                                }
-                                % GROB_OVERRIDES:
-                                \once \override Stem.direction = #down
-                                % OPENING:
-                                % COMMANDS:
-                                  %! abjad.on_beat_grace_container(4)
-                                \voiceTwo
-                                c'2.
-                                % AFTER:
-                                % SPANNER_STARTS:
-                                ~
-                                % BEFORE:
-                                % GROB_OVERRIDES:
-                                \once \override Stem.direction = #down
-                                % OPENING:
-                                \afterGrace
-                                c'8
-                                % AFTER:
-                                % OPEN_BRACKETS:
-                                {
-                                    % BEFORE:
-                                    % COMMANDS:
-                                    \my-hack-slash
-                                    \stemUp
-                                    c'16
-                                    % AFTER:
-                                    % START_BEAM:
-                                    [
-                                    % SPANNER_STARTS:
-                                    (
-                                    c'16
-                                    % AFTER:
-                                    % SPANNER_STOPS:
-                                    )
-                                    % STOP_BEAM:
-                                    ]
-                                    % COMMANDS:
-                                    \stemNeutral
-                                % CLOSE_BRACKETS:
-                                }
-                            % CLOSE_BRACKETS:
-                            }
-                        % CLOSE_BRACKETS:
-                        >>
-                        % OPEN_BRACKETS:
-                        <<
-                            % OPEN_BRACKETS:
-                            \context Voice = "On_Beat_Grace_Container"
-                            {
-                            % OPENING:
-                                % COMMANDS:
-                                  %! abjad.on_beat_grace_container(1)
-                                \set fontSize = #-5.5
-                                % BEFORE:
-                                % COMMANDS:
-                                  %! abjad.on_beat_grace_container(2)
-                                \my-hack-slash
-                                \override Beam.beam-thickness = #0.48
-                                \override Beam.length-fraction = #1
-                                % OPENING:
-                                % COMMANDS:
-                                  %! abjad.on_beat_grace_container(3)
-                                \voiceOne
-                                <
-                                    \tweak font-size 0
-                                    \tweak transparent ##t
-                                    c'
-                                >16 * 3
-                                % AFTER:
-                                % START_BEAM:
-                                [
-                                % SPANNER_STARTS:
-                                (
-                                c'16 * 3
-                                c'16 * 3
-                                c'16 * 3
-                                % AFTER:
-                                % SPANNER_STOPS:
-                                )
-                                % STOP_BEAM:
-                                ]
-                                % COMMANDS:
-                                \revert Beam.length-fraction
-                                \revert Beam.thickness
-                            % CLOSE_BRACKETS:
-                            }
-                            % OPEN_BRACKETS:
-                            \context Voice = "RhythmMaker.Music Anchor"
-                            {
-                                % BEFORE:
-                                % OPEN_BRACKETS:
-                                \grace {
-                                    % BEFORE:
-                                    % COMMANDS:
-                                    \my-hack-slash
-                                    \stemUp
-                                    c'16
-                                    % AFTER:
-                                    % START_BEAM:
-                                    [
-                                    % SPANNER_STARTS:
-                                    (
-                                    c'16
-                                    c'16
-                                    c'16
-                                    c'16
-                                    c'16
-                                    c'16
-                                    % AFTER:
-                                    % SPANNER_STOPS:
-                                    )
-                                    % STOP_BEAM:
-                                    ]
-                                    % COMMANDS:
-                                    \stemNeutral
-                                % CLOSE_BRACKETS:
-                                }
-                                % GROB_OVERRIDES:
-                                \once \override Stem.direction = #down
-                                % OPENING:
-                                % COMMANDS:
-                                  %! abjad.on_beat_grace_container(4)
-                                \voiceTwo
-                                \afterGrace
-                                c'2.
-                                % AFTER:
-                                % OPEN_BRACKETS:
-                                {
-                                    % BEFORE:
-                                    % COMMANDS:
-                                    \once \override Flag.stroke-style = #"grace" 
-                                    \stemUp
-                                    c'16
-                                    % AFTER:
-                                    % COMMANDS:
-                                    \stemNeutral
-                                % CLOSE_BRACKETS:
-                                }
-                            % CLOSE_BRACKETS:
-                            }
-                        % CLOSE_BRACKETS:
-                        >>
+                        % AFTER:
+                        % COMMANDS:
+                        \oneVoice
                     % CLOSE_BRACKETS:
                     }
                 % CLOSE_BRACKETS:
@@ -933,11 +249,11 @@
                     % OPEN_BRACKETS:
                     \context Voice = "piano 2 voice"
                     {
-                        s1 * 5/4
-                        s1 * 11/8
-                        s1 * 9/8
                         s1 * 1
-                        s1 * 7/8
+                        s1 * 1
+                        s1 * 1
+                        s1 * 1
+                        s1 * 1
                     % CLOSE_BRACKETS:
                     }
                 % CLOSE_BRACKETS:
@@ -948,11 +264,119 @@
                     % OPEN_BRACKETS:
                     \context Voice = "piano 3 voice"
                     {
-                        s1 * 5/4
-                        s1 * 11/8
-                        s1 * 9/8
-                        s1 * 1
-                        s1 * 7/8
+                        % OPEN_BRACKETS:
+                        <<
+                            % OPEN_BRACKETS:
+                            \context Voice = "13 voice temp"
+                            {
+                                % OPEN_BRACKETS:
+                                \tweak text #tuplet-number::calc-fraction-text
+                                \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 13 16) (ly:make-duration 4 0))
+                                \times 16/13
+                                {
+                                    % BEFORE:
+                                    % COMMANDS:
+                                    \ottava 2
+                                    % OPENING:
+                                    % COMMANDS:
+                                    \voiceOne
+                                    g''''4
+                                    g''''4
+                                    g''''4
+                                    g''''16
+                                    % AFTER:
+                                    % SPANNER_STARTS:
+                                    ~
+                                % CLOSE_BRACKETS:
+                                }
+                                % OPEN_BRACKETS:
+                                \tweak text #tuplet-number::calc-fraction-text
+                                \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 13 16) (ly:make-duration 4 0))
+                                \times 16/13
+                                {
+                                    g''''8.
+                                    g''''4
+                                    g''''4
+                                    g''''8
+                                    % AFTER:
+                                    % SPANNER_STARTS:
+                                    ~
+                                % CLOSE_BRACKETS:
+                                }
+                                % OPEN_BRACKETS:
+                                \tweak text #tuplet-number::calc-fraction-text
+                                \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 13 16) (ly:make-duration 4 0))
+                                \times 16/13
+                                {
+                                    g''''8
+                                    g''''4
+                                    g''''4
+                                    g''''8.
+                                    % AFTER:
+                                    % SPANNER_STARTS:
+                                    ~
+                                % CLOSE_BRACKETS:
+                                }
+                                % OPEN_BRACKETS:
+                                \tweak text #tuplet-number::calc-fraction-text
+                                \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 13 16) (ly:make-duration 4 0))
+                                \times 16/13
+                                {
+                                    g''''16
+                                    g''''4
+                                    g''''4
+                                    g''''4
+                                % CLOSE_BRACKETS:
+                                }
+                                % OPEN_BRACKETS:
+                                \tweak text #tuplet-number::calc-fraction-text
+                                \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 13 16) (ly:make-duration 4 0))
+                                \times 16/13
+                                {
+                                    g''''4
+                                    g''''4
+                                    g''''4
+                                    g''''16
+                                % CLOSE_BRACKETS:
+                                }
+                            % CLOSE_BRACKETS:
+                            }
+                            % OPEN_BRACKETS:
+                            \context Voice = "4 voice"
+                            {
+                                % OPENING:
+                                % COMMANDS:
+                                \voiceTwo
+                                g''''4
+                                g''''4
+                                g''''4
+                                g''''4
+                                g''''4
+                                g''''4
+                                g''''4
+                                g''''4
+                                g''''4
+                                g''''4
+                                g''''4
+                                g''''4
+                                g''''4
+                                g''''4
+                                g''''4
+                                g''''4
+                                g''''4
+                                g''''4
+                                g''''4
+                                g''''4
+                                % AFTER:
+                                % COMMANDS:
+                                \ottava 0
+                            % CLOSE_BRACKETS:
+                            }
+                        % CLOSE_BRACKETS:
+                        >>
+                        % AFTER:
+                        % COMMANDS:
+                        \oneVoice
                     % CLOSE_BRACKETS:
                     }
                 % CLOSE_BRACKETS:
@@ -965,11 +389,11 @@
                 % OPEN_BRACKETS:
                 \context Voice = "piano 4 voice"
                 {
-                    s1 * 5/4
-                    s1 * 11/8
-                    s1 * 9/8
                     s1 * 1
-                    s1 * 7/8
+                    s1 * 1
+                    s1 * 1
+                    s1 * 1
+                    s1 * 1
                 % CLOSE_BRACKETS:
                 }
             % CLOSE_BRACKETS:

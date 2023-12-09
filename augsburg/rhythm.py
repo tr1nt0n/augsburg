@@ -503,3 +503,111 @@ def rhythm_b(index=0, stage=1, grace=False, grace_selector=None):
         return selections
 
     return rhythm
+
+
+def rhythm_g(index=0, stage=1, hand="rh"):
+    def rhythm(durations):
+        _counts_dictionary = {
+            "voice 1": [],
+            "voice 2": [],
+            "voice 3": [],
+            "voice 4": [],
+        }
+
+        for duration in durations:
+            thirty_second_multiplier = int(32 / duration.denominator)
+            thirty_second_amount = int(duration.numerator * thirty_second_multiplier)
+
+            # sixteenth_multiplier = int(16 / duration.denominator)
+            # sixteenth_amount = int(duration.numerator * thirty_second_multiplier)
+
+            thirty_seven_count = 37 - thirty_second_amount
+            thirty_five_count = 35 - thirty_second_amount
+            thirteen_count = 26 - thirty_second_amount
+
+            _counts_dictionary["voice 1"].append(thirty_seven_count)
+            _counts_dictionary["voice 2"].append(thirty_five_count)
+            _counts_dictionary["voice 3"].append(thirteen_count)
+            _counts_dictionary["voice 4"].append(0)
+
+        if stage > 1:
+            count_additions = [
+                _
+                for _ in library.logistic_map_sequence(index=index)
+                if _ % 3 != 0 and _ < 8
+            ]
+
+            fundamental_counts = []
+
+            for i, count in enumerate(count_additions):
+                if i % 2 == 0:
+                    count = count * -1
+                else:
+                    count = count
+
+                fundamental_counts.append(count)
+
+            for counts_list in [
+                _counts_dictionary["voice 1"],
+                _counts_dictionary["voice 2"],
+                _counts_dictionary["voice 3"],
+                _counts_dictionary["voice 4"],
+            ]:
+                for counts_index, counts_addition, original_count in zip(
+                    range(0, len(counts_list)), fundamental_counts, counts_list
+                ):
+                    new_count = original_count + counts_addition
+                    counts_list[counts_index] = new_count
+
+        if hand == "rh":
+            voice_name = "37 voice"
+            extra_counts = _counts_dictionary["voice 1"]
+
+        else:
+            voice_name = "13 voice"
+            extra_counts = _counts_dictionary["voice 3"]
+
+        components = rmakers.talea(durations, [8], 32, extra_counts=extra_counts)
+        components = abjad.Voice(components, name=voice_name)
+
+        if hand == "rh":
+            voice_name = "35 voice"
+            extra_counts = _counts_dictionary["voice 2"]
+
+        else:
+            voice_name = "4 voice"
+            extra_counts = _counts_dictionary["voice 4"]
+
+        literal1 = abjad.LilyPondLiteral(r"\voiceOne")
+        literal2 = abjad.LilyPondLiteral(r"\voiceTwo")
+        closing_literal = abjad.LilyPondLiteral(r"\oneVoice", site="after")
+
+        duration = [abjad.get.duration(components[:])]
+        container = abjad.Container(simultaneous=True)
+        original_voice = abjad.Voice(name=f"{components.name} temp")
+
+        intermittent_voice = abjad.Voice(name=voice_name)
+        new_components = rmakers.talea(durations, [8], 32, extra_counts=extra_counts)
+        intermittent_voice.extend(new_components)
+
+        selections = trinton.get_top_level_components_from_leaves(components)
+        abjad.mutate.wrap(selections, original_voice)
+        abjad.mutate.wrap(original_voice, container)
+        container.append(intermittent_voice)
+        abjad.attach(literal1, abjad.select.leaf(original_voice, 0))
+        abjad.attach(literal2, abjad.select.leaf(intermittent_voice, 0))
+        abjad.attach(closing_literal, container)
+
+        library.respell_tuplets(abjad.select.tuplets(components))
+        rmakers.rewrite_sustained(components)
+        rmakers.rewrite_rest_filled(components)
+
+        rmakers.rewrite_dots(components)
+        rmakers.trivialize(components)
+        rmakers.extract_trivial(components)
+
+        selections = abjad.mutate.eject_contents(components)
+
+        return selections
+
+    return rhythm

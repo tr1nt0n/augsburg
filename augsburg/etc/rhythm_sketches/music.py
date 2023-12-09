@@ -13,8 +13,8 @@ from augsburg import rhythm
 
 # score
 
-score = library.augsburg_score([(5, 4), (11, 8), (9, 8), (4, 4), (7, 8)])
-# score = library.augsburg_score([(4, 4), (4, 4), (4, 4), (4, 4)])
+# score = library.augsburg_score([(5, 4), (11, 8), (9, 8), (4, 4), (7, 8)])
+score = library.augsburg_score([(4, 4), (4, 4), (4, 4), (4, 4), (4, 4)])
 
 # sketches
 
@@ -33,14 +33,41 @@ score = library.augsburg_score([(5, 4), (11, 8), (9, 8), (4, 4), (7, 8)])
 
 # beta rhythm sketch
 
+# trinton.make_music(
+#     lambda _: trinton.select_target(_, (2, 5)),
+#     evans.RhythmHandler(
+#         rhythm.rhythm_b(index=0, stage=2, grace=True),
+#     ),
+#     trinton.notehead_bracket_command(),
+#     voice=score["piano 1 voice"],
+# )
+
+# gamma rhythm sketch
+
 trinton.make_music(
-    lambda _: trinton.select_target(_, (2, 5)),
+    lambda _: trinton.select_target(_, (1, 5)),
     evans.RhythmHandler(
-        rhythm.rhythm_b(index=0, stage=2, grace=True),
+        rhythm.rhythm_g(stage=1, hand="rh"),
+    ),
+    evans.PitchHandler(["g''''"]),
+    trinton.ottava_command(
+        octave=2, selector=trinton.select_leaves_by_index([0, -1], pitched=True)
     ),
     trinton.notehead_bracket_command(),
     voice=score["piano 1 voice"],
-    # beam_meter=True,
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1, 5)),
+    evans.RhythmHandler(
+        rhythm.rhythm_g(stage=1, hand="lh"),
+    ),
+    evans.PitchHandler(["g''''"]),
+    trinton.ottava_command(
+        octave=2, selector=trinton.select_leaves_by_index([0, -1], pitched=True)
+    ),
+    trinton.notehead_bracket_command(),
+    voice=score["piano 3 voice"],
 )
 
 # beautifying time signatures

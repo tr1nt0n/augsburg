@@ -117,8 +117,8 @@ afterGraceFraction = #(cons 15 16)
 
         \override Stem.stemlet-length = 1
         \override Stem.thickness = #0.5
-        \override Stem.details.beamed-lengths = #'(8)
-        \override Stem.details.lengths = #'(8)
+        \override Stem.details.beamed-lengths = #'(7)
+        \override Stem.details.lengths = #'(7)
 
         \override StemTremolo.stencil = #ly:text-interface::print
         \override StemTremolo.text = \markup {
