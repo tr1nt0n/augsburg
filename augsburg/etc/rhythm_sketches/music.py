@@ -13,17 +13,17 @@ from augsburg import rhythm
 
 # score
 
-# score = library.augsburg_score([(5, 4), (11, 8), (9, 8), (4, 4), (7, 8)])
-score = library.augsburg_score([(4, 4), (4, 4), (4, 4), (4, 4), (4, 4)])
+score = library.augsburg_score([(5, 4), (11, 8), (9, 8), (4, 4), (7, 8)])
+# score = library.augsburg_score([(4, 4), (4, 4), (4, 4), (4, 4), (4, 4)])
 
 # sketches
 
 # alpha rhythm sketch
-
+#
 # trinton.make_music(
 #     lambda _: trinton.select_target(_, (1, 5)),
 #     evans.RhythmHandler(
-#         rhythm.rhythm_a(index=1, stage=3),
+#         rhythm.rhythm_a(index=1, stage=2),
 #     ),
 #     trinton.rewrite_meter_command(),
 #     trinton.notehead_bracket_command(),
@@ -44,31 +44,37 @@ score = library.augsburg_score([(4, 4), (4, 4), (4, 4), (4, 4), (4, 4)])
 
 # gamma rhythm sketch
 
-trinton.make_music(
-    lambda _: trinton.select_target(_, (1, 5)),
-    evans.RhythmHandler(
-        rhythm.rhythm_g(stage=1, hand="rh"),
-    ),
-    evans.PitchHandler(["g''''"]),
-    trinton.ottava_command(
-        octave=2, selector=trinton.select_leaves_by_index([0, -1], pitched=True)
-    ),
-    trinton.notehead_bracket_command(),
-    voice=score["piano 1 voice"],
-)
-
-trinton.make_music(
-    lambda _: trinton.select_target(_, (1, 5)),
-    evans.RhythmHandler(
-        rhythm.rhythm_g(stage=1, hand="lh"),
-    ),
-    evans.PitchHandler(["g''''"]),
-    trinton.ottava_command(
-        octave=2, selector=trinton.select_leaves_by_index([0, -1], pitched=True)
-    ),
-    trinton.notehead_bracket_command(),
-    voice=score["piano 3 voice"],
-)
+# trinton.make_music(
+#     lambda _: trinton.select_target(_, (1, 5)),
+#     evans.RhythmHandler(
+#         rhythm.rhythm_g(stage=2, hand="rh"),
+#     ),
+#     evans.PitchHandler(["g''''"]),
+#     trinton.ottava_command(
+#         octave=2, selector=trinton.select_leaves_by_index([0, -1], pitched=True)
+#     ),
+#     trinton.notehead_bracket_command(),
+#     voice=score["piano 1 voice"],
+# )
+#
+# trinton.make_music(
+#     lambda _: trinton.select_target(_, (1, 5)),
+#     evans.RhythmHandler(
+#         rhythm.rhythm_g(stage=2, hand="lh"),
+#     ),
+#     evans.PitchHandler(["g''''"]),
+#     trinton.ottava_command(
+#         octave=2, selector=trinton.select_leaves_by_index([0, -1], pitched=True)
+#     ),
+#     trinton.notehead_bracket_command(),
+#     voice=score["piano 3 voice"],
+# )
+#
+# library.interruptive_polyphony(
+#     score=score,
+#     selector=lambda _: trinton.select_target(_, (1, 5)),
+#     stage=2
+# )
 
 # beautifying time signatures
 

@@ -54,69 +54,51 @@ def logistic_map_sequence(index):
 # notation tools
 
 
-# def respell_tuplets(tuplets):
-#     for tuplet in tuplets:
-#         prolation = tuplet.implied_prolation
-#         if prolation.denominator == 3 and prolation.numerator % 2 == 0:
-#             rmakers.force_diminution(tuplet)
-#         if prolation.denominator == 5 and prolation.numerator % 3 == 0:
-#             rmakers.force_augmentation(tuplet)
-#         if prolation.denominator % 5 == 0 and prolation.numerator % 9 == 0:
-#             rmakers.force_diminution(tuplet)
-#         if prolation.denominator == 7 and prolation.numerator % 4 == 0:
-#             rmakers.force_augmentation(tuplet)
-#         if prolation.denominator == 7 and prolation.numerator % 5 == 0:
-#             rmakers.force_augmentation(tuplet)
-#         if prolation.denominator == 7 and prolation.numerator % 6 == 0:
-#             rmakers.force_diminution(tuplet)
-#         if prolation.denominator % 2 == 0 and prolation.numerator % 7 == 0:
-#             rmakers.force_diminution(tuplet)
-#         if prolation.denominator % 3 == 0 and prolation.numerator % 7 == 0:
-#             rmakers.force_augmentation(tuplet)
-#         if prolation.denominator == 9 and prolation.numerator % 5 == 0:
-#             rmakers.force_augmentation(tuplet)
-#         if prolation.denominator == 9 and prolation.numerator % 7 == 0:
-#             rmakers.force_diminution(tuplet)
-#         if prolation.denominator % 9 == 0 and prolation.numerator % 11 == 0:
-#             rmakers.force_augmentation(tuplet)
-#             tuplet.denominator = 11
-#         if prolation.denominator % 10 == 0 and prolation.numerator % 11 == 0:
-#             rmakers.force_augmentation(tuplet)
-#         if prolation.denominator == 11 and prolation.numerator % 3 == 0:
-#             rmakers.force_augmentation(tuplet)
-#         if prolation.denominator == 15 and prolation.numerator % 2 == 0:
-#             rmakers.force_augmentation(tuplet)
+def interruptive_polyphony(
+    score, selector=lambda _: trinton.select_target(_, (1, 2)), stage=1
+):
+    for voice_name, color in zip(
+        ["37 voice temp", "35 voice", "13 voice temp", "4 voice"],
+        ["darkmagenta", "magenta", "cyan", "darkcyan"],
+    ):
+        selections = selector(score[voice_name])
+        leaves = abjad.select.leaves(selections)
 
+        abjad.attach(
+            abjad.LilyPondLiteral(
+                [
+                    rf"\override NoteHead.details.interrupt-color = {color}",
+                    rf"\override NoteHead.details.switch-color = {color}",
+                    rf"\override NoteHead.details.folow-color = {color}",
+                    rf"\override NoteHead.details.hocket-color = {color}",
+                ],
+                site="before",
+            ),
+            leaves[0],
+        )
 
-def respell_tuplets(tuplets):
-    for tuplet in tuplets:
-        prolation = tuplet.implied_prolation
-        numerator = prolation.denominator
-        denominator = prolation.numerator
-        if numerator == 3 and denominator == 2:
-            pass
-
+        if voice_name == "37 voice temp":
+            leaves = leaves
         else:
-            double_denominator = denominator * 2
-            half_denominator = int(denominator / 2)
+            leaves = abjad.select.exclude(leaves, [0])
 
-            current_difference = abs(numerator - denominator)
-            double_difference = abs(numerator - double_denominator)
-            half_difference = abs(numerator - half_denominator)
+        # abjad.attach(
+        #     abjad.LilyPondLiteral(r"\start-explicit-interrupt", "before"),
+        #     leaves[0]
+        # )
+        #
+        # abjad.attach(
+        #     abjad.LilyPondLiteral(r"\stop-explicit-interrupt", "after"),
+        #     leaves[-1]
+        # )
 
-            difference_array = [current_difference, double_difference, half_difference]
-            difference_array = sorted(difference_array)
+        for leaf in leaves:
+            if stage == 1:
+                literal_string = r"\interrupt"
+            else:
+                literal_string = r"\hocket"
 
-            smallest = difference_array[0]
-
-            if smallest == current_difference:
-                pass
-
-            if smallest == half_difference:
-                rmakers.force_diminution(tuplet)
-
-            if smallest == double_difference:
-                rmakers.force_augmentation(tuplet)
+            abjad.attach(abjad.LilyPondLiteral(literal_string, site="before"), leaf)
 
 
 # tempi

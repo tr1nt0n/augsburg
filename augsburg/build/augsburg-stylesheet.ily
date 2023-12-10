@@ -183,6 +183,8 @@ afterGraceFraction = #(cons 15 16)
         fontSize = #-2.5
         \remove Time_signature_engraver
         \consists Duration_line_engraver
+        \consists Grob_pq_engraver
+        \consists #Interrupt_heads_engraver
 
         \override DurationLine.style = #'line
         \override DurationLine.thickness = #3
@@ -260,6 +262,10 @@ afterGraceFraction = #(cons 15 16)
         \StaffGroup
         \accepts lowPassStaff
         \accepts timeSignatureStaff
+        \accepts InterruptiveGroup
+        \consists "Span_stem_engraver"
+        \consists Grob_pq_engraver
+        \consists #Interrupt_heads_engraver
     }
 
     \context{
@@ -268,6 +274,10 @@ afterGraceFraction = #(cons 15 16)
         \accepts blankStaffGroup
         \accepts lowPassStaff
         \accepts timeSignatureStaff
+        \accepts InterruptiveGroup
+        \consists "Span_stem_engraver"
+        \consists Grob_pq_engraver
+        \consists #Interrupt_heads_engraver
     }
 
     \context {

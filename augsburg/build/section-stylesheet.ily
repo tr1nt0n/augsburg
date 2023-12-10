@@ -176,6 +176,8 @@ afterGraceFraction = #(cons 15 16)
         fontSize = #-2.5
         \remove Time_signature_engraver
         \consists Duration_line_engraver
+        \consists Grob_pq_engraver
+        \consists #Interrupt_heads_engraver
 
         \override DurationLine.style = #'line
         \override DurationLine.thickness = #3
@@ -253,19 +255,41 @@ afterGraceFraction = #(cons 15 16)
         \StaffGroup
         \accepts lowPassStaff
         \accepts timeSignatureStaff
+        \accepts InterruptiveGroup
+        % \accepts VanishingStaff
+        \consists Grob_pq_engraver
+        \consists #Interrupt_heads_engraver
+        \consists #Explicit_interrupt_heads_engraver
+        \consists #Follow_lines_engraver
+        \consists #Switch_heads_engraver
+        \consists #Hocket_lines_engraver
+        % \override VoiceFollower.layer = -20
+        \consists "Span_stem_engraver"
+        \consists "Horizontal_bracket_engraver"
     }
 
     \context{
         \GrandStaff
         % \remove Time_signature_engraver
-        \accepts blankStaffGroup
         \accepts lowPassStaff
         \accepts timeSignatureStaff
+        \accepts InterruptiveGroup
+        % \accepts VanishingStaff
+        \consists Grob_pq_engraver
+        \consists #Interrupt_heads_engraver
+        \consists #Explicit_interrupt_heads_engraver
+        \consists #Follow_lines_engraver
+        \consists #Switch_heads_engraver
+        \consists #Hocket_lines_engraver
+        % \override VoiceFollower.layer = -20
+        \consists "Span_stem_engraver"
+        \consists "Horizontal_bracket_engraver"
     }
 
     \context {
         \Voice
         \remove Forbid_line_break_engraver
+        \consists "Horizontal_bracket_engraver"
         \override Accidental.font-size = 1
     }
 

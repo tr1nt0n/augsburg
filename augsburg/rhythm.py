@@ -105,7 +105,7 @@ def rhythm_a(index=0, stage=1):
         for tuplet in tuplets:
             rmakers.rewrite_dots(tuplet)
 
-        library.respell_tuplets(tuplets)
+        trinton.respell_tuplets(tuplets)
 
         map_sequence = library.logistic_map_sequence(index=index)
 
@@ -220,7 +220,7 @@ def rhythm_a(index=0, stage=1):
         if stage < 3:
             for tuplet in tuplets:
                 if isinstance(abjad.get.parentage(tuplet).parent, abjad.Tuplet):
-                    library.respell_tuplets([tuplet])
+                    trinton.respell_tuplets([tuplet])
                     rmakers.rewrite_rest_filled(tuplet)
                     rmakers.rewrite_sustained(tuplet)
                 # abjad.beam(tuplet, beam_rests=False)
@@ -249,7 +249,7 @@ def rhythm_a(index=0, stage=1):
             tuplets = abjad.select.tuplets(components)
 
             for tuplet in tuplets:
-                library.respell_tuplets([tuplet])
+                trinton.respell_tuplets([tuplet])
                 rmakers.rewrite_rest_filled(tuplet)
                 rmakers.rewrite_sustained(tuplet)
 
@@ -518,9 +518,6 @@ def rhythm_g(index=0, stage=1, hand="rh"):
             thirty_second_multiplier = int(32 / duration.denominator)
             thirty_second_amount = int(duration.numerator * thirty_second_multiplier)
 
-            # sixteenth_multiplier = int(16 / duration.denominator)
-            # sixteenth_amount = int(duration.numerator * thirty_second_multiplier)
-
             thirty_seven_count = 37 - thirty_second_amount
             thirty_five_count = 35 - thirty_second_amount
             thirteen_count = 26 - thirty_second_amount
@@ -598,7 +595,7 @@ def rhythm_g(index=0, stage=1, hand="rh"):
         abjad.attach(literal2, abjad.select.leaf(intermittent_voice, 0))
         abjad.attach(closing_literal, container)
 
-        library.respell_tuplets(abjad.select.tuplets(components))
+        trinton.respell_tuplets(abjad.select.tuplets(components))
         rmakers.rewrite_sustained(components)
         rmakers.rewrite_rest_filled(components)
 
