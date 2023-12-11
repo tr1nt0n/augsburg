@@ -59,7 +59,7 @@ def interruptive_polyphony(
 ):
     for voice_name, color in zip(
         ["37 voice temp", "35 voice", "13 voice temp", "4 voice"],
-        ["darkmagenta", "magenta", "cyan", "darkcyan"],
+        ["\一", "\三", "\二", "\四"],
     ):
         selections = selector(score[voice_name])
         leaves = abjad.select.leaves(selections)
@@ -71,10 +71,53 @@ def interruptive_polyphony(
                     rf"\override NoteHead.details.switch-color = {color}",
                     rf"\override NoteHead.details.folow-color = {color}",
                     rf"\override NoteHead.details.hocket-color = {color}",
+                    rf"\override Accidental.color = {color}",
+                    rf"\override Beam.color = {color}",
+                    rf"\override Dots.color = {color}",
+                    rf"\override Flag.color = {color}",
+                    rf"\override Glissando.color = {color}",
+                    rf"\override MultiMeasureRest.color = {color}",
+                    rf"\override NoteHead.color = {color}",
+                    rf"\override RepeatTie.color = {color}",
+                    rf"\override Rest.color = {color}",
+                    rf"\override Slur.color = {color}",
+                    rf"\override Stem.color = {color}",
+                    rf"\override StemTremolo.color = {color}",
+                    rf"\override Tie.color = {color}",
+                    rf"\override TupletBracket.color = {color}",
+                    rf"\override TupletNumber.color = {color}",
+                    rf"\override DynamicText.color = {color}",
+                    r"\override Dots.staff-position = #2",
                 ],
                 site="before",
             ),
             leaves[0],
+        )
+
+        abjad.attach(
+            abjad.LilyPondLiteral(
+                [
+                    rf"\revert Accidental.color",
+                    rf"\revert Beam.color",
+                    rf"\revert Dots.color",
+                    rf"\revert Flag.color",
+                    rf"\revert Glissando.color",
+                    rf"\revert MultiMeasureRest.color",
+                    rf"\revert NoteHead.color",
+                    rf"\revert RepeatTie.color",
+                    rf"\revert Rest.color",
+                    rf"\revert Slur.color",
+                    rf"\revert Stem.color",
+                    rf"\revert StemTremolo.color",
+                    rf"\revert Tie.color",
+                    rf"\revert TupletBracket.color",
+                    rf"\revert TupletNumber.color",
+                    rf"\revert DynamicText.color",
+                    r"\revert Dots.staff-position",
+                ],
+                site="absolute_after",
+            ),
+            leaves[-1],
         )
 
         if voice_name == "37 voice temp":
@@ -92,13 +135,15 @@ def interruptive_polyphony(
         #     leaves[-1]
         # )
 
-        for leaf in leaves:
+        ties = abjad.select.logical_ties(leaves)
+
+        for tie in ties:
             if stage == 1:
                 literal_string = r"\interrupt"
             else:
                 literal_string = r"\hocket"
 
-            abjad.attach(abjad.LilyPondLiteral(literal_string, site="before"), leaf)
+            abjad.attach(abjad.LilyPondLiteral(literal_string, site="before"), tie[0])
 
 
 # tempi

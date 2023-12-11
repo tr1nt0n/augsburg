@@ -156,6 +156,8 @@ def rhythm_a(index=0, stage=1):
                 overhang=False,
             )
 
+            map_sequence = itertools.cycle(map_sequence)
+
             for i, measure in zip(map_sequence, measures):
                 rmakers.force_rest(abjad.select.logical_ties(measure))
                 ties = abjad.select.logical_ties(measure)
@@ -246,6 +248,20 @@ def rhythm_a(index=0, stage=1):
                     full_measure = abjad.mutate.eject_contents(container)
                     abjad.mutate.replace(tuplet, full_measure)
 
+                for tuplet in abjad.select.tuplets(tuplet_contents):
+                    tuplet_leaf_duration = abjad.get.duration(
+                        abjad.select.leaves(tuplet), preprolated=True
+                    )
+                    pitched_tuplet_leaf_duration = abjad.get.duration(
+                        abjad.select.leaves(tuplet, pitched=True), preprolated=True
+                    )
+                    tuplet_multiplied_duration = tuplet.multiplied_duration
+                    if tuplet_leaf_duration == pitched_tuplet_leaf_duration:
+                        new_leaf = rmakers.note([tuplet_multiplied_duration])
+                        container = abjad.Container(new_leaf)
+                        new_leaf = abjad.mutate.eject_contents(container)
+                        abjad.mutate.replace(tuplet, new_leaf)
+
             tuplets = abjad.select.tuplets(components)
 
             for tuplet in tuplets:
@@ -253,16 +269,44 @@ def rhythm_a(index=0, stage=1):
                 rmakers.rewrite_rest_filled(tuplet)
                 rmakers.rewrite_sustained(tuplet)
 
-            tiable_tuplets = abjad.select.exclude(tuplets, [-1])
+            tiable_ties = abjad.select.logical_ties(components, pitched=True)
+            tiable_ties = abjad.select.exclude(tiable_ties, [-1])
 
-            for tuplet in tiable_tuplets:
-                last_leaf = abjad.select.leaf(tuplet, -1)
-                if isinstance(last_leaf, abjad.Rest):
-                    pass
-                else:
-                    next_leaf = abjad.select.with_next_leaf(last_leaf)[-1]
-                    if isinstance(next_leaf, abjad.Note):
-                        abjad.attach(abjad.Tie(), last_leaf)
+            for tie in tiable_ties:
+                next_leaf = abjad.select.with_next_leaf(tie)[-1]
+                if isinstance(next_leaf, abjad.Note):
+                    abjad.attach(abjad.Tie(), tie[-1])
+
+        tuplets = abjad.select.tuplets(components)
+
+        for tuplet in tuplets:
+            trinton.respell_tuplets([tuplet])
+            rmakers.rewrite_rest_filled(tuplet)
+            rmakers.rewrite_sustained(tuplet)
+
+            rests = abjad.select.rests(tuplet)
+            for rest_group in abjad.select.group_by_contiguity(rests):
+                parental_groups = abjad.select.group_by(
+                    rest_group, predicate=lambda _: abjad.get.parentage(_).parent
+                )
+                for parental_group in parental_groups:
+                    abjad.mutate.fuse(parental_group)
+
+            leaves = abjad.select.leaves(tuplet)
+            beam_groups = []
+            for leaf in leaves:
+                leaf_duration = leaf.written_duration
+                if leaf_duration < abjad.Duration((1, 4)):
+                    beam_groups.append(leaf)
+
+            beam_groups = abjad.select.group_by_contiguity(beam_groups)
+
+            for group in beam_groups:
+                abjad.beam(group, beam_lone_notes=False)
+
+            # tuplet_parent = abjad.get.parentage(tuplet).parent
+            # if isinstance(tuplet_parent, abjad.Tuplet):
+            #     rmakers.trivialize(tuplet)
 
         rmakers.extract_trivial(components)
 
@@ -346,21 +390,37 @@ def rhythm_b(index=0, stage=1, grace=False, grace_selector=None):
             ]
             after_grace_amounts = trinton.rotated_sequence(before_grace_amounts, 2)
 
+            relevant_leaves = []
+
+            measures = abjad.select.partition_by_durations(
+                components,
+                durations,
+                cyclic=False,
+                fill=abjad.EXACT,
+                in_seconds=False,
+                overhang=False,
+            )
+
+            for measure in measures:
+                exclude_first = abjad.select.exclude(abjad.select.leaves(measure), [0])
+                for leaf in exclude_first:
+                    relevant_leaves.append(leaf)
+
             if grace_selector is not None:
-                ties = grace_selector(components)
-                ties = abjad.select.logical_ties(ties)
+                ties = grace_selector(relevant_leaves)
+                ties = abjad.select.logical_ties(relevant_leaves)
 
             else:
                 if stage == 1:
                     ties = [
                         _
-                        for _ in abjad.select.logical_ties(components)
+                        for _ in abjad.select.logical_ties(relevant_leaves)
                         if abjad.get.duration(_, preprolated=True)
                         > abjad.Duration((3, 16))
                     ]
 
                 else:
-                    ties = abjad.select.logical_ties(components)
+                    ties = abjad.select.logical_ties(relevant_leaves)
 
             name_count = 1
 
@@ -605,6 +665,122 @@ def rhythm_g(index=0, stage=1, hand="rh"):
 
         selections = abjad.mutate.eject_contents(components)
 
+        return selections
+
+    return rhythm
+
+
+def rhythm_d(stage=1, hand="rh", tuplet_selector=None):
+    def rhythm(durations):
+        tuplet_ratios = []
+        for duration in durations:
+            if hand == "rh":
+                range_limit = duration.numerator + 1
+            else:
+                range_limit = duration.numerator
+
+            tuplet_ratio = []
+
+            for _ in range(0, range_limit):
+                if hand == "rh":
+                    tuplet_ratio.append(3)
+                    tuplet_ratio.append(-1)
+                else:
+                    tuplet_ratio.append(-3)
+                    tuplet_ratio.append(1)
+
+            tuplet_ratio = tuple(tuplet_ratio)
+
+            tuplet_ratios.append(tuplet_ratio)
+
+        components = rmakers.tuplet(durations, tuplet_ratios)
+        components = abjad.Container(components)
+
+        tuplets = abjad.select.tuplets(components)
+        trinton.respell_tuplets(tuplets)
+        rmakers.rewrite_sustained(components)
+        rmakers.rewrite_rest_filled(components)
+        rmakers.rewrite_dots(components)
+        rmakers.trivialize(components)
+
+        if stage > 1:
+            if tuplet_selector is not None:
+                ties = tuplet_selector(components)
+            else:
+                ties = abjad.select.logical_ties(components, pitched=True)
+
+            for tie in ties:
+                tie_duration = abjad.get.duration(tie, preprolated=True)
+
+                if hand == "rh":
+                    tuplet_ratio = (1, 1, 1, 1, 1)
+                else:
+                    tuplet_ratio = (1, 1, 1)
+
+                nested_tuplet = rmakers.tuplet([tie_duration], [tuplet_ratio])
+                # trinton.respell_tuplets(nested_tuplet)
+                rmakers.rewrite_dots(nested_tuplet)
+                rmakers.trivialize(nested_tuplet)
+                rmakers.rewrite_rest_filled(nested_tuplet)
+                rmakers.rewrite_sustained(nested_tuplet)
+                abjad.mutate.replace(tie, nested_tuplet)
+            else:
+                pass
+
+        tuplets = abjad.select.tuplets(components)
+
+        for tuplet in tuplets:
+            tuplet_parent = abjad.get.parentage(tuplet).parent
+            if isinstance(tuplet_parent, abjad.Tuplet):
+                pass
+            else:
+                leaves = abjad.select.leaves(tuplet)
+                beam_groups = []
+                for leaf in leaves:
+                    leaf_duration = leaf.written_duration
+                    if leaf_duration < abjad.Duration((1, 4)):
+                        beam_groups.append(leaf)
+
+                beam_groups = abjad.select.group_by_contiguity(beam_groups)
+
+                for group in beam_groups:
+                    abjad.beam(group, beam_lone_notes=False)
+
+        rmakers.extract_trivial(components)
+
+        selections = abjad.mutate.eject_contents(components)
+        return selections
+
+    return rhythm
+
+
+def rhythm_e(hand="rh"):
+    def rhythm(durations):
+
+        if hand == "rh":
+            components = rmakers.incised(
+                durations,
+                prefix_talea=[-2, 1, -2, 2, -2, 3],
+                prefix_counts=[2],
+                extra_counts=[0, 1, 0, 2, 0],
+                talea_denominator=8,
+            )
+
+        else:
+            components = rmakers.note(durations)
+
+        components = abjad.Container(components)
+
+        tuplets = abjad.select.tuplets(components)
+        trinton.respell_tuplets(tuplets)
+        rmakers.rewrite_sustained(components)
+        rmakers.rewrite_rest_filled(components)
+        rmakers.rewrite_dots(components)
+        rmakers.trivialize(components)
+
+        rmakers.extract_trivial(components)
+
+        selections = abjad.mutate.eject_contents(components)
         return selections
 
     return rhythm

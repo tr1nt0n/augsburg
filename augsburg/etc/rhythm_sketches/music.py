@@ -10,33 +10,46 @@ from abjadext import microtones
 from augsburg import library
 from augsburg import pitch
 from augsburg import rhythm
+from augsburg import ts
 
 # score
 
-score = library.augsburg_score([(5, 4), (11, 8), (9, 8), (4, 4), (7, 8)])
+# score = library.augsburg_score([(5, 4), (11, 8), (9, 8), (4, 4), (7, 8)])
 # score = library.augsburg_score([(4, 4), (4, 4), (4, 4), (4, 4), (4, 4)])
+score = library.augsburg_score(
+    ts.return_descending_ts(
+        index=0, cut_time=False, double_time=True, chaos=False, reduce=True
+    )
+)
 
 # sketches
 
 # alpha rhythm sketch
-#
+
 # trinton.make_music(
-#     lambda _: trinton.select_target(_, (1, 5)),
+#     lambda _: trinton.select_target(_, (1, 16)),
 #     evans.RhythmHandler(
-#         rhythm.rhythm_a(index=1, stage=2),
+#         rhythm.rhythm_a(index=0, stage=1),
 #     ),
-#     trinton.rewrite_meter_command(),
 #     trinton.notehead_bracket_command(),
 #     voice=score["piano 1 voice"],
-#     beam_meter=True,
+# )
+#
+# trinton.make_music(
+#     lambda _: trinton.select_target(_, (1, 16)),
+#     evans.RhythmHandler(
+#         rhythm.rhythm_a(index=4, stage=1),
+#     ),
+#     trinton.notehead_bracket_command(),
+#     voice=score["piano 3 voice"],
 # )
 
 # beta rhythm sketch
 
 # trinton.make_music(
-#     lambda _: trinton.select_target(_, (2, 5)),
+#     lambda _: trinton.select_target(_, (1, 16)),
 #     evans.RhythmHandler(
-#         rhythm.rhythm_b(index=0, stage=2, grace=True),
+#         rhythm.rhythm_b(index=0, stage=3, grace=True),
 #     ),
 #     trinton.notehead_bracket_command(),
 #     voice=score["piano 1 voice"],
@@ -45,7 +58,7 @@ score = library.augsburg_score([(5, 4), (11, 8), (9, 8), (4, 4), (7, 8)])
 # gamma rhythm sketch
 
 # trinton.make_music(
-#     lambda _: trinton.select_target(_, (1, 5)),
+#     lambda _: trinton.select_target(_, (1, 16)),
 #     evans.RhythmHandler(
 #         rhythm.rhythm_g(stage=2, hand="rh"),
 #     ),
@@ -58,7 +71,7 @@ score = library.augsburg_score([(5, 4), (11, 8), (9, 8), (4, 4), (7, 8)])
 # )
 #
 # trinton.make_music(
-#     lambda _: trinton.select_target(_, (1, 5)),
+#     lambda _: trinton.select_target(_, (1, 16)),
 #     evans.RhythmHandler(
 #         rhythm.rhythm_g(stage=2, hand="lh"),
 #     ),
@@ -72,8 +85,63 @@ score = library.augsburg_score([(5, 4), (11, 8), (9, 8), (4, 4), (7, 8)])
 #
 # library.interruptive_polyphony(
 #     score=score,
-#     selector=lambda _: trinton.select_target(_, (1, 5)),
-#     stage=2
+#     selector=lambda _: trinton.select_target(_, (1, 16)),
+#     stage=1
+# )
+
+# delta rhythm sketch
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1, 16)),
+    evans.RhythmHandler(
+        rhythm.rhythm_d(
+            stage=2,
+            hand="rh",
+            tuplet_selector=trinton.patterned_tie_index_selector(
+                [2, 4, 7], 8, pitched=True
+            ),
+        ),
+    ),
+    trinton.notehead_bracket_command(),
+    voice=score["piano 1 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1, 16)),
+    evans.RhythmHandler(
+        rhythm.rhythm_d(
+            stage=2,
+            hand="lh",
+            tuplet_selector=trinton.patterned_tie_index_selector(
+                [1, 3, 6], 7, pitched=True
+            ),
+        ),
+    ),
+    trinton.notehead_bracket_command(),
+    voice=score["piano 3 voice"],
+)
+
+# epsilon rhythm sketch
+
+# trinton.make_music(
+#     lambda _: trinton.select_target(_, (1, 16)),
+#     evans.RhythmHandler(
+#         rhythm.rhythm_e(hand="rh"),
+#     ),
+#     trinton.rewrite_meter_command(),
+#     trinton.notehead_bracket_command(),
+#     voice=score["piano 1 voice"],
+#     beam_meter=True
+# )
+#
+# trinton.make_music(
+#     lambda _: trinton.select_target(_, (1, 16)),
+#     evans.RhythmHandler(
+#         rhythm.rhythm_e(hand="lh"),
+#     ),
+#     trinton.rewrite_meter_command(),
+#     voice=score["piano 3 voice"],
+#     beam_meter=True
 # )
 
 # beautifying time signatures

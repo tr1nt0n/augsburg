@@ -38,13 +38,13 @@ afterGraceFraction = #(cons 15 16)
         \consists Measure_spanner_engraver
         \override BarNumber.stencil = #(make-stencil-circler 0.1 0.75 ly:text-interface::print)
         \override BarNumber.Y-extent = ##f
-        \override BarNumber.Y-offset = -4
-        \override BarNumber.extra-offset = #'(-0.5 . 0.5)
+        \override BarNumber.Y-offset = -12
+        \override BarNumber.extra-offset = #'(-4 . 4)
         \override BarNumber.font-size = 1
         \override BarNumber.padding = 1
-        \override BarNumber.font-name = "Bodoni72 Book Italic"
+        \override BarNumber.font-name = "Bodoni72 Book"
         \override MetronomeMark.stencil = ##f
-        \override VerticalAxisGroup.staff-staff-spacing = #'((basic-distance . 10) (minimum-distance . 10) (padding . 6) (stretchability . 0))
+        \override VerticalAxisGroup.staff-staff-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 0) (stretchability . 0))
         \override TimeSignature.break-visibility = #end-of-line-invisible
         \override TimeSignature.transparent = ##t
         % \override TimeSignature.font-size = 10
@@ -65,7 +65,7 @@ afterGraceFraction = #(cons 15 16)
         pedalSustainStyle = #'bracket
 
         \override StaffGrouper.staff-staff-spacing = #'((basic-distance . 0) (minimum distance . 3) (padding . 3) (stretchability . 28))
-        \override StaffGrouper.staffgroup-staff-spacing = #'((basic-distance . 0) (minimum distance . 5) (padding . 6) (stretchability . 28))
+        \override StaffGrouper.staffgroup-staff-spacing = #'((basic-distance . 0) (minimum distance . 3) (padding . 4) (stretchability . 28))
 
         \override AccidentalSuggestion.avoid-slur = #'ignore
         \override Accidental.layer = 3
@@ -214,6 +214,7 @@ afterGraceFraction = #(cons 15 16)
         \override TimeSignature.whiteout = 1
         \override TimeSignature.layer = 4
         \override TimeSignature.break-visibility = #end-of-line-invisible
+        % \override TimeSignature.padding = 1
     }
 
     \context {
@@ -263,26 +264,40 @@ afterGraceFraction = #(cons 15 16)
         \accepts lowPassStaff
         \accepts timeSignatureStaff
         \accepts InterruptiveGroup
-        \consists "Span_stem_engraver"
+        % \accepts VanishingStaff
         \consists Grob_pq_engraver
         \consists #Interrupt_heads_engraver
+        \consists #Explicit_interrupt_heads_engraver
+        \consists #Follow_lines_engraver
+        \consists #Switch_heads_engraver
+        \consists #Hocket_lines_engraver
+        % \override VoiceFollower.layer = -20
+        \consists "Span_stem_engraver"
+        \consists "Horizontal_bracket_engraver"
     }
 
     \context{
         \GrandStaff
         % \remove Time_signature_engraver
-        \accepts blankStaffGroup
         \accepts lowPassStaff
         \accepts timeSignatureStaff
         \accepts InterruptiveGroup
-        \consists "Span_stem_engraver"
+        % \accepts VanishingStaff
         \consists Grob_pq_engraver
         \consists #Interrupt_heads_engraver
+        \consists #Explicit_interrupt_heads_engraver
+        \consists #Follow_lines_engraver
+        \consists #Switch_heads_engraver
+        \consists #Hocket_lines_engraver
+        \override VoiceFollower.layer = -20
+        \consists "Span_stem_engraver"
+        \consists "Horizontal_bracket_engraver"
     }
 
     \context {
         \Voice
         \remove Forbid_line_break_engraver
+        \consists "Horizontal_bracket_engraver"
         \override Accidental.font-size = 1
     }
 
@@ -294,9 +309,9 @@ afterGraceFraction = #(cons 15 16)
 	        #:music "haydn"
 	        #:brace "haydn"
 	))
-    max-systems-per-page = 5
+    max-systems-per-page = 4
     % system-separator-markup = \markup \fontsize #12 { \tremolo-moderato }
-    system-system-spacing = #'((basic-distance . 22) (minimum-distance . 22) (padding . 16))
+    system-system-spacing = #'((basic-distance . 7) (minimum-distance . 7) (padding . 10))
     indent = 20\mm
     short-indent = 15\mm
     bottom-margin = 10\mm
