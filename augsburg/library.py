@@ -29,7 +29,7 @@ def augsburg_score(time_signatures):
             [
                 "Staff",
                 "timeSignatureStaff",
-                "Staff",
+                "leftHandStaff",
             ],
             "lowPassStaff",
         ],

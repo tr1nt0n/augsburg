@@ -40,6 +40,14 @@ afterGraceFraction = #(cons 15 16)
         \override VerticalAxisGroup.staff-staff-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 0) (stretchability . 0))
         \override TimeSignature.break-visibility = #end-of-line-invisible
         \override TimeSignature.transparent = ##t
+        \override TimeSignature.font-size = 10
+		\override TimeSignature.font-name = "Bodoni72 Book"
+        \override TimeSignature.X-extent = ##f
+        \override TimeSignature.X-offset = -1.3
+        \override TimeSignature.whiteout-style = #'outline
+        \override TimeSignature.whiteout = 1
+        \override TimeSignature.layer = 4
+        \override TimeSignature.break-visibility = #end-of-line-invisible
         % \override TimeSignature.font-size = 10
 		% \override TimeSignature.font-name = "Bodoni72 Book"
         % \override TimeSignature.X-offset = -2.5
@@ -57,7 +65,7 @@ afterGraceFraction = #(cons 15 16)
         proportionalNotationDuration = #(ly:make-moment 1 20)
         pedalSustainStyle = #'bracket
 
-        \override StaffGrouper.staff-staff-spacing = #'((basic-distance . 0) (minimum distance . 3) (padding . 3) (stretchability . 28))
+        \override StaffGrouper.staff-staff-spacing = #'((basic-distance . 0) (minimum distance . 3) (padding . 3) (stretchability . 12))
         \override StaffGrouper.staffgroup-staff-spacing = #'((basic-distance . 0) (minimum distance . 3) (padding . 4) (stretchability . 28))
 
         \override AccidentalSuggestion.avoid-slur = #'ignore
@@ -189,6 +197,13 @@ afterGraceFraction = #(cons 15 16)
 
     \context {
         \Staff
+        \name leftHandStaff
+        \alias Staff
+        \override TupletBracket.direction = #DOWN
+    } % just trying this out
+
+    \context {
+        \Staff
         \name timeSignatureStaff
         \type Engraver_group
         \consists Time_signature_engraver
@@ -202,7 +217,7 @@ afterGraceFraction = #(cons 15 16)
         \override TimeSignature.font-size = 10
 		\override TimeSignature.font-name = "Bodoni72 Book"
         \override TimeSignature.X-extent = ##f
-        \override TimeSignature.X-offset = -2
+        \override TimeSignature.X-offset = -1.3
         \override TimeSignature.whiteout-style = #'outline
         \override TimeSignature.whiteout = 1
         \override TimeSignature.layer = 4
@@ -256,6 +271,7 @@ afterGraceFraction = #(cons 15 16)
         \StaffGroup
         \accepts lowPassStaff
         \accepts timeSignatureStaff
+        \accepts leftHandStaff
         \accepts InterruptiveGroup
         % \accepts VanishingStaff
         \consists Grob_pq_engraver
@@ -274,6 +290,7 @@ afterGraceFraction = #(cons 15 16)
         % \remove Time_signature_engraver
         \accepts lowPassStaff
         \accepts timeSignatureStaff
+        \accepts leftHandStaff
         \accepts InterruptiveGroup
         % \accepts VanishingStaff
         \consists Grob_pq_engraver
@@ -304,7 +321,7 @@ afterGraceFraction = #(cons 15 16)
 	))
     max-systems-per-page = 4
     % system-separator-markup = \markup \fontsize #12 { \tremolo-moderato }
-    system-system-spacing = #'((basic-distance . 7) (minimum-distance . 7) (padding . 10))
+    system-system-spacing = #'((basic-distance . 10) (minimum-distance . 10) (padding . 14))
     indent = 20\mm
     short-indent = 15\mm
     bottom-margin = 10\mm

@@ -17,8 +17,17 @@ from augsburg import ts
 # score = library.augsburg_score([(5, 4), (11, 8), (9, 8), (4, 4), (7, 8)])
 # score = library.augsburg_score([(4, 4), (4, 4), (4, 4), (4, 4), (4, 4)])
 score = library.augsburg_score(
-    ts.return_descending_ts(
-        index=0, cut_time=False, double_time=True, chaos=False, reduce=True
+    # ts.return_descending_ts(
+    #     index=0, cut_time=False, double_time=True, chaos=False, reduce=True
+    # )
+    # ts.return_gestural_ts_sequence(index=1, slice_tuple=None),
+    ts.assemble_section_ts(
+        [
+            ts.return_gestural_ts_sequence(slice_tuple=(1, 6)),
+            [(4, 4), (4, 4), (4, 4)],
+            ts.return_descending_ts(reduce=True, slice_tuple=(6, 11)),
+            [(3, 4), (3, 4), (3, 4)],
+        ]
     )
 )
 
@@ -49,7 +58,7 @@ score = library.augsburg_score(
 # trinton.make_music(
 #     lambda _: trinton.select_target(_, (1, 16)),
 #     evans.RhythmHandler(
-#         rhythm.rhythm_b(index=0, stage=3, grace=True),
+#         rhythm.rhythm_b(index=0, stage=2, grace=True),
 #     ),
 #     trinton.notehead_bracket_command(),
 #     voice=score["piano 1 voice"],

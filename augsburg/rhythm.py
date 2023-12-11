@@ -23,7 +23,7 @@ def rhythm_a(index=0, stage=1):
                 denominator = int(duration.denominator)
                 meter = abjad.Meter(duration)
 
-                if numerator % 3 == 0:
+                if numerator % 3 == 0 and numerator != 15:
                     regions = []
                     if meter.is_compound is True:
                         range_limit = int(numerator / 3)
@@ -296,7 +296,7 @@ def rhythm_a(index=0, stage=1):
             beam_groups = []
             for leaf in leaves:
                 leaf_duration = leaf.written_duration
-                if leaf_duration < abjad.Duration((1, 4)):
+                if leaf_duration < abjad.Duration(1, 4):
                     beam_groups.append(leaf)
 
             beam_groups = abjad.select.group_by_contiguity(beam_groups)
