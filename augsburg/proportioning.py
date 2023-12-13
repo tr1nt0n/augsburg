@@ -6,6 +6,7 @@ import fractions
 import itertools
 import random
 from augsburg import library
+from augsburg import sections
 from itertools import cycle
 
 
@@ -27,8 +28,8 @@ def determine_section_clock_times(
         if tempo_modulations is not None:
             relevant_modulation = tempo_modulations[section_number - 1]
 
-            numerator = relevant_modulation[-1]
-            denominator = relevant_modulation[0]
+            numerator = relevant_modulation[0]
+            denominator = relevant_modulation[-1]
 
             beat_count = seconds_length * numerator
             beat_count = beat_count / denominator
@@ -37,7 +38,7 @@ def determine_section_clock_times(
             new_tempo = new_tempo / denominator
 
             print(
-                f"You would like to modulate this tempo by {denominator}:{numerator}."
+                f"You would like to modulate this tempo by {numerator}:{denominator}."
             )
             print(f"In this prolation, the new tempo is {new_tempo} BPM.")
             print(
@@ -52,5 +53,5 @@ def determine_section_clock_times(
 determine_section_clock_times(
     piece_duration_in_seconds=900,
     section_proportional_factors=[3, 5, 8, 1, 2],
-    tempo_modulations=[],
+    tempo_modulations=[(37, 16), (1, 1), (13, 16), (35, 64), (13, 8)],
 )

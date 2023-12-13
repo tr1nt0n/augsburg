@@ -148,119 +148,155 @@ def interruptive_polyphony(
 
 # tempi
 
-# metronome_marks = {
-#     "48": abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 48),
-#     "57 3/5": abjad.MetronomeMark.make_tempo_equation_markup(
-#         (1, 4), quicktions.Fraction(288, 5)
-#     ),
-#     "72": abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 72),
-#     "96": abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 96),
-#     "144": abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 144),
-#     # slower
-#     "2.=4": abjad.MetricModulation(
-#         left_rhythm=abjad.Note("c2."), right_rhythm=abjad.Note("c4")
-#     ),
-#     "4:5(2)=4": abjad.MetricModulation(
-#         left_rhythm=abjad.Tuplet("4:5", "c2"),
-#         right_rhythm=abjad.Note("c4"),
-#     ),
-#     "2=4": abjad.MetricModulation(
-#         left_rhythm=abjad.Note("c2"), right_rhythm=abjad.Note("c4")
-#     ),
-#     "5:6(4)=4": abjad.MetricModulation(
-#         left_rhythm=abjad.Tuplet("5:6", "c4"),
-#         right_rhythm=abjad.Note("c4"),
-#     ),
-#     "4:5(4)=4": abjad.MetricModulation(
-#         left_rhythm=abjad.Tuplet("4:5", "c4"),
-#         right_rhythm=abjad.Note("c4"),
-#     ),
-#     "3:5(4)=4": abjad.MetricModulation(
-#         left_rhythm=abjad.Tuplet("3:5", "c4"),
-#         right_rhythm=abjad.Note("c4"),
-#     ),
-#     "3:4(4)=4": abjad.MetricModulation(
-#         left_rhythm=abjad.Tuplet("3:4", "c4"),
-#         right_rhythm=abjad.Note("c4"),
-#     ),
-#     "4.=4": abjad.MetricModulation(
-#         left_rhythm=abjad.Note("c4."), right_rhythm=abjad.Note("c4")
-#     ),
-#     # faster
-#     "6:5(4)=4": abjad.MetricModulation(
-#         left_rhythm=abjad.Tuplet("6:5", "c4"),
-#         right_rhythm=abjad.Note("c4"),
-#     ),
-#     "5:4(4)=4": abjad.MetricModulation(
-#         left_rhythm=abjad.Tuplet("5:4", "c4"),
-#         right_rhythm=abjad.Note("c4"),
-#     ),
-#     "5:4(8)=4": abjad.MetricModulation(
-#         left_rhythm=abjad.Tuplet("5:4", "c8"),
-#         right_rhythm=abjad.Note("c4"),
-#     ),
-#     "5:3(4)=4": abjad.MetricModulation(
-#         left_rhythm=abjad.Tuplet("5:3", "c4"),
-#         right_rhythm=abjad.Note("c4"),
-#     ),
-#     "4:3(4)=4": abjad.MetricModulation(
-#         left_rhythm=abjad.Tuplet("4:3", "c4"),
-#         right_rhythm=abjad.Note("c4"),
-#     ),
-#     "3:2(4)=4": abjad.MetricModulation(
-#         left_rhythm=abjad.Tuplet("3:2", "c4"),
-#         right_rhythm=abjad.Note("c4"),
-#     ),
-#     "8=4": abjad.MetricModulation(
-#         left_rhythm=abjad.Note("c8"), right_rhythm=abjad.Note("c4")
-#     ),
-#     "3:2(8)=4": abjad.MetricModulation(
-#         left_rhythm=abjad.Tuplet("3:2", "c8"),
-#         right_rhythm=abjad.Note("c4"),
-#     ),
-# }
+_metronome_marks = {
+    "33": """\\abjad-metronome-mark-markup #2 #0 #2 #"33" """,
+    "48 3/4": """\\abjad-metronome-mark-mixed-number-markup #2 #0 #2 #"48" #"3" #"4" """,
+    "60": """\\abjad-metronome-mark-markup #2 #0 #2 #"60" """,
+    "97 1/2": """\\abjad-metronome-mark-mixed-number-markup #2 #0 #2 #"97" #"1" #"2" """,
+    "138 3/4": """\\abjad-metronome-mark-mixed-number-markup #2 #0 #2 #"138" #"3" #"4" """,
+}
+
+_metric_modulations = {
+    # faster
+    "33 - 48 3/4": abjad.MetricModulation(
+        left_rhythm=abjad.Tuplet("8:11", "c8"),
+        right_rhythm=abjad.Note("c4"),
+    ),
+    "33 - 60": abjad.MetricModulation(
+        left_rhythm=abjad.Tuplet("32:35", "c8"),
+        right_rhythm=abjad.Note("c4"),
+    ),
+    "33 - 97 1/2": abjad.MetricModulation(
+        left_rhythm=abjad.Tuplet("65:44", "c8"),
+        right_rhythm=abjad.Note("c4"),
+    ),
+    "33 - 138 3/4": None,
+    "48 3/4 - 60": abjad.MetricModulation(
+        left_rhythm=abjad.Tuplet("16:13", "c4"),
+        right_rhythm=abjad.Note("c4"),
+    ),
+    "48 3/4 - 97 1/2": abjad.MetricModulation(
+        left_rhythm=abjad.Note("c8"),
+        right_rhythm=abjad.Note("c4"),
+    ),
+    "48 3/4 - 138 3/4": abjad.MetricModulation(
+        left_rhythm=abjad.Tuplet("37:36", "c8"),
+        right_rhythm=abjad.Note("c4"),
+    ),
+    "60 - 97 1/2": abjad.MetricModulation(
+        left_rhythm=abjad.Tuplet("13:16", "c8"),
+        right_rhythm=abjad.Note("c4"),
+    ),
+    "60 - 138 3/4": abjad.MetricModulation(
+        left_rhythm=abjad.Tuplet("37:32", "c8"),
+        right_rhythm=abjad.Note("c4"),
+    ),
+    "97 1/2 - 138 3/4": abjad.MetricModulation(
+        left_rhythm=abjad.Tuplet("37:26", "c4"),
+        right_rhythm=abjad.Note("c4"),
+    ),
+    # slower
+    "138 3/4 - 97 1/2": abjad.MetricModulation(
+        left_rhythm=abjad.Tuplet("26:37", "c4"),
+        right_rhythm=abjad.Note("c4"),
+    ),
+    "138 3/4 - 60": abjad.MetricModulation(
+        left_rhythm=abjad.Tuplet("32:37", "c2"),
+        right_rhythm=abjad.Note("c4"),
+    ),
+    "138 3/4 - 48 3/4": abjad.MetricModulation(
+        left_rhythm=abjad.Tuplet("26:37", "c2"),
+        right_rhythm=abjad.Note("c4"),
+    ),
+    "138 3/4 - 33": None,
+    "97 1/2 - 60": abjad.MetricModulation(
+        left_rhythm=abjad.Tuplet("16:13", "c2"),
+        right_rhythm=abjad.Note("c4"),
+    ),
+    "97 1/2 - 48 3/4": abjad.MetricModulation(
+        left_rhythm=abjad.Note("c2"),
+        right_rhythm=abjad.Note("c4"),
+    ),
+    "97 1/2 - 33": abjad.MetricModulation(
+        left_rhythm=abjad.Tuplet("44:65", "c2"),
+        right_rhythm=abjad.Note("c4"),
+    ),
+    "60 - 48 3/4": abjad.MetricModulation(
+        left_rhythm=abjad.Tuplet("13:16", "c4"),
+        right_rhythm=abjad.Note("c4"),
+    ),
+    "60 - 33": abjad.MetricModulation(
+        left_rhythm=abjad.Tuplet("35:32", "c2"),
+        right_rhythm=abjad.Note("c4"),
+    ),
+    "48 3/4 - 33": abjad.MetricModulation(
+        left_rhythm=abjad.Tuplet("11:8", "c2"),
+        right_rhythm=abjad.Note("c4"),
+    ),
+}
 
 
-# def metronome_markups(
-#     met_string, mod_string=None, string_only=False, parenthesis=False
-# ):
-#     if mod_string is None:
-#         if parenthesis is False:
-#             mark = abjad.LilyPondLiteral(
-#                 [
-#                     r"^ \markup {",
-#                     r"  \raise #9 \with-dimensions-from \null",
-#                     r"  \override #'(font-size . 5.5)",
-#                     r"  \concat {",
-#                     f"      {met_string.string[8:]}",
-#                     r"  }",
-#                     r"}",
-#                 ],
-#                 site="after",
-#             )
-#             return mark
-#         else:
-#             mark = f"\markup {{ \override #'(font-size . 5.5) \concat {{ ( {met_string.string[8:]} ) }} }}"
-#             return mark
-#
-#     else:
-#         if string_only is True:
-#             mark = f"\markup {{ \override #'(font-size . 5.5) \concat {{ {met_string.string[8:]} [{abjad.lilypond(mod_string)[8:]}] }} }}"
-#         else:
-#             mark = abjad.LilyPondLiteral(
-#                 [
-#                     r"^ \markup {",
-#                     r"  \raise #9 \with-dimensions-from \null",
-#                     r"  \override #'(font-size . 5.5)",
-#                     r"  \concat {",
-#                     f"      {met_string.string[8:]}",
-#                     f"      [{abjad.lilypond(mod_string)[8:]}]",
-#                     r"  }",
-#                     r"}",
-#                 ],
-#                 site="after",
-#             )
-#         return mark
+def metronome_markups(
+    tempo_string, previous_tempo_string=None, string_only=False, parenthesis=False
+):
+
+    if (
+        tempo_string == "33"
+        and previous_tempo_string == "138 3/4"
+        or tempo_string == "138 3/4"
+        and previous_tempo_string == "33"
+    ):
+        raise Exception(
+            r"In this score, you have decided not to show the metric relationship between 138 3/4 BPM and 33 BPM."
+        )
+
+    tempo_markup = _metronome_marks[tempo_string]
+
+    if parenthesis is True:
+        mark = f"\markup {{ \override #'(font-size . 5.5) \concat {{ ( {tempo_markup} ) }} }}"
+        return mark
+
+    else:
+        if previous_tempo_string is not None:
+            mod_key = f"{previous_tempo_string} - {tempo_string}"
+            mod_string = _metric_modulations[mod_key]
+
+            if string_only is True:
+                mark = f"\markup {{ \override #'(font-size . 5.5) \concat {{ {tempo_markup} [{abjad.lilypond(mod_string)[8:]}] }} }}"
+            else:
+                mark = abjad.LilyPondLiteral(
+                    [
+                        r"^ \markup {",
+                        r"  \raise #13.5 \with-dimensions-from \null",
+                        r"  \override #'(font-size . 5.5)",
+                        r"  \concat {",
+                        f"      {tempo_markup}",
+                        f"      [{abjad.lilypond(mod_string)[8:]}]",
+                        r"  }",
+                        r"}",
+                    ],
+                    site="after",
+                )
+
+        else:
+            if string_only is True:
+                mark = f"\markup {{ \override #'(font-size . 5.5) \concat {{ {tempo_markup} }} }}"
+            else:
+                mark = abjad.LilyPondLiteral(
+                    [
+                        r"^ \markup {",
+                        r"  \raise #13.5 \with-dimensions-from \null",
+                        r"  \override #'(font-size . 5.5)",
+                        r"  \concat {",
+                        f"      {tempo_markup}",
+                        r"  }",
+                        r"}",
+                    ],
+                    site="after",
+                )
+
+        return mark
+
 
 # markups
 

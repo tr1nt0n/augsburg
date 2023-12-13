@@ -292,17 +292,25 @@ def rhythm_a(index=0, stage=1):
                 for parental_group in parental_groups:
                     abjad.mutate.fuse(parental_group)
 
-            leaves = abjad.select.leaves(tuplet)
-            beam_groups = []
-            for leaf in leaves:
-                leaf_duration = leaf.written_duration
-                if leaf_duration < abjad.Duration(1, 4):
-                    beam_groups.append(leaf)
+            tuplet_contents = abjad.get.contents(tuplet)[1:]
 
-            beam_groups = abjad.select.group_by_contiguity(beam_groups)
+            if any(isinstance(item, abjad.Tuplet) for item in tuplet_contents):
+                pass
 
-            for group in beam_groups:
-                abjad.beam(group, beam_lone_notes=False)
+            else:
+                leaves = abjad.select.leaves(tuplet)
+                beam_groups = []
+                for leaf in leaves:
+                    leaf_duration = leaf.written_duration
+                    if leaf_duration < abjad.Duration(1, 4):
+                        beam_groups.append(leaf)
+
+                beam_groups = abjad.select.group_by_contiguity(beam_groups)
+
+                for group in beam_groups:
+                    group_pleaves = abjad.select.leaves(group, pitched=True)
+                    if len(group_pleaves) > 1:
+                        abjad.beam(group, beam_lone_notes=False)
 
             # tuplet_parent = abjad.get.parentage(tuplet).parent
             # if isinstance(tuplet_parent, abjad.Tuplet):
@@ -744,7 +752,9 @@ def rhythm_d(stage=1, hand="rh", tuplet_selector=None):
                 beam_groups = abjad.select.group_by_contiguity(beam_groups)
 
                 for group in beam_groups:
-                    abjad.beam(group, beam_lone_notes=False)
+                    group_pleaves = abjad.select.leaves(group, pitched=True)
+                    if len(group_pleaves) > 1:
+                        abjad.beam(group, beam_lone_notes=False)
 
         rmakers.extract_trivial(components)
 

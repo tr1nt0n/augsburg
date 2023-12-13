@@ -35,23 +35,23 @@ score = library.augsburg_score(
 
 # alpha rhythm sketch
 
-# trinton.make_music(
-#     lambda _: trinton.select_target(_, (1, 16)),
-#     evans.RhythmHandler(
-#         rhythm.rhythm_a(index=0, stage=1),
-#     ),
-#     trinton.notehead_bracket_command(),
-#     voice=score["piano 1 voice"],
-# )
-#
-# trinton.make_music(
-#     lambda _: trinton.select_target(_, (1, 16)),
-#     evans.RhythmHandler(
-#         rhythm.rhythm_a(index=4, stage=1),
-#     ),
-#     trinton.notehead_bracket_command(),
-#     voice=score["piano 3 voice"],
-# )
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1, 16)),
+    evans.RhythmHandler(
+        rhythm.rhythm_a(index=0, stage=1),
+    ),
+    trinton.notehead_bracket_command(),
+    voice=score["piano 1 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1, 16)),
+    evans.RhythmHandler(
+        rhythm.rhythm_a(index=4, stage=1),
+    ),
+    trinton.notehead_bracket_command(),
+    voice=score["piano 3 voice"],
+)
 
 # beta rhythm sketch
 
@@ -99,36 +99,36 @@ score = library.augsburg_score(
 # )
 
 # delta rhythm sketch
-
-trinton.make_music(
-    lambda _: trinton.select_target(_, (1, 16)),
-    evans.RhythmHandler(
-        rhythm.rhythm_d(
-            stage=2,
-            hand="rh",
-            tuplet_selector=trinton.patterned_tie_index_selector(
-                [2, 4, 7], 8, pitched=True
-            ),
-        ),
-    ),
-    trinton.notehead_bracket_command(),
-    voice=score["piano 1 voice"],
-)
-
-trinton.make_music(
-    lambda _: trinton.select_target(_, (1, 16)),
-    evans.RhythmHandler(
-        rhythm.rhythm_d(
-            stage=2,
-            hand="lh",
-            tuplet_selector=trinton.patterned_tie_index_selector(
-                [1, 3, 6], 7, pitched=True
-            ),
-        ),
-    ),
-    trinton.notehead_bracket_command(),
-    voice=score["piano 3 voice"],
-)
+#
+# trinton.make_music(
+#     lambda _: trinton.select_target(_, (1, 16)),
+#     evans.RhythmHandler(
+#         rhythm.rhythm_d(
+#             stage=2,
+#             hand="rh",
+#             tuplet_selector=trinton.patterned_tie_index_selector(
+#                 [2, 4, 7], 8, pitched=True
+#             ),
+#         ),
+#     ),
+#     trinton.notehead_bracket_command(),
+#     voice=score["piano 1 voice"],
+# )
+#
+# trinton.make_music(
+#     lambda _: trinton.select_target(_, (1, 16)),
+#     evans.RhythmHandler(
+#         rhythm.rhythm_d(
+#             stage=2,
+#             hand="lh",
+#             tuplet_selector=trinton.patterned_tie_index_selector(
+#                 [1, 3, 6], 7, pitched=True
+#             ),
+#         ),
+#     ),
+#     trinton.notehead_bracket_command(),
+#     voice=score["piano 3 voice"],
+# )
 
 # epsilon rhythm sketch
 
@@ -152,6 +152,49 @@ trinton.make_music(
 #     voice=score["piano 3 voice"],
 #     beam_meter=True
 # )
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1, 8)),
+    # trinton.linear_attachment_command(
+    #     attachments=[
+    #         library.metronome_markups(
+    #             tempo_string="60",
+    #             previous_tempo_string=None,
+    #             string_only=False,
+    #             parenthesis=False,
+    #         ),
+    #         library.metronome_markups(
+    #             tempo_string="138 3/4",
+    #             previous_tempo_string="60",
+    #             string_only=False,
+    #             parenthesis=False,
+    #         ),
+    #     ],
+    #     selector=trinton.select_leaves_by_index([0, -1])
+    # ),
+    trinton.spanner_command(
+        strings=[
+            library.metronome_markups(
+                tempo_string="138 3/4",
+                previous_tempo_string=None,
+                string_only=True,
+                parenthesis=True,
+            ),
+            library.metronome_markups(
+                tempo_string="97 1/2",
+                previous_tempo_string="138 3/4",
+                string_only=True,
+                parenthesis=False,
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0, -1]),
+        style="solid-line-with-arrow",
+        padding=14,
+        full_string=True,
+        right_padding=0,
+    ),
+    voice=score["Global Context"],
+)
 
 # beautifying time signatures
 
