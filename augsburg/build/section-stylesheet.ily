@@ -72,7 +72,6 @@ afterGraceFraction = #(cons 15 16)
         \override Accidental.layer = 3
         \override Accidental.whiteout-style = #'outline
         \override Accidental.whiteout = 1
-        \override Accidental.X-extent = ##f
 
         \override BarLine.transparent = ##t
         \override BarLine.hair-thickness = 0.5
@@ -186,6 +185,8 @@ afterGraceFraction = #(cons 15 16)
         \consists Duration_line_engraver
         \consists Grob_pq_engraver
         \consists #Interrupt_heads_engraver
+
+        \override Accidental.X-extent = ##f
 
         \override DurationLine.style = #'line
         \override DurationLine.thickness = #3

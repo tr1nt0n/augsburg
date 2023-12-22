@@ -54,98 +54,6 @@ def logistic_map_sequence(index):
 # notation tools
 
 
-# def interruptive_polyphony(
-#     score, selector=lambda _: trinton.select_target(_, (1, 2)), stage=1
-# ):
-#     for voice_name, color in zip(
-#         ["37 voice temp", "35 voice", "13 voice temp", "4 voice"],
-#         ["\一", "\三", "\二", "\四"],
-#     ):
-#         selections = selector(score[voice_name])
-#         leaves = abjad.select.leaves(selections)
-#
-#         abjad.attach(
-#             abjad.LilyPondLiteral(
-#                 [
-#                     rf"\override NoteHead.details.interrupt-color = {color}",
-#                     rf"\override NoteHead.details.switch-color = {color}",
-#                     rf"\override NoteHead.details.folow-color = {color}",
-#                     rf"\override NoteHead.details.hocket-color = {color}",
-#                     rf"\override Accidental.color = {color}",
-#                     rf"\override Beam.color = {color}",
-#                     rf"\override Dots.color = {color}",
-#                     rf"\override Flag.color = {color}",
-#                     rf"\override Glissando.color = {color}",
-#                     rf"\override MultiMeasureRest.color = {color}",
-#                     rf"\override NoteHead.color = {color}",
-#                     rf"\override RepeatTie.color = {color}",
-#                     rf"\override Rest.color = {color}",
-#                     rf"\override Slur.color = {color}",
-#                     rf"\override Stem.color = {color}",
-#                     rf"\override StemTremolo.color = {color}",
-#                     rf"\override Tie.color = {color}",
-#                     rf"\override TupletBracket.color = {color}",
-#                     rf"\override TupletNumber.color = {color}",
-#                     rf"\override DynamicText.color = {color}",
-#                     r"\override Dots.staff-position = #2",
-#                 ],
-#                 site="before",
-#             ),
-#             leaves[0],
-#         )
-#
-#         abjad.attach(
-#             abjad.LilyPondLiteral(
-#                 [
-#                     rf"\revert Accidental.color",
-#                     rf"\revert Beam.color",
-#                     rf"\revert Dots.color",
-#                     rf"\revert Flag.color",
-#                     rf"\revert Glissando.color",
-#                     rf"\revert MultiMeasureRest.color",
-#                     rf"\revert NoteHead.color",
-#                     rf"\revert RepeatTie.color",
-#                     rf"\revert Rest.color",
-#                     rf"\revert Slur.color",
-#                     rf"\revert Stem.color",
-#                     rf"\revert StemTremolo.color",
-#                     rf"\revert Tie.color",
-#                     rf"\revert TupletBracket.color",
-#                     rf"\revert TupletNumber.color",
-#                     rf"\revert DynamicText.color",
-#                     r"\revert Dots.staff-position",
-#                 ],
-#                 site="absolute_after",
-#             ),
-#             leaves[-1],
-#         )
-#
-#         if voice_name == "37 voice temp":
-#             leaves = leaves
-#         else:
-#             leaves = abjad.select.exclude(leaves, [0])
-#
-#         # abjad.attach(
-#         #     abjad.LilyPondLiteral(r"\start-explicit-interrupt", "before"),
-#         #     leaves[0]
-#         # )
-#         #
-#         # abjad.attach(
-#         #     abjad.LilyPondLiteral(r"\stop-explicit-interrupt", "after"),
-#         #     leaves[-1]
-#         # )
-#
-#         ties = abjad.select.logical_ties(leaves)
-#
-#         for tie in ties:
-#             if stage == 1:
-#                 literal_string = r"\interrupt"
-#             else:
-#                 literal_string = r"\hocket"
-#
-#             abjad.attach(abjad.LilyPondLiteral(literal_string, site="before"), tie[0])
-
-
 def interruptive_polyphony(
     hand,
     stage=1,
@@ -240,6 +148,55 @@ def interruptive_polyphony(
                 )
 
     return polyphony
+
+
+def handle_accidentals(score):
+    pties = abjad.select.logical_ties(score, pitched=True)
+
+    ficta_ties = []
+    chords = []
+
+    for tie in pties:
+        tie_duration = abjad.get.duration(tie)
+        if isinstance(tie[0], abjad.Chord):
+            chords.append(tie)
+        if tie_duration < abjad.Duration(1, 16):
+            ficta_ties.append(tie)
+
+    for chord in chords:
+        abjad.attach(
+            abjad.LilyPondLiteral(r"\revert Staff.Accidental.X-extent", site="before"),
+            chord[0],
+        )
+        abjad.attach(
+            abjad.LilyPondLiteral(
+                r"\override Staff.Accidental.X-extent = ##f", site="after"
+            ),
+            chord[-1],
+        )
+
+        for head in chord[0].note_heads:
+            head.is_forced = True
+
+    ficta_ties = abjad.select.group_by_contiguity(ficta_ties)
+
+    for group in ficta_ties:
+        first_tie = group[0]
+        last_tie = group[-1]
+
+        abjad.attach(
+            abjad.LilyPondLiteral(
+                r"\set suggestAccidentals = ##t", site="absolute_before"
+            ),
+            first_tie[0],
+        )
+
+        abjad.attach(
+            abjad.LilyPondLiteral(
+                r"\set suggestAccidentals = ##f", site="absolute_after"
+            ),
+            last_tie[-1],
+        )
 
 
 # tempi
