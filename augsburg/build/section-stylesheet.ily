@@ -63,7 +63,7 @@ afterGraceFraction = #(cons 15 16)
         \accepts TimeSignatureContext
         \remove Bar_number_engraver
         proportionalNotationDuration = #(ly:make-moment 1 20)
-        pedalSustainStyle = #'bracket
+        pedalSustainStyle = #'mixed
 
         \override StaffGrouper.staff-staff-spacing = #'((basic-distance . 0) (minimum distance . 3) (padding . 3) (stretchability . 12))
         \override StaffGrouper.staffgroup-staff-spacing = #'((basic-distance . 0) (minimum distance . 3) (padding . 4) (stretchability . 28))
@@ -72,11 +72,12 @@ afterGraceFraction = #(cons 15 16)
         \override Accidental.layer = 3
         \override Accidental.whiteout-style = #'outline
         \override Accidental.whiteout = 1
+        % \override Accidental.X-extent = ##f
 
         \override BarLine.transparent = ##t
         \override BarLine.hair-thickness = 0.5
         \override BarLine.thick-thickness = #10
-        \override BarLine.X-extent = #'(0 . 0)
+        % \override BarLine.X-extent = #'(0 . 0)
         % \override BarLine.X-extent = ##f
         % \override BarLine.X-offset = -4
         % \override BarLine.extra-offset = #'(-0.5 . 0.5)
@@ -115,10 +116,12 @@ afterGraceFraction = #(cons 15 16)
         \override MeasureSpanner.thickness = #1.5
         \override MeasureSpanner.font-size = 7
         \override MeasureSpanner.font-name = "Bodoni72 Book"
-        \override MeasureSpanner.padding = -9.5
+        \override MeasureSpanner.padding = 5
 
         \override NoteCollision.merge-differently-dotted = ##t
         \override NoteCollision.merge-differently-headed = ##t
+
+        \override PianoPedalBracket.shorten-pair = #'(0 . -4)
 
         \override Staff.thickness = #0.5
 
@@ -228,6 +231,17 @@ afterGraceFraction = #(cons 15 16)
 
     \context {
         \Staff
+        \name thirdStaff
+        \type Engraver_group
+        % \remove System_start_delimiter_engraver
+
+        \RemoveAllEmptyStaves
+
+        \alias Staff
+    }
+
+    \context {
+        \Staff
         \name lowPassStaff
         \type Engraver_group
         \remove System_start_delimiter_engraver
@@ -273,6 +287,7 @@ afterGraceFraction = #(cons 15 16)
         \accepts lowPassStaff
         \accepts timeSignatureStaff
         \accepts leftHandStaff
+        \accepts thirdStaff
         \accepts InterruptiveGroup
         % \accepts VanishingStaff
         \consists Grob_pq_engraver
@@ -292,6 +307,7 @@ afterGraceFraction = #(cons 15 16)
         \accepts lowPassStaff
         \accepts timeSignatureStaff
         \accepts leftHandStaff
+        \accepts thirdStaff
         \accepts InterruptiveGroup
         % \accepts VanishingStaff
         \consists Grob_pq_engraver

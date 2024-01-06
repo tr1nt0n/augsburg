@@ -20,9 +20,10 @@ def augsburg_score(time_signatures):
             abjad.Piano(),
             abjad.Piano(),
             abjad.Piano(),
+            abjad.Piano(),
         ],
         groups=[
-            3,
+            4,
             1,
         ],
         staff_types=[
@@ -30,6 +31,7 @@ def augsburg_score(time_signatures):
                 "Staff",
                 "timeSignatureStaff",
                 "leftHandStaff",
+                "thirdStaff",
             ],
             "lowPassStaff",
         ],
@@ -52,6 +54,147 @@ def logistic_map_sequence(index):
 
 
 # notation tools
+
+
+def change_lines(
+    lines,
+    selector=trinton.select_leaves_by_index([0], pitched=True),
+    clef="treble",
+):
+    def change(argument):
+        selections = selector(argument)
+        for selection in selections:
+            abjad.attach(abjad.Clef(clef), selection)
+            abjad.attach(
+                abjad.LilyPondLiteral(
+                    rf"\staff-line-count {lines}",
+                    site="absolute_before",
+                ),
+                selection,
+            )
+
+    return change
+
+
+def clean_graces(
+    score, voice_names=["piano 1 voice", "piano 3 voice", "piano 4 voice"]
+):
+    for voice_name in voice_names:
+        grace_groups = []
+
+        for leaf in abjad.select.leaves(score[voice_name]):
+            before_grace_container = abjad.get.before_grace_container(leaf)
+            after_grace_container = abjad.get.after_grace_container(leaf)
+            grace_groups.append(before_grace_container)
+            grace_groups.append(after_grace_container)
+
+        for group in grace_groups:
+            if group is not None:
+                if len(group) == 1:
+                    start_slash_literal = abjad.LilyPondLiteral(
+                        r"""\once \override Flag.stroke-style = #"grace" """,
+                        site="before",
+                    )
+
+                else:
+                    abjad.beam(group)
+                    abjad.slur(group)
+
+                    start_slash_literal = abjad.LilyPondLiteral(
+                        r"\my-hack-slash", site="before"
+                    )
+
+                abjad.attach(start_slash_literal, group[0])
+
+        onbeat_graces = []
+
+        for leaf in abjad.select.leaves(score[voice_name]):
+            parentage = abjad.get.parentage(leaf).parent
+            if isinstance(parentage, abjad.OnBeatGraceContainer):
+                onbeat_graces.append(leaf)
+
+        onbeat_graces = abjad.select.group_by_contiguity(onbeat_graces)
+
+        for container in onbeat_graces:
+            abjad.attach(
+                abjad.LilyPondLiteral(
+                    r"\override Beam.beam-thickness = #0.48", site="before"
+                ),
+                container[0],
+            )
+            abjad.attach(
+                abjad.LilyPondLiteral(r"\revert Beam.thickness", site="after"),
+                container[-1],
+            )
+
+            abjad.attach(
+                abjad.LilyPondLiteral(
+                    r"\override Beam.length-fraction = #1", site="before"
+                ),
+                container[0],
+            )
+            abjad.attach(
+                abjad.LilyPondLiteral(r"\revert Beam.length-fraction", site="after"),
+                container[-1],
+            )
+
+
+def duration_line(selector=trinton.select_logical_ties_by_index([-1], pitched=True)):
+    def line(argument):
+        selections = selector(argument)
+        pties = abjad.select.logical_ties(
+            selections,
+            pitched=True,
+        )
+
+        for tie in pties:
+            relevant_leaf = tie[-1]
+            if isinstance(relevant_leaf, abjad.Chord):
+                tie_pitches = relevant_leaf.written_pitches
+                pitch_string = " "
+                for pitch in tie_pitches:
+                    pitch_string += pitch.get_name()
+                    pitch_string += " "
+                container = abjad.AfterGraceContainer(f"<{pitch_string}>16")
+            else:
+                tie_pitch = relevant_leaf.written_pitch.get_name()
+                container = abjad.AfterGraceContainer(f"{tie_pitch}16")
+
+            abjad.attach(container, tie[-1])
+
+            with_grace = abjad.select.with_next_leaf(tie)
+
+            abjad.glissando(
+                with_grace,
+                hide_middle_note_heads=True,
+                allow_repeats=True,
+                allow_ties=True,
+                zero_padding=True,
+            )
+
+    return line
+
+
+def reset_line_positions(score, voice_names):
+    voices = [score[_] for _ in voice_names]
+
+    reset = abjad.LilyPondLiteral(
+        r"\once \revert Staff.StaffSymbol.line-positions", "before"
+    )
+
+    for voice in voices:
+        shards = abjad.select.group_by_measure(voice)
+        relevant_shards = []
+        for shard in shards:
+            if (
+                all(isinstance(leaf, abjad.Rest) for leaf in shard)
+                or all(isinstance(leaf, abjad.MultimeasureRest) for leaf in shard)
+                or all(isinstance(leaf, abjad.Skip) for leaf in shard)
+            ):
+                relevant_shards.append(shard)
+
+        for shard in relevant_shards:
+            abjad.attach(reset, shard[0])
 
 
 def interruptive_polyphony(
@@ -150,18 +293,47 @@ def interruptive_polyphony(
     return polyphony
 
 
-def handle_accidentals(score):
+def handle_accidentals(score, force_accidentals=True):
     pties = abjad.select.logical_ties(score, pitched=True)
 
     ficta_ties = []
     chords = []
+    post_graces = []
 
     for tie in pties:
+        previous_leaf = abjad.select.with_previous_leaf(tie)[0]
         tie_duration = abjad.get.duration(tie)
         if isinstance(tie[0], abjad.Chord):
             chords.append(tie)
         if tie_duration < abjad.Duration(1, 16):
             ficta_ties.append(tie)
+        previous_parentage = abjad.get.parentage(previous_leaf).parent
+        if (
+            isinstance(previous_parentage, abjad.BeforeGraceContainer)
+            or isinstance(previous_parentage, abjad.OnBeatGraceContainer)
+            or isinstance(previous_parentage, abjad.AfterGraceContainer)
+        ):
+            tie_parentage = abjad.get.parentage(tie[0]).parent
+            if (
+                isinstance(tie_parentage, abjad.BeforeGraceContainer)
+                or isinstance(tie_parentage, abjad.OnBeatGraceContainer)
+                or isinstance(tie_parentage, abjad.AfterGraceContainer)
+            ):
+                pass
+            else:
+                post_graces.append(tie)
+
+    for tie in post_graces:
+        abjad.attach(
+            abjad.LilyPondLiteral(r"\revert Staff.Accidental.X-extent", site="before"),
+            tie[0],
+        )
+        abjad.attach(
+            abjad.LilyPondLiteral(
+                r"\override Staff.Accidental.X-extent = ##f", site="absolute_after"
+            ),
+            tie[-1],
+        )
 
     for chord in chords:
         abjad.attach(
@@ -175,8 +347,9 @@ def handle_accidentals(score):
             chord[-1],
         )
 
-        for head in chord[0].note_heads:
-            head.is_forced = True
+        if force_accidentals is True:
+            for head in chord[0].note_heads:
+                head.is_forced = True
 
     ficta_ties = abjad.select.group_by_contiguity(ficta_ties)
 
@@ -354,12 +527,13 @@ def metronome_markups(
 # markups
 
 
-def boxed_markup(string, tweaks, font_name="Bodoni72 Book", fontsize=8):
+def boxed_markup(string, tweaks=None, font_name="Bodoni72 Book", fontsize=2):
     markup = abjad.Markup(
         rf"""\markup \override #'(font-name . " {font_name} ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #{fontsize} \box \line {{ {string} }}""",
     )
 
-    for tweak in tweaks:
-        markup = abjad.bundle(markup, tweak)
+    if tweaks is not None:
+        for tweak in tweaks:
+            markup = abjad.bundle(markup, tweak)
 
     return markup
