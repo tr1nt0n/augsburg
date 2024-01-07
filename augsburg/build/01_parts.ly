@@ -55,6 +55,8 @@
                         cs'4
                         :32
                         \pp
+                        - \tweak color \四
+                        - \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { ( SYNTHESIZER EIN ) }
                         (
                         - \tweak stencil #constante-hairpin
                         \<
@@ -127,6 +129,8 @@
                         <as cs' fs' as'>4..
                         - \tenuto
                         \p
+                        - \tweak color \四
+                        - \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { ( SYNTHESIZER AUS ) }
                         \breathe
                         \override Staff.Accidental.X-extent = ##f
                         \override Staff.Accidental.X-extent = ##f
@@ -154,7 +158,7 @@
                         \arpeggio
                         \override Staff.Accidental.X-extent = ##f
                         \revert Staff.Accidental.X-extent
-                        <a c' fs' as'>2
+                        <a c' fs' gs'>2
                         - \accent
                         \ff
                         )
@@ -182,6 +186,7 @@
                         s1 * 1
                         s1 * 1
                         \once \override Accidental.stencil = ##f
+                        \once \override Staff.StemTremolo.direction = #DOWN
                         \revert Staff.Accidental.X-extent
                         <cs,, cs,>1
                             _ #(make-dynamic-script (markup #:whiteout #:italic "ffpp"))

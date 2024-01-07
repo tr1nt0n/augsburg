@@ -66,6 +66,15 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([0, 0, 1, 2, 2, 2, 5, 6, 6, 8, 8, 9]),
     ),
+    trinton.attachment_command(
+        attachments=[
+            library.boxed_markup(
+                string="( SYNTHESIZER EIN )",
+                tweaks=[r"- \tweak color \四"],
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+    ),
     trinton.tremolo_command(selector=trinton.pleaves(grace=False)),
     trinton.tremolo_command(selector=trinton.select_leaves_by_index([-1])),
     trinton.notehead_bracket_command(),
@@ -84,7 +93,7 @@ trinton.make_music(
             ["fs'", "d'", "as", "fs"],
             ["f'", "ds'", "b", "fs"],
             ["fss'", "ds'", "cs'", "as"],
-            ["as'", "fs'", "c'", "a"],
+            ["gs'", "fs'", "c'", "a"],
         ]
     ),
     trinton.attachment_command(
@@ -116,6 +125,15 @@ trinton.make_music(
         selector=trinton.select_logical_ties_by_index(
             [0, 1, 2, 2, 2, -1, -1], first=True, pitched=True
         ),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            library.boxed_markup(
+                string="( SYNTHESIZER AUS )",
+                tweaks=[r"- \tweak color \四"],
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
     ),
     voice=score["piano 1 voice"],
 )
@@ -173,7 +191,9 @@ trinton.make_music(
             [0, 0, 0, 0, 0, 1, 3, 3, 5, 6, 6, -1, -1], first=True
         ),
     ),
-    trinton.tremolo_command(selector=trinton.select_leaves_by_index([0])),
+    trinton.tremolo_command(
+        selector=trinton.select_leaves_by_index([0]), direction="DOWN"
+    ),
     trinton.invisible_accidentals_command(selector=trinton.pleaves()),
     voice=score["piano 3 voice"],
     beam_meter=True,
