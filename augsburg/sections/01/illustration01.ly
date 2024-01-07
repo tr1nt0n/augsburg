@@ -291,8 +291,8 @@
                             c'32 * 99/32
                             \once \override Accidental.stencil = ##f
                             c'32 * 69/32
-                            \set suggestAccidentals = ##t
                             \once \override Accidental.stencil = ##f
+                            \set suggestAccidentals = ##t
                             c'32 * 13/8
                             \once \override Accidental.stencil = ##f
                             c'32 * 47/32

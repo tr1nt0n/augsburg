@@ -74,9 +74,11 @@ afterGraceFraction = #(cons 15 16)
         \override Accidental.whiteout = 1
         % \override Accidental.X-extent = ##f
 
+        \override BarLine.color = \二
         \override BarLine.transparent = ##t
         \override BarLine.hair-thickness = 0.5
         \override BarLine.thick-thickness = #10
+        \override BarLine.layer = 2
         % \override BarLine.X-extent = #'(0 . 0)
         % \override BarLine.X-extent = ##f
         % \override BarLine.X-offset = -4
@@ -100,6 +102,7 @@ afterGraceFraction = #(cons 15 16)
         \override Clef.layer = 2
         \override Clef.whiteout-style = #'outline
         \override Clef.whiteout = 1
+        \override Clef.color = \二
 
         \override DynamicText.font-size = #-2
         \override DynamicText.layer = 2
@@ -112,16 +115,25 @@ afterGraceFraction = #(cons 15 16)
 
         \override Hairpin.to-barline = ##f
 
+        \override KeySignature.color = \二
+        \override KeySignature.layer = 2
+        \override KeySignature.whiteout-style = #'outline
+        \override KeySignature.whiteout = 1
+
         \override MeasureSpanner.direction = #UP
         \override MeasureSpanner.thickness = #1.5
         \override MeasureSpanner.font-size = 7
         \override MeasureSpanner.font-name = "Bodoni72 Book"
         \override MeasureSpanner.padding = 5
+        \override MeasureSpanner.color = \二
 
         \override NoteCollision.merge-differently-dotted = ##t
         \override NoteCollision.merge-differently-headed = ##t
 
         \override PianoPedalBracket.shorten-pair = #'(0 . -4)
+        \override PianoPedalBracket.color = \一
+
+        \override SpanBar.color = \二
 
         \override Staff.thickness = #0.5
 
@@ -136,6 +148,8 @@ afterGraceFraction = #(cons 15 16)
             \override #'(font-name . "ekmelos")
             \char ##xe222
         }
+
+        \override SustainPedal.color = \一
 
         \override TextScript.font-name = "Bodoni72 Book"
         \override TextScript.whiteout = 1
@@ -263,7 +277,7 @@ afterGraceFraction = #(cons 15 16)
 
         \override Glissando.bound-details.left.padding = #0.5
         \override Glissando.bound-details.right.padding = #0.5
-        \override Glissando.color = "darkmagenta"
+        \override Glissando.color = #(rgb-color 190/255 132/255 170/255)
 
         \override NoteHead.X-extent = #'(0 . 0)
         \override NoteHead.transparent = ##t
@@ -271,7 +285,7 @@ afterGraceFraction = #(cons 15 16)
 
         \override StaffSymbol.line-count = #2
         \override StaffSymbol.line-positions = #'(5 -5)
-        \override StaffSymbol.color = #(rgb-color 49/110 63/110 87/110)
+        \override StaffSymbol.color = #(rgb-color 170/255 165/255 230/255)
 
         \override Stem.stencil = ##f
 
@@ -338,13 +352,13 @@ afterGraceFraction = #(cons 15 16)
 	))
     max-systems-per-page = 4
     % system-separator-markup = \markup \fontsize #12 { \tremolo-moderato }
-    system-system-spacing = #'((basic-distance . 10) (minimum-distance . 10) (padding . 14))
+    system-system-spacing = #'((basic-distance . 22) (minimum-distance . 22) (padding . 22))
     indent = 20\mm
     short-indent = 15\mm
     bottom-margin = 10\mm
     left-margin = 10\mm
     right-margin = 10\mm
-    top-margin = 10\mm
+    top-margin = 20\mm
 
     oddHeaderMarkup = \markup ""
     evenHeaderMarkup = \markup ""

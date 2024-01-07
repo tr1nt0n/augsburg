@@ -53,6 +53,32 @@ def logistic_map_sequence(index):
     return trinton.rotated_sequence(logistic_map, index)
 
 
+# immutables
+
+change_to_rh = eval(
+    """abjad.LilyPondLiteral(
+        r'\change Staff = "piano 1 staff"', site="before"
+    )"""
+)
+
+change_to_lh = eval(
+    """abjad.LilyPondLiteral(
+        r'\change Staff = "piano 3 staff"', site="before"
+    )"""
+)
+
+revert_to_rh = eval(
+    """abjad.LilyPondLiteral(
+        r'\change Staff = "piano 1 staff"', site="absolute_after"
+    )"""
+)
+
+revert_to_lh = eval(
+    """abjad.LilyPondLiteral(
+        r'\change Staff = "piano 3 staff"', site="absolute_after"
+    )"""
+)
+
 # notation tools
 
 
@@ -342,7 +368,7 @@ def handle_accidentals(score, force_accidentals=True):
         )
         abjad.attach(
             abjad.LilyPondLiteral(
-                r"\override Staff.Accidental.X-extent = ##f", site="after"
+                r"\override Staff.Accidental.X-extent = ##f", site="absolute_after"
             ),
             chord[-1],
         )
@@ -358,9 +384,7 @@ def handle_accidentals(score, force_accidentals=True):
         last_tie = group[-1]
 
         abjad.attach(
-            abjad.LilyPondLiteral(
-                r"\set suggestAccidentals = ##t", site="absolute_before"
-            ),
+            abjad.LilyPondLiteral(r"\set suggestAccidentals = ##t", site="before"),
             first_tie[0],
         )
 
@@ -463,7 +487,11 @@ _metric_modulations = {
 
 
 def metronome_markups(
-    tempo_string, previous_tempo_string=None, string_only=False, parenthesis=False
+    tempo_string,
+    previous_tempo_string=None,
+    padding=13.5,
+    string_only=False,
+    parenthesis=False,
 ):
 
     if (
@@ -493,7 +521,7 @@ def metronome_markups(
                 mark = abjad.LilyPondLiteral(
                     [
                         r"^ \markup {",
-                        r"  \raise #13.5 \with-dimensions-from \null",
+                        rf"  \raise #{padding} \with-dimensions-from \null",
                         r"  \override #'(font-size . 5.5)",
                         r"  \concat {",
                         f"      {tempo_markup}",
@@ -511,7 +539,7 @@ def metronome_markups(
                 mark = abjad.LilyPondLiteral(
                     [
                         r"^ \markup {",
-                        r"  \raise #13.5 \with-dimensions-from \null",
+                        rf"  \raise #{padding} \with-dimensions-from \null",
                         r"  \override #'(font-size . 5.5)",
                         r"  \concat {",
                         f"      {tempo_markup}",

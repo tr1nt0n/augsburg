@@ -359,13 +359,13 @@ afterGraceFraction = #(cons 15 16)
 	))
     max-systems-per-page = 4
     % system-separator-markup = \markup \fontsize #12 { \tremolo-moderato }
-    system-system-spacing = #'((basic-distance . 10) (minimum-distance . 10) (padding . 14))
+    system-system-spacing = #'((basic-distance . 22) (minimum-distance . 22) (padding . 22))
     indent = 20\mm
     short-indent = 15\mm
     bottom-margin = 10\mm
     left-margin = 10\mm
     right-margin = 10\mm
-    top-margin = 10\mm
+    top-margin = 20\mm
 
     oddHeaderMarkup = \markup ""
     evenHeaderMarkup = \markup ""
