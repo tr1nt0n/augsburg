@@ -76,8 +76,8 @@
             - \tweak padding #16.5
             - \abjad-solid-line-with-arrow
             - \tweak bound-details.left.text \markup \concat { { \override #'(font-size . 5.5) \concat { ( \abjad-metronome-mark-markup #2 #0 #2 #"60"  ) } } \hspace #0.5 }
-            - \tweak bound-details.right.text \markup { \override #'(font-size . 5.5) \concat { \abjad-metronome-mark-mixed-number-markup #2 #0 #2 #"97" #"1" #"2"  [\abjad-metric-modulation-tuplet-lhs #3 #0 #16 #13 #2 #0 #'(1 . 1)] } }
-            - \tweak bound-details.right.padding 4
+            - \tweak bound-details.right.text \markup { \override #'(font-size . 5.5) \concat { \abjad-metronome-mark-markup #2 #0 #2 #"33"  [\abjad-metric-modulation-tuplet-lhs #1 #0 #32 #35 #2 #0 #'(1 . 1)] } }
+            - \tweak bound-details.right.padding 6
             \startTextSpan
             \once \override Score.BarLine.transparent = ##f
             \once \override MultiMeasureRest.transparent = ##t
@@ -847,6 +847,7 @@
                         - \abjad-zero-padding-glissando
                           %! abjad.glissando(7)
                         \glissando
+                        \sustainOn
                         {
                             \once \override Flag.stroke-style = #"grace" 
                             \ottava -2
@@ -870,6 +871,7 @@
                             \undo \hide NoteHead
                             <a,,,! as,,,!>16
                             )
+                            \sustainOff
                             \ottava 0
                             \ottava 0
                             \override Staff.Accidental.X-extent = ##f

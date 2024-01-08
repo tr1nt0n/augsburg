@@ -223,10 +223,7 @@ def reset_line_positions(score, voice_names):
             abjad.attach(reset, shard[0])
 
 
-def interruptive_polyphony(
-    hand,
-    stage=1,
-):
+def interruptive_polyphony(hand, stage=1, dynamic=True):
     def polyphony(argument):
         if hand == "rh":
             colors = ["\一", "\三"]
@@ -238,31 +235,37 @@ def interruptive_polyphony(
         ):
             leaves = abjad.select.leaves(voice)
 
+            literal_strings = [
+                rf"\override NoteHead.details.interrupt-color = {color}",
+                rf"\override NoteHead.details.switch-color = {color}",
+                rf"\override NoteHead.details.folow-color = {color}",
+                rf"\override NoteHead.details.hocket-color = {color}",
+                rf"\override Accidental.color = {color}",
+                rf"\override Beam.color = {color}",
+                rf"\override Dots.color = {color}",
+                rf"\override Flag.color = {color}",
+                rf"\override Glissando.color = {color}",
+                rf"\override MultiMeasureRest.color = {color}",
+                rf"\override NoteHead.color = {color}",
+                rf"\override RepeatTie.color = {color}",
+                rf"\override Rest.color = {color}",
+                rf"\override Slur.color = {color}",
+                rf"\override Stem.color = {color}",
+                rf"\override StemTremolo.color = {color}",
+                rf"\override Tie.color = {color}",
+                rf"\override TupletBracket.color = {color}",
+                rf"\override TupletNumber.color = {color}",
+                r"\override Dots.staff-position = #2",
+            ]
+
+            if dynamic is True:
+                literal_strings.append(
+                    rf"\override DynamicText.color = {color}",
+                )
+
             abjad.attach(
                 abjad.LilyPondLiteral(
-                    [
-                        rf"\override NoteHead.details.interrupt-color = {color}",
-                        rf"\override NoteHead.details.switch-color = {color}",
-                        rf"\override NoteHead.details.folow-color = {color}",
-                        rf"\override NoteHead.details.hocket-color = {color}",
-                        rf"\override Accidental.color = {color}",
-                        rf"\override Beam.color = {color}",
-                        rf"\override Dots.color = {color}",
-                        rf"\override Flag.color = {color}",
-                        rf"\override Glissando.color = {color}",
-                        rf"\override MultiMeasureRest.color = {color}",
-                        rf"\override NoteHead.color = {color}",
-                        rf"\override RepeatTie.color = {color}",
-                        rf"\override Rest.color = {color}",
-                        rf"\override Slur.color = {color}",
-                        rf"\override Stem.color = {color}",
-                        rf"\override StemTremolo.color = {color}",
-                        rf"\override Tie.color = {color}",
-                        rf"\override TupletBracket.color = {color}",
-                        rf"\override TupletNumber.color = {color}",
-                        rf"\override DynamicText.color = {color}",
-                        r"\override Dots.staff-position = #2",
-                    ],
+                    literal_strings,
                     site="before",
                 ),
                 leaves[0],

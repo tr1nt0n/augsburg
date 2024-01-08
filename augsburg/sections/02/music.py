@@ -238,6 +238,10 @@ trinton.make_music(
         attachments=[abjad.Clef("treble"), abjad.Clef("bass")],
         selector=trinton.pleaves(),
     ),
+    trinton.linear_attachment_command(
+        attachments=[abjad.StartPianoPedal(), abjad.StopPianoPedal()],
+        selector=trinton.pleaves(),
+    ),
     trinton.attachment_command(
         attachments=[
             library.boxed_markup(string="( Tasten )"),
@@ -332,6 +336,60 @@ trinton.make_music(
 
 # filter music
 
+trinton.make_music(
+    lambda _: trinton.select_target(_, (6, 11)),
+    evans.RhythmHandler(
+        evans.RhythmHandler(rmakers.note),
+    ),
+    trinton.aftergrace_command(selector=trinton.select_leaves_by_index([-1])),
+    evans.PitchHandler([9]),
+    trinton.pitch_with_selector_command(
+        pitch_list=[-9], selector=trinton.select_leaves_by_index([-1])
+    ),
+    trinton.glissando_command(
+        selector=trinton.ranged_selector(ranges=[range(0, 9)], nested=True),
+        zero_padding=True,
+    ),
+    voice=score["piano 5 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (13,)),
+    evans.RhythmHandler(
+        evans.RhythmHandler(evans.talea([13], 16)),
+    ),
+    trinton.aftergrace_command(selector=trinton.select_logical_ties_by_index([-1])),
+    evans.PitchHandler(
+        [
+            -9,
+            -5,
+        ]
+    ),
+    trinton.glissando_command(
+        selector=trinton.ranged_selector(
+            ranges=[range(0, 3), range(2, 5)], nested=True
+        ),
+        zero_padding=True,
+    ),
+    voice=score["piano 5 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (15,)),
+    evans.RhythmHandler(
+        evans.RhythmHandler(evans.talea([11], 16)),
+    ),
+    trinton.aftergrace_command(selector=trinton.select_logical_ties_by_index([-1])),
+    evans.PitchHandler([-9, -3]),
+    trinton.glissando_command(
+        selector=trinton.ranged_selector(
+            ranges=[range(0, 3), range(2, 5)], nested=True
+        ),
+        zero_padding=True,
+    ),
+    voice=score["piano 5 voice"],
+)
+
 
 # globals
 
@@ -399,7 +457,7 @@ trinton.make_music(
                 parenthesis=True,
             ),
             library.metronome_markups(
-                tempo_string="97 1/2",
+                tempo_string="33",
                 previous_tempo_string="60",
                 string_only=True,
                 parenthesis=False,
@@ -409,70 +467,9 @@ trinton.make_music(
         style="solid-line-with-arrow",
         padding=16.5,
         full_string=True,
-        right_padding=-4,
+        right_padding=-6,
     ),
     voice=score["Global Context"],
-)
-
-# filter music
-
-trinton.make_music(
-    lambda _: trinton.select_target(_, (6, 11)),
-    evans.RhythmHandler(
-        evans.RhythmHandler(rmakers.note),
-    ),
-    trinton.aftergrace_command(selector=trinton.select_leaves_by_index([-1])),
-    evans.PitchHandler([9]),
-    trinton.pitch_with_selector_command(
-        pitch_list=[-9], selector=trinton.select_leaves_by_index([-1])
-    ),
-    trinton.glissando_command(
-        selector=trinton.ranged_selector(ranges=[range(0, 9)], nested=True),
-        zero_padding=True,
-    ),
-    voice=score["piano 5 voice"],
-)
-
-trinton.make_music(
-    lambda _: trinton.select_target(_, (13,)),
-    evans.RhythmHandler(
-        evans.RhythmHandler(evans.talea([13], 16)),
-    ),
-    trinton.aftergrace_command(selector=trinton.select_logical_ties_by_index([-1])),
-    evans.PitchHandler(
-        [
-            -9,
-            -5,
-        ]
-    ),
-    trinton.glissando_command(
-        selector=trinton.ranged_selector(
-            ranges=[range(0, 3), range(2, 5)], nested=True
-        ),
-        zero_padding=True,
-    ),
-    voice=score["piano 5 voice"],
-)
-
-trinton.make_music(
-    lambda _: trinton.select_target(_, (15,)),
-    evans.RhythmHandler(
-        evans.RhythmHandler(evans.talea([11], 16)),
-    ),
-    trinton.aftergrace_command(selector=trinton.select_logical_ties_by_index([-1])),
-    evans.PitchHandler(
-        [
-            -9,
-            -3,
-        ]
-    ),
-    trinton.glissando_command(
-        selector=trinton.ranged_selector(
-            ranges=[range(0, 3), range(2, 5)], nested=True
-        ),
-        zero_padding=True,
-    ),
-    voice=score["piano 5 voice"],
 )
 
 # beautification

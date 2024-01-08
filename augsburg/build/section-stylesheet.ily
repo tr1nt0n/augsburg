@@ -65,7 +65,7 @@ afterGraceFraction = #(cons 15 16)
         proportionalNotationDuration = #(ly:make-moment 1 20)
         pedalSustainStyle = #'mixed
 
-        \override StaffGrouper.staff-staff-spacing = #'((basic-distance . 13) (minimum distance . 13) (padding . 0) (stretchability . 0))
+        \override StaffGrouper.staffgroup-staff-spacing = #'((basic-distance . 5) (minimum distance . 5) (padding . 1) (stretchability . 0))
         \override StaffGrouper.staff-staff-spacing = #'((basic-distance . 13) (minimum distance . 13) (padding . 0) (stretchability . 0))
 
         \override AccidentalSuggestion.avoid-slur = #'ignore
@@ -208,11 +208,9 @@ afterGraceFraction = #(cons 15 16)
         \override Accidental.X-extent = ##f
 
         \override AccidentalSuggestion.direction = #UP
-        % \override AccidentalSuggestion.Y-extent = ##f
         \override AccidentalSuggestion.whiteout-style = #'outline
         \override AccidentalSuggestion.whiteout = 1
         \override AccidentalSuggestion.layer = 2
-
 
         \override DurationLine.style = #'line
         \override DurationLine.thickness = #3
@@ -362,7 +360,7 @@ afterGraceFraction = #(cons 15 16)
 	))
     max-systems-per-page = 4
     % system-separator-markup = \markup \fontsize #12 { \tremolo-moderato }
-    system-system-spacing = #'((basic-distance . 17) (minimum-distance . 17) (padding . 17))
+    system-system-spacing = #'((basic-distance . 17) (minimum-distance . 17) (padding . 17) (stretchability . 0))
     indent = 20\mm
     short-indent = 15\mm
     bottom-margin = 10\mm
