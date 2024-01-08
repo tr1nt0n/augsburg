@@ -65,8 +65,8 @@ afterGraceFraction = #(cons 15 16)
         proportionalNotationDuration = #(ly:make-moment 1 20)
         pedalSustainStyle = #'mixed
 
-        \override StaffGrouper.staff-staff-spacing = #'((basic-distance . 0) (minimum distance . 3) (padding . 3) (stretchability . 12))
-        \override StaffGrouper.staffgroup-staff-spacing = #'((basic-distance . 0) (minimum distance . 3) (padding . 4) (stretchability . 28))
+        \override StaffGrouper.staff-staff-spacing = #'((basic-distance . 13) (minimum distance . 13) (padding . 0) (stretchability . 0))
+        \override StaffGrouper.staff-staff-spacing = #'((basic-distance . 13) (minimum distance . 13) (padding . 0) (stretchability . 0))
 
         \override AccidentalSuggestion.avoid-slur = #'ignore
         \override Accidental.layer = 3
@@ -114,6 +114,8 @@ afterGraceFraction = #(cons 15 16)
         \override Glissando.breakable = ##t
 
         \override Hairpin.to-barline = ##f
+
+        \override KeyCancellation.color = \二
 
         \override KeySignature.color = \二
         \override KeySignature.layer = 2
@@ -205,6 +207,13 @@ afterGraceFraction = #(cons 15 16)
 
         \override Accidental.X-extent = ##f
 
+        \override AccidentalSuggestion.direction = #UP
+        % \override AccidentalSuggestion.Y-extent = ##f
+        \override AccidentalSuggestion.whiteout-style = #'outline
+        \override AccidentalSuggestion.whiteout = 1
+        \override AccidentalSuggestion.layer = 2
+
+
         \override DurationLine.style = #'line
         \override DurationLine.thickness = #3
         \override DurationLine.to-barline = ##f
@@ -218,6 +227,7 @@ afterGraceFraction = #(cons 15 16)
         \name leftHandStaff
         \alias Staff
         \override TupletBracket.direction = #DOWN
+        \override AccidentalSuggestion.direction = #DOWN
     } % just trying this out
 
     \context {
@@ -352,7 +362,7 @@ afterGraceFraction = #(cons 15 16)
 	))
     max-systems-per-page = 4
     % system-separator-markup = \markup \fontsize #12 { \tremolo-moderato }
-    system-system-spacing = #'((basic-distance . 22) (minimum-distance . 22) (padding . 22))
+    system-system-spacing = #'((basic-distance . 17) (minimum-distance . 17) (padding . 17))
     indent = 20\mm
     short-indent = 15\mm
     bottom-margin = 10\mm

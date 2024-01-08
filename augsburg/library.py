@@ -329,9 +329,10 @@ def handle_accidentals(score, force_accidentals=True):
     for tie in pties:
         previous_leaf = abjad.select.with_previous_leaf(tie)[0]
         tie_duration = abjad.get.duration(tie)
+        previous_duration = abjad.get.duration(previous_leaf)
         if isinstance(tie[0], abjad.Chord):
             chords.append(tie)
-        if tie_duration < abjad.Duration(1, 16):
+        if previous_duration < abjad.Duration(1, 16):
             ficta_ties.append(tie)
         previous_parentage = abjad.get.parentage(previous_leaf).parent
         if (
@@ -556,9 +557,19 @@ def metronome_markups(
 
 
 def boxed_markup(string, tweaks=None, font_name="Bodoni72 Book", fontsize=2):
-    markup = abjad.Markup(
-        rf"""\markup \override #'(font-name . " {font_name} ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #{fontsize} \box \line {{ {string} }}""",
-    )
+    if isinstance(string, list):
+        lines = [f"\line {{ {_} }} " for _ in string]
+
+        lines = "".join(lines)
+
+        markup = abjad.Markup(
+            rf"""\markup \override #'(font-name . " {font_name} ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #{fontsize} {{ \center-column {{ { lines } }} }}""",
+        )
+
+    else:
+        markup = abjad.Markup(
+            rf"""\markup \override #'(font-name . " {font_name} ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #{fontsize} \box \line {{ {string} }}""",
+        )
 
     if tweaks is not None:
         for tweak in tweaks:
