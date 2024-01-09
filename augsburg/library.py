@@ -82,6 +82,39 @@ revert_to_lh = eval(
 # notation tools
 
 
+def low_pass_glissandi(selector=trinton.pleaves()):
+    def glissando(argument):
+        selections = selector(argument)
+        selections = abjad.select.logical_ties(selections)
+        selections = abjad.select.exclude(selections, [-1])
+
+        singletons = []
+        multiples = []
+
+        for tie in selections:
+            if len(tie) > 1:
+                multiples.append(tie)
+
+            else:
+                singletons.append(tie)
+
+        for tie in singletons:
+            abjad.attach(abjad.Glissando(zero_padding=True))
+
+        for tie in multiples:
+            glissando_group = abjad.select.with_next_leaf(tie)
+
+            abjad.glissando(
+                glissando_group,
+                hide_middle_note_heads=True,
+                allow_repeats=True,
+                allow_ties=True,
+                zero_padding=True,
+            )
+
+    return glissando
+
+
 def change_lines(
     lines,
     selector=trinton.select_leaves_by_index([0], pitched=True),
