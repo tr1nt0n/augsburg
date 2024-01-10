@@ -12,7 +12,7 @@ from itertools import cycle
 from augsburg import library
 
 
-def rhythm_a(index=0, stage=1):
+def rhythm_a(index=0, stage=1, hand_swapping=False):
     def rhythm(durations):
         beat_regions = []
         for i, duration in enumerate(durations):
@@ -292,6 +292,25 @@ def rhythm_a(index=0, stage=1):
                 for parental_group in parental_groups:
                     abjad.mutate.fuse(parental_group)
 
+        if hand_swapping is True:
+            p_ties = abjad.select.logical_ties(components, pitched=True)
+
+            for i, tie in enumerate(p_ties):
+                if i % 2 == 0:
+                    abjad.attach(library.change_to_lh, tie[0])
+                else:
+                    abjad.attach(library.change_to_rh, tie[0])
+
+            rests = abjad.select.rests(components)
+
+            for rest in rests:
+                abjad.attach(library.change_to_rh, rest)
+
+            abjad.attach(library.revert_to_rh, p_ties[-1][-1])
+
+        tuplets = abjad.select.tuplets(components)
+
+        for tuplet in tuplets:
             tuplet_contents = abjad.get.contents(tuplet)[1:]
 
             if any(isinstance(item, abjad.Tuplet) for item in tuplet_contents):
@@ -308,9 +327,9 @@ def rhythm_a(index=0, stage=1):
                 beam_groups = abjad.select.group_by_contiguity(beam_groups)
 
                 for group in beam_groups:
-                    group_pleaves = abjad.select.leaves(group, pitched=True)
-                    if len(group_pleaves) > 1:
-                        abjad.beam(group, beam_lone_notes=False)
+                    # group_pleaves = abjad.select.leaves(group, pitched=True)
+                    # if len(group_pleaves) > 1:
+                    abjad.beam(group, beam_lone_notes=False)
 
             # tuplet_parent = abjad.get.parentage(tuplet).parent
             # if isinstance(tuplet_parent, abjad.Tuplet):

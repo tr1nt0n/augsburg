@@ -358,7 +358,7 @@ afterGraceFraction = #(cons 15 16)
 	        #:music "haydn"
 	        #:brace "haydn"
 	))
-    max-systems-per-page = 4
+    min-systems-per-page = 2
     % system-separator-markup = \markup \fontsize #12 { \tremolo-moderato }
     system-system-spacing = #'((basic-distance . 17) (minimum-distance . 17) (padding . 17) (stretchability . 17))
     indent = 20\mm

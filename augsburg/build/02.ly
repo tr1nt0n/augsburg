@@ -63,7 +63,7 @@
             - \abjad-solid-line-with-arrow
             - \tweak bound-details.left.text \markup \concat { { \override #'(font-size . 5.5) \concat { ( \abjad-metronome-mark-markup #2 #0 #2 #"60"  ) } } \hspace #0.5 }
             - \tweak bound-details.right.text \markup { \override #'(font-size . 5.5) \concat { \abjad-metronome-mark-markup #2 #0 #2 #"33"  [\abjad-metric-modulation-tuplet-lhs #1 #0 #32 #35 #2 #0 #'(1 . 1)] } }
-            - \tweak bound-details.right.padding 6
+            - \tweak bound-details.right.padding 8
             \startTextSpan
             \once \override Score.BarLine.transparent = ##f
             \once \override MultiMeasureRest.transparent = ##t
@@ -238,6 +238,8 @@
                         \times 4/5
                         {
                             \change Staff = "piano 3 staff"
+                            \once \override TupletBracket.bracket-visibility = ##f
+                            \once \override TupletBracket.bracket-visibility = ##f
                             c'16
                             _ #(make-dynamic-script
                                 (markup
@@ -266,6 +268,8 @@
                         \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 7 8) (ly:make-duration 6 0))
                         \times 8/7
                         {
+                            \once \override TupletBracket.bracket-visibility = ##f
+                            \once \override TupletBracket.bracket-visibility = ##f
                             c'32
                             [
                             \set suggestAccidentals = ##f
@@ -286,6 +290,8 @@
                         \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 4 0))
                         \times 2/3
                         {
+                            \once \override TupletBracket.bracket-visibility = ##f
+                            \once \override TupletBracket.bracket-visibility = ##f
                             c'16
                             [
                             \set suggestAccidentals = ##f
@@ -317,6 +323,7 @@
                         \times 8/7
                         {
                             \change Staff = "piano 1 staff"
+                            \once \override TupletBracket.bracket-visibility = ##f
                             r64
                             [
                             \change Staff = "piano 1 staff"
@@ -351,6 +358,7 @@
                         \times 2/3
                         {
                             \change Staff = "piano 1 staff"
+                            \once \override TupletBracket.bracket-visibility = ##f
                             r16
                             [
                             \change Staff = "piano 1 staff"
@@ -383,6 +391,8 @@
                         \times 4/5
                         {
                             \change Staff = "piano 1 staff"
+                            \once \override TupletBracket.bracket-visibility = ##f
+                            \once \override TupletBracket.bracket-visibility = ##f
                             c'32
                             [
                             \>
@@ -399,6 +409,8 @@
                         \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 7 8) (ly:make-duration 7 0))
                         \times 8/7
                         {
+                            \once \override TupletBracket.bracket-visibility = ##f
+                            \once \override TupletBracket.bracket-visibility = ##f
                             c'64
                             [
                             \set suggestAccidentals = ##f
@@ -419,6 +431,8 @@
                         \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
                         \times 2/3
                         {
+                            \once \override TupletBracket.bracket-visibility = ##f
+                            \once \override TupletBracket.bracket-visibility = ##f
                             c'32
                             [
                             \set suggestAccidentals = ##f
@@ -448,11 +462,23 @@
                         ~
                         c'16
                         ~
+                        \once \override TupletBracket.bracket-visibility = ##f
+                        \once \override TupletBracket.bracket-visibility = ##f
                         c'32..
+                        [
                         \set suggestAccidentals = ##f
                         \change Staff = "piano 1 staff"
                         r128
+                        ]
                         \change Staff = "piano 3 staff"
+                        \once \override Stem.cross-staff = ##t
+                        \once \override Stem.Y-extent = #'(0 . 0)
+                        \once \override Stem.details.lengths = #'(33)
+                        \once \override Flag.cross-staff = ##t
+                        \once \override Flag.Y-extent = #'(0 . 0)
+                        \once \override StaffGroup.Flag.Y-offset = 33
+                        \once \override TupletBracket.bracket-visibility = ##f
+                        \once \override TupletBracket.bracket-visibility = ##f
                         \set suggestAccidentals = ##t
                         c'16
                         \set suggestAccidentals = ##f
@@ -461,7 +487,10 @@
                         \times 8/7
                         {
                             \change Staff = "piano 1 staff"
+                            \once \override TupletBracket.bracket-visibility = ##f
+                            \once \override TupletBracket.bracket-visibility = ##f
                             r128
+                            [
                             \change Staff = "piano 1 staff"
                             \set suggestAccidentals = ##t
                             c'32.
@@ -477,11 +506,14 @@
                                         )
                                     )
                                 )
+                            ]
                             ~
                         }
                         \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
                         \times 2/3
                         {
+                            \once \override TupletBracket.bracket-visibility = ##f
+                            \once \override TupletBracket.bracket-visibility = ##f
                             c'32
                             [
                             \set suggestAccidentals = ##f
@@ -509,6 +541,7 @@
                         \times 2/3
                         {
                             \change Staff = "piano 1 staff"
+                            \once \override TupletBracket.bracket-visibility = ##f
                             r16
                             [
                             \change Staff = "piano 1 staff"
@@ -523,6 +556,7 @@
                         \times 4/5
                         {
                             \change Staff = "piano 1 staff"
+                            \once \override TupletBracket.bracket-visibility = ##f
                             r32
                             [
                             \change Staff = "piano 1 staff"
@@ -538,6 +572,7 @@
                             \set suggestAccidentals = ##f
                         }
                         \change Staff = "piano 1 staff"
+                        \once \override TupletBracket.bracket-visibility = ##f
                         r64
                         [
                         \change Staff = "piano 1 staff"
@@ -561,6 +596,7 @@
                         \times 4/6
                         {
                             \change Staff = "piano 1 staff"
+                            \once \override TupletBracket.bracket-visibility = ##f
                             r32
                             [
                             \change Staff = "piano 3 staff"
@@ -612,6 +648,12 @@
                                 \change Staff = "piano 1 staff"
                                 c'4
                                 \change Staff = "piano 3 staff"
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(33)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                \once \override StaffGroup.Flag.Y-offset = 33
                                 c'4
                             }
                             \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 4) (ly:make-duration 4 0))
@@ -826,7 +868,7 @@
                         \revert Staff.Accidental.X-extent
                         \clef "treble"
                         \afterGrace
-                        <cf'''''! c'''''!>4
+                        <bf''''! b''''!>4
                         ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { ( Tasten ) }
                         (
                           %! abjad.glissando(7)

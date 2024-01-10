@@ -147,6 +147,13 @@ trinton.make_music(
             first=True,
         ),
     ),
+    # trinton.beam_groups(
+    #     selector=trinton.ranged_selector(
+    #         ranges=[range(67, 70)],
+    #         nested=True
+    #     ),
+    #     beam_rests=True
+    # ),
     trinton.attachment_command(
         attachments=[
             library.change_to_rh,
@@ -176,6 +183,29 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([0]),
         direction=abjad.UP,
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                [
+                    r"\once \override Stem.cross-staff = ##t",
+                    r"\once \override Stem.Y-extent = #'(0 . 0)",
+                    r"\once \override Stem.details.lengths = #'(33)",
+                    r"\once \override Flag.cross-staff = ##t",
+                    r"\once \override Flag.Y-extent = #'(0 . 0)",
+                    r"\once \override StaffGroup.Flag.Y-offset = 33",
+                ],
+                site="before",
+            ),
+        ],
+        selector=trinton.select_logical_ties_by_index(
+            [
+                44,
+                -5,
+            ],
+            first=True,
+            pitched=True,
+        ),
     ),
     voice=score["piano 1 voice"],
 )
@@ -229,7 +259,7 @@ trinton.make_music(
     lambda _: trinton.select_target(_, (1,)),
     evans.RhythmHandler(rmakers.note),
     trinton.aftergrace_command(),
-    evans.PitchHandler([["c'''''", "cf'''''"], ["a,,,", "as,,,"]]),
+    evans.PitchHandler([["b''''", "bf''''"], ["a,,,", "as,,,"]]),
     trinton.glissando_command(
         selector=trinton.ranged_selector(ranges=[range(0, 2)], nested=True),
         zero_padding=True,
@@ -467,7 +497,7 @@ trinton.make_music(
         style="solid-line-with-arrow",
         padding=16.5,
         full_string=True,
-        right_padding=-6,
+        right_padding=-8,
     ),
     voice=score["Global Context"],
 )

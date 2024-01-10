@@ -11,7 +11,13 @@ from augsburg import rhythm
 from augsburg import pitch
 
 score = library.augsburg_score(
-    ts.assemble_section_ts([[(2, 4), (1, 4)], [(5, 4) for _ in range(0, 4)]])
+    ts.assemble_section_ts(
+        [
+            [(2, 4), (1, 4)],
+            [(5, 4) for _ in range(0, 4)],
+            ts.return_descending_ts(slice_tuple=(12, 18), reduce=True),
+        ],
+    )
 )
 
 # rh music
@@ -88,7 +94,6 @@ trinton.make_music(
 trinton.make_music(
     lambda _: trinton.select_target(_, (6,)),
     evans.RhythmHandler(evans.talea([3, 1, 1], 4)),
-    # trinton.rewrite_meter_command(),
     trinton.aftergrace_command(selector=trinton.select_leaves_by_index([-1])),
     trinton.glissando_command(
         selector=trinton.ranged_selector(ranges=[range(0, 4)], nested=True),
@@ -114,6 +119,83 @@ trinton.make_music(
         selector=trinton.select_leaves_by_index([0, 0, 1, 1, -1], pitched=True),
     ),
     trinton.tremolo_command(),
+    voice=score["piano 1 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (7, 8)),
+    evans.RhythmHandler(rhythm.rhythm_a(index=10, stage=2, hand_swapping=True)),
+    trinton.notehead_bracket_command(),
+    voice=score["piano 1 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (9, 12)),
+    evans.RhythmHandler(rhythm.rhythm_a(index=2, stage=1, hand_swapping=True)),
+    trinton.notehead_bracket_command(),
+    voice=score["piano 1 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (7, 12)),
+    trinton.attachment_command(
+        attachments=[
+            library.boxed_markup(
+                string=["Auf dem Deckel", "mit Styroporkugeln"],
+                tweaks=[r"- \tweak padding #12"],
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        direction=abjad.UP,
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                [
+                    r"\override Score.Stem.direction = #UP",
+                    r"\override Staff.TupletBracket.direction = #UP",
+                ],
+                site="before",
+            ),
+            abjad.LilyPondLiteral(
+                [
+                    r"\revert Score.Stem.direction",
+                    r"\override Staff.TupletBracket.direction = #UP",
+                ],
+                site="after",
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0, -1]),
+    ),
+    # trinton.linear_attachment_command(
+    #     attachments=[
+    #         abjad.Dynamic('"mf"'),
+    #         abjad.StartHairpin("--"),
+    #         abjad.Dynamic('"p"'),
+    #         abjad.StartHairpin("--"),
+    #         abjad.StartHairpin("<"),
+    #         abjad.Dynamic('"f"'),
+    #         abjad.StartHairpin(">")
+    #     ]
+    # ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                [
+                    r"\once \override Stem.cross-staff = ##t",
+                    r"\once \override Stem.Y-extent = #'(0 . 0)",
+                    r"\once \override Stem.details.lengths = #'(33)",
+                    r"\once \override Flag.cross-staff = ##t",
+                    r"\once \override Flag.Y-extent = #'(0 . 0)",
+                    r"\once \override StaffGroup.Flag.Y-offset = 33",
+                ],
+                site="before",
+            ),
+        ],
+        selector=trinton.select_logical_ties_by_index(
+            [-2, -4], first=True, pitched=True
+        ),
+    ),
     voice=score["piano 1 voice"],
 )
 
@@ -151,6 +233,30 @@ trinton.make_music(
     ),
     trinton.linear_attachment_command(
         attachments=[abjad.StartPianoPedal(), abjad.StopPianoPedal()],
+        selector=trinton.select_leaves_by_index([0, -1]),
+    ),
+    voice=score["piano 3 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (7, 12)),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                [
+                    r"\override Score.Stem.direction = #UP",
+                    r"\override Staff.TupletBracket.direction = #UP",
+                ],
+                site="before",
+            ),
+            abjad.LilyPondLiteral(
+                [
+                    r"\revert Score.Stem.direction",
+                    r"\override Staff.TupletBracket.direction = #DOWN",
+                ],
+                site="after",
+            ),
+        ],
         selector=trinton.select_leaves_by_index([0, -1]),
     ),
     voice=score["piano 3 voice"],
@@ -236,31 +342,31 @@ trinton.make_music(
 #     voice=score["Global Context"],
 # )
 #
-# trinton.make_music(
-#     lambda _: trinton.select_target(_, (15, 16)),
-#     trinton.spanner_command(
-#         strings=[
-#             library.metronome_markups(
-#                 tempo_string="60",
-#                 previous_tempo_string=None,
-#                 string_only=True,
-#                 parenthesis=True,
-#             ),
-#             library.metronome_markups(
-#                 tempo_string="97 1/2",
-#                 previous_tempo_string="60",
-#                 string_only=True,
-#                 parenthesis=False,
-#             ),
-#         ],
-#         selector=trinton.select_leaves_by_index([0, -1]),
-#         style="solid-line-with-arrow",
-#         padding=16.5,
-#         full_string=True,
-#         right_padding=-4,
-#     ),
-#     voice=score["Global Context"],
-# )
+trinton.make_music(
+    lambda _: trinton.select_target(_, (7, 8)),
+    trinton.spanner_command(
+        strings=[
+            library.metronome_markups(
+                tempo_string="97 1/2",
+                previous_tempo_string=None,
+                string_only=True,
+                parenthesis=True,
+            ),
+            library.metronome_markups(
+                tempo_string="60",
+                previous_tempo_string="97 1/2",
+                string_only=True,
+                parenthesis=False,
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0, -1]),
+        style="solid-line-with-arrow",
+        padding=25,
+        full_string=True,
+        right_padding=4,
+    ),
+    voice=score["piano 1 voice"],
+)
 
 # beautification
 

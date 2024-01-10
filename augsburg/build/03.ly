@@ -31,6 +31,18 @@
             \once \override Score.TimeSignature.stencil = ##f
             \time 5/4
             s1 * 5/4
+            \time 3/4
+            s1 * 3/4
+            \time 8/8
+            s1 * 1
+            \time 4/8
+            s1 * 1/2
+            \time 3/8
+            s1 * 3/8
+            \time 5/8
+            s1 * 5/8
+            \time 13/8
+            s1 * 13/8
         }
         \context StaffGroup = "Staff Group"
         <<
@@ -202,6 +214,275 @@
                             :128
                             \f
                         }
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 4) (ly:make-duration 4 0))
+                        \times 4/5
+                        {
+                            \change Staff = "piano 1 staff"
+                            \override Score.Stem.direction = #UP
+                            \override Staff.TupletBracket.direction = #UP
+                            r16
+                            - \tweak padding #12
+                            ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #2 { \center-column { \line { Auf dem Deckel } \line { mit Styroporkugeln }  } }
+                            [
+                            - \tweak padding #25
+                            - \abjad-solid-line-with-arrow
+                            - \tweak bound-details.left.text \markup \concat { { \override #'(font-size . 5.5) \concat { ( \abjad-metronome-mark-mixed-number-markup #2 #0 #2 #"97" #"1" #"2"  ) } } \hspace #0.5 }
+                            - \tweak bound-details.right.text \markup { \override #'(font-size . 5.5) \concat { \abjad-metronome-mark-markup #2 #0 #2 #"60"  [\abjad-metric-modulation-tuplet-lhs #1 #0 #13 #16 #2 #0 #'(1 . 1)] } }
+                            - \tweak bound-details.right.padding -4
+                            \startTextSpan
+                            \change Staff = "piano 3 staff"
+                            \set suggestAccidentals = ##t
+                            c'16
+                            \change Staff = "piano 1 staff"
+                            c'16
+                            \change Staff = "piano 3 staff"
+                            c'16
+                            \change Staff = "piano 1 staff"
+                            c'16
+                            ]
+                            \set suggestAccidentals = ##f
+                        }
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 7 8) (ly:make-duration 5 0))
+                        \times 8/7
+                        {
+                            \change Staff = "piano 1 staff"
+                            r32
+                            [
+                            \change Staff = "piano 3 staff"
+                            \set suggestAccidentals = ##t
+                            c'32
+                            \change Staff = "piano 1 staff"
+                            c'32
+                            \change Staff = "piano 3 staff"
+                            c'32
+                            \change Staff = "piano 1 staff"
+                            c'32
+                            \change Staff = "piano 3 staff"
+                            c'32
+                            \change Staff = "piano 1 staff"
+                            c'32
+                            ]
+                            \set suggestAccidentals = ##f
+                        }
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 3 0))
+                        \times 2/3
+                        {
+                            \change Staff = "piano 1 staff"
+                            r8
+                            [
+                            \change Staff = "piano 3 staff"
+                            c'8
+                            \change Staff = "piano 1 staff"
+                            c'8
+                            ]
+                        }
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 4) (ly:make-duration 2 0))
+                        \times 4/5
+                        {
+                            \tweak text #tuplet-number::calc-fraction-text
+                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 3 0))
+                            \times 6/5
+                            {
+                                \change Staff = "piano 1 staff"
+                                r8
+                                [
+                                \change Staff = "piano 3 staff"
+                                c'8
+                                \change Staff = "piano 1 staff"
+                                c'8
+                                \change Staff = "piano 3 staff"
+                                c'8
+                                \change Staff = "piano 1 staff"
+                                c'8
+                                ]
+                            }
+                            \tweak text #tuplet-number::calc-fraction-text
+                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 7 8) (ly:make-duration 4 0))
+                            \times 8/7
+                            {
+                                \change Staff = "piano 1 staff"
+                                r16
+                                [
+                                \change Staff = "piano 3 staff"
+                                \set suggestAccidentals = ##t
+                                c'16
+                                \change Staff = "piano 1 staff"
+                                c'16
+                                \change Staff = "piano 3 staff"
+                                c'16
+                                \change Staff = "piano 1 staff"
+                                c'16
+                                \change Staff = "piano 3 staff"
+                                c'16
+                                \change Staff = "piano 1 staff"
+                                c'16
+                                \stopTextSpan
+                                ]
+                                \change Staff = "piano 1 staff"
+                                \set suggestAccidentals = ##f
+                            }
+                        }
+                        \change Staff = "piano 1 staff"
+                        r8
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 4) (ly:make-duration 5 0))
+                        \times 4/5
+                        {
+                            \change Staff = "piano 1 staff"
+                            \once \override TupletBracket.bracket-visibility = ##f
+                            r8
+                            [
+                            \change Staff = "piano 3 staff"
+                            c'32
+                            ]
+                        }
+                        \change Staff = "piano 1 staff"
+                        \once \override TupletBracket.bracket-visibility = ##f
+                        r16
+                        [
+                        \change Staff = "piano 1 staff"
+                        r64
+                        \change Staff = "piano 1 staff"
+                        \set suggestAccidentals = ##t
+                        c'64
+                        \set suggestAccidentals = ##f
+                        \change Staff = "piano 1 staff"
+                        r32
+                        ]
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 6 4) (ly:make-duration 5 0))
+                        \times 4/6
+                        {
+                            \change Staff = "piano 1 staff"
+                            \once \override TupletBracket.bracket-visibility = ##f
+                            r8
+                            [
+                            r32
+                            \change Staff = "piano 3 staff"
+                            \set suggestAccidentals = ##t
+                            c'32
+                            ]
+                            \set suggestAccidentals = ##f
+                        }
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 7 6) (ly:make-duration 4 0))
+                        \times 6/7
+                        {
+                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 3 0))
+                            \times 2/3
+                            {
+                                \change Staff = "piano 1 staff"
+                                r8
+                                [
+                                \change Staff = "piano 1 staff"
+                                c'8
+                                \change Staff = "piano 3 staff"
+                                c'8
+                                ]
+                            }
+                            \tweak text #tuplet-number::calc-fraction-text
+                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 5 0))
+                            \times 6/5
+                            {
+                                \change Staff = "piano 1 staff"
+                                c'32
+                                [
+                                \change Staff = "piano 1 staff"
+                                r32
+                                \change Staff = "piano 3 staff"
+                                \set suggestAccidentals = ##t
+                                c'32
+                                \set suggestAccidentals = ##f
+                                \change Staff = "piano 1 staff"
+                                r32
+                                \change Staff = "piano 1 staff"
+                                \set suggestAccidentals = ##t
+                                c'32
+                                ]
+                                \set suggestAccidentals = ##f
+                            }
+                        }
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 3 0))
+                        \times 2/3
+                        {
+                            \change Staff = "piano 1 staff"
+                            r8
+                            [
+                            \change Staff = "piano 3 staff"
+                            c'8
+                            \change Staff = "piano 1 staff"
+                            c'8
+                            ]
+                        }
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 7 6) (ly:make-duration 4 0))
+                        \times 6/7
+                        {
+                            \change Staff = "piano 1 staff"
+                            r16
+                            [
+                            \change Staff = "piano 3 staff"
+                            \set suggestAccidentals = ##t
+                            c'16
+                            \change Staff = "piano 1 staff"
+                            c'16
+                            \change Staff = "piano 3 staff"
+                            c'16
+                            \change Staff = "piano 1 staff"
+                            c'16
+                            \set suggestAccidentals = ##f
+                            \change Staff = "piano 1 staff"
+                            r16
+                            \change Staff = "piano 3 staff"
+                            \set suggestAccidentals = ##t
+                            c'16
+                            ]
+                            \set suggestAccidentals = ##f
+                        }
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 18 13) (ly:make-duration 3 0))
+                        \times 13/18
+                        {
+                            \tweak text #tuplet-number::calc-fraction-text
+                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 6 5) (ly:make-duration 2 0))
+                            \times 5/6
+                            {
+                                \change Staff = "piano 1 staff"
+                                r2
+                                \change Staff = "piano 1 staff"
+                                c'2
+                                \change Staff = "piano 1 staff"
+                                r2
+                            }
+                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 4) (ly:make-duration 2 0))
+                            \times 4/5
+                            {
+                                \change Staff = "piano 3 staff"
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(33)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                \once \override StaffGroup.Flag.Y-offset = 33
+                                c'4
+                                \change Staff = "piano 1 staff"
+                                c'4
+                                \change Staff = "piano 3 staff"
+                                \once \override Stem.cross-staff = ##t
+                                \once \override Stem.Y-extent = #'(0 . 0)
+                                \once \override Stem.details.lengths = #'(33)
+                                \once \override Flag.cross-staff = ##t
+                                \once \override Flag.Y-extent = #'(0 . 0)
+                                \once \override StaffGroup.Flag.Y-offset = 33
+                                c'4
+                                \change Staff = "piano 1 staff"
+                                r4
+                                \change Staff = "piano 1 staff"
+                                c'4
+                                \revert Score.Stem.direction
+                                \override Staff.TupletBracket.direction = #UP
+                                \change Staff = "piano 1 staff"
+                            }
+                        }
                     }
                 }
                 \context timeSignatureStaff = "piano 2 staff"
@@ -216,6 +497,12 @@
                         s1 * 5/4
                         s1 * 5/4
                         s1 * 5/4
+                        s1 * 3/4
+                        s1 * 1
+                        s1 * 1/2
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 13/8
                     }
                 }
                 \context leftHandStaff = "piano 3 staff"
@@ -375,6 +662,16 @@
                         r4
                         r2
                         \sustainOff
+                        \override Score.Stem.direction = #UP
+                        \override Staff.TupletBracket.direction = #UP
+                        s1 * 3/4
+                        s1 * 1
+                        s1 * 1/2
+                        s1 * 3/8
+                        s1 * 5/8
+                        s1 * 13/8
+                        \revert Score.Stem.direction
+                        \override Staff.TupletBracket.direction = #DOWN
                     }
                 }
                 \context thirdStaff = "piano 4 staff"
@@ -418,6 +715,42 @@
                         \once \override Staff.TimeSignature.transparent = ##t
                         \once \override MultiMeasureRest.transparent = ##t
                         R1 * 5/4
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 3/4
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 1
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 1/2
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 3/8
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 5/8
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 13/8
                         \stopStaff \startStaff
                     }
                 }
@@ -500,6 +833,48 @@
                         \undo \hide NoteHead
                         ef16
                     }
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 3/4
+                    \stopStaff \startStaff
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 1
+                    \stopStaff \startStaff
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 1/2
+                    \stopStaff \startStaff
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 3/8
+                    \stopStaff \startStaff
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 5/8
+                    \stopStaff \startStaff
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 13/8
+                    \stopStaff \startStaff
                 }
             }
         >>
