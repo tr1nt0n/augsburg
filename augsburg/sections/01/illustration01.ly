@@ -105,7 +105,7 @@
                         \grace {
                             \my-hack-slash
                             g'16
-                                _ #(make-dynamic-script (markup #:whiteout #:italic "sf"))
+                                _ #(make-dynamic-script (markup #:whiteout #:italic "s. f"))
                             - \accent
                             [
                             (
@@ -117,7 +117,7 @@
                         \revert Staff.Accidental.X-extent
                         \afterGrace
                         gs'2.
-                            _ #(make-dynamic-script (markup #:whiteout #:italic "spp"))
+                            _ #(make-dynamic-script (markup #:whiteout #:italic "s. pp"))
                         :32
                         - \abjad-zero-padding-glissando
                         \glissando
@@ -292,12 +292,11 @@
                             \once \override Accidental.stencil = ##f
                             c'32 * 69/32
                             \once \override Accidental.stencil = ##f
-                            \set suggestAccidentals = ##t
                             c'32 * 13/8
                             \once \override Accidental.stencil = ##f
+                            \set suggestAccidentals = ##t
                             c'32 * 47/32
                             ]
-                            \set suggestAccidentals = ##f
                         }
                         \revert TupletNumber.text
                         \once \override Accidental.stencil = ##f
@@ -305,6 +304,7 @@
                         - \accent
                         \ff
                         \sustainOff
+                        \set suggestAccidentals = ##f
                         \staff-line-count 5
                         \key fs \major
                         \revert Staff.Accidental.X-extent

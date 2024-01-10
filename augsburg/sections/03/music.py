@@ -87,11 +87,11 @@ trinton.make_music(
 
 trinton.make_music(
     lambda _: trinton.select_target(_, (6,)),
-    evans.RhythmHandler(rmakers.note),
-    trinton.rewrite_meter_command(),
-    trinton.aftergrace_command(),
+    evans.RhythmHandler(evans.talea([3, 1, 1], 4)),
+    # trinton.rewrite_meter_command(),
+    trinton.aftergrace_command(selector=trinton.select_leaves_by_index([-1])),
     trinton.glissando_command(
-        selector=trinton.ranged_selector(ranges=[range(0, 3)], nested=True),
+        selector=trinton.ranged_selector(ranges=[range(0, 4)], nested=True),
         zero_padding=True,
         no_ties=True,
     ),
@@ -106,10 +106,12 @@ trinton.make_music(
     trinton.linear_attachment_command(
         attachments=[
             abjad.Dynamic("fp"),
-            abjad.StartHairpin(">o"),
-            abjad.StopHairpin(),
+            abjad.StartHairpin(">"),
+            abjad.Dynamic("ppp"),
+            abjad.StartHairpin("<"),
+            abjad.Dynamic("f"),
         ],
-        selector=trinton.select_leaves_by_index([0, 0, -1], pitched=True),
+        selector=trinton.select_leaves_by_index([0, 0, 1, 1, -1], pitched=True),
     ),
     trinton.tremolo_command(),
     voice=score["piano 1 voice"],

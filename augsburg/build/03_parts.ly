@@ -170,7 +170,6 @@
                         - \abjad-zero-padding-glissando
                           %! abjad.glissando(7)
                         \glissando
-                        - \tweak circled-tip ##t
                         \>
                         \once \override Dots.staff-position = #2
                           %! abjad.glissando(1)
@@ -181,8 +180,13 @@
                         \override NoteColumn.glissando-skip = ##t
                           %! abjad.glissando(1)
                         \override NoteHead.no-ledgers = ##t
+                        c'4
+                        :32
+                        \ppp
+                        \<
+                        \once \override Dots.staff-position = #2
                         \afterGrace
-                        c'2
+                        c'4
                         :32
                         {
                             \once \override Flag.stroke-style = #"grace" 
@@ -196,7 +200,7 @@
                             \undo \hide NoteHead
                             c'16
                             :128
-                            \!
+                            \f
                         }
                     }
                 }
