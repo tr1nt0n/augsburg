@@ -85,6 +85,7 @@ revert_to_lh = eval(
 def low_pass_glissandi(selector=trinton.pleaves()):
     def glissando(argument):
         selections = selector(argument)
+        dots_selections = abjad.select.leaves(selections)
         selections = abjad.select.logical_ties(selections)
         selections = abjad.select.exclude(selections, [-1])
 
@@ -99,7 +100,7 @@ def low_pass_glissandi(selector=trinton.pleaves()):
                 singletons.append(tie)
 
         for tie in singletons:
-            abjad.attach(abjad.Glissando(zero_padding=True))
+            abjad.attach(abjad.Glissando(zero_padding=True), tie[0])
 
         for tie in multiples:
             glissando_group = abjad.select.with_next_leaf(tie)
@@ -111,6 +112,18 @@ def low_pass_glissandi(selector=trinton.pleaves()):
                 allow_ties=True,
                 zero_padding=True,
             )
+
+        abjad.attach(
+            abjad.LilyPondLiteral(
+                r"\override Dots.staff-position = #2", site="absolute_before"
+            ),
+            dots_selections[0],
+        )
+
+        abjad.attach(
+            abjad.LilyPondLiteral(r"\revert Dots.staff-position", site="before"),
+            dots_selections[-1],
+        )
 
     return glissando
 

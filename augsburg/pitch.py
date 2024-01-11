@@ -32,7 +32,7 @@ def return_seed_pitch_sequence(index=0):
     return trinton.rotated_sequence(seed_sequence, index % len(seed_sequence))
 
 
-# e pentachords
+# pentachords
 
 raw_e_pentachords = abjad.sequence.partition_by_counts(
     sequence=seed_sequence,
@@ -55,3 +55,33 @@ for pentachord in raw_e_pentachords:
 
 def return_e_pentachords(index=0):
     return trinton.rotated_sequence(e_pentachords, index % len(e_pentachords))
+
+
+# epsilon chords
+
+epsilon_chord_pairs = [
+    (["c'", "ds'", "gs'", "b'"], "f,,"),  # rh mf lh fff
+    (["ds", "a", "bf"], "b,,,"),  # rh p lh fff
+    (["b", "c'", "f'", "bf'"], "df,,"),  # rh p lh fff
+    (["gs''", "c'''", "f'''", "a'''"], "e,"),  # rh p lh ff
+    (["g", "c'", "df'"], "ef,,"),  # rh f lh fff
+]
+
+epsilon_chord_sequence = trinton.random_walk(chord=epsilon_chord_pairs, seed=1)
+
+
+def return_epsilon_chords(index, hand):
+    chord_sequence = trinton.rotated_sequence(
+        epsilon_chord_sequence, index % len(epsilon_chord_sequence)
+    )
+    chord_sequence = trinton.remove_adjacent(chord_sequence)
+
+    out = []
+
+    for pair in chord_sequence:
+        if hand == "rh":
+            out.append(pair[0])
+        if hand == "lh":
+            out.append(pair[-1])
+
+    return out

@@ -163,8 +163,8 @@ afterGraceFraction = #(cons 15 16)
 
         % \override TrillSpanner.bound-details.right.padding = #-5
 
-        % \shape #'((0 . 0) (0.5 . 0) (1 . 0) (2 . 0)) LaissezVibrerTie
-        % \override LaissezVibrerTie.X-extent = ##f
+        \shape #'((0 . 0) (0.5 . 0) (1 . 0) (2 . 0)) LaissezVibrerTie
+        \override LaissezVibrerTie.X-extent = ##f
         %
         % \shape #'((-2 . 0) (-1 . 0) (-0.5 . 0) (0 . 0)) RepeatTie
         % \override RepeatTie.X-extent = ##f

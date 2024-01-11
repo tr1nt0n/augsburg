@@ -795,10 +795,36 @@ def rhythm_e(hand="rh"):
                 talea_denominator=8,
             )
 
-        else:
-            components = rmakers.note(durations)
+            components = abjad.Container(components)
 
-        components = abjad.Container(components)
+        if hand == "lh":
+            components = rmakers.note(durations)
+            components = abjad.Voice(components, name="epsilon intermittent voice 1")
+            components = abjad.mutate.eject_contents(components)
+            components = rmakers.wrap_in_time_signature_staff(components, durations)
+            rmakers.rewrite_meter(components)
+            rmakers.unbeam(components)
+
+        if hand == "lh":
+            literal1 = abjad.LilyPondLiteral(r"\voiceOne")
+            literal2 = abjad.LilyPondLiteral(r"\voiceTwo")
+            closing_literal = abjad.LilyPondLiteral(r"\oneVoice", site="after")
+
+            duration = [abjad.get.duration(components[:])]
+            container = abjad.Container(simultaneous=True)
+            original_voice = abjad.Voice(name=f"{components.name} temp")
+
+            intermittent_voice = abjad.Voice(name="epsilon intermittent voice 2")
+            new_components = abjad.mutate.copy(components)
+            intermittent_voice.extend(new_components)
+
+            selections = trinton.get_top_level_components_from_leaves(components)
+            abjad.mutate.wrap(selections, original_voice)
+            abjad.mutate.wrap(original_voice, container)
+            container.append(intermittent_voice)
+            abjad.attach(literal1, abjad.select.leaf(original_voice, 0))
+            abjad.attach(literal2, abjad.select.leaf(intermittent_voice, 0))
+            abjad.attach(closing_literal, container)
 
         tuplets = abjad.select.tuplets(components)
         trinton.respell_tuplets(tuplets)
