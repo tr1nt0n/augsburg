@@ -365,7 +365,7 @@ afterGraceFraction = #(cons 15 16)
 	))
     min-systems-per-page = 2
     % system-separator-markup = \markup \fontsize #12 { \tremolo-moderato }
-    system-system-spacing = #'((basic-distance . 17) (minimum-distance . 17) (padding . 17) (stretchability . 17))
+    system-system-spacing = #'((basic-distance . 17) (minimum-distance . 17) (padding . 8) (stretchability . 17))
     indent = 20\mm
     short-indent = 15\mm
     bottom-margin = 10\mm

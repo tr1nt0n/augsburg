@@ -79,6 +79,21 @@ revert_to_lh = eval(
     )"""
 )
 
+start_jaw_harp_literal = eval(
+    """abjad.LilyPondLiteral(
+        [
+            r"\override NoteHead.no-ledgers = ##t",
+            r"\override Accidental.stencil = ##f"
+        ],
+        site="before"
+    )"""
+)
+
+stop_jaw_harp_literal = abjad.LilyPondLiteral(
+    [r"\revert NoteHead.no-ledgers", r"\revert Accidental.stencil"],
+    site="absolute_after",
+)
+
 # notation tools
 
 

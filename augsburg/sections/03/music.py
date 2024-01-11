@@ -250,6 +250,20 @@ trinton.make_music(
     beam_meter=True,
 )
 
+trinton.make_music(
+    lambda _: trinton.select_target(_, (16,)),
+    trinton.attachment_command(
+        attachments=[
+            library.boxed_markup(
+                string="( SYNTHESIZER AUS )",
+                tweaks=[r"- \tweak color \四"],
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+    ),
+    voice=score["piano 1 voice"],
+)
+
 # lh music
 
 trinton.make_music(
@@ -329,6 +343,16 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([0]),
     ),
+    trinton.attachment_command(
+        attachments=[
+            library.boxed_markup(
+                string="( SYNTHESIZER EIN )",
+                tweaks=[r"- \tweak color \四"],
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        direction=abjad.UP,
+    ),
     trinton.ottava_command(octave=-1, selector=trinton.select_leaves_by_index([0, 0])),
     voice=score["piano 3 voice"],
 )
@@ -361,6 +385,7 @@ trinton.make_music(
         selector=trinton.select_leaves_by_index([0, -1]),
         direction=abjad.UP,
     ),
+    trinton.ottava_command(octave=-1, selector=trinton.select_leaves_by_index([0, -1])),
     voice=score["epsilon intermittent voice 2"],
 )
 
@@ -524,6 +549,36 @@ trinton.make_music(
 #     ),
 #     voice=score["Global Context"],
 # )
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (3, 6)),
+    trinton.linear_attachment_command(
+        attachments=[
+            # abjad.LilyPondLiteral(
+            #     r'\tweak text "×3" \startMeasureSpanner', site="absolute_before"
+            # ),
+            abjad.BarLine(".|:", site="before"),
+            abjad.LilyPondLiteral(
+                r"\once \override Score.BarLine.transparent = ##f",
+                site="absolute_before",
+            ),
+            abjad.BarLine(":|.", site="after"),
+            abjad.LilyPondLiteral(
+                r"\once \override Score.BarLine.transparent = ##f", site="after"
+            ),
+            # abjad.LilyPondLiteral(r"\stopMeasureSpanner", site="absolute_after"),
+        ],
+        selector=trinton.select_leaves_by_index(
+            [
+                0,
+                0,
+                -1,
+                -1,
+            ]
+        ),
+    ),
+    voice=score["Global Context"],
+)
 #
 trinton.make_music(
     lambda _: trinton.select_target(_, (7, 8)),

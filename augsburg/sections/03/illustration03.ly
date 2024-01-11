@@ -26,6 +26,8 @@
             - \tweak font-size #'15
             _ \middle-fermata
             \once \override Score.BarLine.transparent = ##f
+            \once \override Score.BarLine.transparent = ##f
+            \bar ".|:"
             \time 5/4
             s1 * 5/4
             ^ \markup {
@@ -45,6 +47,8 @@
             \once \override Score.TimeSignature.stencil = ##f
             \time 5/4
             s1 * 5/4
+            \bar ":|."
+            \once \override Score.BarLine.transparent = ##f
             \time 3/4
             s1 * 3/4
             \time 8/8
@@ -688,6 +692,8 @@
                         }
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
+                        - \tweak color \四
+                        - \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { ( SYNTHESIZER AUS ) }
                         \stopStaff \startStaff
                     }
                 }
@@ -897,6 +903,8 @@
                         - \accent
                         \fff
                         \laissezVibrer
+                        - \tweak color \四
+                        ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { ( SYNTHESIZER EIN ) }
                         \sustainOn
                         \ottava 0
                         \afterGrace
@@ -925,6 +933,7 @@
                             }
                             \context Voice = "epsilon intermittent voice 2"
                             {
+                                \ottava -1
                                 \voiceTwo
                                 b,,,1.
                                 \fff
@@ -932,6 +941,7 @@
                                 ~
                                 b,,,1
                                 \sustainOff
+                                \ottava 0
                             }
                         >>
                         \oneVoice
