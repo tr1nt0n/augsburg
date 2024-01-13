@@ -94,7 +94,35 @@ stop_jaw_harp_literal = abjad.LilyPondLiteral(
     site="absolute_after",
 )
 
+clef_whitespace_literal = abjad.LilyPondLiteral(
+    [
+        r"\once \override Staff.Clef.X-extent = ##f",
+        r"\once \override Staff.Clef.extra-offset = #'(-2.5 . 0)",
+    ],
+    site="absolute_before",
+)
+
 # notation tools
+
+
+def continuous_pedal(selector=trinton.pleaves()):
+    def pedal(argument):
+        selections = selector(argument)
+
+        start_literal = abjad.LilyPondLiteral(
+            r"\override Score.PianoPedalBracket.shorten-pair = #'(0 . 0)", site="before"
+        )
+
+        stop_literal = abjad.LilyPondLiteral(
+            r"\override Score.PianoPedalBracket.shorten-pair = #'(0 . -4)",
+            site="before",
+        )
+
+        abjad.attach(start_literal, selections[0])
+
+        abjad.attach(stop_literal, selections[-2])
+
+    return pedal
 
 
 def low_pass_glissandi(selector=trinton.pleaves()):

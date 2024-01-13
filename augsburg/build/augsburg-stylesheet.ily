@@ -1,7 +1,7 @@
 \version "2.23.81"
 \language english
 #(set-default-paper-size "11x17landscape")
-#(set-global-staff-size 15)
+#(set-global-staff-size 12)
 #(ly:set-option 'relative-includes #t)
 
 \include "../library.ily"
@@ -12,9 +12,9 @@
 afterGraceFraction = #(cons 15 16)
 
 \header {
-    dedication = \markup \fontsize #3 \center-column {\line \override #'(font-name . "Bodoni72 Book Italic") { { für } \override #'(font-name . "Bodoni72 Book") { Paula Rocosa Gáñez } } \fontsize #0.25 \with-color #white "."}
-    title = \markup \override #'(font-name . "Bodoni72 Book") \fontsize #12 \center-column { \line { D A S \hspace #5 W U N D E R Z E I C H E N B U C H } \fontsize #0.01 \with-color #white "."}
-    subtitle = \markup \fontsize #5 \center-column { \line { \override #'(font-name . "Bodoni72 Book") { oder: } \override #'(font-name . "Bodoni72 Book Italic") { "\" tres soles llamados \'Paraphog\' \"" } } \fontsize #0.01 \with-color #white "."}
+    dedication = \markup \fontsize #4 \center-column {\line \override #'(font-name . "Bodoni72 Book Italic") { { für } \override #'(font-name . "Bodoni72 Book") { Paula Rocosa Gáñez } } \fontsize #0.25 \with-color #white "."}
+    title = \markup \override #'(font-name . "Bodoni72 Book") \fontsize #14 \center-column { \line { D A S \hspace #5 W U N D E R Z E I C H E N B U C H } \fontsize #0.01 \with-color #white "."}
+    subtitle = \markup \fontsize #6 \center-column { \line { \override #'(font-name . "Bodoni72 Book") { oder: } \override #'(font-name . "Bodoni72 Book Italic") { "\" tres soles llamados \'Paraphog\' \"" } } \fontsize #0.01 \with-color #white "."}
     composer = \markup \override #'(font-name . "Bodoni72") \fontsize #4 {"Trinton Hlynn (*2000)"}
 }
 
@@ -206,7 +206,7 @@ afterGraceFraction = #(cons 15 16)
 
     \context {
         \Staff
-        fontSize = #-2.5
+        fontSize = #-3.5
         \remove Time_signature_engraver
         \consists Duration_line_engraver
         \consists Grob_pq_engraver
@@ -215,9 +215,12 @@ afterGraceFraction = #(cons 15 16)
         \override Accidental.X-extent = ##f
 
         \override AccidentalSuggestion.direction = #UP
+        \override AccidentalSuggestion.font-size = 0.4
         \override AccidentalSuggestion.whiteout-style = #'outline
         \override AccidentalSuggestion.whiteout = 1
         \override AccidentalSuggestion.layer = 2
+        \override AccidentalSuggestion.parent-alignment-X = -1
+        \override AccidentalSuggestion.X-extent = #'(0 . 0)
 
         \override DurationLine.style = #'line
         \override DurationLine.thickness = #3
@@ -247,7 +250,7 @@ afterGraceFraction = #(cons 15 16)
 
         \override BarLine.transparent = ##f
 
-        \override TimeSignature.font-size = 10
+        \override TimeSignature.font-size = 12
 		\override TimeSignature.font-name = "Bodoni72 Book"
         \override TimeSignature.X-extent = ##f
         \override TimeSignature.X-offset = -1.3
@@ -365,7 +368,7 @@ afterGraceFraction = #(cons 15 16)
 	))
     min-systems-per-page = 2
     % system-separator-markup = \markup \fontsize #12 { \tremolo-moderato }
-    system-system-spacing = #'((basic-distance . 17) (minimum-distance . 17) (padding . 8) (stretchability . 17))
+    system-system-spacing = #'((basic-distance . 20) (minimum-distance . 20) (padding . 15) (stretchability . 20))
     indent = 20\mm
     short-indent = 15\mm
     bottom-margin = 10\mm

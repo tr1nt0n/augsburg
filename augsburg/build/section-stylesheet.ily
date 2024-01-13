@@ -1,7 +1,7 @@
 \version "2.23.81"
 \language english
 #(set-default-paper-size "11x17landscape")
-#(set-global-staff-size 15)
+#(set-global-staff-size 12)
 #(ly:set-option 'relative-includes #t)
 
 \include "../library.ily"
@@ -165,7 +165,7 @@ afterGraceFraction = #(cons 15 16)
 
         \shape #'((0 . 0) (0.5 . 0) (1 . 0) (2 . 0)) LaissezVibrerTie
         \override LaissezVibrerTie.X-extent = ##f
-        %
+
         % \shape #'((-2 . 0) (-1 . 0) (-0.5 . 0) (0 . 0)) RepeatTie
         % \override RepeatTie.X-extent = ##f
 
@@ -199,7 +199,7 @@ afterGraceFraction = #(cons 15 16)
 
     \context {
         \Staff
-        fontSize = #-2.5
+        fontSize = #-3.5
         \remove Time_signature_engraver
         \consists Duration_line_engraver
         \consists Grob_pq_engraver
@@ -208,9 +208,12 @@ afterGraceFraction = #(cons 15 16)
         \override Accidental.X-extent = ##f
 
         \override AccidentalSuggestion.direction = #UP
+        \override AccidentalSuggestion.font-size = 0.4
         \override AccidentalSuggestion.whiteout-style = #'outline
         \override AccidentalSuggestion.whiteout = 1
         \override AccidentalSuggestion.layer = 2
+        \override AccidentalSuggestion.parent-alignment-X = -1
+        \override AccidentalSuggestion.X-extent = #'(0 . 0)
 
         \override DurationLine.style = #'line
         \override DurationLine.thickness = #3
@@ -240,7 +243,7 @@ afterGraceFraction = #(cons 15 16)
 
         \override BarLine.transparent = ##f
 
-        \override TimeSignature.font-size = 10
+        \override TimeSignature.font-size = 12
 		\override TimeSignature.font-name = "Bodoni72 Book"
         \override TimeSignature.X-extent = ##f
         \override TimeSignature.X-offset = -1.3
@@ -311,7 +314,6 @@ afterGraceFraction = #(cons 15 16)
         \accepts leftHandStaff
         \accepts thirdStaff
         \accepts InterruptiveGroup
-        % \accepts VanishingStaff
         \consists Grob_pq_engraver
         \consists #Interrupt_heads_engraver
         \consists #Explicit_interrupt_heads_engraver
@@ -331,7 +333,6 @@ afterGraceFraction = #(cons 15 16)
         \accepts leftHandStaff
         \accepts thirdStaff
         \accepts InterruptiveGroup
-        % \accepts VanishingStaff
         \consists Grob_pq_engraver
         \consists #Interrupt_heads_engraver
         \consists #Explicit_interrupt_heads_engraver
@@ -360,7 +361,7 @@ afterGraceFraction = #(cons 15 16)
 	))
     min-systems-per-page = 2
     % system-separator-markup = \markup \fontsize #12 { \tremolo-moderato }
-    system-system-spacing = #'((basic-distance . 17) (minimum-distance . 17) (padding . 8) (stretchability . 17))
+    system-system-spacing = #'((basic-distance . 20) (minimum-distance . 20) (padding . 15) (stretchability . 20))
     indent = 20\mm
     short-indent = 15\mm
     bottom-margin = 10\mm

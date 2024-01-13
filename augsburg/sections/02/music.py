@@ -66,7 +66,9 @@ trinton.make_music(
     ),
     trinton.linear_attachment_command(
         attachments=[
-            library.boxed_markup(string=["Auf den Saiten mit", "einem Plektrum"]),
+            library.boxed_markup(
+                string=["Auf den Saiten mit", "einem Plektrum"],
+            ),
             abjad.BreathMark(),
         ],
         selector=trinton.select_leaves_by_index([0, -1]),
@@ -179,6 +181,7 @@ trinton.make_music(
         attachments=[
             library.boxed_markup(
                 string=["Auf dem Deckel", "mit Styroporkugeln"],
+                tweaks=[r"- \tweak padding #12"],
             ),
         ],
         selector=trinton.select_leaves_by_index([0]),
@@ -497,7 +500,7 @@ trinton.make_music(
         style="solid-line-with-arrow",
         padding=16.5,
         full_string=True,
-        right_padding=-8,
+        right_padding=-10,
     ),
     voice=score["Global Context"],
 )

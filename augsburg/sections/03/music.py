@@ -29,7 +29,7 @@ trinton.make_music(
         rhythm.rhythm_g(stage=1, hand="rh"),
     ),
     trinton.attachment_command(
-        attachments=[abjad.Clef("treble")],
+        attachments=[abjad.Clef("treble"), library.clef_whitespace_literal],
         selector=trinton.select_leaves_by_index([0], pitched=True),
     ),
     library.interruptive_polyphony(hand="rh", stage=3, dynamic=False),
@@ -46,7 +46,7 @@ trinton.make_music(
         rhythm.rhythm_g(stage=1, hand="lh"),
     ),
     trinton.attachment_command(
-        attachments=[abjad.Clef("treble")],
+        attachments=[abjad.Clef("treble"), library.clef_whitespace_literal],
         selector=trinton.select_leaves_by_index([0], pitched=True),
     ),
     library.interruptive_polyphony(hand="lh", stage=3, dynamic=False),
@@ -525,6 +525,7 @@ trinton.make_music(
             library.metronome_markups(
                 tempo_string="138 3/4",
                 previous_tempo_string="60",
+                padding=0,
                 string_only=False,
                 parenthesis=False,
             ),
@@ -599,7 +600,7 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([0, -1]),
         style="solid-line-with-arrow",
-        padding=25,
+        padding=23,
         full_string=True,
         right_padding=4,
     ),

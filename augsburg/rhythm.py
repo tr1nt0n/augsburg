@@ -789,7 +789,7 @@ def rhythm_e(hand="rh"):
         if hand == "rh":
             components = rmakers.incised(
                 durations,
-                prefix_talea=[-2, 1, -2, 2, -2, 3],
+                prefix_talea=[-2, 4, -2, 4, -2, 6],
                 prefix_counts=[2],
                 extra_counts=[0, 1, 0, 2, 0],
                 talea_denominator=8,

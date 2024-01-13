@@ -72,7 +72,7 @@
             \time 9/4
             s1 * 9/4
             ^ \markup {
-              \raise #13.5 \with-dimensions-from \null
+              \raise #0 \with-dimensions-from \null
               \override #'(font-size . 5.5)
               \concat {
                   \abjad-metronome-mark-mixed-number-markup #2 #0 #2 #"138" #"3" #"4" 
@@ -104,6 +104,8 @@
                                 \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 21 16) (ly:make-duration 5 0))
                                 \times 16/21
                                 {
+                                    \once \override Staff.Clef.X-extent = ##f
+                                    \once \override Staff.Clef.extra-offset = #'(-2.5 . 0)
                                     \hocket
                                     \ottava 2
                                     \override NoteHead.details.interrupt-color = \一
@@ -270,7 +272,7 @@
                             - \tweak padding #12
                             ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #2 { \center-column { \line { Auf dem Deckel } \line { mit Styroporkugeln }  } }
                             [
-                            - \tweak padding #25
+                            - \tweak padding #23
                             - \abjad-solid-line-with-arrow
                             - \tweak bound-details.left.text \markup \concat { { \override #'(font-size . 5.5) \concat { ( \abjad-metronome-mark-mixed-number-markup #2 #0 #2 #"97" #"1" #"2"  ) } } \hspace #0.5 }
                             - \tweak bound-details.right.text \markup { \override #'(font-size . 5.5) \concat { \abjad-metronome-mark-markup #2 #0 #2 #"60"  [\abjad-metric-modulation-tuplet-lhs #1 #0 #13 #16 #2 #0 #'(1 . 1)] } }
@@ -734,6 +736,8 @@
                                 \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 13 16) (ly:make-duration 5 0))
                                 \times 16/13
                                 {
+                                    \once \override Staff.Clef.X-extent = ##f
+                                    \once \override Staff.Clef.extra-offset = #'(-2.5 . 0)
                                     \hocket
                                     \ottava 2
                                     \override NoteHead.details.interrupt-color = \二
