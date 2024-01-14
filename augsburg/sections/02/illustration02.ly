@@ -21,7 +21,7 @@
             \time 9/16
             s1 * 9/16
             ^ \markup {
-              \raise #20 \with-dimensions-from \null
+              \raise #20.5 \with-dimensions-from \null
               \override #'(font-size . 5.5)
               \concat {
                   \abjad-metronome-mark-mixed-number-markup #2 #0 #2 #"48" #"3" #"4" 
@@ -77,7 +77,7 @@
             - \abjad-solid-line-with-arrow
             - \tweak bound-details.left.text \markup \concat { { \override #'(font-size . 5.5) \concat { ( \abjad-metronome-mark-markup #2 #0 #2 #"60"  ) } } \hspace #0.5 }
             - \tweak bound-details.right.text \markup { \override #'(font-size . 5.5) \concat { \abjad-metronome-mark-markup #2 #0 #2 #"33"  [\abjad-metric-modulation-tuplet-lhs #1 #0 #32 #35 #2 #0 #'(1 . 1)] } }
-            - \tweak bound-details.right.padding 10
+            - \tweak bound-details.right.padding 15
             \startTextSpan
             \once \override Score.BarLine.transparent = ##f
             \once \override MultiMeasureRest.transparent = ##t
@@ -488,10 +488,10 @@
                         \change Staff = "piano 3 staff"
                         \once \override Stem.cross-staff = ##t
                         \once \override Stem.Y-extent = #'(0 . 0)
-                        \once \override Stem.details.lengths = #'(33)
+                        \once \override Stem.details.lengths = #'(27.5)
                         \once \override Flag.cross-staff = ##t
                         \once \override Flag.Y-extent = #'(0 . 0)
-                        \once \override StaffGroup.Flag.Y-offset = 33
+                        \once \override StaffGroup.Flag.Y-offset = 27.5
                         \once \override TupletBracket.bracket-visibility = ##f
                         \once \override TupletBracket.bracket-visibility = ##f
                         \set suggestAccidentals = ##t
@@ -665,10 +665,10 @@
                                 \change Staff = "piano 3 staff"
                                 \once \override Stem.cross-staff = ##t
                                 \once \override Stem.Y-extent = #'(0 . 0)
-                                \once \override Stem.details.lengths = #'(33)
+                                \once \override Stem.details.lengths = #'(27.5)
                                 \once \override Flag.cross-staff = ##t
                                 \once \override Flag.Y-extent = #'(0 . 0)
-                                \once \override StaffGroup.Flag.Y-offset = 33
+                                \once \override StaffGroup.Flag.Y-offset = 27.5
                                 c'4
                             }
                             \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 4) (ly:make-duration 4 0))

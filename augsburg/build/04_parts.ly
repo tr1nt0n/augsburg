@@ -221,25 +221,33 @@
                         - \tweak color \四
                         - \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { ( SYNTHESIZER EIN ) }
                         \override Dots.staff-position = #2
-                        \clef "treble"
-                        f'2
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \one-thirty-seven-limit-quarter-tone-up  }
+                        f!2
+                        ^ \markup \center-align { \concat { F\raise #0.75 { \teeny \smaller \sharp } -49 } }
                         ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Nagel + Vibrator }
                         - \abjad-zero-padding-glissando
                         \glissando
+                        \once \override Staff.Clef.X-extent = ##f
+                        \once \override Staff.Clef.extra-offset = #'(-4 . 0)
+                        \clef "treble"
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-tridecimal-third-tone-down \hspace #0.125 \abjad-sharp  }
-                        cs''2
+                        cs''!2
                         ^ \markup \center-align { \concat { C+41 } }
                         - \abjad-zero-padding-glissando
                         \glissando
                         s1 * 1/4
                         r4
-                        g'2
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup \concat { \one-tridecimal-third-tone-down \hspace #0.125 \abjad-sharp  }
+                        cs''!2
+                        ^ \markup \center-align { \concat { C+41 } }
                         - \abjad-zero-padding-glissando
                         \glissando
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-thirty-seven-limit-quarter-tone-up \hspace #0.125 \abjad-sharp  }
-                        cs''\breve
+                        cs''!\breve
                         ^ \markup \center-align { \concat { D-49 } }
                         - \abjad-zero-padding-glissando
                         \glissando
@@ -248,12 +256,15 @@
                         \times 14/15
                         {
                             r4
-                            e'2
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup \concat { \one-thirty-seven-limit-quarter-tone-up \hspace #0.125 \abjad-sharp  }
+                            cs''!2
+                            ^ \markup \center-align { \concat { D-49 } }
                             - \abjad-zero-padding-glissando
                             \glissando
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \flat-one-syntonic-comma-down  }
-                            ef'1
+                            ef'!1
                             ^ \markup \center-align { \concat { -45 } }
                             ~
                             \revert Dots.staff-position
@@ -275,7 +286,7 @@
                         ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Einzelstimmwirbelmagnet links }
                         ~
                         c'16
-                        _ #(make-dynamic-script (markup #:whiteout #:normal-text #:italic "cresc. poco a poco"))
+                        _ #(make-dynamic-script (markup #:whiteout #:normal-text #:italic "cresc. poco a poco ( bis mezzo-forte )"))
                         c'8.
                         c'16.
                         c'32

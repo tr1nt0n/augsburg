@@ -76,7 +76,7 @@
               \override #'(font-size . 5.5)
               \concat {
                   \abjad-metronome-mark-mixed-number-markup #2 #0 #2 #"138" #"3" #"4" 
-                  [\abjad-metric-modulation-tuplet-lhs #3 #0 #32 #37 #2 #0 #'(1 . 1)]
+                  [\abjad-metric-modulation-tuplet-lhs #3 #0 #36 #37 #2 #0 #'(1 . 1)]
               }
             }
             \time 5/2
@@ -130,16 +130,16 @@
                                     \override Dots.staff-position = #2
                                     \clef "treble"
                                     \voiceOne
-                                    g''''4
+                                    a''''4
                                     \pp
                                     - \tweak stencil #constante-hairpin
                                     \<
                                     \hocket
-                                    g''''4
+                                    a''''4
                                     \hocket
-                                    g''''8
+                                    a''''8
                                     ~
-                                    g''''32
+                                    a''''32
                                     \!
                                     \revert Accidental.color
                                     \revert Beam.color
@@ -187,11 +187,11 @@
                                     \override TupletNumber.color = \三
                                     \override Dots.staff-position = #2
                                     \voiceTwo
-                                    a''''4
+                                    g''''4
                                     \hocket
-                                    a''''4
+                                    g''''4
                                     \hocket
-                                    a''''16.
+                                    g''''16.
                                     \ottava 0
                                     \revert Accidental.color
                                     \revert Beam.color
@@ -275,7 +275,7 @@
                             - \tweak padding #23
                             - \abjad-solid-line-with-arrow
                             - \tweak bound-details.left.text \markup \concat { { \override #'(font-size . 5.5) \concat { ( \abjad-metronome-mark-mixed-number-markup #2 #0 #2 #"97" #"1" #"2"  ) } } \hspace #0.5 }
-                            - \tweak bound-details.right.text \markup { \override #'(font-size . 5.5) \concat { \abjad-metronome-mark-markup #2 #0 #2 #"60"  [\abjad-metric-modulation-tuplet-lhs #1 #0 #13 #16 #2 #0 #'(1 . 1)] } }
+                            - \tweak bound-details.right.text \markup { \override #'(font-size . 5.5) \concat { \abjad-metronome-mark-mixed-number-markup #2 #0 #2 #"48" #"3" #"4"  [\abjad-metric-modulation #1 #0 #2 #0 #'(1 . 1)] } }
                             - \tweak bound-details.right.padding -4
                             \startTextSpan
                             \change Staff = "piano 3 staff"
@@ -616,7 +616,7 @@
                         - \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Tasten }
                         \override Staff.Accidental.X-extent = ##f
                         \override Dots.staff-position = #2
-                        fs2.
+                        fs!2.
                         ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Nagel + Vibrator }
                           %! abjad.glissando(7)
                         - \abjad-zero-padding-glissando
@@ -647,7 +647,7 @@
                         \revert Staff.Stem.stemlet-length
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \natural-one-syntonic-comma-down  }
-                        f'8
+                        f'!8
                         ^ \markup \center-align { \concat { -45 } }
                         ]
                           %! abjad.glissando(7)
@@ -679,12 +679,15 @@
                               %! abjad.glissando(6)
                             \undo \hide NoteHead
                             r4
-                            c4.
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \natural-one-syntonic-comma-down  }
+                            f'!4.
+                            ^ \markup \center-align { \concat { -45 } }
                             - \abjad-zero-padding-glissando
                             \glissando
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup { \one-thirty-seven-limit-quarter-tone-up  }
-                            f\breve
+                            f!\breve
                             ^ \markup \center-align { \concat { F\raise #0.75 { \teeny \smaller \sharp } -49 } }
                             ~
                             \revert Dots.staff-position
@@ -762,14 +765,14 @@
                                     \override Dots.staff-position = #2
                                     \clef "treble"
                                     \voiceOne
-                                    ds''''8
+                                    e''''8
                                     \sustainOn
                                     \hocket
-                                    ds''''8
+                                    e''''8
                                     \hocket
-                                    ds''''8
+                                    e''''8
                                     \hocket
-                                    ds''''32
+                                    e''''32
                                     \sustainOff
                                     \revert Accidental.color
                                     \revert Beam.color
@@ -814,9 +817,9 @@
                                 \override TupletNumber.color = \四
                                 \override Dots.staff-position = #2
                                 \voiceTwo
-                                e''''4
+                                ds''''4
                                 \hocket
-                                e''''4
+                                ds''''4
                                 \ottava 0
                                 \revert Accidental.color
                                 \revert Beam.color

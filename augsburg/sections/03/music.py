@@ -59,7 +59,12 @@ trinton.make_music(
 
 for voice_name, pitch_ in zip(
     ["37 voice temp", "35 voice", "13 voice temp", "4 voice"],
-    ["g''''", "a''''", "ds''''", "e''''"],
+    [
+        "a''''",
+        "g''''",
+        "e''''",
+        "ds''''",
+    ],
 ):
     trinton.make_music(
         lambda _: trinton.select_target(_, (1,)),
@@ -233,11 +238,14 @@ trinton.make_music(
         evans.talea([11, 7, -2, 3, 100], 8, extra_counts=[0, 4]),
     ),
     trinton.rewrite_meter_command(),
-    evans.PitchHandler(pitch_list=["fs", "ef,", "c", "ef,"]),
+    evans.PitchHandler(pitch_list=["fs", "ef,", "ef,", "ef,"]),
     trinton.pitch_with_selector_command(
-        pitch_list=["35/8", "37/16"],
+        pitch_list=["35/8", "35/8", "37/16"],
         as_ratios=True,
-        selector=trinton.patterned_tie_index_selector([1], 2, pitched=True),
+        selector=trinton.logical_ties(exclude=[0]),
+    ),
+    trinton.force_accidentals_command(
+        selector=trinton.logical_ties(first=True, pitched=True)
     ),
     library.low_pass_glissandi(),
     trinton.attachment_command(
@@ -524,7 +532,7 @@ trinton.make_music(
         attachments=[
             library.metronome_markups(
                 tempo_string="138 3/4",
-                previous_tempo_string="60",
+                previous_tempo_string="48 3/4",
                 padding=0,
                 string_only=False,
                 parenthesis=False,
@@ -592,7 +600,7 @@ trinton.make_music(
                 parenthesis=True,
             ),
             library.metronome_markups(
-                tempo_string="60",
+                tempo_string="48 3/4",
                 previous_tempo_string="97 1/2",
                 string_only=True,
                 parenthesis=False,

@@ -102,6 +102,19 @@ clef_whitespace_literal = abjad.LilyPondLiteral(
     site="absolute_before",
 )
 
+
+def return_clef_whitespace_literal(offset_pair=(-2.5, 0)):
+    literal = abjad.LilyPondLiteral(
+        [
+            r"\once \override Staff.Clef.X-extent = ##f",
+            rf"\once \override Staff.Clef.extra-offset = #'({offset_pair[0]} . {offset_pair[-1]})",
+        ],
+        site="absolute_before",
+    )
+
+    return literal
+
+
 # notation tools
 
 

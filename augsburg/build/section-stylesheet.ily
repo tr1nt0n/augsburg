@@ -208,7 +208,7 @@ afterGraceFraction = #(cons 15 16)
         \override Accidental.X-extent = ##f
 
         \override AccidentalSuggestion.direction = #UP
-        \override AccidentalSuggestion.font-size = 0.4
+        \override AccidentalSuggestion.font-size = 0.2
         \override AccidentalSuggestion.whiteout-style = #'outline
         \override AccidentalSuggestion.whiteout = 1
         \override AccidentalSuggestion.layer = 2
@@ -228,7 +228,7 @@ afterGraceFraction = #(cons 15 16)
         \name leftHandStaff
         \alias Staff
         \override TupletBracket.direction = #DOWN
-        \override AccidentalSuggestion.direction = #DOWN
+        % \override AccidentalSuggestion.direction = #DOWN
     } % just trying this out
 
     \context {
@@ -243,7 +243,7 @@ afterGraceFraction = #(cons 15 16)
 
         \override BarLine.transparent = ##f
 
-        \override TimeSignature.font-size = 12
+        \override TimeSignature.font-size = 11
 		\override TimeSignature.font-name = "Bodoni72 Book"
         \override TimeSignature.X-extent = ##f
         \override TimeSignature.X-offset = -1.3
@@ -258,7 +258,11 @@ afterGraceFraction = #(cons 15 16)
         \Staff
         \name thirdStaff
         \type Engraver_group
-        % \remove System_start_delimiter_engraver
+        \remove #Interrupt_heads_engraver
+        \remove #Explicit_interrupt_heads_engraver
+        \remove #Follow_lines_engraver
+        \remove #Switch_heads_engraver
+        \remove #Hocket_lines_engraver
 
         \RemoveAllEmptyStaves
 
@@ -270,6 +274,12 @@ afterGraceFraction = #(cons 15 16)
         \name lowPassStaff
         \type Engraver_group
         \remove System_start_delimiter_engraver
+        \remove #Interrupt_heads_engraver
+        \remove #Explicit_interrupt_heads_engraver
+        \remove #Follow_lines_engraver
+        \remove #Switch_heads_engraver
+        \remove #Hocket_lines_engraver
+        \remove InterruptiveGroup
         \clef varpercussion
 
         \override Accidental.stencil = ##f
@@ -359,9 +369,10 @@ afterGraceFraction = #(cons 15 16)
 	        #:music "haydn"
 	        #:brace "haydn"
 	))
-    min-systems-per-page = 2
+    min-systems-per-page = 3
+    max-systems-per-page = 3
     % system-separator-markup = \markup \fontsize #12 { \tremolo-moderato }
-    system-system-spacing = #'((basic-distance . 20) (minimum-distance . 20) (padding . 15) (stretchability . 20))
+    system-system-spacing = #'((basic-distance . 30) (minimum-distance . 30) (padding . 0) (stretchability . 30))
     indent = 20\mm
     short-indent = 15\mm
     bottom-margin = 10\mm

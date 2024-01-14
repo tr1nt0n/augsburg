@@ -193,10 +193,10 @@ trinton.make_music(
                 [
                     r"\once \override Stem.cross-staff = ##t",
                     r"\once \override Stem.Y-extent = #'(0 . 0)",
-                    r"\once \override Stem.details.lengths = #'(33)",
+                    r"\once \override Stem.details.lengths = #'(27.5)",
                     r"\once \override Flag.cross-staff = ##t",
                     r"\once \override Flag.Y-extent = #'(0 . 0)",
-                    r"\once \override StaffGroup.Flag.Y-offset = 33",
+                    r"\once \override StaffGroup.Flag.Y-offset = 27.5",
                 ],
                 site="before",
             ),
@@ -453,7 +453,7 @@ trinton.make_music(
             library.metronome_markups(
                 tempo_string="48 3/4",
                 previous_tempo_string=None,
-                padding=20,
+                padding=20.5,
                 string_only=False,
                 parenthesis=False,
             ),
@@ -500,7 +500,7 @@ trinton.make_music(
         style="solid-line-with-arrow",
         padding=16.5,
         full_string=True,
-        right_padding=-10,
+        right_padding=-15,
     ),
     voice=score["Global Context"],
 )

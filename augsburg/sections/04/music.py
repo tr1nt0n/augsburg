@@ -107,19 +107,29 @@ for measures in [(5,), (7, 8)]:
 
 trinton.make_music(
     lambda _: trinton.select_target(_, (5, 8)),
-    evans.PitchHandler(["f'", "e'", "g'", "b'", "e'", "df'"]),
+    evans.PitchHandler(["ef,", "e'", "e'", "b'", "b'", "df'"]),
     trinton.pitch_with_selector_command(
-        pitch_list=["13/8", "37/32", "35/32"],
+        pitch_list=["37/16", "13/8", "13/8", "37/32", "37/32", "35/32"],
         as_ratios=True,
-        selector=trinton.patterned_tie_index_selector([1], 2, pitched=True),
+        selector=trinton.logical_ties(pitched=True),
+    ),
+    trinton.force_accidentals_command(
+        selector=trinton.logical_ties(pitched=True, first=True)
     ),
     library.low_pass_glissandi(),
     trinton.attachment_command(
         attachments=[
-            abjad.Clef("treble"),
             library.boxed_markup(string="Nagel + Vibrator"),
         ],
         selector=trinton.select_leaves_by_index([0], pitched=True),
+        direction=abjad.UP,
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.Clef("treble"),
+            library.return_clef_whitespace_literal(offset_pair=(-4, 0)),
+        ],
+        selector=trinton.select_logical_ties_by_index([1], first=True, pitched=True),
         direction=abjad.UP,
     ),
     trinton.linear_attachment_command(
@@ -215,7 +225,9 @@ trinton.make_music(
     ),
     trinton.attachment_command(
         attachments=[
-            abjad.Dynamic("cresc. poco a poco", name_is_textual=True),
+            abjad.Dynamic(
+                "cresc. poco a poco ( bis mezzo-forte )", name_is_textual=True
+            ),
         ],
         selector=trinton.select_leaves_by_index([1]),
     ),
@@ -388,7 +400,7 @@ trinton.make_music(
     voice=score["piano 3 voice"],
 )
 
-# low pass music
+# filter music
 
 trinton.make_music(
     lambda _: trinton.select_target(_, (3, 4)),
