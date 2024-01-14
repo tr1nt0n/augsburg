@@ -487,7 +487,19 @@
                 {
                     \context Voice = "piano 3 voice"
                     {
+                        \afterGrace
                         s1 * 3/2
+                        \sustainOn
+                        {
+                            \once \override Flag.stroke-style = #"grace" 
+                            \once \override Stem.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override NoteHead.no-ledgers = ##t
+                            \once \override Accidental.stencil = ##f
+                            \once \override NoteHead.transparent = ##t
+                            c'16
+                            \sustainOff
+                        }
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff

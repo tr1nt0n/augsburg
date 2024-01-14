@@ -241,6 +241,21 @@ trinton.make_music(
 # lh music
 
 trinton.make_music(
+    lambda _: trinton.select_target(_, (1,)),
+    trinton.aftergrace_command(
+        invisible=True, selector=trinton.select_leaves_by_index([-1])
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.StartPianoPedal(),
+            abjad.StopPianoPedal(),
+        ],
+        selector=trinton.select_leaves_by_index([0, -1]),
+    ),
+    voice=score["piano 3 voice"],
+)
+
+trinton.make_music(
     lambda _: trinton.select_target(_, (3,)),
     evans.RhythmHandler(rhythm.rhythm_d(stage=1, hand="lh")),
     evans.PitchHandler(pitch.return_seed_pitch_sequence(index=6)),
