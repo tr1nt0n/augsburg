@@ -144,7 +144,7 @@
                         \override Staff.Accidental.X-extent = ##f
                         \arpeggioArrowUp
                         \revert Staff.Accidental.X-extent
-                        <fs b ds' f'>4
+                        <fs b cs' f'>4
                         - \tenuto
                         \arpeggio
                         \f

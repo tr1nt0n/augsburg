@@ -91,7 +91,7 @@ trinton.make_music(
         [
             ["as'", "fs'", "cs'", "as"],
             ["fs'", "d'", "as", "fs"],
-            ["f'", "ds'", "b", "fs"],
+            ["f'", "b", "cs'", "fs"],
             ["fss'", "ds'", "cs'", "as"],
             ["gs'", "fs'", "c'", "a"],
         ]
