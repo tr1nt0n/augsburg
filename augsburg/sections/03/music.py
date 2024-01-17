@@ -235,9 +235,11 @@ trinton.make_music(
 trinton.make_music(
     lambda _: trinton.select_target(_, (14, 15)),
     evans.RhythmHandler(
-        evans.talea([11, 7, -2, 3, 100], 8, extra_counts=[0, 4]),
+        evans.talea([6, 2, 2, 1, 1, 2, 2, 2, -2, 3, 100], 8, extra_counts=[0, 4]),
     ),
-    trinton.rewrite_meter_command(),
+    trinton.attachment_command(
+        attachments=[abjad.Tie()], selector=trinton.pleaves(exclude=[3, -4, -3, -2, -1])
+    ),
     evans.PitchHandler(pitch_list=["fs", "ef,", "ef,", "ef,"]),
     trinton.pitch_with_selector_command(
         pitch_list=["35/8", "35/8", "37/16"],
@@ -246,6 +248,14 @@ trinton.make_music(
     ),
     trinton.force_accidentals_command(
         selector=trinton.logical_ties(first=True, pitched=True)
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override Voice.Accidental.font-size = 5", site="before"
+            )
+        ],
+        selector=trinton.logical_ties(first=True, pitched=True, exclude=[0]),
     ),
     library.low_pass_glissandi(),
     trinton.attachment_command(

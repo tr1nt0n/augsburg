@@ -116,6 +116,14 @@ trinton.make_music(
     trinton.force_accidentals_command(
         selector=trinton.logical_ties(pitched=True, first=True)
     ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override Voice.Accidental.font-size = 5", site="before"
+            )
+        ],
+        selector=trinton.logical_ties(first=True, pitched=True),
+    ),
     library.low_pass_glissandi(),
     trinton.attachment_command(
         attachments=[
@@ -127,7 +135,7 @@ trinton.make_music(
     trinton.attachment_command(
         attachments=[
             abjad.Clef("treble"),
-            library.return_clef_whitespace_literal(offset_pair=(-4, 0)),
+            library.return_clef_whitespace_literal(offset_pair=(-5, 0)),
         ],
         selector=trinton.select_logical_ties_by_index([1], first=True, pitched=True),
         direction=abjad.UP,
@@ -476,7 +484,7 @@ trinton.make_music(
             library.metronome_markups(
                 tempo_string="60",
                 previous_tempo_string="138 3/4",
-                padding=12,
+                padding=5,
                 string_only=False,
                 parenthesis=False,
             ),

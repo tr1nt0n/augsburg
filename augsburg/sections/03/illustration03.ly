@@ -631,11 +631,14 @@
                         \override NoteColumn.glissando-skip = ##t
                           %! abjad.glissando(1)
                         \override NoteHead.no-ledgers = ##t
-                        fs2
+                        fs4
+                        ~
+                        fs4
                         ~
                         \override Staff.Stem.stemlet-length = 0.75
                         fs8
                         [
+                        \once \override Voice.Accidental.font-size = 5
                           %! abjad.glissando(6)
                         \revert Accidental.stencil
                           %! abjad.glissando(6)
@@ -665,7 +668,15 @@
                         \override NoteHead.no-ledgers = ##t
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \natural-one-syntonic-comma-down  }
-                        f'2.
+                        f'4
+                        ~
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \natural-one-syntonic-comma-down  }
+                        f'4
+                        ~
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \natural-one-syntonic-comma-down  }
+                        f'4
                         \tweak text #tuplet-number::calc-fraction-text
                         \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 6 5) (ly:make-duration 1 0))
                         \times 5/6
@@ -679,12 +690,14 @@
                               %! abjad.glissando(6)
                             \undo \hide NoteHead
                             r4
+                            \once \override Voice.Accidental.font-size = 5
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \natural-one-syntonic-comma-down  }
                             f'!4.
                             ^ \markup \center-align { \concat { -45 } }
                             - \abjad-zero-padding-glissando
                             \glissando
+                            \once \override Voice.Accidental.font-size = 5
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup { \one-thirty-seven-limit-quarter-tone-up  }
                             f!\breve

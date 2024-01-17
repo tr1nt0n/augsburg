@@ -29,7 +29,7 @@
             \time 3/4
             s1 * 3/4
             ^ \markup {
-              \raise #12 \with-dimensions-from \null
+              \raise #5 \with-dimensions-from \null
               \override #'(font-size . 5.5)
               \concat {
                   \abjad-metronome-mark-markup #2 #0 #2 #"60" 
@@ -235,6 +235,7 @@
                         - \tweak color \四
                         - \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { ( SYNTHESIZER EIN ) }
                         \override Dots.staff-position = #2
+                        \once \override Voice.Accidental.font-size = 5
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \one-thirty-seven-limit-quarter-tone-up  }
                         f!2
@@ -243,7 +244,8 @@
                         - \abjad-zero-padding-glissando
                         \glissando
                         \once \override Staff.Clef.X-extent = ##f
-                        \once \override Staff.Clef.extra-offset = #'(-4 . 0)
+                        \once \override Staff.Clef.extra-offset = #'(-5 . 0)
+                        \once \override Voice.Accidental.font-size = 5
                         \clef "treble"
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-tridecimal-third-tone-down \hspace #0.125 \abjad-sharp  }
@@ -253,12 +255,14 @@
                         \glissando
                         s1 * 1/4
                         r4
+                        \once \override Voice.Accidental.font-size = 5
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-tridecimal-third-tone-down \hspace #0.125 \abjad-sharp  }
                         cs''!2
                         ^ \markup \center-align { \concat { C+41 } }
                         - \abjad-zero-padding-glissando
                         \glissando
+                        \once \override Voice.Accidental.font-size = 5
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-thirty-seven-limit-quarter-tone-up \hspace #0.125 \abjad-sharp  }
                         cs''!\breve
@@ -270,12 +274,14 @@
                         \times 14/15
                         {
                             r4
+                            \once \override Voice.Accidental.font-size = 5
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup \concat { \one-thirty-seven-limit-quarter-tone-up \hspace #0.125 \abjad-sharp  }
                             cs''!2
                             ^ \markup \center-align { \concat { D-49 } }
                             - \abjad-zero-padding-glissando
                             \glissando
+                            \once \override Voice.Accidental.font-size = 5
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \flat-one-syntonic-comma-down  }
                             ef'!1
