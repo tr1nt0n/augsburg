@@ -68,6 +68,7 @@ afterGraceFraction = #(cons 15 16)
         \Score
         \numericTimeSignature
         \accepts TimeSignatureContext
+        \consists Grid_line_span_engraver
         \remove Bar_number_engraver
         proportionalNotationDuration = #(ly:make-moment 1 20)
         pedalSustainStyle = #'mixed
@@ -209,6 +210,7 @@ afterGraceFraction = #(cons 15 16)
         fontSize = #-3.5
         \remove Time_signature_engraver
         \consists Duration_line_engraver
+        \consists Grid_point_engraver
         \consists Grob_pq_engraver
         \consists #Interrupt_heads_engraver
 
