@@ -29,7 +29,7 @@
             \time 3/4
             s1 * 3/4
             ^ \markup {
-              \raise #5 \with-dimensions-from \null
+              \raise #13 \with-dimensions-from \null
               \override #'(font-size . 5.5)
               \concat {
                   \abjad-metronome-mark-markup #2 #0 #2 #"60" 

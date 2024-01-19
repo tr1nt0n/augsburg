@@ -312,6 +312,9 @@ afterGraceFraction = #(cons 15 16)
 
         \override Tie.stencil = ##f
 
+        \override TupletBracket.stencil = ##f
+        \override TupletNumber.stencil = ##f
+
         \RemoveAllEmptyStaves
 
         \alias Staff

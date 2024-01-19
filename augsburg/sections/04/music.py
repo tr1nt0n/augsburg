@@ -484,7 +484,7 @@ trinton.make_music(
             library.metronome_markups(
                 tempo_string="60",
                 previous_tempo_string="138 3/4",
-                padding=5,
+                padding=13,
                 string_only=False,
                 parenthesis=False,
             ),

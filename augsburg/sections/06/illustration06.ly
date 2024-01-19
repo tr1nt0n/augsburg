@@ -16,8 +16,9 @@
     <<
         \context TimeSignatureContext = "Global Context"
         {
-            \time 37/16
-            s1 * 37/16
+            #(ly:expect-warning "strange time signature found")
+            \time 37/12
+            s1 * 37/12
             ^ \markup {
               \raise #14.5 \with-dimensions-from \null
               \override #'(font-size . 5.5)
@@ -35,6 +36,44 @@
             \abjad-metronome-mark-markup #2 #0 #2 #"72" 
               }
             }
+            \time 11/16
+            s1 * 11/16
+            - \tweak padding #23
+            - \abjad-solid-line-with-arrow
+            - \tweak bound-details.left.text \markup \concat { { \override #'(font-size . 5.5) \concat { (  \abjad-metronome-mark-markup #2 #0 #2 #"72" ) } } \hspace #0.5 }
+            - \tweak bound-details.right.text \markup { \override #'(font-size . 5.5) \concat { \abjad-metronome-mark-mixed-number-markup #2 #0 #2 #"48" #"3" #"4"  } }
+            \startTextSpan
+            \time 7/8
+            s1 * 7/8
+            \time 13/16
+            s1 * 13/16
+            \stopTextSpan
+            \time 7/16
+            s1 * 7/16
+            \time 3/8
+            s1 * 3/8
+            \time 6/4
+            s1 * 3/2
+            ^ \markup {
+              \raise #11 \with-dimensions-from \null
+              \override #'(font-size . 5.5)
+              \concat {
+                  \abjad-metronome-mark-markup #2 #0 #2 #"60" 
+                  [\abjad-metric-modulation-tuplet-lhs #2 #0 #13 #16 #2 #0 #'(1 . 1)]
+              }
+            }
+            \time 7/4
+            s1 * 7/4
+            ^ \markup {
+              \raise #14.5 \with-dimensions-from \null
+              \override #'(font-size . 5.5)
+              \concat {
+                  \abjad-metronome-mark-mixed-number-markup #2 #0 #2 #"48" #"3" #"4" 
+                  [\abjad-metric-modulation-tuplet-lhs #2 #0 #16 #13 #2 #0 #'(1 . 1)]
+              }
+            }
+            \time 5/4
+            s1 * 5/4
         }
         \context StaffGroup = "Staff Group"
         <<
@@ -71,11 +110,15 @@
                                         tupletFullLength = ##t
                                     }
                                     {
-                                        c'\breve
-                                        ~
-                                        c'4
-                                        ~
-                                        c'16
+                                        \tweak edge-height #'(0.7 . 0)
+                                        \times 8/12
+                                        {
+                                            c'\longa
+                                            ~
+                                            c'2
+                                            ~
+                                            c'8
+                                        }
                                     }
                                 >>
                                 \layout
@@ -84,6 +127,7 @@
                                     ragged-right = ##t
                                 }
                             }
+                        \tweak edge-height #'(0.7 . 0)
                         \times 1/1
                         {
                             \once \override Staff.Clef.X-extent = ##f
@@ -98,34 +142,44 @@
                             ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Tastaturabdeckung }
                             [
                             c'32 * 127/32
-                            c'32 * 125/32
-                            c'32 * 123/32
-                            c'32 * 119/32
-                            c'32 * 115/32
+                            c'32 * 63/16
+                            c'32 * 31/8
+                            c'32 * 61/16
+                            c'32 * 15/4
+                            c'32 * 117/32
+                            c'32 * 57/16
                             c'32 * 55/16
-                            c'32 * 53/16
-                            c'32 * 101/32
-                            c'32 * 3
-                            c'32 * 91/32
-                            c'32 * 43/16
+                            c'32 * 107/32
+                            c'32 * 103/32
+                            c'32 * 99/32
+                            c'32 * 95/32
+                            c'32 * 23/8
+                            c'32 * 11/4
+                            c'32 * 85/32
                             c'32 * 41/16
-                            c'32 * 39/16
-                            c'32 * 37/16
+                            c'32 * 79/32
+                            c'32 * 19/8
+                            c'32 * 73/32
                             c'32 * 71/32
                             c'32 * 17/8
-                            c'32 * 65/32
+                            c'32 * 33/16
+                            c'32 * 2
                             c'32 * 31/16
                             \set suggestAccidentals = ##t
-                            c'32 * 15/8
+                            c'32 * 61/32
+                            c'32 * 59/32
                             c'32 * 29/16
                             c'32 * 57/32
+                            c'32 * 7/4
                             c'32 * 55/32
                             c'32 * 27/16
                             c'32 * 53/32
                             c'32 * 13/8
                             c'32 * 13/8
                             c'32 * 51/32
-                            c'32 * 25/16
+                            c'32 * 51/32
+                            c'32 * 51/32
+                            c'32 * 151/96
                             ]
                             \revert Staff.Stem.direction
                         }
@@ -135,14 +189,431 @@
                         \revert Staff.Stem.direction
                         \set suggestAccidentals = ##f
                         r1
+                        \staff-line-count 1
+                        \change Staff = "piano 3 staff"
+                        \once \override TupletBracket.bracket-visibility = ##f
+                        \once \override TupletBracket.bracket-visibility = ##f
+                        \override Score.Stem.direction = #UP
+                        \override Staff.TupletBracket.direction = #UP
+                        \clef "percussion"
+                        c'16
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.1
+                                    #:dynamic "pp"
+                                    #:hspace -0.25
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
+                        [
+                        \<
+                        ~
+                        c'64
+                        \change Staff = "piano 1 staff"
+                        r64
+                        - \tweak padding #12
+                        ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #2 { \center-column { \line { Auf dem Deckel } \line { mit Styroporkugeln }  } }
+                        \change Staff = "piano 1 staff"
+                        \set suggestAccidentals = ##t
+                        c'32
+                        ]
+                        ~
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 4 0))
+                        \times 2/3
+                        {
+                            \once \override TupletBracket.bracket-visibility = ##f
+                            \once \override TupletBracket.bracket-visibility = ##f
+                            c'16
+                            [
+                            \set suggestAccidentals = ##f
+                            \change Staff = "piano 1 staff"
+                            r32
+                            \change Staff = "piano 3 staff"
+                            \set suggestAccidentals = ##t
+                            c'16.
+                            ]
+                            ~
+                        }
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 7 8) (ly:make-duration 6 0))
+                        \times 8/7
+                        {
+                            \once \override TupletBracket.bracket-visibility = ##f
+                            \once \override TupletBracket.bracket-visibility = ##f
+                            c'32
+                            [
+                            \set suggestAccidentals = ##f
+                            \change Staff = "piano 1 staff"
+                            r64
+                            \change Staff = "piano 1 staff"
+                            \set suggestAccidentals = ##t
+                            c'16
+                            ]
+                            ~
+                        }
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 4 0))
+                        \times 2/3
+                        {
+                            \once \override TupletBracket.bracket-visibility = ##f
+                            \once \override TupletBracket.bracket-visibility = ##f
+                            c'16
+                            [
+                            \set suggestAccidentals = ##f
+                            \change Staff = "piano 1 staff"
+                            r16
+                            \change Staff = "piano 3 staff"
+                            \set suggestAccidentals = ##t
+                            c'16
+                            ]
+                            ~
+                        }
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 7 6) (ly:make-duration 5 0))
+                        \times 6/7
+                        {
+                            c'8
+                            [
+                            ~
+                            c'32
+                            \set suggestAccidentals = ##f
+                            \change Staff = "piano 1 staff"
+                            r32
+                            \change Staff = "piano 1 staff"
+                            \set suggestAccidentals = ##t
+                            c'32
+                            ]
+                            ~
+                        }
+                        c'2..
+                        ~
+                        \once \override TupletBracket.bracket-visibility = ##f
+                        \once \override TupletBracket.bracket-visibility = ##f
+                        c'8
+                        ~
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 7 8) (ly:make-duration 6 0))
+                        \times 8/7
+                        {
+                            \once \override TupletBracket.bracket-visibility = ##f
+                            \once \override TupletBracket.bracket-visibility = ##f
+                            c'16
+                            [
+                            ~
+                            c'64
+                            \set suggestAccidentals = ##f
+                            \change Staff = "piano 1 staff"
+                            r64
+                            \change Staff = "piano 3 staff"
+                            \set suggestAccidentals = ##t
+                            c'64
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.4
+                                        #:dynamic "f"
+                                        #:hspace -0.2
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
+                            ]
+                            ~
+                        }
+                        \once \override TupletBracket.bracket-visibility = ##f
+                        \once \override TupletBracket.bracket-visibility = ##f
+                        c'8
+                        ~
+                        \once \override TupletBracket.bracket-visibility = ##f
+                        \once \override TupletBracket.bracket-visibility = ##f
+                        c'8
+                        \set suggestAccidentals = ##f
+                        \change Staff = "piano 1 staff"
+                        \once \override TupletBracket.bracket-visibility = ##f
+                        \once \override TupletBracket.bracket-visibility = ##f
+                        r64
+                        [
+                        \change Staff = "piano 1 staff"
+                        \set suggestAccidentals = ##t
+                        c'16..
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.1
+                                    #:dynamic "pp"
+                                    #:hspace -0.25
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
+                        ]
+                        ~
+                        c'8
+                        [
+                        \set suggestAccidentals = ##f
+                        \change Staff = "piano 1 staff"
+                        r32
+                        \change Staff = "piano 3 staff"
+                        \set suggestAccidentals = ##t
+                        c'32
+                        ]
+                        ~
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 4) (ly:make-duration 4 0))
+                        \times 4/5
+                        {
+                            c'16
+                            [
+                            \set suggestAccidentals = ##f
+                            \change Staff = "piano 1 staff"
+                            r16
+                            \change Staff = "piano 1 staff"
+                            \set suggestAccidentals = ##t
+                            c'8.
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.4
+                                        #:dynamic "fp"
+                                        #:hspace -0.25
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
+                            ]
+                            \<
+                            \set suggestAccidentals = ##f
+                        }
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 7 6) (ly:make-duration 5 0))
+                        \times 6/7
+                        {
+                            \change Staff = "piano 1 staff"
+                            r32
+                            [
+                            \change Staff = "piano 3 staff"
+                            \set suggestAccidentals = ##t
+                            c'8
+                            \set suggestAccidentals = ##f
+                            \change Staff = "piano 1 staff"
+                            r32
+                            \change Staff = "piano 1 staff"
+                            \set suggestAccidentals = ##t
+                            c'32
+                            ]
+                            ~
+                        }
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 4 0))
+                        \times 2/3
+                        {
+                            \once \override TupletBracket.bracket-visibility = ##f
+                            \once \override TupletBracket.bracket-visibility = ##f
+                            c'16
+                            [
+                            \set suggestAccidentals = ##f
+                            \change Staff = "piano 1 staff"
+                            r16
+                            \change Staff = "piano 3 staff"
+                            \set suggestAccidentals = ##t
+                            c'16
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.1
+                                        #:dynamic "mf"
+                                        #:hspace -0.2
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
+                            ]
+                            - \tweak stencil #constante-hairpin
+                            \<
+                            ~
+                        }
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 7 8) (ly:make-duration 6 0))
+                        \times 8/7
+                        {
+                            \once \override TupletBracket.bracket-visibility = ##f
+                            \once \override TupletBracket.bracket-visibility = ##f
+                            c'32
+                            [
+                            \set suggestAccidentals = ##f
+                            \change Staff = "piano 1 staff"
+                            r64
+                            \change Staff = "piano 1 staff"
+                            \set suggestAccidentals = ##t
+                            c'16
+                            ]
+                            ~
+                        }
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 9 8) (ly:make-duration 6 0))
+                        \times 8/9
+                        {
+                            \once \override TupletBracket.bracket-visibility = ##f
+                            \once \override TupletBracket.bracket-visibility = ##f
+                            c'32
+                            [
+                            \set suggestAccidentals = ##f
+                            \change Staff = "piano 1 staff"
+                            r64
+                            \change Staff = "piano 3 staff"
+                            \set suggestAccidentals = ##t
+                            c'16
+                            \set suggestAccidentals = ##f
+                            \change Staff = "piano 1 staff"
+                            r64
+                            \change Staff = "piano 1 staff"
+                            \set suggestAccidentals = ##t
+                            c'64
+                            \!
+                            ]
+                            \revert Score.Stem.direction
+                            \override Staff.TupletBracket.direction = #UP
+                            \change Staff = "piano 1 staff"
+                        }
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 7 6) (ly:make-duration 2 0))
+                        \times 6/7
+                        {
+                            \staff-line-count 5
+                            \ottava -1
+                            \clef "bass"
+                            fs,8.
+                            \p
+                            [
+                            - \tweak stencil #constante-hairpin
+                            \<
+                            \set suggestAccidentals = ##f
+                            r16
+                            \set suggestAccidentals = ##t
+                            g,,8.
+                            \set suggestAccidentals = ##f
+                            r16
+                            \set suggestAccidentals = ##t
+                            b,,8.
+                            \set suggestAccidentals = ##f
+                            r16
+                            \set suggestAccidentals = ##t
+                            a,8.
+                            \set suggestAccidentals = ##f
+                            r16
+                            \set suggestAccidentals = ##t
+                            cs,8.
+                            \set suggestAccidentals = ##f
+                            r16
+                            \set suggestAccidentals = ##t
+                            ef,,8.
+                            \set suggestAccidentals = ##f
+                            r16
+                            \set suggestAccidentals = ##t
+                            c,,8.
+                            \!
+                            \ottava 0
+                            \set suggestAccidentals = ##f
+                            r16
+                            ]
+                        }
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 6 4) (ly:make-duration 3 0))
+                        \times 4/6
+                        {
+                            \staff-line-count 1
+                            \clef "percussion"
+                            r4
+                            ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #2 { \center-column { \line { Auf dem Deckel } \line { mit Styroporkugeln }  } }
+                            c'8
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.1
+                                        #:dynamic "mf"
+                                        #:hspace -0.2
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
+                            [
+                            - \tweak stencil #constante-hairpin
+                            \<
+                            r8
+                            c'8
+                            r8
+                            ]
+                        }
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 7 8) (ly:make-duration 4 0))
+                        \times 8/7
+                        {
+                            r16
+                            [
+                            c'16
+                            r16
+                            c'16
+                            r8
+                            c'16
+                            ]
+                        }
+                        r2
+                        c'4
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 7 5) (ly:make-duration 2 0))
+                        \times 5/7
+                        {
+                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 6 4) (ly:make-duration 2 0))
+                            \times 4/6
+                            {
+                                r4
+                                c'4
+                                c'4
+                                r4
+                                c'4
+                                r4
+                            }
+                            \tweak text #tuplet-number::calc-fraction-text
+                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 7 6) (ly:make-duration 3 0))
+                            \times 6/7
+                            {
+                                c'8
+                                [
+                                r8
+                                c'8
+                                r8
+                                c'8
+                                r8
+                                c'8
+                                \!
+                                ]
+                            }
+                        }
                     }
                 }
                 \context timeSignatureStaff = "piano 2 staff"
                 {
                     \context Voice = "piano 2 voice"
                     {
-                        s1 * 37/16
+                        s1 * 37/12
                         s1 * 3/2
+                        s1 * 11/16
+                        s1 * 7/8
+                        s1 * 13/16
+                        s1 * 7/16
+                        s1 * 3/8
+                        s1 * 3/2
+                        s1 * 7/4
+                        s1 * 5/4
                     }
                 }
                 \context leftHandStaff = "piano 3 staff"
@@ -176,11 +647,15 @@
                                         tupletFullLength = ##t
                                     }
                                     {
-                                        c'\breve
-                                        ~
-                                        c'4
-                                        ~
-                                        c'16
+                                        \tweak edge-height #'(0.7 . 0)
+                                        \times 8/12
+                                        {
+                                            c'\longa
+                                            ~
+                                            c'2
+                                            ~
+                                            c'8
+                                        }
                                     }
                                 >>
                                 \layout
@@ -189,6 +664,7 @@
                                     ragged-right = ##t
                                 }
                             }
+                        \tweak edge-height #'(0.7 . 0)
                         \times 1/1
                         {
                             \once \override Staff.Clef.X-extent = ##f
@@ -198,6 +674,7 @@
                             \once \override Staff.TupletBracket.stencil = ##f
                             \once \override Staff.TupletNumber.stencil = ##f
                             \once \override Staff.Beam.stencil = ##f
+                            \override Staff.TupletBracket.direction = #DOWN
                               %! +SCORE
                             \revert Staff.BarLine.bar-extent
                             \once \override Beam.grow-direction = #right
@@ -210,34 +687,44 @@
                             \<
                             \sustainOn
                             d,32 * 127/32
-                            d,32 * 125/32
-                            d,32 * 123/32
-                            d,32 * 119/32
-                            d,32 * 115/32
+                            d,32 * 63/16
+                            d,32 * 31/8
+                            d,32 * 61/16
+                            d,32 * 15/4
+                            d,32 * 117/32
+                            d,32 * 57/16
                             d,32 * 55/16
-                            d,32 * 53/16
-                            d,32 * 101/32
-                            d,32 * 3
-                            d,32 * 91/32
-                            d,32 * 43/16
+                            d,32 * 107/32
+                            d,32 * 103/32
+                            d,32 * 99/32
+                            d,32 * 95/32
+                            d,32 * 23/8
+                            d,32 * 11/4
+                            d,32 * 85/32
                             d,32 * 41/16
-                            d,32 * 39/16
-                            d,32 * 37/16
+                            d,32 * 79/32
+                            d,32 * 19/8
+                            d,32 * 73/32
                             d,32 * 71/32
                             d,32 * 17/8
-                            d,32 * 65/32
+                            d,32 * 33/16
+                            d,32 * 2
                             d,32 * 31/16
                             \set suggestAccidentals = ##t
-                            d,32 * 15/8
+                            d,32 * 61/32
+                            d,32 * 59/32
                             d,32 * 29/16
                             d,32 * 57/32
+                            d,32 * 7/4
                             d,32 * 55/32
                             d,32 * 27/16
                             d,32 * 53/32
                             d,32 * 13/8
                             d,32 * 13/8
                             d,32 * 51/32
-                            d,32 * 25/16
+                            d,32 * 51/32
+                            d,32 * 51/32
+                            d,32 * 151/96
                             ]
                         }
                         \revert TupletNumber.text
@@ -262,6 +749,210 @@
                             r2
                             r8.
                         }
+                        \staff-line-count 1
+                        \override Score.Stem.direction = #UP
+                        \override Staff.TupletBracket.direction = #UP
+                        \clef "percussion"
+                        s1 * 11/16
+                        s1 * 7/8
+                        s1 * 13/16
+                        s1 * 7/16
+                        s1 * 3/8
+                        \revert Score.Stem.direction
+                        \override Staff.TupletBracket.direction = #DOWN
+                        r8.
+                        - \tweak padding #6
+                        ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Tasten }
+                        [
+                        \staff-line-count 5
+                        \once \override Staff.DynamicLineSpanner.staff-padding = 10
+                        \ottava -1
+                        \clef "bass"
+                        ef,,16
+                        \ff
+                        - \tweak stencil #constante-hairpin
+                        \<
+                        \sustainOn
+                        r8.
+                        c,16
+                        \sustainOff
+                        r8.
+                        cs,,16
+                        r8.
+                        ef,16
+                        r8.
+                        g,,16
+                        r8.
+                        af,,16
+                        \!
+                        ]
+                        \ottava 0
+                        \staff-line-count 1
+                        \clef "percussion"
+                        c'16
+                        - \accent
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.1
+                                    #:dynamic "mf"
+                                    #:hspace -0.2
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
+                        [
+                        r16
+                        ]
+                        c'4.
+                        - \accent
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.4
+                                    #:dynamic "fp"
+                                    #:hspace -0.25
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 2 0))
+                        \times 2/3
+                        {
+                            r8
+                            c'4
+                            \<
+                            r8
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.4
+                                        #:dynamic "f"
+                                        #:hspace -0.2
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
+                            c'4
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.1
+                                        #:dynamic "p"
+                                        #:hspace -0.25
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
+                            \<
+                            ~
+                        }
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 7 6) (ly:make-duration 3 0))
+                        \times 6/7
+                        {
+                            c'4
+                            r8
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.4
+                                        #:dynamic "ff"
+                                        #:hspace -0.2
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
+                            c'4
+                            \>
+                            r8
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.1
+                                        #:dynamic "pp"
+                                        #:hspace -0.25
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
+                            [
+                            c'8
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.1
+                                        #:dynamic "mf"
+                                        #:hspace -0.2
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
+                            ]
+                            \>
+                            ~
+                        }
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 6 5) (ly:make-duration 2 0))
+                        \times 5/6
+                        {
+                            c'8
+                            [
+                            r8
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.1
+                                        #:dynamic "pp"
+                                        #:hspace -0.25
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
+                            ]
+                            c'4.
+                            \<
+                            r8
+                            c'4
+                            ~
+                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 6 4) (ly:make-duration 3 0))
+                            \times 4/6
+                            {
+                                c'2
+                                r8
+                                [
+                                c'8
+                                _ #(make-dynamic-script
+                                    (markup
+                                        #:whiteout
+                                        #:line (
+                                            #:general-align Y -2 #:normal-text #:larger "“"
+                                            #:hspace -0.1
+                                            #:dynamic "mf"
+                                            #:hspace -0.2
+                                            #:general-align Y -2 #:normal-text #:larger "”"
+                                            )
+                                        )
+                                    )
+                                ]
+                            }
+                        }
                     }
                 }
                 \context thirdStaff = "piano 4 staff"
@@ -272,13 +963,61 @@
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \once \override Staff.TimeSignature.transparent = ##t
                         \once \override MultiMeasureRest.transparent = ##t
-                        R1 * 37/16
+                        R1 * 37/12
                         \stopStaff \startStaff
                         \once \override Staff.BarLine.transparent = ##f
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \once \override Staff.TimeSignature.transparent = ##t
                         \once \override MultiMeasureRest.transparent = ##t
                         R1 * 3/2
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 11/16
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 7/8
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 13/16
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 7/16
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 3/8
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 3/2
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 7/4
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 5/4
                         \stopStaff \startStaff
                     }
                 }
@@ -287,8 +1026,47 @@
             {
                 \context Voice = "piano 5 voice"
                 {
+                    \tweak edge-height #'(0.7 . 0)
+                    \times 2/3
+                    {
+                        \override Dots.staff-position = #2
+                        ef\longa
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        ~
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        ef2
+                        ~
+                        ef8
+                    }
+                      %! abjad.glissando(6)
+                    \revert Accidental.stencil
+                      %! abjad.glissando(6)
+                    \revert NoteColumn.glissando-skip
+                      %! abjad.glissando(6)
+                    \revert NoteHead.no-ledgers
+                      %! abjad.glissando(6)
+                    \undo \hide NoteHead
+                    \afterGrace
+                    g'1.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    {
+                        \revert Dots.staff-position
+                        ef16
+                    }
                     \override Dots.staff-position = #2
-                    ef\breve
+                    \revert Staff.Accidental.X-extent
+                    ef2
                       %! abjad.glissando(7)
                     - \abjad-zero-padding-glissando
                       %! abjad.glissando(7)
@@ -302,29 +1080,65 @@
                     \override NoteColumn.glissando-skip = ##t
                       %! abjad.glissando(1)
                     \override NoteHead.no-ledgers = ##t
-                    ef4
+                    ef8.
                     ~
-                    ef16
-                    ~
-                    ef2
-                    ~
-                    ef16
-                      %! abjad.glissando(6)
-                    \revert Accidental.stencil
-                      %! abjad.glissando(6)
-                    \revert NoteColumn.glissando-skip
-                      %! abjad.glissando(6)
-                    \revert NoteHead.no-ledgers
-                      %! abjad.glissando(6)
-                    \undo \hide NoteHead
                     \afterGrace
-                    g'2...
-                    - \abjad-zero-padding-glissando
-                    \glissando
+                    ef2..
                     {
                         \revert Dots.staff-position
-                        ef16
+                          %! abjad.glissando(6)
+                        \revert Accidental.stencil
+                          %! abjad.glissando(6)
+                        \revert NoteColumn.glissando-skip
+                          %! abjad.glissando(6)
+                        \revert NoteHead.no-ledgers
+                          %! abjad.glissando(6)
+                        \undo \hide NoteHead
+                        a'16
                     }
+                    \override Staff.Accidental.X-extent = ##f
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 13/16
+                    \stopStaff \startStaff
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 7/16
+                    \stopStaff \startStaff
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 3/8
+                    \stopStaff \startStaff
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 3/2
+                    \stopStaff \startStaff
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 7/4
+                    \stopStaff \startStaff
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 5/4
+                    \stopStaff \startStaff
                 }
             }
         >>
