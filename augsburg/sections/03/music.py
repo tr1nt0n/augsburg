@@ -109,7 +109,7 @@ trinton.make_music(
     library.change_lines(lines=1, clef="percussion"),
     trinton.attachment_command(
         attachments=[
-            library.boxed_markup(string=["Stimmwirbelmagneten", "mit der Handfläche"]),
+            library.boxed_markup(string=["Magnete", "mit der Handfläche"]),
         ],
         selector=trinton.select_leaves_by_index([0], pitched=True),
         direction=abjad.UP,

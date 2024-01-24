@@ -234,8 +234,11 @@
                         r4
                         - \tweak color \四
                         - \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { ( SYNTHESIZER EIN ) }
+                        \once \override Staff.Clef.X-extent = ##f
+                        \once \override Staff.Clef.extra-offset = #'(-5 . 0)
                         \override Dots.staff-position = #2
                         \once \override Voice.Accidental.font-size = 5
+                        \clef "treble"
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \one-thirty-seven-limit-quarter-tone-up  }
                         f!2
@@ -243,10 +246,7 @@
                         ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Nagel + Vibrator }
                         - \abjad-zero-padding-glissando
                         \glissando
-                        \once \override Staff.Clef.X-extent = ##f
-                        \once \override Staff.Clef.extra-offset = #'(-5 . 0)
                         \once \override Voice.Accidental.font-size = 5
-                        \clef "treble"
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-tridecimal-third-tone-down \hspace #0.125 \abjad-sharp  }
                         cs''!2
@@ -303,7 +303,7 @@
                         \clef "percussion"
                         c'2.
                             _ #(make-dynamic-script (markup #:whiteout #:italic "ppp"))
-                        ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Einzelstimmwirbelmagnet links }
+                        ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Magnet links }
                         ~
                         c'16
                         _ #(make-dynamic-script (markup #:whiteout #:normal-text #:italic "cresc. poco a poco ( bis mezzo-forte )"))
@@ -330,7 +330,7 @@
                         \once \override Stem.direction = #down
                         \clef "percussion"
                         b32
-                        ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #2 { \center-column { \line { 1. Stimmwirbelmagneten mit der Handfläche } \line { 2. Einzelstimmwirbelmagnet rechts }  } }
+                        ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #2 { \center-column { \line { 1. Magnete mit der Handfläche } \line { 2. Magnet rechts }  } }
                         \set suggestAccidentals = ##t
                         \once \override Stem.direction = #down
                         b16.

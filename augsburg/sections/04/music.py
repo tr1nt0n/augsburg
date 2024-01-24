@@ -137,7 +137,7 @@ trinton.make_music(
             abjad.Clef("treble"),
             library.return_clef_whitespace_literal(offset_pair=(-5, 0)),
         ],
-        selector=trinton.select_logical_ties_by_index([1], first=True, pitched=True),
+        selector=trinton.select_logical_ties_by_index([0], first=True, pitched=True),
         direction=abjad.UP,
     ),
     trinton.linear_attachment_command(
@@ -164,7 +164,7 @@ trinton.make_music(
     library.change_lines(lines=1, clef="percussion"),
     trinton.attachment_command(
         attachments=[
-            library.boxed_markup(string="Einzelstimmwirbelmagnet links"),
+            library.boxed_markup(string="Magnet links"),
         ],
         selector=trinton.select_leaves_by_index([0], pitched=True),
         direction=abjad.UP,
@@ -195,8 +195,8 @@ trinton.make_music(
         attachments=[
             library.boxed_markup(
                 string=[
-                    "1. Stimmwirbelmagneten mit der Handfläche",
-                    "2. Einzelstimmwirbelmagnet rechts",
+                    "1. Magnete mit der Handfläche",
+                    "2. Magnet rechts",
                 ]
             ),
         ],
