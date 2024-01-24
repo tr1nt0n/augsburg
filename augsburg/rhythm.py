@@ -592,7 +592,7 @@ def rhythm_b(index=0, stage=1, grace=False, grace_selector=None):
     return rhythm
 
 
-def rhythm_g(index=0, stage=1, hand="rh"):
+def rhythm_g(index=0, stage=1, hand="rh", voice_number=None):
     def rhythm(durations):
         _counts_dictionary = {
             "voice 1": [],
@@ -655,11 +655,17 @@ def rhythm_g(index=0, stage=1, hand="rh"):
         components = abjad.Voice(components, name=voice_name)
 
         if hand == "rh":
-            voice_name = "35 voice"
+            if voice_number is not None:
+                voice_name = f"35 voice {voice_number}"
+            else:
+                voice_name = "35 voice"
             extra_counts = _counts_dictionary["voice 2"]
 
-        else:
-            voice_name = "4 voice"
+        if hand == "lh":
+            if voice_number is not None:
+                voice_name = f"4 voice {voice_number}"
+            else:
+                voice_name = "4 voice"
             extra_counts = _counts_dictionary["voice 4"]
 
         literal1 = abjad.LilyPondLiteral(r"\voiceOne")
@@ -668,7 +674,10 @@ def rhythm_g(index=0, stage=1, hand="rh"):
 
         duration = [abjad.get.duration(components[:])]
         container = abjad.Container(simultaneous=True)
-        original_voice = abjad.Voice(name=f"{components.name} temp")
+        if voice_number is not None:
+            original_voice = abjad.Voice(name=f"{components.name} temp {voice_number}")
+        else:
+            original_voice = abjad.Voice(name=f"{components.name} temp")
 
         intermittent_voice = abjad.Voice(name=voice_name)
         new_components = rmakers.talea(durations, [8], 32, extra_counts=extra_counts)

@@ -244,7 +244,42 @@
                             }
                         >>
                         \oneVoice
-                        s1 * 13/16
+                        \revert Staff.Accidental.X-extent
+                        <b! c'! f'! bf'!>8.
+                        \p
+                        [
+                        (
+                        - \tweak stencil #constante-hairpin
+                        \<
+                        \override Staff.Accidental.X-extent = ##f
+                        \revert Staff.Accidental.X-extent
+                        <ds! a! bf!>8
+                        ]
+                        \override Staff.Accidental.X-extent = ##f
+                        \revert Staff.Accidental.X-extent
+                        <c'! ds'! gs'! b'!>4
+                        \mf
+                        )
+                        \override Staff.Accidental.X-extent = ##f
+                        \revert Staff.Accidental.X-extent
+                        <ds! a! bf!>8
+                        - \tenuto
+                        \p
+                        [
+                        (
+                        - \tweak stencil #constante-hairpin
+                        \<
+                        \override Staff.Accidental.X-extent = ##f
+                        \revert Staff.Accidental.X-extent
+                        <b! c'! f'! bf'!>8
+                        - \accent
+                        - \accent
+                        - \staccato
+                        - \staccato
+                        \!
+                        )
+                        ]
+                        \override Staff.Accidental.X-extent = ##f
                         s1 * 11/16
                         s1 * 5/8
                         s1 * 9/16
@@ -370,9 +405,11 @@
                                 g''''4
                                 \interrupt
                                 g''''4
+                                \sustainOn
                                 \interrupt
                                 ds''''8
                                 ^ \f
+                                \sustainOff
                                 \ottava 0
                                 \revert Accidental.color
                                 \revert Beam.color
@@ -394,7 +431,31 @@
                             }
                         >>
                         \oneVoice
-                        s1 * 13/16
+                        \ottava -1
+                        \clef "bass"
+                        df,,8.
+                        \fff
+                        [
+                        (
+                        - \tweak stencil #constante-hairpin
+                        \<
+                        b,,,8
+                        ]
+                        f,,4
+                        )
+                        df,,8
+                        - \tenuto
+                        [
+                        (
+                        df,,8
+                        - \accent
+                        - \accent
+                        - \staccato
+                        - \staccato
+                        \!
+                        )
+                        ]
+                        \ottava 0
                         s1 * 11/16
                         s1 * 5/8
                         s1 * 9/16
