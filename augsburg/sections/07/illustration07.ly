@@ -38,7 +38,7 @@
             \time 11/16
             s1 * 11/16
             ^ \markup {
-              \raise #10.5 \with-dimensions-from \null
+              \raise #26.5 \with-dimensions-from \null
               \override #'(font-size . 5.5)
               \concat {
                   \abjad-metronome-mark-markup #2 #0 #2 #"60" 
@@ -294,7 +294,99 @@
                         )
                         ]
                         \override Staff.Accidental.X-extent = ##f
-                        s1 * 11/16
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 12 11) (ly:make-duration 4 0))
+                        \times 11/12
+                        {
+                            \override Staff.Stem.direction = #UP
+                            \clef "bass"
+                            ef32.
+                            - \staccato
+                            \mp
+                            [
+                            - \tweak stencil #constante-hairpin
+                            \<
+                            r64
+                            \set suggestAccidentals = ##t
+                            c32.
+                            - \staccato
+                            \set suggestAccidentals = ##f
+                            r64
+                            \set suggestAccidentals = ##t
+                            cs,32.
+                            - \staccato
+                            \set suggestAccidentals = ##f
+                            r64
+                            \ottava -1
+                            \set suggestAccidentals = ##t
+                            ef,,32.
+                            - \tenuto
+                            \set suggestAccidentals = ##f
+                            r64
+                            \set suggestAccidentals = ##t
+                            fs,,32.
+                            - \tenuto
+                            \set suggestAccidentals = ##f
+                            r64
+                            \set suggestAccidentals = ##t
+                            g,,32.
+                            - \tenuto
+                            \set suggestAccidentals = ##f
+                            r64
+                            \set suggestAccidentals = ##t
+                            af,,32.
+                            - \tenuto
+                            \set suggestAccidentals = ##f
+                            r64
+                            \set suggestAccidentals = ##t
+                            e,32.
+                            - \tenuto
+                            \ottava 0
+                            \set suggestAccidentals = ##f
+                            r64
+                            \set suggestAccidentals = ##t
+                            b,32.
+                            - \tenuto
+                            \set suggestAccidentals = ##f
+                            r64
+                            \set suggestAccidentals = ##t
+                            a,32.
+                            - \tenuto
+                            \set suggestAccidentals = ##f
+                            r64
+                            \set suggestAccidentals = ##t
+                            b,32.
+                            - \tenuto
+                            \set suggestAccidentals = ##f
+                            r64
+                            \once \override TupletBracket.bracket-visibility = ##f
+                            \tweak text #tuplet-number::calc-fraction-text
+                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 7 0))
+                            \times 6/5
+                            {
+                                \set suggestAccidentals = ##t
+                                ef128
+                                - \staccato
+                                \ff
+                                - \tweak stencil #constante-hairpin
+                                \<
+                                c'128
+                                - \marcato
+                                - \staccato
+                                cs128
+                                - \staccato
+                                e128
+                                - \staccato
+                                fs'128
+                                - \marcato
+                                - \staccato
+                                \!
+                                \revert Staff.Stem.direction
+                                \set suggestAccidentals = ##f
+                            }
+                            r64
+                            ]
+                        }
                         s1 * 5/8
                         s1 * 9/16
                         s1 * 1/2
@@ -470,7 +562,83 @@
                         )
                         ]
                         \ottava 0
-                        s1 * 11/16
+                        r32.
+                        [
+                        \ottava -1
+                        \override Staff.Stem.direction = #DOWN
+                        \set suggestAccidentals = ##t
+                        a,,,64
+                            _ #(make-dynamic-script (markup #:whiteout #:italic "sffz pp"))
+                        \sustainOn
+                        \set suggestAccidentals = ##f
+                        r32.
+                        \set suggestAccidentals = ##t
+                        b,,,64
+                        \set suggestAccidentals = ##f
+                        r32.
+                        \set suggestAccidentals = ##t
+                        cs,,64
+                        \sustainOff
+                        \set suggestAccidentals = ##f
+                        r32.
+                        \set suggestAccidentals = ##t
+                        ef,,64
+                        \set suggestAccidentals = ##f
+                        r32.
+                        \set suggestAccidentals = ##t
+                        c,64
+                            _ #(make-dynamic-script (markup #:whiteout #:italic "sffz pp"))
+                        \sustainOn
+                        \set suggestAccidentals = ##f
+                        r32.
+                        \sustainOff
+                        \set suggestAccidentals = ##t
+                        cs,,64
+                        \set suggestAccidentals = ##f
+                        r32.
+                        \set suggestAccidentals = ##t
+                        ef,64
+                            _ #(make-dynamic-script (markup #:whiteout #:italic "sffz pp"))
+                        \sustainOn
+                        \set suggestAccidentals = ##f
+                        r32.
+                        \sustainOff
+                        \set suggestAccidentals = ##t
+                        fs,,64
+                            _ #(make-dynamic-script (markup #:whiteout #:italic "sffz pp"))
+                        \sustainOn
+                        \set suggestAccidentals = ##f
+                        r32.
+                        \set suggestAccidentals = ##t
+                        g,64
+                        \set suggestAccidentals = ##f
+                        r32.
+                        \set suggestAccidentals = ##t
+                        af,64
+                        \ottava 0
+                        \set suggestAccidentals = ##f
+                        r32.
+                        \sustainOff
+                        \once \override TupletBracket.bracket-visibility = ##f
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 7 0))
+                        \times 2/3
+                        {
+                            \set suggestAccidentals = ##t
+                            e128
+                            - \staccato
+                            \ff
+                            - \tweak stencil #constante-hairpin
+                            \<
+                            b128
+                            - \marcato
+                            - \staccato
+                            a128
+                            - \staccato
+                            \!
+                            ]
+                            \revert Staff.Stem.direction
+                            \set suggestAccidentals = ##f
+                        }
                         s1 * 5/8
                         s1 * 9/16
                         s1 * 1/2

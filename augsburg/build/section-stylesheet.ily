@@ -171,7 +171,7 @@ afterGraceFraction = #(cons 15 16)
 
         tupletFullLength = ##t
         \override TupletBracket.full-length-to-extent = ##f
-        \override TupletBracket.padding = 3
+        \override TupletBracket.padding = 2
         \override TupletNumber.font-size = 1.5
         \override TupletBracket.bracket-visibility = ##t
         \override TupletBracket.layer = 2

@@ -733,7 +733,7 @@ def rhythm_d(stage=1, hand="rh", tuplet_selector=None):
         components = abjad.Container(components)
 
         tuplets = abjad.select.tuplets(components)
-        trinton.respell_tuplets(tuplets)
+        trinton.respell_tuplets(tuplets, rewrite_brackets=True)
         rmakers.rewrite_sustained(components)
         rmakers.rewrite_rest_filled(components)
         rmakers.rewrite_dots(components)
@@ -754,7 +754,15 @@ def rhythm_d(stage=1, hand="rh", tuplet_selector=None):
                     tuplet_ratio = (1, 1, 1)
 
                 nested_tuplet = rmakers.tuplet([tie_duration], [tuplet_ratio])
-                # trinton.respell_tuplets(nested_tuplet)
+                nested_tuplet_duration = abjad.get.duration(nested_tuplet)
+                if nested_tuplet_duration < abjad.Duration(3, 16):
+                    abjad.attach(
+                        abjad.LilyPondLiteral(
+                            r"\once \override TupletBracket.bracket-visibility = ##f",
+                            site="before",
+                        ),
+                        abjad.select.tuplet(nested_tuplet, 0),
+                    )
                 rmakers.rewrite_dots(nested_tuplet)
                 rmakers.trivialize(nested_tuplet)
                 rmakers.rewrite_rest_filled(nested_tuplet)
