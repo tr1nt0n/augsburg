@@ -19,7 +19,7 @@
             \time 7/8
             s1 * 7/8
             ^ \markup {
-              \raise #16.5 \with-dimensions-from \null
+              \raise #19 \with-dimensions-from \null
               \override #'(font-size . 5.5)
               \concat {
                   \abjad-metronome-mark-markup #2 #0 #2 #"33" 
@@ -38,7 +38,7 @@
             \time 11/16
             s1 * 11/16
             ^ \markup {
-              \raise #20 \with-dimensions-from \null
+              \raise #22 \with-dimensions-from \null
               \override #'(font-size . 5.5)
               \concat {
                   \abjad-metronome-mark-markup #2 #0 #2 #"60" 
@@ -58,7 +58,7 @@
             \time 9/16
             s1 * 9/16
             ^ \markup {
-              \raise #10.5 \with-dimensions-from \null
+              \raise #22 \with-dimensions-from \null
               \override #'(font-size . 5.5)
               \concat {
                   \abjad-metronome-mark-markup #2 #0 #2 #"60" 
@@ -170,6 +170,7 @@
                                     \clef "treble"
                                     \voiceOne
                                     g''''4
+                                    ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Tasten }
                                     \interrupt
                                     g''''4
                                     \interrupt
@@ -369,8 +370,6 @@
                             - \tenuto
                             \revert Staff.Accidental.stencil
                             r64
-                            \once \override Staff.TupletBracket.direction = #DOWN
-                            \once \override TupletBracket.bracket-visibility = ##f
                             \tweak text #tuplet-number::calc-fraction-text
                             \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 7 0))
                             \times 6/5
@@ -403,8 +402,137 @@
                             r64
                             ]
                         }
-                        s1 * 5/8
-                        s1 * 9/16
+                        \revert Staff.Accidental.X-extent
+                        \clef "treble"
+                        <b! c'! f'! bf'!>8.
+                        - \marcato
+                        - \staccato
+                        \p
+                        [
+                        - \tweak stencil #constante-hairpin
+                        \<
+                        \override Staff.Accidental.X-extent = ##f
+                        \revert Staff.Accidental.X-extent
+                        <gs''! c'''! f'''! a'''!>8.
+                        :64
+                        - \tenuto
+                        \arpeggio
+                        (
+                        \override Staff.Accidental.X-extent = ##f
+                        \revert Staff.Accidental.X-extent
+                        <b! c'! f'! bf'!>16
+                        \override Staff.Accidental.X-extent = ##f
+                        \revert Staff.Accidental.X-extent
+                        <ds! a! bf!>8.
+                        \!
+                        )
+                        ]
+                        \override Staff.Accidental.X-extent = ##f
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 10 9) (ly:make-duration 4 0))
+                        \times 9/10
+                        {
+                            \tweak text #tuplet-number::calc-fraction-text
+                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 7 0))
+                            \times 6/5
+                            {
+                                \override Staff.Stem.direction = #UP
+                                \clef "bass"
+                                ef128
+                                \ff
+                                [
+                                - \tweak stencil #constante-hairpin
+                                \<
+                                \override Staff.Accidental.stencil = ##f
+                                c'128
+                                - \marcato
+                                - \natural-articulation
+                                cs128
+                                - \sharp-articulation
+                                e128
+                                - \natural-articulation
+                                fs'128
+                                - \marcato
+                                - \sharp-articulation
+                                \revert Staff.Accidental.stencil
+                            }
+                            r64
+                            \override Staff.Accidental.stencil = ##f
+                            g32.
+                            - \natural-articulation
+                            \revert Staff.Accidental.stencil
+                            r64
+                            \override Staff.Accidental.stencil = ##f
+                            af,32.
+                            - \flat-articulation
+                            \revert Staff.Accidental.stencil
+                            r64
+                            \override Staff.Accidental.stencil = ##f
+                            e,32.
+                            - \marcato
+                            - \natural-articulation
+                            \revert Staff.Accidental.stencil
+                            r64
+                            \override Staff.Accidental.stencil = ##f
+                            fs,32.
+                            - \sharp-articulation
+                            \pp
+                            - \tweak stencil #constante-hairpin
+                            \<
+                            \revert Staff.Accidental.stencil
+                            r64
+                            \override Staff.Accidental.stencil = ##f
+                            g,32.
+                            - \natural-articulation
+                            \revert Staff.Accidental.stencil
+                            r64
+                            \override Staff.Accidental.stencil = ##f
+                            b,32.
+                            - \natural-articulation
+                            \revert Staff.Accidental.stencil
+                            r64
+                            \override Staff.Accidental.stencil = ##f
+                            a,32.
+                            - \natural-articulation
+                            \revert Staff.Accidental.stencil
+                            r64
+                            \override Staff.Accidental.stencil = ##f
+                            cs32.
+                            - \sharp-articulation
+                            \revert Staff.Accidental.stencil
+                            r64
+                            \tweak text #tuplet-number::calc-fraction-text
+                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 7 0))
+                            \times 6/5
+                            {
+                                \override Staff.Accidental.stencil = ##f
+                                ef128
+                                - \flat-articulation
+                                - \staccato
+                                \ff
+                                - \tweak stencil #constante-hairpin
+                                \<
+                                c'128
+                                - \marcato
+                                - \natural-articulation
+                                - \staccato
+                                cs'128
+                                - \sharp-articulation
+                                - \staccato
+                                ef'128
+                                - \flat-articulation
+                                - \staccato
+                                g'128
+                                - \marcato
+                                - \natural-articulation
+                                - \staccato
+                                \!
+                                \revert Staff.Accidental.stencil
+                                \revert Staff.Stem.direction
+                            }
+                            r64
+                            ]
+                        }
                         s1 * 1/2
                         s1 * 7/16
                         s1 * 3/8
@@ -644,8 +772,6 @@
                         \revert Staff.Accidental.stencil
                         r32.
                         \sustainOff
-                        \once \override Staff.TupletBracket.direction = #UP
-                        \once \override TupletBracket.bracket-visibility = ##f
                         \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 7 0))
                         \times 2/3
                         {
@@ -665,10 +791,116 @@
                             - \staccato
                             \!
                             ]
+                        }
+                        \ottava -1
+                        df,,8.
+                        - \flat-articulation
+                        - \marcato
+                        - \staccato
+                        \fff
+                        [
+                        \ottava 0
+                        \revert Staff.Accidental.stencil
+                        e,8.
+                        :64
+                        - \tenuto
+                        \ff
+                        (
+                        \<
+                        \ottava -1
+                        df,,16
+                        \fff
+                        - \tweak stencil #constante-hairpin
+                        \<
+                        b,,,8.
+                        \!
+                        )
+                        ]
+                        \sustainOn
+                        \ottava 0
+                        r32.
+                        [
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 7 0))
+                        \times 2/3
+                        {
+                            \override Staff.Accidental.stencil = ##f
+                            \clef "bass"
+                            e,128
+                            - \natural-articulation
+                            \ff
+                            - \tweak stencil #constante-hairpin
+                            \<
+                            b,128
+                            - \marcato
+                            - \natural-articulation
+                            a,128
+                            - \natural-articulation
                             \revert Staff.Accidental.stencil
                         }
-                        s1 * 5/8
-                        s1 * 9/16
+                        r32.
+                        \ottava -1
+                        \override Staff.Accidental.stencil = ##f
+                        b,,64
+                        - \marcato
+                        - \natural-articulation
+                        \revert Staff.Accidental.stencil
+                        r32.
+                        \override Staff.Accidental.stencil = ##f
+                        ef,,64
+                        - \flat-articulation
+                        \sustainOff
+                        \revert Staff.Accidental.stencil
+                        r32.
+                        \override Staff.Accidental.stencil = ##f
+                        c,,64
+                        - \natural-articulation
+                        \mp
+                        - \tweak stencil #constante-hairpin
+                        \<
+                        \revert Staff.Accidental.stencil
+                        r32.
+                        \override Staff.Accidental.stencil = ##f
+                        cs,,64
+                        - \sharp-articulation
+                        \revert Staff.Accidental.stencil
+                        r32.
+                        \override Staff.Accidental.stencil = ##f
+                        e,,64
+                        - \natural-articulation
+                        \revert Staff.Accidental.stencil
+                        r32.
+                        \override Staff.Accidental.stencil = ##f
+                        fs,,64
+                        - \sharp-articulation
+                        \revert Staff.Accidental.stencil
+                        r32.
+                        \override Staff.Accidental.stencil = ##f
+                        g,,64
+                        - \natural-articulation
+                        \revert Staff.Accidental.stencil
+                        r32.
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 7 0))
+                        \times 2/3
+                        {
+                            \override Staff.Accidental.stencil = ##f
+                            af,,128
+                            - \flat-articulation
+                            - \staccato
+                            \ff
+                            - \tweak stencil #constante-hairpin
+                            \<
+                            e,128
+                            - \marcato
+                            - \natural-articulation
+                            - \staccato
+                            fs,128
+                            - \sharp-articulation
+                            - \staccato
+                            \!
+                            ]
+                            \ottava 0
+                            \revert Staff.Accidental.stencil
+                        }
                         s1 * 1/2
                         s1 * 7/16
                         s1 * 3/8

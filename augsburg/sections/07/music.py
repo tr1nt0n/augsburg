@@ -46,6 +46,11 @@ trinton.make_music(
 trinton.make_music(
     lambda _: trinton.select_target(_, (1,)),
     evans.PitchHandler(["g''''", "g''''", "g''''", "a''''", "a''''"]),
+    trinton.attachment_command(
+        attachments=[library.boxed_markup(string="Tasten")],
+        selector=trinton.select_leaves_by_index([0], pitched=True),
+        direction=abjad.UP,
+    ),
     voice=score["37 voice temp"],
 )
 
@@ -154,6 +159,121 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index(
             [0, 0, 0, -5, -5, -1, -1], pitched=True
+        ),
+    ),
+    trinton.notehead_bracket_command(),
+    voice=score["piano 1 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (4,)),
+    evans.RhythmHandler(evans.talea([3, 3, 1, 3], 16)),
+    evans.PitchHandler(pitch.return_epsilon_chords(index=15, hand="rh")),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.Clef("treble"),
+        ],
+        selector=trinton.select_leaves_by_index(
+            [
+                0,
+            ],
+            pitched=True,
+        ),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.Dynamic("p"),
+            abjad.StartHairpin("--"),
+            abjad.StopHairpin(),
+        ],
+        selector=trinton.select_leaves_by_index([0, 0, -1]),
+    ),
+    trinton.tremolo_command(selector=trinton.select_leaves_by_index([1])),
+    trinton.attachment_command(
+        attachments=[abjad.Arpeggio()], selector=trinton.select_leaves_by_index([1])
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation("staccato"), abjad.Articulation("marcato")],
+        selector=trinton.select_leaves_by_index([0], pitched=True),
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation("tenuto")],
+        selector=trinton.select_leaves_by_index([1], pitched=True),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.StartSlur(),
+            abjad.StopSlur(),
+        ],
+        selector=trinton.select_leaves_by_index([1, -1], pitched=True),
+    ),
+    abjad.beam,
+    voice=score["piano 1 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (5,)),
+    evans.RhythmHandler(
+        rhythm.rhythm_d(
+            hand="rh",
+            stage=2,
+            tuplet_selector=trinton.select_logical_ties_by_index([0, -1], pitched=True),
+        )
+    ),
+    evans.PitchHandler(pitch_list=pitch.return_seed_pitch_sequence(index=34)),
+    trinton.octavation(
+        octave=-1,
+        selector=trinton.logical_ties(pitched=True, exclude=[1, 4, -4, -3, -2, -1]),
+    ),
+    trinton.octavation(
+        octave=-1,
+        selector=trinton.select_logical_ties_by_index(
+            [6, 7, 8, 9, 10, 11], pitched=True
+        ),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.Clef("bass"),
+        ],
+        selector=trinton.select_leaves_by_index([0], pitched=True),
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation("marcato")],
+        selector=trinton.select_leaves_by_index([1, 4, 7, -4, -1], pitched=True),
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation("staccato")],
+        selector=trinton.select_leaves_by_index([-5, -4, -3, -2, -1], pitched=True),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\override Staff.Stem.direction = #UP", site="before"
+            ),
+            abjad.Dynamic("ff"),
+            abjad.StartHairpin("--"),
+            abjad.Dynamic("pp"),
+            abjad.StartHairpin("--"),
+            abjad.Dynamic("ff"),
+            abjad.StartHairpin("--"),
+            abjad.StopHairpin(),
+            abjad.LilyPondLiteral(
+                r"\revert Staff.Stem.direction", site="absolute_after"
+            ),
+        ],
+        selector=trinton.select_leaves_by_index(
+            [
+                0,
+                0,
+                0,
+                8,
+                8,
+                13,
+                13,
+                -1,
+                -1,
+            ],
+            pitched=True,
         ),
     ),
     trinton.notehead_bracket_command(),
@@ -295,6 +415,97 @@ trinton.make_music(
     voice=score["piano 3 voice"],
 )
 
+trinton.make_music(
+    lambda _: trinton.select_target(_, (4,)),
+    evans.RhythmHandler(evans.talea([3, 3, 1, 3], 16)),
+    evans.PitchHandler(pitch.return_epsilon_chords(index=15, hand="lh")),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.Dynamic("fff"),
+            abjad.Dynamic("ff"),
+            abjad.StartHairpin("<"),
+            abjad.Dynamic("fff"),
+            abjad.StartHairpin("--"),
+            abjad.StopHairpin(),
+            abjad.StartPianoPedal(),
+        ],
+        selector=trinton.select_leaves_by_index([0, 1, 1, 2, 2, -1, -1]),
+    ),
+    trinton.tremolo_command(selector=trinton.select_leaves_by_index([1])),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation("staccato"), abjad.Articulation("marcato")],
+        selector=trinton.select_leaves_by_index([0], pitched=True),
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation("tenuto")],
+        selector=trinton.select_leaves_by_index([1], pitched=True),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.StartSlur(),
+            abjad.StopSlur(),
+        ],
+        selector=trinton.select_leaves_by_index([1, -1], pitched=True),
+    ),
+    trinton.ottava_command(
+        octave=-1, selector=trinton.select_leaves_by_index([0, 0, 2, -1], pitched=True)
+    ),
+    abjad.beam,
+    voice=score["piano 3 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (5,)),
+    evans.RhythmHandler(
+        rhythm.rhythm_d(
+            hand="lh",
+            stage=2,
+            tuplet_selector=trinton.select_logical_ties_by_index([0, -1], pitched=True),
+        )
+    ),
+    evans.PitchHandler(pitch_list=pitch.return_seed_pitch_sequence(index=30)),
+    trinton.octavation(octave=-3),
+    trinton.octavation(
+        octave=1,
+        selector=trinton.select_logical_ties_by_index([0, 1, 2, -2, -1], pitched=True),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.Clef("bass"),
+            abjad.StopPianoPedal(),
+        ],
+        selector=trinton.select_leaves_by_index([0, 4], pitched=True),
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation("marcato")],
+        selector=trinton.select_leaves_by_index([1, 3, -2], pitched=True),
+    ),
+    trinton.attachment_command(
+        attachments=[abjad.Articulation("staccato")],
+        selector=trinton.select_leaves_by_index([-3, -2, -1], pitched=True),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.Dynamic("ff"),
+            abjad.StartHairpin("--"),
+            abjad.Dynamic("mp"),
+            abjad.StartHairpin("--"),
+            abjad.Dynamic("ff"),
+            abjad.StartHairpin("--"),
+            abjad.StopHairpin(),
+        ],
+        selector=trinton.select_leaves_by_index(
+            [0, 0, 5, 5, -3, -3, -1],
+            pitched=True,
+        ),
+    ),
+    trinton.ottava_command(
+        octave=-1, selector=trinton.select_leaves_by_index([3, -1], pitched=True)
+    ),
+    trinton.notehead_bracket_command(),
+    voice=score["piano 3 voice"],
+)
+
 # globals
 
 # trinton.make_music(
@@ -353,7 +564,7 @@ for measure, previous_tempo_string, padding in zip(
         "60",
         None,
     ],
-    [16.5, 10.5, 18.5, 10.5],
+    [19, 10.5, 18.5, 10.5],
 ):
     trinton.make_music(
         lambda _: trinton.select_target(_, (measure,)),
@@ -408,7 +619,7 @@ for measure, previous_tempo_string, padding in zip(
         7,
     ],
     ["138 3/4", "138 3/4", "48 3/4"],
-    [20, 10.5, 10.5],
+    [22, 22, 10.5],
 ):
     trinton.make_music(
         lambda _: trinton.select_target(_, (measure,)),

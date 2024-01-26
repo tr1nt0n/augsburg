@@ -438,7 +438,10 @@ def handle_accidentals(score, force_accidentals=True):
         if isinstance(tie[0], abjad.Chord):
             chords.append(tie)
         if previous_duration < abjad.Duration(1, 16):
-            ficta_ties.append(tie)
+            if isinstance(tie[0], abjad.Chord):
+                pass
+            else:
+                ficta_ties.append(tie)
         previous_parentage = abjad.get.parentage(previous_leaf).parent
         if (
             isinstance(previous_parentage, abjad.BeforeGraceContainer)
@@ -485,10 +488,6 @@ def handle_accidentals(score, force_accidentals=True):
 
     ficta_ties = abjad.select.group_by_contiguity(ficta_ties)
 
-    # _accidental_articulation_dictionary = {
-    #     Accidental(name='natural')
-    # }
-
     for group in ficta_ties:
         first_tie = group[0]
         last_tie = group[-1]
@@ -508,6 +507,9 @@ def handle_accidentals(score, force_accidentals=True):
         )
 
         for tie in group:
+            # if isinstance(tie[0], abjad.Chord):
+            #     pass
+            # else:
             previous_leaf = abjad.select.with_previous_leaf(tie)[0]
             if isinstance(previous_leaf, abjad.Rest):
                 previous_leaf_pitch = None

@@ -74,6 +74,10 @@ afterGraceFraction = #(cons 15 16)
         \override Accidental.whiteout = 1
         % \override Accidental.X-extent = ##f
 
+        \override Script.layer = 2
+        \override Script.whiteout-style = #'outline
+        \override Script.whiteout = 1
+
         \override BarLine.color = \二
         \override BarLine.transparent = ##t
         \override BarLine.hair-thickness = 0.5
@@ -99,7 +103,7 @@ afterGraceFraction = #(cons 15 16)
             \char ##xe4D5
         }
 
-        \override Clef.layer = 2
+        \override Clef.layer = 3
         \override Clef.whiteout-style = #'outline
         \override Clef.whiteout = 1
         \override Clef.color = \二
@@ -146,10 +150,15 @@ afterGraceFraction = #(cons 15 16)
 
         \override StemTremolo.stencil = #ly:text-interface::print
         \override StemTremolo.text = \markup {
-            \fontsize #3.5
+            \fontsize #5
             \override #'(font-name . "ekmelos")
-            \char ##xe222
+            {
+                \char ##xe222
+            }
         }
+        \override StemTremolo.whiteout-style = #'outline
+        \override StemTremolo.whiteout = 1
+        \override StemTremolo.layer = 2
 
         \override SustainPedal.color = \一
 
@@ -245,7 +254,7 @@ afterGraceFraction = #(cons 15 16)
 
         \override TimeSignature.font-size = 11
 		\override TimeSignature.font-name = "Bodoni72 Book"
-        \override TimeSignature.X-extent = #'(2.3 . 2.3)
+        \override TimeSignature.X-extent = #'(2.145 . 2.145)
         \override TimeSignature.whiteout-style = #'outline
         \override TimeSignature.whiteout = 1
         \override TimeSignature.layer = 4
