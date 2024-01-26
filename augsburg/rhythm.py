@@ -763,6 +763,20 @@ def rhythm_d(stage=1, hand="rh", tuplet_selector=None):
                         ),
                         abjad.select.tuplet(nested_tuplet, 0),
                     )
+                if hand == "rh":
+                    bracket_direction_literal = abjad.LilyPondLiteral(
+                        r"\once \override Staff.TupletBracket.direction = #DOWN",
+                        site="before",
+                    )
+                if hand == "lh":
+                    bracket_direction_literal = abjad.LilyPondLiteral(
+                        r"\once \override Staff.TupletBracket.direction = #UP",
+                        site="before",
+                    )
+
+                abjad.attach(
+                    bracket_direction_literal, abjad.select.tuplet(nested_tuplet, 0)
+                )
                 rmakers.rewrite_dots(nested_tuplet)
                 rmakers.trivialize(nested_tuplet)
                 rmakers.rewrite_rest_filled(nested_tuplet)

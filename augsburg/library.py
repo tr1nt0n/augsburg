@@ -485,21 +485,47 @@ def handle_accidentals(score, force_accidentals=True):
 
     ficta_ties = abjad.select.group_by_contiguity(ficta_ties)
 
+    # _accidental_articulation_dictionary = {
+    #     Accidental(name='natural')
+    # }
+
     for group in ficta_ties:
         first_tie = group[0]
         last_tie = group[-1]
 
         abjad.attach(
-            abjad.LilyPondLiteral(r"\set suggestAccidentals = ##t", site="before"),
+            abjad.LilyPondLiteral(
+                r"\override Staff.Accidental.stencil = ##f", site="before"
+            ),
             first_tie[0],
         )
 
         abjad.attach(
             abjad.LilyPondLiteral(
-                r"\set suggestAccidentals = ##f", site="absolute_after"
+                r"\revert Staff.Accidental.stencil", site="absolute_after"
             ),
             last_tie[-1],
         )
+
+        for tie in group:
+            previous_leaf = abjad.select.with_previous_leaf(tie)[0]
+            if isinstance(previous_leaf, abjad.Rest):
+                previous_leaf_pitch = None
+            else:
+                previous_leaf_pitch = previous_leaf.written_pitch
+            first_leaf = tie[0]
+            first_leaf_pitch = first_leaf.written_pitch
+            accidental = first_leaf_pitch.accidental
+            accidental_name = accidental.name
+            clef = abjad.get.effective(first_leaf, abjad.Clef)
+
+            if clef.name == "percussion" or first_leaf_pitch == previous_leaf_pitch:
+                pass
+
+            else:
+                abjad.attach(
+                    abjad.Articulation(f"{accidental_name}-articulation"), first_leaf
+                )
 
 
 # tempi

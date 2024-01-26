@@ -265,7 +265,7 @@
                             - \tweak bound-details.right.padding -4
                             \startTextSpan
                             \change Staff = "piano 3 staff"
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             c'16
                             _ #(make-dynamic-script
                                 (markup
@@ -288,7 +288,7 @@
                             \change Staff = "piano 1 staff"
                             c'16
                             ]
-                            \set suggestAccidentals = ##f
+                            \revert Staff.Accidental.stencil
                         }
                         \tweak text #tuplet-number::calc-fraction-text
                         \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 7 8) (ly:make-duration 5 0))
@@ -298,7 +298,7 @@
                             r32
                             [
                             \change Staff = "piano 3 staff"
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             c'32
                             \change Staff = "piano 1 staff"
                             c'32
@@ -311,7 +311,7 @@
                             \change Staff = "piano 1 staff"
                             c'32
                             ]
-                            \set suggestAccidentals = ##f
+                            \revert Staff.Accidental.stencil
                         }
                         \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 3 0))
                         \times 2/3
@@ -353,7 +353,7 @@
                                 r16
                                 [
                                 \change Staff = "piano 3 staff"
-                                \set suggestAccidentals = ##t
+                                \override Staff.Accidental.stencil = ##f
                                 c'16
                                 \change Staff = "piano 1 staff"
                                 c'16
@@ -368,7 +368,7 @@
                                 \stopTextSpan
                                 ]
                                 \change Staff = "piano 1 staff"
-                                \set suggestAccidentals = ##f
+                                \revert Staff.Accidental.stencil
                             }
                         }
                         \change Staff = "piano 1 staff"
@@ -405,9 +405,9 @@
                         \change Staff = "piano 1 staff"
                         r64
                         \change Staff = "piano 1 staff"
-                        \set suggestAccidentals = ##t
+                        \override Staff.Accidental.stencil = ##f
                         c'64
-                        \set suggestAccidentals = ##f
+                        \revert Staff.Accidental.stencil
                         \change Staff = "piano 1 staff"
                         r32
                         ]
@@ -420,10 +420,10 @@
                             [
                             r32
                             \change Staff = "piano 3 staff"
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             c'32
                             ]
-                            \set suggestAccidentals = ##f
+                            \revert Staff.Accidental.stencil
                         }
                         \tweak text #tuplet-number::calc-fraction-text
                         \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 7 6) (ly:make-duration 4 0))
@@ -451,16 +451,16 @@
                                 \change Staff = "piano 1 staff"
                                 r32
                                 \change Staff = "piano 3 staff"
-                                \set suggestAccidentals = ##t
+                                \override Staff.Accidental.stencil = ##f
                                 c'32
-                                \set suggestAccidentals = ##f
+                                \revert Staff.Accidental.stencil
                                 \change Staff = "piano 1 staff"
                                 r32
                                 \change Staff = "piano 1 staff"
-                                \set suggestAccidentals = ##t
+                                \override Staff.Accidental.stencil = ##f
                                 c'32
                                 ]
-                                \set suggestAccidentals = ##f
+                                \revert Staff.Accidental.stencil
                             }
                         }
                         \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 3 0))
@@ -483,7 +483,7 @@
                             r16
                             [
                             \change Staff = "piano 3 staff"
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             c'16
                             \change Staff = "piano 1 staff"
                             c'16
@@ -492,14 +492,14 @@
                             c'16
                             \change Staff = "piano 1 staff"
                             c'16
-                            \set suggestAccidentals = ##f
+                            \revert Staff.Accidental.stencil
                             \change Staff = "piano 1 staff"
                             r16
                             \change Staff = "piano 3 staff"
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             c'16
                             ]
-                            \set suggestAccidentals = ##f
+                            \revert Staff.Accidental.stencil
                         }
                         \tweak text #tuplet-number::calc-fraction-text
                         \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 18 13) (ly:make-duration 3 0))

@@ -245,13 +245,11 @@ afterGraceFraction = #(cons 15 16)
 
         \override TimeSignature.font-size = 11
 		\override TimeSignature.font-name = "Bodoni72 Book"
-        \override TimeSignature.X-extent = ##f
-        \override TimeSignature.X-offset = -1.3
+        \override TimeSignature.X-extent = #'(2.3 . 2.3)
         \override TimeSignature.whiteout-style = #'outline
         \override TimeSignature.whiteout = 1
         \override TimeSignature.layer = 4
         \override TimeSignature.break-visibility = #end-of-line-invisible
-        % \override TimeSignature.padding = 1
     }
 
     \context {

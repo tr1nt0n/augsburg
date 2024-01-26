@@ -294,7 +294,7 @@
                             \once \override Accidental.stencil = ##f
                             c'32 * 13/8
                             \once \override Accidental.stencil = ##f
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             c'32 * 47/32
                             ]
                         }
@@ -304,7 +304,7 @@
                         - \accent
                         \ff
                         \sustainOff
-                        \set suggestAccidentals = ##f
+                        \revert Staff.Accidental.stencil
                         \staff-line-count 5
                         \key fs \major
                         \revert Staff.Accidental.X-extent

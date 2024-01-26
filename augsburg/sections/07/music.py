@@ -278,17 +278,18 @@ trinton.make_music(
     ),
     trinton.linear_attachment_command(
         attachments=[
-            abjad.LilyPondLiteral(
-                r"\override Staff.Stem.direction = #DOWN", site="before"
-            ),
             abjad.Dynamic("ff"),
             abjad.StartHairpin("--"),
             abjad.StopHairpin(),
-            abjad.LilyPondLiteral(
-                r"\revert Staff.Stem.direction", site="absolute_after"
-            ),
         ],
-        selector=trinton.select_leaves_by_index([0, -3, -3, -1, -1], pitched=True),
+        selector=trinton.select_leaves_by_index(
+            [
+                -3,
+                -3,
+                -1,
+            ],
+            pitched=True,
+        ),
     ),
     trinton.notehead_bracket_command(),
     voice=score["piano 3 voice"],
@@ -407,7 +408,7 @@ for measure, previous_tempo_string, padding in zip(
         7,
     ],
     ["138 3/4", "138 3/4", "48 3/4"],
-    [26.5, 10.5, 10.5],
+    [20, 10.5, 10.5],
 ):
     trinton.make_music(
         lambda _: trinton.select_target(_, (measure,)),

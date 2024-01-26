@@ -200,19 +200,22 @@
                             \mf
                             [
                             r16
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             ef,,8.
-                            \set suggestAccidentals = ##f
+                            - \flat-articulation
+                            \revert Staff.Accidental.stencil
                             r16
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             c,,8.
+                            - \natural-articulation
                             \mp
-                            \set suggestAccidentals = ##f
+                            \revert Staff.Accidental.stencil
                             r16
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             cs,,8.
+                            - \sharp-articulation
                             \ottava 0
-                            \set suggestAccidentals = ##f
+                            \revert Staff.Accidental.stencil
                             r16
                             ]
                         }
@@ -298,11 +301,11 @@
                         c'32
                         ~
                         c'32
-                        \set suggestAccidentals = ##t
+                        \override Staff.Accidental.stencil = ##f
                         c'16.
                         ~
                         c'4.
-                        \set suggestAccidentals = ##f
+                        \revert Staff.Accidental.stencil
                         c'4.
                         c'8.
                         c'16
@@ -317,7 +320,7 @@
                         \clef "percussion"
                         b32
                         ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #2 { \center-column { \line { 1. Magnete mit der Handfläche } \line { 2. Magnet rechts }  } }
-                        \set suggestAccidentals = ##t
+                        \override Staff.Accidental.stencil = ##f
                         \once \override Stem.direction = #down
                         b16.
                         ~
@@ -387,7 +390,7 @@
                                     \stemNeutral
                                 }
                                 \override Staff.Accidental.X-extent = ##f
-                                \set suggestAccidentals = ##f
+                                \revert Staff.Accidental.stencil
                             }
                         >>
                         <<

@@ -354,15 +354,15 @@
                             \change Staff = "piano 1 staff"
                             r16
                             \change Staff = "piano 1 staff"
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             c'16
-                            \set suggestAccidentals = ##f
+                            \revert Staff.Accidental.stencil
                             \change Staff = "piano 1 staff"
                             r16
                             \change Staff = "piano 3 staff"
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             c'16
-                            \set suggestAccidentals = ##f
+                            \revert Staff.Accidental.stencil
                             \change Staff = "piano 1 staff"
                             r8
                             ]
@@ -433,22 +433,22 @@
                                 \change Staff = "piano 1 staff"
                                 r16
                                 \change Staff = "piano 1 staff"
-                                \set suggestAccidentals = ##t
+                                \override Staff.Accidental.stencil = ##f
                                 c'16
-                                \set suggestAccidentals = ##f
+                                \revert Staff.Accidental.stencil
                                 \change Staff = "piano 1 staff"
                                 r16
                                 \change Staff = "piano 3 staff"
-                                \set suggestAccidentals = ##t
+                                \override Staff.Accidental.stencil = ##f
                                 c'16
-                                \set suggestAccidentals = ##f
+                                \revert Staff.Accidental.stencil
                                 \change Staff = "piano 1 staff"
                                 r16
                                 \change Staff = "piano 1 staff"
-                                \set suggestAccidentals = ##t
+                                \override Staff.Accidental.stencil = ##f
                                 c'16
                                 ]
-                                \set suggestAccidentals = ##f
+                                \revert Staff.Accidental.stencil
                             }
                         }
                         \tweak text #tuplet-number::calc-fraction-text
@@ -476,28 +476,28 @@
                             r16
                             [
                             \change Staff = "piano 1 staff"
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             c'16
-                            \set suggestAccidentals = ##f
+                            \revert Staff.Accidental.stencil
                             \change Staff = "piano 1 staff"
                             r16
                             \change Staff = "piano 3 staff"
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             c'16
-                            \set suggestAccidentals = ##f
+                            \revert Staff.Accidental.stencil
                             \change Staff = "piano 1 staff"
                             r16
                             \change Staff = "piano 1 staff"
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             c'16
-                            \set suggestAccidentals = ##f
+                            \revert Staff.Accidental.stencil
                             \change Staff = "piano 1 staff"
                             r16
                             \change Staff = "piano 3 staff"
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             c'16
                             ]
-                            \set suggestAccidentals = ##f
+                            \revert Staff.Accidental.stencil
                         }
                         \tweak text #tuplet-number::calc-fraction-text
                         \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 4 5) (ly:make-duration 3 0))
@@ -535,21 +535,21 @@
                             r32
                             [
                             \change Staff = "piano 3 staff"
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             c'32
-                            \set suggestAccidentals = ##f
+                            \revert Staff.Accidental.stencil
                             \change Staff = "piano 1 staff"
                             r32
                             \change Staff = "piano 1 staff"
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             c'32
                             \change Staff = "piano 3 staff"
                             c'32
-                            \set suggestAccidentals = ##f
+                            \revert Staff.Accidental.stencil
                             \change Staff = "piano 1 staff"
                             r32
                             \change Staff = "piano 1 staff"
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             c'32
                             ]
                         }
@@ -559,7 +559,7 @@
                             \change Staff = "piano 3 staff"
                             c'8
                             [
-                            \set suggestAccidentals = ##f
+                            \revert Staff.Accidental.stencil
                             \change Staff = "piano 1 staff"
                             r8
                             \change Staff = "piano 1 staff"
@@ -577,13 +577,13 @@
                                 r16
                                 [
                                 \change Staff = "piano 3 staff"
-                                \set suggestAccidentals = ##t
+                                \override Staff.Accidental.stencil = ##f
                                 c'16
-                                \set suggestAccidentals = ##f
+                                \revert Staff.Accidental.stencil
                                 \change Staff = "piano 1 staff"
                                 r16
                                 \change Staff = "piano 1 staff"
-                                \set suggestAccidentals = ##t
+                                \override Staff.Accidental.stencil = ##f
                                 c'16
                                 \change Staff = "piano 3 staff"
                                 c'16
@@ -596,21 +596,21 @@
                                 \change Staff = "piano 1 staff"
                                 c'32
                                 [
-                                \set suggestAccidentals = ##f
+                                \revert Staff.Accidental.stencil
                                 \change Staff = "piano 1 staff"
                                 r32
                                 \change Staff = "piano 3 staff"
-                                \set suggestAccidentals = ##t
+                                \override Staff.Accidental.stencil = ##f
                                 c'32
                                 \change Staff = "piano 1 staff"
                                 c'32
                                 \change Staff = "piano 3 staff"
                                 c'32
-                                \set suggestAccidentals = ##f
+                                \revert Staff.Accidental.stencil
                                 \change Staff = "piano 1 staff"
                                 r32
                                 \change Staff = "piano 1 staff"
-                                \set suggestAccidentals = ##t
+                                \override Staff.Accidental.stencil = ##f
                                 c'32
                                 _ #(make-dynamic-script
                                     (markup
@@ -628,7 +628,7 @@
                                 \revert Score.Stem.direction
                                 \override Staff.TupletBracket.direction = #UP
                                 \change Staff = "piano 1 staff"
-                                \set suggestAccidentals = ##f
+                                \revert Staff.Accidental.stencil
                             }
                         }
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
@@ -649,54 +649,64 @@
                             - \tweak stencil #constante-hairpin
                             \<
                             r32
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             fs,,16.
-                            \set suggestAccidentals = ##f
+                            - \sharp-articulation
+                            \revert Staff.Accidental.stencil
                             r32
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             g,,16.
-                            \set suggestAccidentals = ##f
+                            - \natural-articulation
+                            \revert Staff.Accidental.stencil
                             r32
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             af,,16.
-                            \set suggestAccidentals = ##f
+                            - \flat-articulation
+                            \revert Staff.Accidental.stencil
                             r32
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             e,,16.
-                            \set suggestAccidentals = ##f
+                            - \natural-articulation
+                            \revert Staff.Accidental.stencil
                             r32
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             fs,,16.
-                            \set suggestAccidentals = ##f
+                            - \sharp-articulation
+                            \revert Staff.Accidental.stencil
                             r32
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             a,,,16.
-                            \set suggestAccidentals = ##f
+                            - \natural-articulation
+                            \revert Staff.Accidental.stencil
                             r32
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             b,,,16.
-                            \set suggestAccidentals = ##f
+                            - \natural-articulation
+                            \revert Staff.Accidental.stencil
                             r32
                             ]
                         }
                         \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 3 0))
                         \times 2/3
                         {
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             ef,16.
+                            - \flat-articulation
                             \ff
                             [
                             - \tweak stencil #constante-hairpin
                             \<
-                            \set suggestAccidentals = ##f
+                            \revert Staff.Accidental.stencil
                             r32
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             df,16.
-                            \set suggestAccidentals = ##f
+                            - \flat-articulation
+                            \revert Staff.Accidental.stencil
                             r32
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             ef,16.
-                            \set suggestAccidentals = ##f
+                            - \flat-articulation
+                            \revert Staff.Accidental.stencil
                             r32
                             ]
                         }
@@ -704,79 +714,95 @@
                         \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 16 15) (ly:make-duration 4 0))
                         \times 15/16
                         {
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             cs,,32.
+                            - \sharp-articulation
                             \mp
                             [
                             - \tweak stencil #constante-hairpin
                             \<
-                            \set suggestAccidentals = ##f
+                            \revert Staff.Accidental.stencil
                             r64
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             ef,,32.
-                            \set suggestAccidentals = ##f
+                            - \flat-articulation
+                            \revert Staff.Accidental.stencil
                             r64
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             fs,,32.
-                            \set suggestAccidentals = ##f
+                            - \sharp-articulation
+                            \revert Staff.Accidental.stencil
                             r64
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             g,,32.
-                            \set suggestAccidentals = ##f
+                            - \natural-articulation
+                            \revert Staff.Accidental.stencil
                             r64
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             af,,32.
-                            \set suggestAccidentals = ##f
+                            - \flat-articulation
+                            \revert Staff.Accidental.stencil
                             r64
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             e,,32.
-                            \set suggestAccidentals = ##f
+                            - \natural-articulation
+                            \revert Staff.Accidental.stencil
                             r64
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             b,,,32.
-                            \set suggestAccidentals = ##f
+                            - \natural-articulation
+                            \revert Staff.Accidental.stencil
                             r64
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             a,,,32.
+                            - \natural-articulation
                             \f
                             - \tweak stencil #constante-hairpin
                             \<
-                            \set suggestAccidentals = ##f
+                            \revert Staff.Accidental.stencil
                             r64
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             b,,,32.
-                            \set suggestAccidentals = ##f
+                            - \natural-articulation
+                            \revert Staff.Accidental.stencil
                             r64
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             ef,,32.
-                            \set suggestAccidentals = ##f
+                            - \flat-articulation
+                            \revert Staff.Accidental.stencil
                             r64
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             c,,32.
+                            - \natural-articulation
                             \p
                             - \tweak stencil #constante-hairpin
                             \<
-                            \set suggestAccidentals = ##f
+                            \revert Staff.Accidental.stencil
                             r64
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             cs,,32.
-                            \set suggestAccidentals = ##f
+                            - \sharp-articulation
+                            \revert Staff.Accidental.stencil
                             r64
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             e,,32.
-                            \set suggestAccidentals = ##f
+                            - \natural-articulation
+                            \revert Staff.Accidental.stencil
                             r64
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             fs,,32.
-                            \set suggestAccidentals = ##f
+                            - \sharp-articulation
+                            \revert Staff.Accidental.stencil
                             r64
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             g,,32.
-                            \set suggestAccidentals = ##f
+                            - \natural-articulation
+                            \revert Staff.Accidental.stencil
                             r64
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             af,,32.
-                            \set suggestAccidentals = ##f
+                            - \flat-articulation
+                            \revert Staff.Accidental.stencil
                             r64
                             ]
                         }
@@ -784,25 +810,29 @@
                         \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 4 3) (ly:make-duration 4 0))
                         \times 3/4
                         {
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             a,32.
+                            - \natural-articulation
                             \fff
                             [
                             - \tweak stencil #constante-hairpin
                             \<
-                            \set suggestAccidentals = ##f
+                            \revert Staff.Accidental.stencil
                             r64
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             ef,32.
-                            \set suggestAccidentals = ##f
+                            - \flat-articulation
+                            \revert Staff.Accidental.stencil
                             r64
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             df,32.
-                            \set suggestAccidentals = ##f
+                            - \flat-articulation
+                            \revert Staff.Accidental.stencil
                             r64
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             ef,32.
-                            \set suggestAccidentals = ##f
+                            - \flat-articulation
+                            \revert Staff.Accidental.stencil
                             r64
                             ]
                         }
@@ -810,40 +840,48 @@
                         \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 8 7) (ly:make-duration 2 0))
                         \times 7/8
                         {
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             a,,,8.
+                            - \natural-articulation
                             \pp
                             [
                             \<
-                            \set suggestAccidentals = ##f
+                            \revert Staff.Accidental.stencil
                             r16
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             cs,,8.
-                            \set suggestAccidentals = ##f
+                            - \sharp-articulation
+                            \revert Staff.Accidental.stencil
                             r16
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             ef,,8.
-                            \set suggestAccidentals = ##f
+                            - \flat-articulation
+                            \revert Staff.Accidental.stencil
                             r16
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             c,,8.
-                            \set suggestAccidentals = ##f
+                            - \natural-articulation
+                            \revert Staff.Accidental.stencil
                             r16
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             cs,,8.
-                            \set suggestAccidentals = ##f
+                            - \sharp-articulation
+                            \revert Staff.Accidental.stencil
                             r16
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             ef,,8.
-                            \set suggestAccidentals = ##f
+                            - \flat-articulation
+                            \revert Staff.Accidental.stencil
                             r16
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             g,,8.
-                            \set suggestAccidentals = ##f
+                            - \natural-articulation
+                            \revert Staff.Accidental.stencil
                             r16
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             af,,8.
-                            \set suggestAccidentals = ##f
+                            - \flat-articulation
+                            \revert Staff.Accidental.stencil
                             r16
                             ]
                         }
@@ -851,27 +889,31 @@
                         \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 4 3) (ly:make-duration 4 0))
                         \times 3/4
                         {
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             a,32.
+                            - \natural-articulation
                             \ffff
                             [
                             - \tweak stencil #constante-hairpin
                             \<
-                            \set suggestAccidentals = ##f
+                            \revert Staff.Accidental.stencil
                             r64
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             ef,32.
-                            \set suggestAccidentals = ##f
+                            - \flat-articulation
+                            \revert Staff.Accidental.stencil
                             r64
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             df,32.
-                            \set suggestAccidentals = ##f
+                            - \flat-articulation
+                            \revert Staff.Accidental.stencil
                             r64
-                            \set suggestAccidentals = ##t
+                            \override Staff.Accidental.stencil = ##f
                             ef,32.
+                            - \flat-articulation
                             \!
                             \ottava 0
-                            \set suggestAccidentals = ##f
+                            \revert Staff.Accidental.stencil
                             r64
                             ]
                         }
@@ -1061,7 +1103,7 @@
                         \staff-line-count 5
                         \ottava -1
                         \clef "bass"
-                        \once \override Staff.DynamicLineSpanner.staff-padding = 10
+                        \once \override Staff.DynamicLineSpanner.staff-padding = 14
                         af,,32
                             _ #(make-dynamic-script (markup #:whiteout #:italic "sffz pp"))
                         - \tweak stencil #constante-hairpin
@@ -1098,94 +1140,112 @@
                         ]
                         r32.
                         [
-                        \set suggestAccidentals = ##t
+                        \override Staff.Accidental.stencil = ##f
                         cs,,64
+                        - \sharp-articulation
                         \mf
                         - \tweak stencil #constante-hairpin
                         \<
                         \sustainOn
-                        \set suggestAccidentals = ##f
+                        \revert Staff.Accidental.stencil
                         r32.
-                        \set suggestAccidentals = ##t
+                        \override Staff.Accidental.stencil = ##f
                         ef,,64
-                        \set suggestAccidentals = ##f
+                        - \flat-articulation
+                        \revert Staff.Accidental.stencil
                         r32.
-                        \set suggestAccidentals = ##t
+                        \override Staff.Accidental.stencil = ##f
                         c,,64
-                        \set suggestAccidentals = ##f
+                        - \natural-articulation
+                        \revert Staff.Accidental.stencil
                         r32.
-                        \set suggestAccidentals = ##t
+                        \override Staff.Accidental.stencil = ##f
                         cs,,64
-                        \set suggestAccidentals = ##f
+                        - \sharp-articulation
+                        \revert Staff.Accidental.stencil
                         r32.
-                        \set suggestAccidentals = ##t
+                        \override Staff.Accidental.stencil = ##f
                         ef,,64
-                        \set suggestAccidentals = ##f
+                        - \flat-articulation
+                        \revert Staff.Accidental.stencil
                         r32.
-                        \set suggestAccidentals = ##t
+                        \override Staff.Accidental.stencil = ##f
                         fs,,64
-                        \set suggestAccidentals = ##f
+                        - \sharp-articulation
+                        \revert Staff.Accidental.stencil
                         r32.
-                        \set suggestAccidentals = ##t
+                        \override Staff.Accidental.stencil = ##f
                         g,,64
+                        - \natural-articulation
                         \ff
                         - \tweak stencil #constante-hairpin
                         \<
-                        \set suggestAccidentals = ##f
+                        \revert Staff.Accidental.stencil
                         r32.
-                        \set suggestAccidentals = ##t
+                        \override Staff.Accidental.stencil = ##f
                         af,,64
-                        \set suggestAccidentals = ##f
+                        - \flat-articulation
+                        \revert Staff.Accidental.stencil
                         r32.
-                        \set suggestAccidentals = ##t
+                        \override Staff.Accidental.stencil = ##f
                         e,,64
-                        \set suggestAccidentals = ##f
+                        - \natural-articulation
+                        \revert Staff.Accidental.stencil
                         r32.
-                        \set suggestAccidentals = ##t
+                        \override Staff.Accidental.stencil = ##f
                         b,,,64
+                        - \natural-articulation
                         \sustainOff
-                        \set suggestAccidentals = ##f
+                        \revert Staff.Accidental.stencil
                         r32.
-                        \set suggestAccidentals = ##t
+                        \override Staff.Accidental.stencil = ##f
                         a,,,64
-                        \set suggestAccidentals = ##f
+                        - \natural-articulation
+                        \revert Staff.Accidental.stencil
                         r32.
-                        \set suggestAccidentals = ##t
+                        \override Staff.Accidental.stencil = ##f
                         b,,,64
+                        - \natural-articulation
                         \mf
                         - \tweak stencil #constante-hairpin
                         \<
-                        \set suggestAccidentals = ##f
+                        \revert Staff.Accidental.stencil
                         r32.
-                        \set suggestAccidentals = ##t
+                        \override Staff.Accidental.stencil = ##f
                         ef,,64
-                        \set suggestAccidentals = ##f
+                        - \flat-articulation
+                        \revert Staff.Accidental.stencil
                         r32.
-                        \set suggestAccidentals = ##t
+                        \override Staff.Accidental.stencil = ##f
                         c,,64
-                        \set suggestAccidentals = ##f
+                        - \natural-articulation
+                        \revert Staff.Accidental.stencil
                         r32.
-                        \set suggestAccidentals = ##t
+                        \override Staff.Accidental.stencil = ##f
                         cs,,64
+                        - \sharp-articulation
                         ]
-                        \set suggestAccidentals = ##f
+                        \revert Staff.Accidental.stencil
                         r32.
                         [
-                        \set suggestAccidentals = ##t
+                        \override Staff.Accidental.stencil = ##f
                         ef,64
+                        - \flat-articulation
                         \fff
                         - \tweak stencil #constante-hairpin
                         \<
-                        \set suggestAccidentals = ##f
+                        \revert Staff.Accidental.stencil
                         r32.
-                        \set suggestAccidentals = ##t
+                        \override Staff.Accidental.stencil = ##f
                         a,64
-                        \set suggestAccidentals = ##f
+                        - \natural-articulation
+                        \revert Staff.Accidental.stencil
                         r32.
-                        \set suggestAccidentals = ##t
+                        \override Staff.Accidental.stencil = ##f
                         ef,64
+                        - \flat-articulation
                         ]
-                        \set suggestAccidentals = ##f
+                        \revert Staff.Accidental.stencil
                         r8.
                         [
                         af,,16
@@ -1208,23 +1268,26 @@
                         ]
                         r32.
                         [
-                        \set suggestAccidentals = ##t
+                        \override Staff.Accidental.stencil = ##f
                         df,64
+                        - \flat-articulation
                         \ffff
                         - \tweak stencil #constante-hairpin
                         \<
-                        \set suggestAccidentals = ##f
+                        \revert Staff.Accidental.stencil
                         r32.
-                        \set suggestAccidentals = ##t
+                        \override Staff.Accidental.stencil = ##f
                         ef,64
-                        \set suggestAccidentals = ##f
+                        - \flat-articulation
+                        \revert Staff.Accidental.stencil
                         r32.
-                        \set suggestAccidentals = ##t
+                        \override Staff.Accidental.stencil = ##f
                         a,64
+                        - \natural-articulation
                         \!
                         ]
                         \ottava 0
-                        \set suggestAccidentals = ##f
+                        \revert Staff.Accidental.stencil
                         <<
                             \context Voice = "13 voice temp"
                             {

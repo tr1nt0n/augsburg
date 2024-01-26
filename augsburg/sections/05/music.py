@@ -242,7 +242,7 @@ trinton.make_music(
     trinton.linear_attachment_command(
         attachments=[
             abjad.LilyPondLiteral(
-                r"\once \override Staff.DynamicLineSpanner.staff-padding = 10"
+                r"\once \override Staff.DynamicLineSpanner.staff-padding = 14"
             ),
             trinton.make_custom_dynamic("sffz pp"),
             abjad.StartHairpin("--"),
