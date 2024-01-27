@@ -507,12 +507,9 @@ def handle_accidentals(score, force_accidentals=True):
         )
 
         for tie in group:
-            # if isinstance(tie[0], abjad.Chord):
-            #     pass
-            # else:
             previous_leaf = abjad.select.with_previous_leaf(tie)[0]
             if isinstance(previous_leaf, abjad.Rest):
-                previous_leaf_pitch = None
+                previous_leaf_pitch = abjad.NamedPitch("c,,,,,,,,,,,,,,,,")
             else:
                 previous_leaf_pitch = previous_leaf.written_pitch
             first_leaf = tie[0]
@@ -521,7 +518,11 @@ def handle_accidentals(score, force_accidentals=True):
             accidental_name = accidental.name
             clef = abjad.get.effective(first_leaf, abjad.Clef)
 
-            if clef.name == "percussion" or first_leaf_pitch == previous_leaf_pitch:
+            # if clef.name == "percussion" or first_leaf_pitch == previous_leaf_pitch:
+            if (
+                clef.name == "percussion"
+                or first_leaf_pitch.name == previous_leaf_pitch.name
+            ):
                 pass
 
             else:
