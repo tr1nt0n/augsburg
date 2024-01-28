@@ -195,7 +195,7 @@ trinton.make_music(
         attachments=[
             library.boxed_markup(
                 string=[
-                    "1. Magnete mit der Handfläche",
+                    "1. Magnetgruppe mit der Handfläche",
                     "2. Magnet rechts",
                 ]
             ),

@@ -435,7 +435,7 @@ def rhythm_b(index=0, stage=1, grace=False, grace_selector=None):
 
             if grace_selector is not None:
                 ties = grace_selector(relevant_leaves)
-                ties = abjad.select.logical_ties(relevant_leaves)
+                ties = abjad.select.logical_ties(ties)
 
             else:
                 if stage == 1:

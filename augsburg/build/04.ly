@@ -319,7 +319,7 @@
                         \once \override Stem.direction = #down
                         \clef "percussion"
                         b32
-                        ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #2 { \center-column { \line { 1. Magnete mit der Handfläche } \line { 2. Magnet rechts }  } }
+                        ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #2 { \center-column { \line { 1. Magnetgruppe mit der Handfläche } \line { 2. Magnet rechts }  } }
                         \override Staff.Accidental.stencil = ##f
                         \once \override Stem.direction = #down
                         b16.
