@@ -354,41 +354,15 @@
                             }
                             \context Voice = "RhythmMaker.Music Anchor"
                             {
-                                \grace {
-                                    \my-hack-slash
-                                    \my-hack-slash
-                                    \stemUp
-                                    d'16
-                                    [
-                                    (
-                                    d'16
-                                    d'16
-                                    d'16
-                                    )
-                                    ]
-                                    \stemNeutral
-                                }
                                 \revert Staff.Accidental.X-extent
                                 \once \override Stem.direction = #down
                                 \voiceTwo
                                 d'32
                                 - \accent
+                                \mf
                                 ~
                                 \once \override Stem.direction = #down
-                                \afterGrace
                                 d'2
-                                {
-                                    \my-hack-slash
-                                    \my-hack-slash
-                                    \stemUp
-                                    d'16
-                                    [
-                                    (
-                                    d'16
-                                    )
-                                    ]
-                                    \stemNeutral
-                                }
                                 \override Staff.Accidental.X-extent = ##f
                                 \revert Staff.Accidental.stencil
                             }
@@ -407,9 +381,12 @@
                                 d'16 * 2
                                 [
                                 (
+                                - \tweak circled-tip ##t
+                                \>
                                 d'16 * 2
                                 d'16 * 2
                                 d'16 * 2
+                                \!
                                 )
                                 ]
                                 \revert Beam.length-fraction
@@ -419,46 +396,11 @@
                             }
                             \context Voice = "RhythmMaker.Music Anchor"
                             {
-                                \grace {
-                                    \my-hack-slash
-                                    \my-hack-slash
-                                    \stemUp
-                                    d'16
-                                    [
-                                    (
-                                    d'16
-                                    d'16
-                                    d'16
-                                    d'16
-                                    d'16
-                                    )
-                                    ]
-                                    \stemNeutral
-                                }
                                 \revert Staff.Accidental.X-extent
                                 \once \override Stem.direction = #down
                                 \voiceTwo
-                                \afterGrace
                                 d'2
                                 - \accent
-                                \mf
-                                - \tweak circled-tip ##t
-                                \>
-                                {
-                                    \my-hack-slash
-                                    \my-hack-slash
-                                    \stemUp
-                                    d'16
-                                    [
-                                    (
-                                    d'16
-                                    d'16
-                                    d'16
-                                    \!
-                                    )
-                                    ]
-                                    \stemNeutral
-                                }
                                 \override Staff.Accidental.X-extent = ##f
                             }
                         >>

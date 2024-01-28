@@ -344,7 +344,14 @@ def rhythm_a(index=0, stage=1, hand_swapping=False):
     return rhythm
 
 
-def rhythm_b(index=0, stage=1, grace=False, grace_selector=None):
+def rhythm_b(
+    index=0,
+    stage=1,
+    grace=False,
+    grace_selector=None,
+    before_grace=False,
+    after_grace=False,
+):
     def rhythm(durations):
         if stage == 1:
             talea_durations = [26, 6, 3, 2, 15, 12, 6, 4, 4, 18, 8, 1, 6, 17]
@@ -476,7 +483,8 @@ def rhythm_b(index=0, stage=1, grace=False, grace_selector=None):
 
                 before_grace_container = abjad.BeforeGraceContainer(notes_string)
 
-                abjad.attach(before_grace_container, first_leaf)
+                if before_grace is True:
+                    abjad.attach(before_grace_container, first_leaf)
 
                 onbeat_durations = [
                     abjad.Duration(1, 16) for _ in range(1, onbeat_grace_amount)
@@ -513,7 +521,8 @@ def rhythm_b(index=0, stage=1, grace=False, grace_selector=None):
 
                 after_grace_container = abjad.AfterGraceContainer(notes_string)
 
-                abjad.attach(after_grace_container, last_leaf)
+                if after_grace is True:
+                    abjad.attach(after_grace_container, last_leaf)
 
             grace_groups = []
 

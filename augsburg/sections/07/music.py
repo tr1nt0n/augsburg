@@ -530,6 +530,15 @@ trinton.make_music(
         selector=trinton.select_leaves_by_index([0], pitched=True),
         direction=abjad.UP,
     ),
+    trinton.attachment_command(
+        attachments=[
+            library.boxed_markup(
+                string="( SYNTHESIZER EIN )",
+                tweaks=[r"- \tweak color \四"],
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+    ),
     trinton.notehead_bracket_command(),
     voice=score["piano 1 voice"],
     preprocessor=trinton.fuse_quarters_preprocessor((1, 1, 3, 1, 1, 1, 2, 2, 3)),

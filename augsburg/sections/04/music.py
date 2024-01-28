@@ -218,13 +218,12 @@ trinton.make_music(
         attachments=[
             trinton.make_custom_dynamic("ppp"),
             abjad.Dynamic("mf"),
-            abjad.StartHairpin(">o"),
+            # abjad.StartHairpin(">o"),
         ],
         selector=trinton.select_logical_ties_by_index(
             [
                 0,
-                13,
-                13,
+                12,
             ],
             first=True,
             grace=False,
@@ -239,9 +238,9 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([1]),
     ),
-    trinton.attachment_command(
-        attachments=[abjad.StopHairpin()],
-        selector=trinton.select_leaves_by_index([-1], grace=True),
+    trinton.linear_attachment_command(
+        attachments=[abjad.StartHairpin(">o"), abjad.StopHairpin()],
+        selector=trinton.select_leaves_by_index([-4, -1], grace=True),
     ),
     voice=score["piano 1 voice"],
 )
