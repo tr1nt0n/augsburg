@@ -824,7 +824,7 @@ def rhythm_d(stage=1, hand="rh", tuplet_selector=None):
     return rhythm
 
 
-def rhythm_e(hand="rh"):
+def rhythm_e(hand="rh", voice_number=None):
     def rhythm(durations):
 
         if hand == "rh":
@@ -855,7 +855,12 @@ def rhythm_e(hand="rh"):
             container = abjad.Container(simultaneous=True)
             original_voice = abjad.Voice(name=f"{components.name} temp")
 
-            intermittent_voice = abjad.Voice(name="epsilon intermittent voice 2")
+            if voice_number is not None:
+                intermittent_voice = abjad.Voice(
+                    name=f"epsilon intermittent voice 2 {voice_number}"
+                )
+            else:
+                intermittent_voice = abjad.Voice(name="epsilon intermittent voice 2")
             new_components = abjad.mutate.copy(components)
             intermittent_voice.extend(new_components)
 

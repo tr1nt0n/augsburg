@@ -18,7 +18,7 @@
               \raise #13 \with-dimensions-from \null
               \override #'(font-size . 5.5)
               \concat {
-                  \abjad-metronome-mark-markup #2 #0 #2 #"60" 
+                  \abjad-metronome-mark-markup #2 #0 #2 #"60"
                   [\abjad-metric-modulation-tuplet-lhs #1 #0 #37 #32 #2 #0 #'(1 . 1)]
               }
             }
@@ -52,7 +52,7 @@
               \raise #6 \with-dimensions-from \null
               \override #'(font-size . 5.5)
               \concat {
-                  \abjad-metronome-mark-mixed-number-markup #2 #0 #2 #"97" #"1" #"2" 
+                  \abjad-metronome-mark-mixed-number-markup #2 #0 #2 #"97" #"1" #"2"
                   [\abjad-metric-modulation-tuplet-lhs #2 #0 #37 #26 #2 #0 #'(1 . 1)]
               }
             }
@@ -95,7 +95,7 @@
                                   %! abjad.glissando(7)
                                 \glissando
                                 {
-                                    \once \override Flag.stroke-style = #"grace" 
+                                    \once \override Flag.stroke-style = #"grace"
                                       %! abjad.glissando(1)
                                     \hide NoteHead
                                       %! abjad.glissando(1)
@@ -173,7 +173,7 @@
                                 - \tweak stencil #constante-hairpin
                                 _ \<
                                 {
-                                    \once \override Flag.stroke-style = #"grace" 
+                                    \once \override Flag.stroke-style = #"grace"
                                     \revert Dots.staff-position
                                     g'16
                                     \!
@@ -231,7 +231,7 @@
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \one-thirty-seven-limit-quarter-tone-up  }
                         f!2
-                        ^ \markup \center-align { \concat { F\raise #0.75 { \teeny \smaller \sharp } -49 } }
+                        ^ \markup \center-align { \concat { F\raise #0.75 { \teeny \smaller \accidental #1/2 } -49 } }
                         ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Nagel + Vibrator }
                         - \abjad-zero-padding-glissando
                         \glissando
@@ -442,7 +442,7 @@
                         s1 * 3/2
                         \sustainOn
                         {
-                            \once \override Flag.stroke-style = #"grace" 
+                            \once \override Flag.stroke-style = #"grace"
                             \once \override Stem.stencil = ##f
                             \once \override Flag.stencil = ##f
                             \once \override NoteHead.no-ledgers = ##t

@@ -20,7 +20,7 @@
               \raise #5 \with-dimensions-from \null
               \override #'(font-size . 5.5)
               \concat {
-                  \abjad-metronome-mark-mixed-number-markup #2 #0 #2 #"97" #"1" #"2" 
+                  \abjad-metronome-mark-mixed-number-markup #2 #0 #2 #"97" #"1" #"2"
                   [\abjad-metric-modulation-tuplet-lhs #3 #0 #44 #65 #2 #0 #'(1 . 1)]
               }
             }
@@ -61,7 +61,7 @@
               \raise #0 \with-dimensions-from \null
               \override #'(font-size . 5.5)
               \concat {
-                  \abjad-metronome-mark-mixed-number-markup #2 #0 #2 #"138" #"3" #"4" 
+                  \abjad-metronome-mark-mixed-number-markup #2 #0 #2 #"138" #"3" #"4"
                   [\abjad-metric-modulation-tuplet-lhs #3 #0 #36 #37 #2 #0 #'(1 . 1)]
               }
             }
@@ -235,7 +235,7 @@
                         c'4
                         :32
                         {
-                            \once \override Flag.stroke-style = #"grace" 
+                            \once \override Flag.stroke-style = #"grace"
                               %! abjad.glissando(6)
                             \revert Accidental.stencil
                               %! abjad.glissando(6)
@@ -687,7 +687,7 @@
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup { \one-thirty-seven-limit-quarter-tone-up  }
                             f!\breve
-                            ^ \markup \center-align { \concat { F\raise #0.75 { \teeny \smaller \sharp } -49 } }
+                            ^ \markup \center-align { \concat { F\raise #0.75 { \teeny \smaller \accidental #1/2 } -49 } }
                             ~
                             \revert Dots.staff-position
                             \tweak Accidental.stencil #ly:text-interface::print
@@ -916,7 +916,7 @@
                         \afterGrace
                         s1 * 9/4
                         {
-                            \once \override Flag.stroke-style = #"grace" 
+                            \once \override Flag.stroke-style = #"grace"
                             \once \override Stem.stencil = ##f
                             \once \override Flag.stencil = ##f
                             \once \override NoteHead.no-ledgers = ##t

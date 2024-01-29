@@ -42,7 +42,7 @@
             \once \override Score.TimeSignature.stencil = ##f
             \time 5/4
             s1 * 5/4
-            - \tweak padding #14
+            - \tweak padding #16
             - \abjad-solid-line-with-arrow
             - \tweak bound-details.left.text \markup \concat { { \override #'(font-size . 5.5) \concat { ( \abjad-metronome-mark-mixed-number-markup #2 #0 #2 #"97" #"1" #"2"  ) } } \hspace #0.5 }
             - \tweak bound-details.right.text \markup { \override #'(font-size . 5.5) \concat { \abjad-metronome-mark-mixed-number-markup #2 #0 #2 #"138" #"3" #"4"  [\abjad-metric-modulation-tuplet-lhs #2 #0 #26 #37 #2 #0 #'(1 . 1)] } }
@@ -60,6 +60,31 @@
             \time 5/4
             s1 * 5/4
             \stopTextSpan
+            \once \override Score.BarLine.transparent = ##f
+            \once \override MultiMeasureRest.transparent = ##t
+            \once \override Score.TimeSignature.stencil = ##f
+            \time 1/4
+            R1 * 1/4
+            - \tweak font-size #'15
+            _ \extremely-short-fermata
+            \once \override Score.BarLine.transparent = ##f
+            \time 3/2
+            s1 * 3/2
+            ^ \markup {
+              \raise #11 \with-dimensions-from \null
+              \override #'(font-size . 5.5)
+              \concat {
+            \abjad-metronome-mark-markup #2 #0 #2 #"72" 
+              }
+            }
+            \once \override Score.BarLine.transparent = ##f
+            \once \override MultiMeasureRest.transparent = ##t
+            \once \override Score.TimeSignature.stencil = ##f
+            \time 1/4
+            R1 * 1/4
+            - \tweak font-size #'15
+            _ \very-long-fermata
+            \once \override Score.BarLine.transparent = ##f
         }
         \context StaffGroup = "Staff Group"
         <<
@@ -177,7 +202,6 @@
                                   %! abjad.on_beat_grace_container(4)
                                 \voiceTwo
                                 c'8
-                                    _ #(make-dynamic-script (markup #:whiteout #:italic "( mf )"))
                                 - \accent
                             }
                         >>
@@ -438,6 +462,21 @@
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-tridecimal-third-tone-down \hspace #0.125 \one-septimal-comma-up \hspace #0.125 \flat-one-syntonic-comma-up  }
                         bf'2.
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        s1 * 1/4
+                        \stopStaff \startStaff
+                        \once \override Staff.Clef.X-extent = ##f
+                        \once \override Staff.Clef.extra-offset = #'(-2.5 . 0)
+                        \staff-line-count 1
+                        \override Staff.Stem.direction = #UP
+                        \clef "percussion"
+                        c'2
+                        ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Tastaturabdeckung }
+                        \revert Staff.Stem.direction
+                        r1
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        s1 * 1/4
+                        \stopStaff \startStaff
                     }
                 }
                 \context timeSignatureStaff = "piano 2 staff"
@@ -454,6 +493,13 @@
                         s1 * 5/4
                         s1 * 5/4
                         s1 * 5/4
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        s1 * 1/4
+                        \stopStaff \startStaff
+                        s1 * 3/2
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        s1 * 1/4
+                        \stopStaff \startStaff
                     }
                 }
                 \context leftHandStaff = "piano 3 staff"
@@ -478,6 +524,7 @@
                         ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Styroporkugel auf dem Innenrahmen }
                         - \tweak stencil #abjad-flared-hairpin
                         \<
+                        \sustainOn
                         ~
                         c'4..
                         r16
@@ -923,6 +970,7 @@
                             }
                         >>
                         \staff-line-count 5
+                        \once \override NoteHead.duration-log = 2
                         \clef "treble"
                         \once \override NoteHead.no-ledgers = ##t
                         <
@@ -935,9 +983,12 @@
                             \tweak style #'la
                             c''''
                         >2.
+                            ^ #(make-dynamic-script (markup #:whiteout #:italic "( mp )"))
                         :32
                         ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Sim. wie das obere Notensystem }
+                        ^ \<
                         ~
+                        \once \override NoteHead.duration-log = 2
                         \once \override NoteHead.no-ledgers = ##t
                         <
                             \tweak style #'la
@@ -951,6 +1002,7 @@
                         >2
                         :32
                         ~
+                        \once \override NoteHead.duration-log = 2
                         \once \override NoteHead.no-ledgers = ##t
                         <
                             \tweak style #'la
@@ -963,7 +1015,11 @@
                             c''''
                         >2.
                         :32
+                        ^ \mf
+                        - \tweak circled-tip ##t
+                        ^ \>
                         ~
+                        \once \override NoteHead.duration-log = 2
                         \once \override NoteHead.no-ledgers = ##t
                         <
                             \tweak style #'la
@@ -976,6 +1032,41 @@
                             c''''
                         >2
                         :32
+                        \!
+                        \sustainOff
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        s1 * 1/4
+                        \stopStaff \startStaff
+                        \once \override Staff.Clef.X-extent = ##f
+                        \once \override Staff.Clef.extra-offset = #'(-2.5 . 0)
+                        \crossStaff {
+                        \once \override Stem.cross-staff = ##t
+                        \once \override Stem.Y-extent = #'(0 . 0)
+                        \once \override Stem.details.lengths = #'(37)
+                        \clef "bass"
+                        d,2
+                        - \accent
+                        ^ \f
+                        ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Tasten }
+                        \sustainOn
+                        \override Staff.TupletBracket.direction = #DOWN
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 4) (ly:make-duration 2 0))
+                        \times 4/5
+                        {
+                            d,2
+                            - \tenuto
+                            ^ \mf
+                            d,16
+                            - \accent
+                            ^ \ff
+                            \sustainOff
+                            r2
+                            r8.
+                            }
+                        }
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        s1 * 1/4
+                        \stopStaff \startStaff
                     }
                 }
                 \context thirdStaff = "piano 4 staff"
@@ -1041,6 +1132,28 @@
                         \once \override Staff.TimeSignature.transparent = ##t
                         \once \override MultiMeasureRest.transparent = ##t
                         R1 * 5/4
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 1/4
+                        \stopStaff \startStaff
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 3/2
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 1/4
+                        \stopStaff \startStaff
                         \stopStaff \startStaff
                     }
                 }
@@ -1554,6 +1667,33 @@
                         \undo \hide NoteHead
                         f16
                     }
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 1/4
+                    \stopStaff \startStaff
+                    \stopStaff \startStaff
+                    \override Dots.staff-position = #2
+                    \afterGrace
+                    g'1.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    {
+                        \revert Dots.staff-position
+                        ef16
+                    }
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 1/4
+                    \stopStaff \startStaff
+                    \stopStaff \startStaff
                 }
             }
         >>
