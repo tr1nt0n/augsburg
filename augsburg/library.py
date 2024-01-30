@@ -518,7 +518,6 @@ def handle_accidentals(score, force_accidentals=True):
             accidental_name = accidental.name
             clef = abjad.get.effective(first_leaf, abjad.Clef)
 
-            # if clef.name == "percussion" or first_leaf_pitch == previous_leaf_pitch:
             if (
                 clef.name == "percussion"
                 or first_leaf_pitch.name == previous_leaf_pitch.name
