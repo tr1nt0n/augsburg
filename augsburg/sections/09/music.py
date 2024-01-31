@@ -973,9 +973,19 @@ for measures, padding in zip(
 #     voice=score["Global Context"],
 # )
 
+for measure in [7, 8, 11, 12, 13, 14]:
+    trinton.make_music(
+        lambda _: trinton.select_target(_, (measure,)),
+        trinton.attachment_command(
+            attachments=[abjad.LilyPondLiteral(r"\noBreak", site="absolute_after")],
+            selector=trinton.select_leaves_by_index([0]),
+        ),
+        voice=score["Global Context"],
+    )
+
 # beautification
 
-library.handle_accidentals(score=score, force_accidentals=False)
+# library.handle_accidentals(score=score, force_accidentals=False)
 
 library.clean_graces(score=score)
 

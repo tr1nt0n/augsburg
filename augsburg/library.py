@@ -437,11 +437,13 @@ def handle_accidentals(score, force_accidentals=True):
         previous_duration = abjad.get.duration(previous_leaf)
         if isinstance(tie[0], abjad.Chord):
             chords.append(tie)
+            pass
         if previous_duration < abjad.Duration(1, 16):
             if isinstance(tie[0], abjad.Chord):
                 pass
             else:
                 ficta_ties.append(tie)
+                pass
         previous_parentage = abjad.get.parentage(previous_leaf).parent
         if (
             isinstance(previous_parentage, abjad.BeforeGraceContainer)
@@ -456,7 +458,10 @@ def handle_accidentals(score, force_accidentals=True):
             ):
                 pass
             else:
-                post_graces.append(tie)
+                if isinstance(tie[0], abjad.Chord):
+                    pass
+                else:
+                    post_graces.append(tie)
 
     for tie in post_graces:
         abjad.attach(

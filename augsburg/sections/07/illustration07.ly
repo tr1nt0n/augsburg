@@ -75,6 +75,7 @@
                   [\abjad-metric-modulation-tuplet-lhs #1 #0 #32 #35 #2 #0 #'(1 . 1)]
               }
             }
+            \noBreak
             \time 7/16
             s1 * 7/16
             ^ \markup {
@@ -85,6 +86,7 @@
                   [\abjad-metric-modulation-tuplet-lhs #2 #0 #13 #16 #2 #0 #'(1 . 1)]
               }
             }
+            \noBreak
             \time 3/8
             s1 * 3/8
             ^ \markup {

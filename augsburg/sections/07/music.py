@@ -1075,6 +1075,16 @@ trinton.make_music(
     voice=score["Global Context"],
 )
 
+for measure in [6, 7]:
+    trinton.make_music(
+        lambda _: trinton.select_target(_, (measure,)),
+        trinton.attachment_command(
+            attachments=[abjad.LilyPondLiteral(r"\noBreak", site="absolute_after")],
+            selector=trinton.select_leaves_by_index([0]),
+        ),
+        voice=score["Global Context"],
+    )
+
 # beautification
 
 library.handle_accidentals(score=score)

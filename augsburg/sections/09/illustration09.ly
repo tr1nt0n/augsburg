@@ -58,9 +58,11 @@
                   \abjad-metronome-mark-markup #2 #0 #2 #"33" 
               }
             }
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 4/4
             s1 * 1
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 4/4
             s1 * 1
@@ -82,15 +84,19 @@
                   \abjad-metronome-mark-markup #2 #0 #2 #"33" 
               }
             }
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 4/4
             s1 * 1
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 4/4
             s1 * 1
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 4/4
             s1 * 1
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 4/4
             s1 * 1
@@ -267,7 +273,6 @@
                         ^ \markup \center-align { \concat { +2 } }
                         r2
                         \once \override NoteHead.duration-log = 2
-                        \revert Staff.Accidental.X-extent
                         \once \override NoteHead.no-ledgers = ##t
                         <
                             \tweak style #'la
@@ -283,7 +288,6 @@
                         - \espressivo
                         \mp
                         ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #2 { \center-column { \line { Die Saiten in der höchsten Oktave } \line { auf ihrer Rückseite anschlagen }  } }
-                        \override Staff.Accidental.X-extent = ##f
                         <<
                             \context Voice = "37 voice temp"
                             {
@@ -463,7 +467,6 @@
                         ^ \markup \center-align { \concat { F-49 } }
                         r2
                         r8
-                        \revert Staff.Accidental.X-extent
                         \once \override NoteHead.no-ledgers = ##t
                         <
                             \tweak style #'la
@@ -492,7 +495,6 @@
                             c''''
                         >4
                         :32
-                        \override Staff.Accidental.X-extent = ##f
                         \staff-line-count 1
                         \clef "percussion"
                         c'4
@@ -656,9 +658,7 @@
                                     ~
                                     g''''32
                                     \interrupt
-                                    \override Staff.Accidental.stencil = ##f
                                     g''''4
-                                    \revert Staff.Accidental.stencil
                                     \interrupt
                                     g'''4
                                     \interrupt
@@ -672,9 +672,7 @@
                                 {
                                     g'''16
                                     \interrupt
-                                    \override Staff.Accidental.stencil = ##f
                                     g'''4
-                                    \revert Staff.Accidental.stencil
                                     \interrupt
                                     g'''4
                                     \interrupt
@@ -836,9 +834,7 @@
                                 {
                                     a''''32
                                     \hocket
-                                    \override Staff.Accidental.stencil = ##f
                                     a''''4
-                                    \revert Staff.Accidental.stencil
                                     \hocket
                                     a''''4
                                     \hocket
@@ -928,10 +924,7 @@
                                     ~
                                     g''''32
                                     \hocket
-                                    \override Staff.Accidental.stencil = ##f
                                     g'''4
-                                    - \natural-articulation
-                                    \revert Staff.Accidental.stencil
                                     \hocket
                                     g'''4
                                     \hocket
@@ -945,10 +938,7 @@
                                 {
                                     g'''16
                                     \hocket
-                                    \override Staff.Accidental.stencil = ##f
                                     g''''4
-                                    - \natural-articulation
-                                    \revert Staff.Accidental.stencil
                                     \hocket
                                     g'''4
                                     \hocket
@@ -1043,7 +1033,6 @@
                         <<
                             \context Voice = "RhythmMaker.Music temp"
                             {
-                                \revert Staff.Accidental.X-extent
                                 \clef "bass"
                                 \voiceOne
                                 <c' ds' gs' b'>1.
@@ -1051,15 +1040,10 @@
                                 ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { ( Tasten ) }
                                 ~
                                 <c' ds' gs' b'>1
-                                \override Staff.Accidental.X-extent = ##f
-                                \revert Staff.Accidental.X-extent
                                 <ds a bf>1..
                                 ^ \p
-                                \override Staff.Accidental.X-extent = ##f
-                                \revert Staff.Accidental.X-extent
                                 <b c' f' bf'>1.
                                 ^ \p
-                                \override Staff.Accidental.X-extent = ##f
                             }
                             \context Voice = "epsilon intermittent voice 2"
                             {
@@ -1197,19 +1181,15 @@
                         <<
                             \context Voice = "RhythmMaker.Music temp"
                             {
-                                \revert Staff.Accidental.X-extent
                                 \clef "bass"
                                 \voiceOne
                                 <ds a bf>1..
                                 ^ \p
                                 ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { ( Tasten ) }
-                                \override Staff.Accidental.X-extent = ##f
-                                \revert Staff.Accidental.X-extent
                                 <c' ds' gs' b'>1.
                                 ^ \p
                                 ~
                                 <c' ds' gs' b'>1
-                                \override Staff.Accidental.X-extent = ##f
                             }
                             \context Voice = "epsilon intermittent voice 2 1"
                             {
@@ -1377,13 +1357,11 @@
                         <<
                             \context Voice = "RhythmMaker.Music temp"
                             {
-                                \revert Staff.Accidental.X-extent
                                 \clef "bass"
                                 \voiceOne
                                 <b c' f' bf'>1.
                                 ^ \p
                                 ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { ( Tasten ) }
-                                \override Staff.Accidental.X-extent = ##f
                             }
                             \context Voice = "epsilon intermittent voice 2 2"
                             {
