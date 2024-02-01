@@ -63,6 +63,72 @@
             s1 * 7/16
             \time 6/16
             s1 * 3/8
+            \once \override Score.TimeSignature.stencil = ##f
+            \time 6/16
+            s1 * 3/8
+            - \tweak padding #18
+            - \abjad-solid-line-with-arrow
+            - \tweak bound-details.left.text \markup \concat { { \override #'(font-size . 5.5) \concat { ( \abjad-metronome-mark-markup #2 #0 #2 #"60"  ) } } \hspace #0.5 }
+            - \tweak bound-details.right.text \markup { \override #'(font-size . 5.5) \concat { \abjad-metronome-mark-mixed-number-markup #2 #0 #2 #"48" #"3" #"4"  [\abjad-metric-modulation-tuplet-lhs #2 #0 #16 #13 #2 #0 #'(1 . 1)] } }
+            \startTextSpan
+            \time 7/16
+            s1 * 7/16
+            \time 4/8
+            s1 * 1/2
+            \time 5/8
+            s1 * 5/8
+            \time 4/4
+            s1 * 1
+            \stopTextSpan
+            \time 7/4
+            s1 * 7/4
+            \time 10/4
+            s1 * 5/2
+            ^ \markup {
+              \raise #13.5 \with-dimensions-from \null
+              \override #'(font-size . 5.5)
+              \concat {
+                  \abjad-metronome-mark-markup #2 #0 #2 #"60" 
+                  [\abjad-metric-modulation-tuplet-lhs #2 #0 #13 #16 #2 #0 #'(1 . 1)]
+              }
+            }
+            \time 12/4
+            s1 * 3
+            \time 4/4
+            s1 * 1
+            \time 3/4
+            s1 * 3/4
+            \once \override Score.BarLine.transparent = ##f
+            \once \override MultiMeasureRest.transparent = ##t
+            \once \override Score.TimeSignature.stencil = ##f
+            \time 1/4
+            R1 * 1/4
+            - \tweak font-size #'15
+            _ \middle-fermata
+            \once \override Score.BarLine.transparent = ##f
+            \once \override Score.BarLine.transparent = ##f
+            \tweak text "×7" \startMeasureSpanner
+            \bar ".|:"
+            \time 7/8
+            s1 * 7/8
+            ^ \markup {
+              \raise #16 \with-dimensions-from \null
+              \override #'(font-size . 5.5)
+              \concat {
+            \abjad-metronome-mark-markup #2 #1 #2 #"55" 
+              }
+            }
+            \bar ":|."
+            \once \override Score.BarLine.transparent = ##f
+            \stopMeasureSpanner
+            \once \override Score.BarLine.transparent = ##f
+            \once \override MultiMeasureRest.transparent = ##t
+            \once \override Score.TimeSignature.stencil = ##f
+            \time 1/4
+            R1 * 1/4
+            - \tweak font-size #'15
+            _ \very-short-fermata
+            \once \override Score.BarLine.transparent = ##f
         }
         \context StaffGroup = "Staff Group"
         <<
@@ -705,6 +771,297 @@
                             r64
                             ]
                         }
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 5 0))
+                        \times 6/5
+                        {
+                            \staff-line-count 1
+                            \override Staff.Accidental.stencil = ##f
+                            \clef "percussion"
+                            c'32
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.1
+                                        #:dynamic "mf"
+                                        #:hspace -0.2
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
+                            ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #2 { \center-column { \line { Auf dem Deckel } \line { mit Styroporkugeln }  } }
+                            [
+                            - \tweak stencil #constante-hairpin
+                            \<
+                            \revert Staff.Accidental.stencil
+                            r32
+                            \override Staff.Accidental.stencil = ##f
+                            c'16.
+                            ]
+                            \revert Staff.Accidental.stencil
+                        }
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 7 6) (ly:make-duration 5 0))
+                        \times 6/7
+                        {
+                            r32
+                            [
+                            \override Staff.Accidental.stencil = ##f
+                            c'8
+                            \revert Staff.Accidental.stencil
+                            r32
+                            \override Staff.Accidental.stencil = ##f
+                            c'32
+                            ]
+                            \>
+                            ~
+                        }
+                        c'4..
+                        ~
+                        \once \override TupletBracket.bracket-visibility = ##f
+                        \once \override TupletBracket.bracket-visibility = ##f
+                        c'8
+                        ~
+                        \once \override TupletBracket.bracket-visibility = ##f
+                        \once \override TupletBracket.bracket-visibility = ##f
+                        c'32
+                        [
+                        \revert Staff.Accidental.stencil
+                        r64
+                        \override Staff.Accidental.stencil = ##f
+                        c'16
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.1
+                                    #:dynamic "p"
+                                    #:hspace -0.25
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
+                        ~
+                        c'64
+                        ]
+                        ~
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 4 0))
+                        \times 2/3
+                        {
+                            \once \override TupletBracket.bracket-visibility = ##f
+                            \once \override TupletBracket.bracket-visibility = ##f
+                            c'16
+                            [
+                            \revert Staff.Accidental.stencil
+                            r32
+                            \override Staff.Accidental.stencil = ##f
+                            c'16.
+                            ]
+                            \<
+                            ~
+                        }
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 7 8) (ly:make-duration 6 0))
+                        \times 8/7
+                        {
+                            \once \override TupletBracket.bracket-visibility = ##f
+                            \once \override TupletBracket.bracket-visibility = ##f
+                            c'16
+                            [
+                            ~
+                            c'64
+                            \revert Staff.Accidental.stencil
+                            r64
+                            \override Staff.Accidental.stencil = ##f
+                            c'64
+                            ]
+                            ~
+                        }
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 6 5) (ly:make-duration 3 0))
+                        \times 5/6
+                        {
+                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 4) (ly:make-duration 3 0))
+                            \times 4/5
+                            {
+                                c'8
+                                [
+                                \revert Staff.Accidental.stencil
+                                r8
+                                ]
+                                c'4.
+                                _ #(make-dynamic-script
+                                    (markup
+                                        #:whiteout
+                                        #:line (
+                                            #:general-align Y -2 #:normal-text #:larger "“"
+                                            #:hspace -0.4
+                                            #:dynamic "f"
+                                            #:hspace -0.2
+                                            #:general-align Y -2 #:normal-text #:larger "”"
+                                            )
+                                        )
+                                    )
+                            }
+                            \tweak text #tuplet-number::calc-fraction-text
+                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 7 8) (ly:make-duration 5 0))
+                            \times 8/7
+                            {
+                                r32
+                                [
+                                \override Staff.Accidental.stencil = ##f
+                                c'8
+                                _ #(make-dynamic-script
+                                    (markup
+                                        #:whiteout
+                                        #:line (
+                                            #:general-align Y -2 #:normal-text #:larger "“"
+                                            #:hspace -0.1
+                                            #:dynamic "mf"
+                                            #:hspace -0.2
+                                            #:general-align Y -2 #:normal-text #:larger "”"
+                                            )
+                                        )
+                                    )
+                                \revert Staff.Accidental.stencil
+                                r32
+                                \override Staff.Accidental.stencil = ##f
+                                c'32
+                                ]
+                                ~
+                            }
+                        }
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 7 8) (ly:make-duration 5 0))
+                        \times 8/7
+                        {
+                            c'16
+                            [
+                            \revert Staff.Accidental.stencil
+                            r32
+                            \override Staff.Accidental.stencil = ##f
+                            c'16
+                            \revert Staff.Accidental.stencil
+                            r32
+                            \override Staff.Accidental.stencil = ##f
+                            c'32
+                            ]
+                            \>
+                            ~
+                        }
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 9 8) (ly:make-duration 5 0))
+                        \times 8/9
+                        {
+                            c'32
+                            [
+                            \revert Staff.Accidental.stencil
+                            r32
+                            \override Staff.Accidental.stencil = ##f
+                            c'16.
+                            \revert Staff.Accidental.stencil
+                            r32
+                            \override Staff.Accidental.stencil = ##f
+                            c'16
+                            \revert Staff.Accidental.stencil
+                            r32
+                            ]
+                        }
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 4) (ly:make-duration 4 0))
+                        \times 4/5
+                        {
+                            \override Staff.Accidental.stencil = ##f
+                            c'8.
+                            [
+                            \revert Staff.Accidental.stencil
+                            r16
+                            \override Staff.Accidental.stencil = ##f
+                            c'16
+                            ]
+                            ~
+                        }
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 7 8) (ly:make-duration 5 0))
+                        \times 8/7
+                        {
+                            c'32
+                            [
+                            \revert Staff.Accidental.stencil
+                            r32
+                            \override Staff.Accidental.stencil = ##f
+                            c'16.
+                            \revert Staff.Accidental.stencil
+                            r32
+                            \override Staff.Accidental.stencil = ##f
+                            c'32
+                            ]
+                            ~
+                        }
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 6 7) (ly:make-duration 2 0))
+                        \times 7/6
+                        {
+                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 4) (ly:make-duration 2 0))
+                            \times 4/5
+                            {
+                                c'4
+                                \revert Staff.Accidental.stencil
+                                r4
+                                c'2.
+                                _ #(make-dynamic-script
+                                    (markup
+                                        #:whiteout
+                                        #:line (
+                                            #:general-align Y -2 #:normal-text #:larger "“"
+                                            #:hspace -0.1
+                                            #:dynamic "ppp"
+                                            #:hspace -0.25
+                                            #:general-align Y -2 #:normal-text #:larger "”"
+                                            )
+                                        )
+                                    )
+                                \<
+                                ~
+                            }
+                            \afterGrace
+                            c'2
+                            {
+                                \once \override Flag.stroke-style = #"grace" 
+                                \once \override Stem.stencil = ##f
+                                \once \override Flag.stencil = ##f
+                                \once \override NoteHead.no-ledgers = ##t
+                                \once \override Accidental.stencil = ##f
+                                \once \override NoteHead.transparent = ##t
+                                c'16
+                                _ #(make-dynamic-script
+                                    (markup
+                                        #:whiteout
+                                        #:line (
+                                            #:general-align Y -2 #:normal-text #:larger "“"
+                                            #:hspace -0.4
+                                            #:dynamic "fff"
+                                            #:hspace -0.2
+                                            #:general-align Y -2 #:normal-text #:larger "”"
+                                            )
+                                        )
+                                    )
+                            }
+                        }
+                        \staff-line-count 5
+                        \clef "bass"
+                        s1 * 5/2
+                        s1 * 3
+                        s1 * 1
+                        s1 * 3/4
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        s1 * 1/4
+                        \stopStaff \startStaff
+                        s1 * 7/8
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        s1 * 1/4
+                        \stopStaff \startStaff
                     }
                 }
                 \context timeSignatureStaff = "piano 2 staff"
@@ -725,6 +1082,23 @@
                         s1 * 1/2
                         s1 * 7/16
                         s1 * 3/8
+                        s1 * 3/8
+                        s1 * 7/16
+                        s1 * 1/2
+                        s1 * 5/8
+                        s1 * 1
+                        s1 * 7/4
+                        s1 * 5/2
+                        s1 * 3
+                        s1 * 1
+                        s1 * 3/4
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        s1 * 1/4
+                        \stopStaff \startStaff
+                        s1 * 7/8
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        s1 * 1/4
+                        \stopStaff \startStaff
                     }
                 }
                 \context leftHandStaff = "piano 3 staff"
@@ -1086,6 +1460,184 @@
                         ]
                         \ottava 0
                         \revert Staff.Accidental.stencil
+                        s1 * 3/8
+                        s1 * 7/16
+                        s1 * 1/2
+                        \staff-line-count 1
+                        \clef "percussion"
+                        c'4
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.4
+                                    #:dynamic "ffff"
+                                    #:hspace -0.2
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
+                        - \tweak stencil #abjad-flared-hairpin
+                        \>
+                        ~
+                        c'4.
+                        ~
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 4) (ly:make-duration 2 0))
+                        \times 4/5
+                        {
+                            \tweak text #tuplet-number::calc-fraction-text
+                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 7 6) (ly:make-duration 3 0))
+                            \times 6/7
+                            {
+                                c'4
+                                r8
+                                c'2
+                                _ #(make-dynamic-script
+                                    (markup
+                                        #:whiteout
+                                        #:line (
+                                            #:general-align Y -2 #:normal-text #:larger "“"
+                                            #:hspace -0.1
+                                            #:dynamic "mf"
+                                            #:hspace -0.2
+                                            #:general-align Y -2 #:normal-text #:larger "”"
+                                            )
+                                        )
+                                    )
+                                \>
+                                ~
+                            }
+                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 2 0))
+                            \times 2/3
+                            {
+                                c'4
+                                r4
+                                c'4
+                                _ #(make-dynamic-script
+                                    (markup
+                                        #:whiteout
+                                        #:line (
+                                            #:general-align Y -2 #:normal-text #:larger "“"
+                                            #:hspace -0.1
+                                            #:dynamic "p"
+                                            #:hspace -0.25
+                                            #:general-align Y -2 #:normal-text #:larger "”"
+                                            )
+                                        )
+                                    )
+                                \<
+                                ~
+                            }
+                        }
+                        c'8.
+                        [
+                        r16
+                        c'8
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.1
+                                    #:dynamic "mf"
+                                    #:hspace -0.2
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
+                        r16
+                        c'16
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.1
+                                    #:dynamic "mf"
+                                    #:hspace -0.2
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
+                        ]
+                        - \tweak circled-tip ##t
+                        \>
+                        ~
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 2 0))
+                        \times 2/3
+                        {
+                            c'4
+                            r8
+                            \!
+                            c'4.
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.4
+                                        #:dynamic "f"
+                                        #:hspace -0.2
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
+                            - \tweak circled-tip ##t
+                            \>
+                        }
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 7 6) (ly:make-duration 3 0))
+                        \times 6/7
+                        {
+                            r8
+                            \!
+                            c'2
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.4
+                                        #:dynamic "ff"
+                                        #:hspace -0.2
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
+                            - \tweak circled-tip ##t
+                            \>
+                            r8
+                            \!
+                            [
+                            c'8
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.4
+                                        #:dynamic "fff"
+                                        #:hspace -0.2
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
+                            ]
+                        }
+                        \staff-line-count 5
+                        \clef "bass"
+                        s1 * 5/2
+                        s1 * 3
+                        s1 * 1
+                        s1 * 3/4
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        s1 * 1/4
+                        \stopStaff \startStaff
+                        s1 * 7/8
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        s1 * 1/4
+                        \stopStaff \startStaff
                     }
                 }
                 \context thirdStaff = "piano 4 staff"
@@ -1206,6 +1758,88 @@
                         \once \override MultiMeasureRest.transparent = ##t
                         R1 * 3/8
                         \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 3/8
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 7/16
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 1/2
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 5/8
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 1
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 7/4
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 5/2
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 3
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 1
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 3/4
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 1/4
+                        \stopStaff \startStaff
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 7/8
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 1/4
+                        \stopStaff \startStaff
+                        \stopStaff \startStaff
                     }
                 }
             >>
@@ -1317,6 +1951,101 @@
                     \once \override Staff.TimeSignature.transparent = ##t
                     \once \override MultiMeasureRest.transparent = ##t
                     R1 * 3/8
+                    \stopStaff \startStaff
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 3/8
+                    \stopStaff \startStaff
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 7/16
+                    \stopStaff \startStaff
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 1/2
+                    \stopStaff \startStaff
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 5/8
+                    \stopStaff \startStaff
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 1
+                    \stopStaff \startStaff
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 7/4
+                    \stopStaff \startStaff
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 5/2
+                    \stopStaff \startStaff
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 3
+                    \stopStaff \startStaff
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 1
+                    \stopStaff \startStaff
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 3/4
+                    \stopStaff \startStaff
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 1/4
+                    \stopStaff \startStaff
+                    \stopStaff \startStaff
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 7/8
+                    \stopStaff \startStaff
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 1/4
+                    \stopStaff \startStaff
                     \stopStaff \startStaff
                 }
             }

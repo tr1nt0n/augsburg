@@ -26,6 +26,19 @@ score = library.augsburg_score(
                 (4, 8),
                 (7, 16),
                 (6, 16),
+                (6, 16),
+                (7, 16),
+                (4, 8),
+                (5, 8),
+                (4, 4),
+                (7, 4),
+                (10, 4),
+                (12, 4),
+                (4, 4),
+                (3, 4),
+                (1, 4),
+                (7, 8),
+                (1, 4),
             ],
         ]
     )
@@ -287,6 +300,77 @@ trinton.make_music(
     voice=score["piano 1 voice"],
 )
 
+trinton.make_music(
+    lambda _: trinton.select_target(_, (13, 18)),
+    evans.RhythmHandler(
+        rhythm.rhythm_a(index=0, stage=3, hand_swapping=False),
+    ),
+    trinton.aftergrace_command(
+        selector=trinton.select_logical_ties_by_index([-1], pitched=True),
+        invisible=True,
+    ),
+    trinton.attachment_command(
+        attachments=[
+            library.boxed_markup(
+                string=["Auf dem Deckel", "mit Styroporkugeln"],
+                # tweaks=[r"- \tweak padding #12"],
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        direction=abjad.UP,
+    ),
+    library.change_lines(lines=1, clef="percussion"),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.Dynamic('"mf"'),
+            abjad.StartHairpin("--"),
+            abjad.StartHairpin(">"),
+            abjad.Dynamic('"p"'),
+            abjad.StartHairpin("<"),
+            abjad.Dynamic('"f"'),
+            abjad.Dynamic('"mf"'),
+            abjad.StartHairpin(">"),
+            abjad.Dynamic('"ppp"'),
+            abjad.StartHairpin("<"),
+            abjad.Dynamic('"fff"'),
+        ],
+        selector=trinton.select_logical_ties_by_index(
+            [0, 0, 3, 4, 5, 7, 8, 11, 18, 18, 19], first=True, pitched=True
+        ),
+    ),
+    trinton.notehead_bracket_command(),
+    voice=score["piano 1 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (19, 20)),
+    library.change_lines(
+        lines=5, clef="bass", selector=trinton.select_leaves_by_index([0])
+    ),
+    voice=score["piano 1 voice"],
+)
+
+# trinton.make_music(
+#     lambda _: trinton.select_target(_, (24,)),
+#     evans.RhythmHandler(evans.talea([1], 8)),
+#     evans.PitchHandler(pitch_list=[["cs'", "as'", "cs''"]]),
+#     trinton.attachment_command(
+#         attachments=[abjad.Clef("treble")],
+#         selector=trinton.select_leaves_by_index([0], pitched=True)
+#     ),
+#     trinton.attachment_command(
+#         attachments=[abjad.Articulation("tenuto")],
+#         selector=trinton.logical_ties(pitched=True, first=True),
+#     ),
+#     trinton.linear_attachment_command(
+#         attachments=[abjad.Dynamic("ff"), abjad.StartHairpin("--"), abjad.StopHairpin()],
+#         selector=trinton.select_leaves_by_index([0, 0, -1], pitched=True),
+#     ),
+#     abjad.beam,
+#     abjad.slur,
+#     voice=score["piano 1 voice"],
+# )
+
 # lh music
 
 trinton.make_music(
@@ -435,25 +519,6 @@ trinton.make_music(
         attachments=[abjad.Clef("bass")],
         selector=trinton.select_leaves_by_index([0], pitched=True),
     ),
-    # trinton.linear_attachment_command(
-    #     attachments=[
-    #         abjad.StartSlur(),
-    #         abjad.StopSlur()
-    #     ],
-    #     selector=trinton.select_leaves_by_index([-3, -1], pitched=True)
-    # ),
-    # trinton.linear_attachment_command(
-    #     attachments=[
-    #         abjad.LilyPondLiteral(
-    #             r"\once \override Staff.DynamicLineSpanner.staff-padding = 12"
-    #         ),
-    #         abjad.Dynamic("mp"),
-    #         abjad.StartHairpin("<"),
-    #         abjad.Dynamic("f")
-    #     ],
-    #     selector=trinton.select_leaves_by_index([0, 0, 0, -3], pitched=True),
-    #     direction=abjad.UP
-    # ),
     trinton.linear_attachment_command(
         attachments=[
             abjad.Dynamic("mf"),
@@ -517,6 +582,97 @@ trinton.make_music(
     voice=score["piano 3 voice"],
 )
 
+trinton.make_music(
+    lambda _: trinton.select_target(_, (16, 18)),
+    evans.RhythmHandler(
+        rhythm.rhythm_a(index=1, stage=3, hand_swapping=False),
+    ),
+    library.change_lines(
+        lines=1,
+        clef="percussion",
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.Dynamic('"ffff"'),
+            abjad.StartHairpin("|>"),
+            abjad.Dynamic('"mf"'),
+            abjad.StartHairpin(">"),
+            abjad.Dynamic('"p"'),
+            abjad.StartHairpin("<"),
+            abjad.Dynamic('"mf"'),
+        ],
+        selector=trinton.select_logical_ties_by_index(
+            [
+                0,
+                0,
+                1,
+                1,
+                2,
+                2,
+                3,
+            ],
+            first=True,
+            pitched=True,
+        ),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.Dynamic('"mf"'),
+            abjad.StartHairpin(">o"),
+            abjad.StopHairpin(),
+            abjad.Dynamic('"f"'),
+            abjad.StartHairpin(">o"),
+            abjad.StopHairpin(),
+            abjad.Dynamic('"ff"'),
+            abjad.StartHairpin(">o"),
+            abjad.StopHairpin(),
+            abjad.Dynamic('"fff"'),
+        ],
+        selector=trinton.select_logical_ties_by_index(
+            [
+                -7,
+                -7,
+                -6,
+                -5,
+                -5,
+                -4,
+                -3,
+                -3,
+                -2,
+                -1,
+            ],
+            first=True,
+        ),
+    ),
+    trinton.notehead_bracket_command(),
+    voice=score["piano 3 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (19, 20)),
+    library.change_lines(
+        lines=5, clef="bass", selector=trinton.select_leaves_by_index([0])
+    ),
+    voice=score["piano 3 voice"],
+)
+
+# trinton.make_music(
+#     lambda _: trinton.select_target(_, (24,)),
+#     evans.RhythmHandler(evans.talea([1], 8)),
+#     evans.PitchHandler(pitch_list=[["cs,,", "gs,,", "cs,"]]),
+#     trinton.attachment_command(
+#         attachments=[abjad.Articulation("tenuto")],
+#         selector=trinton.logical_ties(pitched=True, first=True),
+#     ),
+#     trinton.linear_attachment_command(
+#         attachments=[abjad.Dynamic("ff"), abjad.StartHairpin("--"), abjad.StopHairpin()],
+#         selector=trinton.select_leaves_by_index([0, 0, -1], pitched=True),
+#     ),
+#     abjad.beam,
+#     abjad.slur,
+#     voice=score["piano 3 voice"],
+# )
+
 # filter music
 
 trinton.make_music(
@@ -554,31 +710,61 @@ trinton.fermata_measures(
     ],
 )
 
-# trinton.make_music(
-#     lambda _: trinton.select_target(_, (6, 10)),
-#     trinton.spanner_command(
-#         strings=[
-#             library.metronome_markups(
-#                 tempo_string="97 1/2",
-#                 previous_tempo_string=None,
-#                 string_only=True,
-#                 parenthesis=True,
-#             ),
-#             library.metronome_markups(
-#                 tempo_string="138 3/4",
-#                 previous_tempo_string="97 1/2",
-#                 string_only=True,
-#                 parenthesis=False,
-#             ),
-#         ],
-#         selector=trinton.select_leaves_by_index([0, -1]),
-#         style="solid-line-with-arrow",
-#         padding=16,
-#         full_string=True,
-#         right_padding=0,
-#     ),
-#     voice=score["Global Context"],
-# )
+trinton.fermata_measures(
+    score=score,
+    measures=[23],
+    fermata="middle-fermata",
+    font_size=15,
+    clef_whitespace=True,
+    voice_names=[
+        "piano 1 voice",
+        "piano 2 voice",
+        "piano 3 voice",
+        "piano 4 voice",
+        "piano 5 voice",
+    ],
+)
+
+trinton.fermata_measures(
+    score=score,
+    measures=[25],
+    fermata="very-short-fermata",
+    font_size=15,
+    clef_whitespace=True,
+    voice_names=[
+        "piano 1 voice",
+        "piano 2 voice",
+        "piano 3 voice",
+        "piano 4 voice",
+        "piano 5 voice",
+    ],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (13, 17)),
+    trinton.spanner_command(
+        strings=[
+            library.metronome_markups(
+                tempo_string="60",
+                previous_tempo_string=None,
+                string_only=True,
+                parenthesis=True,
+            ),
+            library.metronome_markups(
+                tempo_string="48 3/4",
+                previous_tempo_string="60",
+                string_only=True,
+                parenthesis=False,
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0, -1]),
+        style="solid-line-with-arrow",
+        padding=18,
+        full_string=True,
+        right_padding=0,
+    ),
+    voice=score["Global Context"],
+)
 
 trinton.make_music(
     lambda _: trinton.select_target(
@@ -627,7 +813,63 @@ trinton.make_music(
                     r"}",
                 ],
                 site="after",
-            )
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+    ),
+    voice=score["Global Context"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (24,)),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r'\tweak text "×7" \startMeasureSpanner', site="absolute_before"
+            ),
+            abjad.BarLine(".|:", site="before"),
+            abjad.LilyPondLiteral(
+                r"\once \override Score.BarLine.transparent = ##f",
+                site="absolute_before",
+            ),
+            abjad.LilyPondLiteral(
+                [
+                    r"^ \markup {",
+                    r"  \raise #16 \with-dimensions-from \null",
+                    r"  \override #'(font-size . 5.5)",
+                    r"  \concat {",
+                    r"""\abjad-metronome-mark-markup #2 #1 #2 #"55" """,
+                    r"  }",
+                    r"}",
+                ],
+                site="after",
+            ),
+            abjad.BarLine(":|.", site="absolute_after"),
+            abjad.LilyPondLiteral(
+                r"\once \override Score.BarLine.transparent = ##f",
+                site="absolute_after",
+            ),
+            abjad.LilyPondLiteral(r"\stopMeasureSpanner", site="absolute_after"),
+        ],
+        selector=trinton.select_leaves_by_index([0, 0, 0, 0, -1, -1, -1]),
+    ),
+    voice=score["Global Context"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(
+        _,
+        (19,),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            library.metronome_markups(
+                tempo_string="60",
+                previous_tempo_string="48 3/4",
+                padding=13.5,
+                string_only=False,
+                parenthesis=False,
+            ),
         ],
         selector=trinton.select_leaves_by_index([0]),
     ),
