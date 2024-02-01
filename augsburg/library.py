@@ -82,15 +82,15 @@ revert_to_lh = eval(
 start_jaw_harp_literal = eval(
     """abjad.LilyPondLiteral(
         [
-            r"\override NoteHead.no-ledgers = ##t",
-            r"\override Accidental.stencil = ##f"
+            r"\override Staff.NoteHead.no-ledgers = ##t",
+            r"\override Staff.Accidental.stencil = ##f"
         ],
         site="before"
     )"""
 )
 
 stop_jaw_harp_literal = abjad.LilyPondLiteral(
-    [r"\revert NoteHead.no-ledgers", r"\revert Accidental.stencil"],
+    [r"\revert Staff.NoteHead.no-ledgers", r"\revert Staff.Accidental.stencil"],
     site="absolute_after",
 )
 
@@ -138,7 +138,7 @@ def continuous_pedal(selector=trinton.pleaves()):
     return pedal
 
 
-def low_pass_glissandi(selector=trinton.pleaves()):
+def low_pass_glissandi(selector=trinton.pleaves(), no_ties=False):
     def glissando(argument):
         selections = selector(argument)
         dots_selections = abjad.select.leaves(selections)
@@ -168,6 +168,10 @@ def low_pass_glissandi(selector=trinton.pleaves()):
                 allow_ties=True,
                 zero_padding=True,
             )
+
+            if no_ties is True:
+                for leaf in tie:
+                    abjad.detach(abjad.Tie, leaf)
 
         abjad.attach(
             abjad.LilyPondLiteral(

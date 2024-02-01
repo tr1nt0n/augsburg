@@ -32,6 +32,8 @@
             \once \override Score.TimeSignature.stencil = ##f
             \time 4/16
             s1 * 1/4
+            \time 13/8
+            s1 * 13/8
             \once \override Score.BarLine.transparent = ##f
             \once \override MultiMeasureRest.transparent = ##t
             \once \override Score.TimeSignature.stencil = ##f
@@ -315,6 +317,186 @@
                         \mf
                         ]
                         \override Staff.Accidental.X-extent = ##f
+                        <<
+                            \context Voice = "piano 1 voice temp"
+                            {
+                                \override Dots.staff-position = #2
+                                \staff-line-count 1
+                                \clef "percussion"
+                                \voiceTwo
+                                c'2..
+                                ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Maultrommel + Vibrator }
+                                  %! abjad.glissando(7)
+                                - \abjad-zero-padding-glissando
+                                  %! abjad.glissando(7)
+                                \glissando
+                                  %! abjad.glissando(1)
+                                \hide NoteHead
+                                  %! abjad.glissando(1)
+                                \override Accidental.stencil = ##f
+                                  %! abjad.glissando(1)
+                                \override NoteColumn.glissando-skip = ##t
+                                  %! abjad.glissando(1)
+                                \override NoteHead.no-ledgers = ##t
+                                c'4
+                                c'4
+                                \afterGrace
+                                c'4
+                                {
+                                    \once \override Flag.stroke-style = #"grace" 
+                                    \revert Dots.staff-position
+                                      %! abjad.glissando(6)
+                                    \revert Accidental.stencil
+                                      %! abjad.glissando(6)
+                                    \revert NoteColumn.glissando-skip
+                                      %! abjad.glissando(6)
+                                    \revert NoteHead.no-ledgers
+                                      %! abjad.glissando(6)
+                                    \undo \hide NoteHead
+                                    c'16
+                                }
+                            }
+                            \context Voice = "sounding voice"
+                            {
+                                \override Dots.staff-position = #2
+                                \override Staff.NoteHead.no-ledgers = ##t
+                                \override Staff.Accidental.stencil = ##f
+                                \voiceOne
+                                c''4.
+                                _ #(make-dynamic-script
+                                    (markup
+                                        #:whiteout
+                                        #:line (
+                                            #:general-align Y -2 #:normal-text #:larger "“"
+                                            #:hspace -0.1
+                                            #:dynamic "p"
+                                            #:hspace -0.25
+                                            #:general-align Y -2 #:normal-text #:larger "”"
+                                            )
+                                        )
+                                    )
+                                (
+                                  %! abjad.glissando(7)
+                                - \abjad-zero-padding-glissando
+                                  %! abjad.glissando(7)
+                                \glissando
+                                _ \>
+                                  %! abjad.glissando(1)
+                                \hide NoteHead
+                                  %! abjad.glissando(1)
+                                \override Accidental.stencil = ##f
+                                  %! abjad.glissando(1)
+                                \override NoteColumn.glissando-skip = ##t
+                                  %! abjad.glissando(1)
+                                \override NoteHead.no-ledgers = ##t
+                                c''4
+                                  %! abjad.glissando(6)
+                                \revert Accidental.stencil
+                                  %! abjad.glissando(6)
+                                \revert NoteColumn.glissando-skip
+                                  %! abjad.glissando(6)
+                                \revert NoteHead.no-ledgers
+                                  %! abjad.glissando(6)
+                                \undo \hide NoteHead
+                                g'4
+                                _ #(make-dynamic-script
+                                    (markup
+                                        #:whiteout
+                                        #:line (
+                                            #:general-align Y -2 #:normal-text #:larger "“"
+                                            #:hspace -0.1
+                                            #:dynamic "ppp"
+                                            #:hspace -0.25
+                                            #:general-align Y -2 #:normal-text #:larger "”"
+                                            )
+                                        )
+                                    )
+                                  %! abjad.glissando(7)
+                                - \abjad-zero-padding-glissando
+                                  %! abjad.glissando(7)
+                                \glissando
+                                _ \<
+                                  %! abjad.glissando(1)
+                                \hide NoteHead
+                                  %! abjad.glissando(1)
+                                \override Accidental.stencil = ##f
+                                  %! abjad.glissando(1)
+                                \override NoteColumn.glissando-skip = ##t
+                                  %! abjad.glissando(1)
+                                \override NoteHead.no-ledgers = ##t
+                                \override Staff.Stem.stemlet-length = 0.75
+                                g'8
+                                [
+                                  %! abjad.glissando(6)
+                                \revert Accidental.stencil
+                                  %! abjad.glissando(6)
+                                \revert NoteColumn.glissando-skip
+                                  %! abjad.glissando(6)
+                                \revert NoteHead.no-ledgers
+                                  %! abjad.glissando(6)
+                                \undo \hide NoteHead
+                                \revert Staff.Stem.stemlet-length
+                                f''8
+                                _ #(make-dynamic-script
+                                    (markup
+                                        #:whiteout
+                                        #:line (
+                                            #:general-align Y -2 #:normal-text #:larger "“"
+                                            #:hspace -0.1
+                                            #:dynamic "mf"
+                                            #:hspace -0.2
+                                            #:general-align Y -2 #:normal-text #:larger "”"
+                                            )
+                                        )
+                                    )
+                                ]
+                                  %! abjad.glissando(7)
+                                - \abjad-zero-padding-glissando
+                                  %! abjad.glissando(7)
+                                \glissando
+                                _ \>
+                                  %! abjad.glissando(1)
+                                \hide NoteHead
+                                  %! abjad.glissando(1)
+                                \override Accidental.stencil = ##f
+                                  %! abjad.glissando(1)
+                                \override NoteColumn.glissando-skip = ##t
+                                  %! abjad.glissando(1)
+                                \override NoteHead.no-ledgers = ##t
+                                f''4
+                                \override Staff.Stem.stemlet-length = 0.75
+                                f''8
+                                [
+                                \revert Dots.staff-position
+                                  %! abjad.glissando(6)
+                                \revert Accidental.stencil
+                                  %! abjad.glissando(6)
+                                \revert NoteColumn.glissando-skip
+                                  %! abjad.glissando(6)
+                                \revert NoteHead.no-ledgers
+                                  %! abjad.glissando(6)
+                                \undo \hide NoteHead
+                                \revert Staff.Stem.stemlet-length
+                                g'8
+                                _ #(make-dynamic-script
+                                    (markup
+                                        #:whiteout
+                                        #:line (
+                                            #:general-align Y -2 #:normal-text #:larger "“"
+                                            #:hspace -0.1
+                                            #:dynamic "ppp"
+                                            #:hspace -0.25
+                                            #:general-align Y -2 #:normal-text #:larger "”"
+                                            )
+                                        )
+                                    )
+                                )
+                                ]
+                                \revert Staff.NoteHead.no-ledgers
+                                \revert Staff.Accidental.stencil
+                            }
+                        >>
+                        \oneVoice
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
@@ -324,10 +506,14 @@
                         {
                             \once \override Staff.Clef.X-extent = ##f
                             \once \override Staff.Clef.extra-offset = #'(-2.5 . 0)
+                            \staff-line-count 5
                             \ottava -1
+                              %! +SCORE
+                            \revert Staff.BarLine.bar-extent
                             \clef "bass"
                             fs,2.
                             \pp
+                            - \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Tasten }
                             - \tweak stencil #constante-hairpin
                             \<
                             r4
@@ -1071,6 +1257,7 @@
                         s1 * 1/4
                         s1 * 1/4
                         s1 * 1/4
+                        s1 * 13/8
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
@@ -1235,6 +1422,7 @@
                         ]
                         \sustainOn
                         \override Staff.Accidental.X-extent = ##f
+                        s1 * 13/8
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \sustainOff
@@ -1704,6 +1892,12 @@
                         \stopStaff \startStaff
                         \once \override Staff.BarLine.transparent = ##f
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 13/8
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \once \override Staff.TimeSignature.transparent = ##t
                         \once \override MultiMeasureRest.transparent = ##t
@@ -1870,6 +2064,13 @@
                         \revert Dots.staff-position
                         ef16
                     }
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 13/8
+                    \stopStaff \startStaff
                     \once \override Staff.BarLine.transparent = ##f
                     \once \revert Staff.StaffSymbol.line-positions
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
