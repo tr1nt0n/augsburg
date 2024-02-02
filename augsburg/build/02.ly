@@ -474,10 +474,10 @@
                         \change Staff = "piano 3 staff"
                         \once \override Stem.cross-staff = ##t
                         \once \override Stem.Y-extent = #'(0 . 0)
-                        \once \override Stem.details.lengths = #'(27.5)
+                        \once \override Stem.details.lengths = #'(30)
                         \once \override Flag.cross-staff = ##t
                         \once \override Flag.Y-extent = #'(0 . 0)
-                        \once \override StaffGroup.Flag.Y-offset = 27.5
+                        \once \override StaffGroup.Flag.Y-offset = 30
                         \once \override TupletBracket.bracket-visibility = ##f
                         \once \override TupletBracket.bracket-visibility = ##f
                         \override Staff.Accidental.stencil = ##f
@@ -651,10 +651,10 @@
                                 \change Staff = "piano 3 staff"
                                 \once \override Stem.cross-staff = ##t
                                 \once \override Stem.Y-extent = #'(0 . 0)
-                                \once \override Stem.details.lengths = #'(27.5)
+                                \once \override Stem.details.lengths = #'(30)
                                 \once \override Flag.cross-staff = ##t
                                 \once \override Flag.Y-extent = #'(0 . 0)
-                                \once \override StaffGroup.Flag.Y-offset = 27.5
+                                \once \override StaffGroup.Flag.Y-offset = 30
                                 c'4
                             }
                             \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 4) (ly:make-duration 4 0))

@@ -193,10 +193,10 @@ trinton.make_music(
                 [
                     r"\once \override Stem.cross-staff = ##t",
                     r"\once \override Stem.Y-extent = #'(0 . 0)",
-                    r"\once \override Stem.details.lengths = #'(27.5)",
+                    r"\once \override Stem.details.lengths = #'(30)",
                     r"\once \override Flag.cross-staff = ##t",
                     r"\once \override Flag.Y-extent = #'(0 . 0)",
-                    r"\once \override StaffGroup.Flag.Y-offset = 27.5",
+                    r"\once \override StaffGroup.Flag.Y-offset = 30",
                 ],
                 site="before",
             ),

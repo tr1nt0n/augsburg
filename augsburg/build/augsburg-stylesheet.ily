@@ -12,9 +12,9 @@
 afterGraceFraction = #(cons 15 16)
 
 \header {
-    dedication = \markup \fontsize #4 \center-column {\line \override #'(font-name . "Bodoni72 Book Italic") { { für } \override #'(font-name . "Bodoni72 Book") { Paula Rocosa Gáñez } } \fontsize #0.25 \with-color #white "."}
-    title = \markup \override #'(font-name . "Bodoni72 Book") \fontsize #14 \center-column { \line { D A S \hspace #5 W U N D E R Z E I C H E N B U C H } \fontsize #0.01 \with-color #white "."}
-    subtitle = \markup \fontsize #6 \center-column { \line { \override #'(font-name . "Bodoni72 Book") { oder: } \override #'(font-name . "Bodoni72 Book Italic") { "\" tres soles llamados \'Paraphog\' \"" } } \fontsize #0.01 \with-color #white "."}
+    dedication = \markup \fontsize #4 \center-column {\line \override #'(font-name . "Bodoni72 Book Italic") { { für } \override #'(font-name . "Bodoni72 Book") { Paula Rocosa Gáñez } } \with-color #white "."}
+    title = \markup \override #'(font-name . "Bodoni72 Book") \center-column { \line \fontsize #14 {  D A S \hspace #5 W U N D E R Z E I C H E N B U C H } \with-color #white \fontsize #4 "." }
+    subtitle = \markup \center-column { \line \fontsize #6 { \override #'(font-name . "Bodoni72 Book") { oder: } \override #'(font-name . "Bodoni72 Book Italic") { "\" tres soles llamados \'Paraphog\' \"" } } \with-color #white \fontsize #4 "."}
     composer = \markup \override #'(font-name . "Bodoni72") \fontsize #4 {"Trinton Hlynn (*2000)"}
 }
 
