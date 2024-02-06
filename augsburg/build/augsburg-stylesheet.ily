@@ -230,8 +230,8 @@ afterGraceFraction = #(cons 15 16)
         \override AccidentalSuggestion.whiteout-style = #'outline
         \override AccidentalSuggestion.whiteout = 1
         \override AccidentalSuggestion.layer = 2
-        \override AccidentalSuggestion.parent-alignment-X = -1
-        \override AccidentalSuggestion.X-extent = #'(0 . 0)
+        % \override AccidentalSuggestion.parent-alignment-X = -1
+        % \override AccidentalSuggestion.X-extent = #'(0 . 0)
 
         \override DurationLine.style = #'line
         \override DurationLine.thickness = #3
