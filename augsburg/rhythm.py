@@ -715,7 +715,7 @@ def rhythm_g(index=0, stage=1, hand="rh", voice_number=None):
     return rhythm
 
 
-def rhythm_d(stage=1, hand="rh", tuplet_selector=None):
+def rhythm_d(stage=1, hand="rh", tuplet_selector=None, inverse_tuplet_directions=False):
     def rhythm(durations):
         tuplet_ratios = []
         for duration in durations:
@@ -764,6 +764,19 @@ def rhythm_d(stage=1, hand="rh", tuplet_selector=None):
 
                 nested_tuplet = rmakers.tuplet([tie_duration], [tuplet_ratio])
                 nested_tuplet_duration = abjad.get.duration(nested_tuplet)
+                if inverse_tuplet_directions is True:
+                    if hand == "rh":
+                        abjad.tweaks.tweak(
+                            abjad.select.tuplet(nested_tuplet, 0),
+                            r"\tweak direction #DOWN",
+                        )
+                    if hand == "lh":
+                        abjad.tweaks.tweak(
+                            abjad.select.tuplet(nested_tuplet, 0),
+                            r"\tweak direction #UP",
+                        )
+
+                # nested_tuplet_container = abjad.Container([nested_tuplet])
                 # if nested_tuplet_duration < abjad.Duration(3, 16):
                 #     abjad.attach(
                 #         abjad.LilyPondLiteral(
@@ -791,6 +804,7 @@ def rhythm_d(stage=1, hand="rh", tuplet_selector=None):
                 rmakers.trivialize(nested_tuplet)
                 rmakers.rewrite_rest_filled(nested_tuplet)
                 rmakers.rewrite_sustained(nested_tuplet)
+                # nested_tuplet = abjad.mutate.eject_contents(nested_tuplet)
                 abjad.mutate.replace(tie, nested_tuplet)
             else:
                 pass
