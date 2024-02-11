@@ -785,6 +785,15 @@ trinton.make_music(
 )
 
 trinton.make_music(
+    lambda _: trinton.select_target(_, (5, 6)),
+    evans.RhythmHandler(evans.tuplet([(1,)])),
+    trinton.aftergrace_command(selector=trinton.select_logical_ties_by_index([-1])),
+    evans.PitchHandler([9, -9, 9]),
+    library.low_pass_glissandi(),
+    voice=score["piano 5 voice"],
+)
+
+trinton.make_music(
     lambda _: trinton.select_target(_, (7,)),
     evans.RhythmHandler(
         evans.tuplet(

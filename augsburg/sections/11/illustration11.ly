@@ -1888,20 +1888,44 @@
                     \glissando
                     \revert Dots.staff-position
                     a'8
-                    \once \override Staff.BarLine.transparent = ##f
-                    \once \revert Staff.StaffSymbol.line-positions
-                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                    \once \override Staff.TimeSignature.transparent = ##t
-                    \once \override MultiMeasureRest.transparent = ##t
-                    R1 * 3/2
-                    \stopStaff \startStaff
-                    \once \override Staff.BarLine.transparent = ##f
-                    \once \revert Staff.StaffSymbol.line-positions
-                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                    \once \override Staff.TimeSignature.transparent = ##t
-                    \once \override MultiMeasureRest.transparent = ##t
-                    R1 * 37/12
-                    \stopStaff \startStaff
+                    \override Dots.staff-position = #2
+                    a'1.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    \tweak edge-height #'(0.7 . 0)
+                    \times 2/3
+                    {
+                        ef\longa
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        ~
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        ef2
+                        ~
+                        \afterGrace
+                        ef8
+                        {
+                            \revert Dots.staff-position
+                              %! abjad.glissando(6)
+                            \revert Accidental.stencil
+                              %! abjad.glissando(6)
+                            \revert NoteColumn.glissando-skip
+                              %! abjad.glissando(6)
+                            \revert NoteHead.no-ledgers
+                              %! abjad.glissando(6)
+                            \undo \hide NoteHead
+                            a'16
+                        }
+                    }
                     \tweak edge-height #'(0.7 . 0)
                     \times 4/5
                     {
