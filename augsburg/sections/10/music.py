@@ -557,7 +557,7 @@ trinton.make_music(
                 ],
                 nested_vectors=[0],
                 nested_period=1,
-                extract_trivial_tuplets=False,
+                # extract_trivial_tuplets=False,
             ),
         ),
         voice_name="delta intermittent voice",
@@ -566,9 +566,9 @@ trinton.make_music(
     voice=score["piano 3 voice"],
 )
 
-first_tuplet = abjad.select.tuplet(score["delta intermittent voice"], 0)
-
-first_tuplet.multiplier = (12, 12)
+# first_tuplet = abjad.select.tuplet(score["delta intermittent voice"], 0)
+#
+# first_tuplet.multiplier = (12, 12)
 
 trinton.make_music(
     lambda _: trinton.select_target(_, (21,)),
@@ -702,27 +702,6 @@ trinton.make_music(
     ),
     voice=score["35 voice 1"],
 )
-
-# trinton.make_music(
-#     lambda _: trinton.select_target(_, (24,)),
-#     evans.RhythmHandler(evans.talea([1], 8)),
-#     evans.PitchHandler(pitch_list=[["cs'", "as'", "cs''"]]),
-#     trinton.attachment_command(
-#         attachments=[abjad.Clef("treble")],
-#         selector=trinton.select_leaves_by_index([0], pitched=True)
-#     ),
-#     trinton.attachment_command(
-#         attachments=[abjad.Articulation("tenuto")],
-#         selector=trinton.logical_ties(pitched=True, first=True),
-#     ),
-#     trinton.linear_attachment_command(
-#         attachments=[abjad.Dynamic("ff"), abjad.StartHairpin("--"), abjad.StopHairpin()],
-#         selector=trinton.select_leaves_by_index([0, 0, -1], pitched=True),
-#     ),
-#     abjad.beam,
-#     abjad.slur,
-#     voice=score["piano 1 voice"],
-# )
 
 trinton.make_music(
     lambda _: trinton.select_target(_, (25,)),
@@ -1132,23 +1111,6 @@ trinton.make_music(
     voice=score["4 voice 1"],
 )
 
-# trinton.make_music(
-#     lambda _: trinton.select_target(_, (24,)),
-#     evans.RhythmHandler(evans.talea([1], 8)),
-#     evans.PitchHandler(pitch_list=[["cs,,", "gs,,", "cs,"]]),
-#     trinton.attachment_command(
-#         attachments=[abjad.Articulation("tenuto")],
-#         selector=trinton.logical_ties(pitched=True, first=True),
-#     ),
-#     trinton.linear_attachment_command(
-#         attachments=[abjad.Dynamic("ff"), abjad.StartHairpin("--"), abjad.StopHairpin()],
-#         selector=trinton.select_leaves_by_index([0, 0, -1], pitched=True),
-#     ),
-#     abjad.slur,
-#     voice=score["piano 3 voice"],
-# beam_meter=True
-# )
-
 trinton.make_music(
     lambda _: trinton.select_target(_, (25,)),
     evans.RhythmHandler(evans.talea([3, -1, 3], 8)),
@@ -1444,7 +1406,7 @@ trinton.make_music(
                     r"  \raise #8.5 \with-dimensions-from \null",
                     r"  \override #'(font-size . 5.5)",
                     r"  \concat {",
-                    r"""\abjad-metronome-mark-markup #2 #1 #2 #"55" """,
+                    r"""\abjad-metronome-mark-markup #2 #1 #2 #"49" """,
                     r"  }",
                     r"}",
                 ],

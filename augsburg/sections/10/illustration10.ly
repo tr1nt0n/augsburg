@@ -125,7 +125,7 @@
               \raise #8.5 \with-dimensions-from \null
               \override #'(font-size . 5.5)
               \concat {
-            \abjad-metronome-mark-markup #2 #1 #2 #"55" 
+            \abjad-metronome-mark-markup #2 #1 #2 #"49" 
               }
             }
             \bar ":|."
@@ -2788,209 +2788,204 @@
                             }
                             \context Voice = "delta intermittent voice"
                             {
-                                \tweak text #tuplet-number::calc-fraction-text
-                                \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 12 12) (ly:make-duration 2 0))
-                                \times 12/12
+                                \ottava -1
+                                \override Staff.Accidental.transparent = ##t
+                                \voiceTwo
+                                r8.
+                                [
+                                \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
+                                \times 2/3
                                 {
-                                    \ottava -1
-                                    \override Staff.Accidental.transparent = ##t
-                                    \voiceTwo
-                                    r8.
-                                    [
-                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
-                                    \times 2/3
-                                    {
-                                        \once \override Staff.Accidental.stencil = ##f
-                                        \once \override TupletBracket.bracket-visibility = ##f
-                                        c,,32
-                                        - \marcato
-                                        - \natural-articulation
-                                        \override Staff.Accidental.stencil = ##f
-                                        cs,,32
-                                        - \sharp-articulation
-                                        ef,,32
-                                        - \flat-articulation
-                                        \revert Staff.Accidental.stencil
-                                    }
-                                    r8.
-                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
-                                    \times 2/3
-                                    {
-                                        \once \override Staff.Accidental.stencil = ##f
-                                        \once \override TupletBracket.bracket-visibility = ##f
-                                        fs,,32
-                                        - \marcato
-                                        - \sharp-articulation
-                                        \override Staff.Accidental.stencil = ##f
-                                        g,,32
-                                        - \natural-articulation
-                                        af,,32
-                                        - \flat-articulation
-                                        \revert Staff.Accidental.stencil
-                                    }
-                                    r8.
-                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
-                                    \times 2/3
-                                    {
-                                        \once \override Staff.Accidental.stencil = ##f
-                                        \once \override TupletBracket.bracket-visibility = ##f
-                                        e,,32
-                                        - \marcato
-                                        - \natural-articulation
-                                        \override Staff.Accidental.stencil = ##f
-                                        b,,,32
-                                        - \natural-articulation
-                                        a,,,32
-                                        - \natural-articulation
-                                        \revert Staff.Accidental.stencil
-                                    }
-                                    r8.
-                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
-                                    \times 2/3
-                                    {
-                                        \once \override Staff.Accidental.stencil = ##f
-                                        \once \override TupletBracket.bracket-visibility = ##f
-                                        b,,,32
-                                        - \marcato
-                                        - \natural-articulation
-                                        \override Staff.Accidental.stencil = ##f
-                                        ef,,32
-                                        - \flat-articulation
-                                        c,,32
-                                        - \natural-articulation
-                                        \revert Staff.Accidental.stencil
-                                    }
-                                    r8.
-                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
-                                    \times 2/3
-                                    {
-                                        \once \override Staff.Accidental.stencil = ##f
-                                        \once \override TupletBracket.bracket-visibility = ##f
-                                        cs,,32
-                                        - \marcato
-                                        - \sharp-articulation
-                                        \override Staff.Accidental.stencil = ##f
-                                        e,,32
-                                        - \natural-articulation
-                                        fs,,32
-                                        - \sharp-articulation
-                                        \revert Staff.Accidental.stencil
-                                    }
-                                    r8.
-                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
-                                    \times 2/3
-                                    {
-                                        \once \override Staff.Accidental.stencil = ##f
-                                        \once \override TupletBracket.bracket-visibility = ##f
-                                        g,,32
-                                        - \marcato
-                                        - \natural-articulation
-                                        \override Staff.Accidental.stencil = ##f
-                                        af,,32
-                                        - \flat-articulation
-                                        e,,32
-                                        - \natural-articulation
-                                        \revert Staff.Accidental.stencil
-                                    }
-                                    r8.
-                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
-                                    \times 2/3
-                                    {
-                                        \once \override Staff.Accidental.stencil = ##f
-                                        \once \override TupletBracket.bracket-visibility = ##f
-                                        fs,,32
-                                        - \marcato
-                                        - \sharp-articulation
-                                        \override Staff.Accidental.stencil = ##f
-                                        g,,32
-                                        - \natural-articulation
-                                        b,,,32
-                                        - \natural-articulation
-                                        \revert Staff.Accidental.stencil
-                                    }
-                                    r8.
-                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
-                                    \times 2/3
-                                    {
-                                        \once \override Staff.Accidental.stencil = ##f
-                                        \once \override TupletBracket.bracket-visibility = ##f
-                                        a,,,32
-                                        - \marcato
-                                        - \natural-articulation
-                                        \override Staff.Accidental.stencil = ##f
-                                        cs,,32
-                                        - \sharp-articulation
-                                        ef,,32
-                                        - \flat-articulation
-                                        \revert Staff.Accidental.stencil
-                                    }
-                                    r8.
-                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
-                                    \times 2/3
-                                    {
-                                        \once \override Staff.Accidental.stencil = ##f
-                                        \once \override TupletBracket.bracket-visibility = ##f
-                                        c,,32
-                                        - \marcato
-                                        - \natural-articulation
-                                        \override Staff.Accidental.stencil = ##f
-                                        cs,,32
-                                        - \sharp-articulation
-                                        ef,,32
-                                        - \flat-articulation
-                                        \revert Staff.Accidental.stencil
-                                    }
-                                    r8.
-                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
-                                    \times 2/3
-                                    {
-                                        \once \override Staff.Accidental.stencil = ##f
-                                        \once \override TupletBracket.bracket-visibility = ##f
-                                        g,,32
-                                        - \marcato
-                                        - \natural-articulation
-                                        \override Staff.Accidental.stencil = ##f
-                                        af,,32
-                                        - \flat-articulation
-                                        e,,32
-                                        - \natural-articulation
-                                        \revert Staff.Accidental.stencil
-                                    }
-                                    r8.
-                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
-                                    \times 2/3
-                                    {
-                                        \once \override Staff.Accidental.stencil = ##f
-                                        \once \override TupletBracket.bracket-visibility = ##f
-                                        fs,,32
-                                        - \marcato
-                                        - \sharp-articulation
-                                        \override Staff.Accidental.stencil = ##f
-                                        a,,,32
-                                        - \natural-articulation
-                                        b,,,32
-                                        - \natural-articulation
-                                        \revert Staff.Accidental.stencil
-                                    }
-                                    r8.
-                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
-                                    \times 2/3
-                                    {
-                                        \once \override Staff.Accidental.stencil = ##f
-                                        \once \override TupletBracket.bracket-visibility = ##f
-                                        a,,,32
-                                        - \marcato
-                                        - \natural-articulation
-                                        \override Staff.Accidental.stencil = ##f
-                                        ef,,32
-                                        - \flat-articulation
-                                        c,,32
-                                        - \natural-articulation
-                                        ]
-                                        \ottava 0
-                                        \revert Staff.Accidental.stencil
-                                        \revert Staff.Accidental.transparent
-                                    }
+                                    \once \override Staff.Accidental.stencil = ##f
+                                    \once \override TupletBracket.bracket-visibility = ##f
+                                    c,,32
+                                    - \marcato
+                                    - \natural-articulation
+                                    \override Staff.Accidental.stencil = ##f
+                                    cs,,32
+                                    - \sharp-articulation
+                                    ef,,32
+                                    - \flat-articulation
+                                    \revert Staff.Accidental.stencil
+                                }
+                                r8.
+                                \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
+                                \times 2/3
+                                {
+                                    \once \override Staff.Accidental.stencil = ##f
+                                    \once \override TupletBracket.bracket-visibility = ##f
+                                    fs,,32
+                                    - \marcato
+                                    - \sharp-articulation
+                                    \override Staff.Accidental.stencil = ##f
+                                    g,,32
+                                    - \natural-articulation
+                                    af,,32
+                                    - \flat-articulation
+                                    \revert Staff.Accidental.stencil
+                                }
+                                r8.
+                                \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
+                                \times 2/3
+                                {
+                                    \once \override Staff.Accidental.stencil = ##f
+                                    \once \override TupletBracket.bracket-visibility = ##f
+                                    e,,32
+                                    - \marcato
+                                    - \natural-articulation
+                                    \override Staff.Accidental.stencil = ##f
+                                    b,,,32
+                                    - \natural-articulation
+                                    a,,,32
+                                    - \natural-articulation
+                                    \revert Staff.Accidental.stencil
+                                }
+                                r8.
+                                \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
+                                \times 2/3
+                                {
+                                    \once \override Staff.Accidental.stencil = ##f
+                                    \once \override TupletBracket.bracket-visibility = ##f
+                                    b,,,32
+                                    - \marcato
+                                    - \natural-articulation
+                                    \override Staff.Accidental.stencil = ##f
+                                    ef,,32
+                                    - \flat-articulation
+                                    c,,32
+                                    - \natural-articulation
+                                    \revert Staff.Accidental.stencil
+                                }
+                                r8.
+                                \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
+                                \times 2/3
+                                {
+                                    \once \override Staff.Accidental.stencil = ##f
+                                    \once \override TupletBracket.bracket-visibility = ##f
+                                    cs,,32
+                                    - \marcato
+                                    - \sharp-articulation
+                                    \override Staff.Accidental.stencil = ##f
+                                    e,,32
+                                    - \natural-articulation
+                                    fs,,32
+                                    - \sharp-articulation
+                                    \revert Staff.Accidental.stencil
+                                }
+                                r8.
+                                \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
+                                \times 2/3
+                                {
+                                    \once \override Staff.Accidental.stencil = ##f
+                                    \once \override TupletBracket.bracket-visibility = ##f
+                                    g,,32
+                                    - \marcato
+                                    - \natural-articulation
+                                    \override Staff.Accidental.stencil = ##f
+                                    af,,32
+                                    - \flat-articulation
+                                    e,,32
+                                    - \natural-articulation
+                                    \revert Staff.Accidental.stencil
+                                }
+                                r8.
+                                \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
+                                \times 2/3
+                                {
+                                    \once \override Staff.Accidental.stencil = ##f
+                                    \once \override TupletBracket.bracket-visibility = ##f
+                                    fs,,32
+                                    - \marcato
+                                    - \sharp-articulation
+                                    \override Staff.Accidental.stencil = ##f
+                                    g,,32
+                                    - \natural-articulation
+                                    b,,,32
+                                    - \natural-articulation
+                                    \revert Staff.Accidental.stencil
+                                }
+                                r8.
+                                \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
+                                \times 2/3
+                                {
+                                    \once \override Staff.Accidental.stencil = ##f
+                                    \once \override TupletBracket.bracket-visibility = ##f
+                                    a,,,32
+                                    - \marcato
+                                    - \natural-articulation
+                                    \override Staff.Accidental.stencil = ##f
+                                    cs,,32
+                                    - \sharp-articulation
+                                    ef,,32
+                                    - \flat-articulation
+                                    \revert Staff.Accidental.stencil
+                                }
+                                r8.
+                                \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
+                                \times 2/3
+                                {
+                                    \once \override Staff.Accidental.stencil = ##f
+                                    \once \override TupletBracket.bracket-visibility = ##f
+                                    c,,32
+                                    - \marcato
+                                    - \natural-articulation
+                                    \override Staff.Accidental.stencil = ##f
+                                    cs,,32
+                                    - \sharp-articulation
+                                    ef,,32
+                                    - \flat-articulation
+                                    \revert Staff.Accidental.stencil
+                                }
+                                r8.
+                                \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
+                                \times 2/3
+                                {
+                                    \once \override Staff.Accidental.stencil = ##f
+                                    \once \override TupletBracket.bracket-visibility = ##f
+                                    g,,32
+                                    - \marcato
+                                    - \natural-articulation
+                                    \override Staff.Accidental.stencil = ##f
+                                    af,,32
+                                    - \flat-articulation
+                                    e,,32
+                                    - \natural-articulation
+                                    \revert Staff.Accidental.stencil
+                                }
+                                r8.
+                                \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
+                                \times 2/3
+                                {
+                                    \once \override Staff.Accidental.stencil = ##f
+                                    \once \override TupletBracket.bracket-visibility = ##f
+                                    fs,,32
+                                    - \marcato
+                                    - \sharp-articulation
+                                    \override Staff.Accidental.stencil = ##f
+                                    a,,,32
+                                    - \natural-articulation
+                                    b,,,32
+                                    - \natural-articulation
+                                    \revert Staff.Accidental.stencil
+                                }
+                                r8.
+                                \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
+                                \times 2/3
+                                {
+                                    \once \override Staff.Accidental.stencil = ##f
+                                    \once \override TupletBracket.bracket-visibility = ##f
+                                    a,,,32
+                                    - \marcato
+                                    - \natural-articulation
+                                    \override Staff.Accidental.stencil = ##f
+                                    ef,,32
+                                    - \flat-articulation
+                                    c,,32
+                                    - \natural-articulation
+                                    ]
+                                    \ottava 0
+                                    \revert Staff.Accidental.stencil
+                                    \revert Staff.Accidental.transparent
                                 }
                             }
                         >>

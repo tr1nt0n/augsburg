@@ -17,18 +17,44 @@
             \time 3/4
             s1 * 3/4
             - \tweak padding #18
-            - \abjad-solid-line-with-arrow
-            - \tweak bound-details.left.text \markup \concat { { \override #'(font-size . 5.5) \concat { ( \abjad-metronome-mark-markup #2 #0 #2 #"60"  ) } } \hspace #0.5 }
-            - \tweak bound-details.right.text \markup { \override #'(font-size . 5.5) \concat { \abjad-metronome-mark-markup #2 #0 #2 #"33"  [\abjad-metric-modulation-tuplet-lhs #1 #0 #32 #35 #2 #0 #'(1 . 1)] } }
+            - \abjad-dashed-line-with-hook
+            - \tweak bound-details.left.text \markup \concat { \fontsize #7 { Rall. } \hspace #0.5 }
             \startTextSpan
             \time 4/4
             s1 * 1
+            \time 3/2
+            s1 * 3/2
+            \stopTextSpan
+            ^ \markup {
+              \raise #11 \with-dimensions-from \null
+              \override #'(font-size . 5.5)
+              \concat {
+            \abjad-metronome-mark-markup #2 #0 #2 #"72" 
+              }
+            }
+            #(ly:expect-warning "strange time signature found")
+            \time 37/12
+            s1 * 37/12
+            ^ \markup {
+              \raise #10.5 \with-dimensions-from \null
+              \override #'(font-size . 5.5)
+              \concat {
+                  \abjad-metronome-mark-markup #2 #0 #2 #"60" 
+              }
+            }
             #(ly:expect-warning "strange time signature found")
             \time 37/20
             s1 * 37/20
-            \stopTextSpan
             \time 5/16
             s1 * 5/16
+            ^ \markup {
+              \raise #20 \with-dimensions-from \null
+              \override #'(font-size . 5.5)
+              \concat {
+                  \abjad-metronome-mark-markup #2 #0 #2 #"33" 
+                  [\abjad-metric-modulation-tuplet-lhs #1 #0 #32 #35 #2 #0 #'(1 . 1)]
+              }
+            }
             \noBreak
             \time 11/8
             s1 * 11/8
@@ -70,7 +96,7 @@
                                 \clef "bass"
                                 e,,32
                                     _ #(make-dynamic-script (markup #:whiteout #:italic "ffp"))
-                                - \markup \fontsize #2 { \override #'(font-name . "Bodoni72 Book Italic") { leggierissimo } }
+                                - \markup \fontsize #4 { \override #'(font-name . "Bodoni72 Book Italic") { leggierissimo } }
                                 [
                                 _ (
                                 b,,32
@@ -283,6 +309,111 @@
                             ]
                         }
                         s1 * 1
+                        \staff-line-count 1
+                          %! +SCORE
+                    %%% \override Staff.BarLine.bar-extent = #'(-0.01 . 0.01)
+                        \override Staff.Stem.direction = #UP
+                        \clef "percussion"
+                        c'2
+                        ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Tastaturabdeckung }
+                        \revert Staff.Stem.direction
+                        r1
+                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                            {
+                                \context Score = "Score"
+                                \with
+                                {
+                                    \override SpacingSpanner.spacing-increment = 0.5
+                                    proportionalNotationDuration = ##f
+                                }
+                                <<
+                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                    \with
+                                    {
+                                        \remove Time_signature_engraver
+                                        \remove Staff_symbol_engraver
+                                        \override Stem.direction = #up
+                                        \override Stem.length = 5
+                                        \override TupletBracket.bracket-visibility = ##t
+                                        \override TupletBracket.direction = #up
+                                        \override TupletBracket.minimum-length = 4
+                                        \override TupletBracket.padding = 1.25
+                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                        \override TupletNumber.font-size = 0
+                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                        tupletFullLength = ##t
+                                    }
+                                    {
+                                        \tweak edge-height #'(0.7 . 0)
+                                        \times 8/12
+                                        {
+                                            c'\longa
+                                            ~
+                                            c'2
+                                            ~
+                                            c'8
+                                        }
+                                    }
+                                >>
+                                \layout
+                                {
+                                    indent = 0
+                                    ragged-right = ##t
+                                }
+                            }
+                        \tweak edge-height #'(0.7 . 0)
+                        \times 1/1
+                        {
+                            \override Staff.Stem.direction = #UP
+                            \once \override Beam.grow-direction = #right
+                            c'32 * 127/32
+                            [
+                            c'32 * 127/32
+                            c'32 * 63/16
+                            c'32 * 31/8
+                            c'32 * 61/16
+                            c'32 * 15/4
+                            c'32 * 117/32
+                            c'32 * 57/16
+                            c'32 * 55/16
+                            c'32 * 107/32
+                            c'32 * 103/32
+                            c'32 * 99/32
+                            c'32 * 95/32
+                            c'32 * 23/8
+                            c'32 * 11/4
+                            c'32 * 85/32
+                            c'32 * 41/16
+                            c'32 * 79/32
+                            c'32 * 19/8
+                            c'32 * 73/32
+                            c'32 * 71/32
+                            c'32 * 17/8
+                            c'32 * 33/16
+                            c'32 * 2
+                            c'32 * 31/16
+                            \override Staff.Accidental.stencil = ##f
+                            c'32 * 61/32
+                            c'32 * 59/32
+                            c'32 * 29/16
+                            c'32 * 57/32
+                            c'32 * 7/4
+                            c'32 * 55/32
+                            c'32 * 27/16
+                            c'32 * 53/32
+                            c'32 * 13/8
+                            c'32 * 13/8
+                            c'32 * 51/32
+                            c'32 * 51/32
+                            c'32 * 51/32
+                            c'32 * 151/96
+                            ]
+                            \revert Staff.Accidental.stencil
+                            \revert Staff.Stem.direction
+                        }
+                        \revert TupletNumber.text
+                        \staff-line-count 5
                         \change Staff = "piano 3 staff"
                         \override NoteHead.details.interrupt-color = \四
                         \override NoteHead.details.switch-color = \四
@@ -306,7 +437,8 @@
                         \override Dots.staff-position = #2
                         \override Staff.Stem.direction = #UP
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        \clef "treble"
+                        <ds'''' e'''' g'''' a''''>32
                         _ \ffff
                         - \tweak padding #1
                         ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { ( Prolatiert mit der Taktart nicht ) }
@@ -317,477 +449,244 @@
                         \change Staff = "piano 1 staff"
                         \ottava 2
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        \clef "treble"
+                        <ds'''' e'''' g'''' a''''>32
+                        ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Tasten }
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 3 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 1 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 3 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 1 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 3 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 1 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 3 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 1 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 3 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 1 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 3 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 1 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 3 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 1 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 3 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 1 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 3 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 1 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 3 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 1 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 3 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 1 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 3 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 1 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 3 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 1 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 3 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 1 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 3 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 1 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 3 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 1 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 3 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 1 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 3 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 1 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 3 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 1 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 3 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 1 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 3 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 1 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 3 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 1 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 3 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 1 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 3 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 1 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 3 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 1 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 3 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 1 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 3 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 1 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 3 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 1 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \override Staff.Accidental.X-extent = ##f
                         \change Staff = "piano 3 staff"
                         \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 1 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 3 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 1 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 3 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 1 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 3 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 1 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 3 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 1 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 3 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 1 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 3 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 1 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 3 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 1 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 3 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 1 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 3 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 1 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 3 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 1 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 3 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 1 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 3 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 1 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 3 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 1 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 3 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 1 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 3 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 1 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 3 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 1 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 3 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 1 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 3 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 1 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 3 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 1 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 3 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 1 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 3 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 1 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 3 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 1 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 3 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 1 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 3 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 1 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 3 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 1 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 3 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 1 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 3 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 1 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 3 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 1 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 3 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
-                        \override Staff.Accidental.X-extent = ##f
-                        \change Staff = "piano 1 staff"
-                        \revert Staff.Accidental.X-extent
-                        <ds'''' e'''' g'''' a''''>64
+                        <ds'''' e'''' g'''' a''''>32
                         \ottava 0
                         \override Staff.Accidental.X-extent = ##f
+                        \once \override TupletBracket.bracket-visibility = ##f
                         \tweak edge-height #'(0.7 . 0)
                         \times 128/160
                         {
-                            \change Staff = "piano 3 staff"
+                            \change Staff = "piano 1 staff"
                             \revert Staff.Accidental.X-extent
                             <ds'''' e'''' g'''' a''''>128
                             \!
@@ -1189,6 +1088,8 @@
                         s1 * 3/4
                         s1 * 3/4
                         s1 * 1
+                        s1 * 3/2
+                        s1 * 37/12
                         s1 * 37/20
                         s1 * 5/16
                         s1 * 11/8
@@ -1293,9 +1194,9 @@
                         \times 2/3
                         {
                             e''32
-                                _ #(make-dynamic-script (markup #:whiteout #:italic "s. p"))
+                                ^ #(make-dynamic-script (markup #:whiteout #:italic "s. p"))
                             \sustainOff
-                            \<
+                            ^ \<
                             \override Staff.Accidental.stencil = ##f
                             fs''32
                             - \sharp-articulation
@@ -1330,7 +1231,128 @@
                         ]
                         \ottava 0
                         \revert Staff.TupletBracket.stencil
+                        \crossStaff {
+                        \clef "bass"
+                        d,2
+                        - \accent
+                        ^ \f
+                        ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { ( Tasten ) }
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 4) (ly:make-duration 2 0))
+                        \times 4/5
+                        {
+                            d,2
+                            - \tenuto
+                            ^ \mf
+                            d,16
+                            - \accent
+                            ^ \ff
+                            \sustainOn
+                            r2
+                            r8.
+                        }
+                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                            {
+                                \context Score = "Score"
+                                \with
+                                {
+                                    \override SpacingSpanner.spacing-increment = 0.5
+                                    proportionalNotationDuration = ##f
+                                }
+                                <<
+                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                    \with
+                                    {
+                                        \remove Time_signature_engraver
+                                        \remove Staff_symbol_engraver
+                                        \override Stem.direction = #up
+                                        \override Stem.length = 5
+                                        \override TupletBracket.bracket-visibility = ##t
+                                        \override TupletBracket.direction = #up
+                                        \override TupletBracket.minimum-length = 4
+                                        \override TupletBracket.padding = 1.25
+                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                        \override TupletNumber.font-size = 0
+                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                        tupletFullLength = ##t
+                                    }
+                                    {
+                                        \tweak edge-height #'(0.7 . 0)
+                                        \times 8/12
+                                        {
+                                            c'\longa
+                                            ~
+                                            c'2
+                                            ~
+                                            c'8
+                                        }
+                                    }
+                                >>
+                                \layout
+                                {
+                                    indent = 0
+                                    ragged-right = ##t
+                                }
+                            }
+                        \tweak edge-height #'(0.7 . 0)
+                        \times 1/1
+                        {
+                            \once \override Staff.TupletBracket.stencil = ##f
+                            \once \override Staff.TupletNumber.stencil = ##f
+                            \once \override Staff.Beam.stencil = ##f
+                            \once \override Beam.grow-direction = #right
+                            d,32 * 127/32
+                            \ppppp
+                            [
+                            \<
+                            d,32 * 127/32
+                            d,32 * 63/16
+                            d,32 * 31/8
+                            d,32 * 61/16
+                            d,32 * 15/4
+                            d,32 * 117/32
+                            d,32 * 57/16
+                            d,32 * 55/16
+                            d,32 * 107/32
+                            d,32 * 103/32
+                            d,32 * 99/32
+                            d,32 * 95/32
+                            d,32 * 23/8
+                            d,32 * 11/4
+                            d,32 * 85/32
+                            d,32 * 41/16
+                            d,32 * 79/32
+                            d,32 * 19/8
+                            d,32 * 73/32
+                            d,32 * 71/32
+                            d,32 * 17/8
+                            d,32 * 33/16
+                            d,32 * 2
+                            d,32 * 31/16
+                            \override Staff.Accidental.stencil = ##f
+                            d,32 * 61/32
+                            d,32 * 59/32
+                            d,32 * 29/16
+                            d,32 * 57/32
+                            d,32 * 7/4
+                            d,32 * 55/32
+                            d,32 * 27/16
+                            d,32 * 53/32
+                            d,32 * 13/8
+                            d,32 * 13/8
+                            d,32 * 51/32
+                            d,32 * 51/32
+                            d,32 * 51/32
+                            d,32 * 151/96
+                            \!
+                            \sustainOff
+                            ]
+                            }
+                            \revert Staff.Accidental.stencil
+                        }
+                        \revert TupletNumber.text
                         \ottava 2
+                        \clef "treble"
                         s1 * 37/20
                         \ottava 0
                         <<
@@ -1736,6 +1758,18 @@
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \once \override Staff.TimeSignature.transparent = ##t
                         \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 3/2
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 37/12
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
                         R1 * 37/20
                         \stopStaff \startStaff
                         \once \override Staff.BarLine.transparent = ##f
@@ -1840,6 +1874,20 @@
                     \glissando
                     \revert Dots.staff-position
                     a'8
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 3/2
+                    \stopStaff \startStaff
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 37/12
+                    \stopStaff \startStaff
                     \tweak edge-height #'(0.7 . 0)
                     \times 4/5
                     {
