@@ -2512,266 +2512,475 @@
                             ]
                             \ottava 0
                         }
-                        \tweak text #tuplet-number::calc-fraction-text
-                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 13 12) (ly:make-duration 2 0))
-                        \times 12/13
-                        {
-                            \tweak text #tuplet-number::calc-fraction-text
-                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 5 0))
-                            \times 6/5
+                        <<
+                            \context Voice = "piano 3 voice temp"
                             {
-                                \ottava -1
-                                \override Staff.TupletBracket.direction = #UP
-                                ef,,32
-                                - \flat-articulation
-                                - \marcato
-                                \ff
-                                [
-                                \>
-                                g,,32
-                                - \natural-articulation
-                                af,,32
-                                - \flat-articulation
-                                e,,32
-                                - \natural-articulation
-                                fs,,32
-                                - \sharp-articulation
-                                \revert Staff.Accidental.stencil
+                                \tweak text #tuplet-number::calc-fraction-text
+                                \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 13 12) (ly:make-duration 2 0))
+                                \times 12/13
+                                {
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 5 0))
+                                    \times 6/5
+                                    {
+                                        \voiceOne
+                                        ef,,32
+                                        - \marcato
+                                        ^ \ff
+                                        [
+                                        ^ \>
+                                        g,,32
+                                        - \natural-articulation
+                                        af,,32
+                                        - \flat-articulation
+                                        e,,32
+                                        - \natural-articulation
+                                        fs,,32
+                                        - \sharp-articulation
+                                        \revert Staff.Accidental.stencil
+                                    }
+                                    r16
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 5 0))
+                                    \times 6/5
+                                    {
+                                        \override Staff.Accidental.stencil = ##f
+                                        a,,32
+                                        - \marcato
+                                        - \natural-articulation
+                                        b,,32
+                                        - \natural-articulation
+                                        a,,32
+                                        - \natural-articulation
+                                        ef,,32
+                                        - \flat-articulation
+                                        c,,32
+                                        - \natural-articulation
+                                        \revert Staff.Accidental.stencil
+                                    }
+                                    r16
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 5 0))
+                                    \times 6/5
+                                    {
+                                        \override Staff.Accidental.stencil = ##f
+                                        cs,,32
+                                        - \marcato
+                                        - \sharp-articulation
+                                        fs,,32
+                                        - \sharp-articulation
+                                        g,,32
+                                        - \natural-articulation
+                                        af,,32
+                                        - \flat-articulation
+                                        e,,32
+                                        - \natural-articulation
+                                        \revert Staff.Accidental.stencil
+                                    }
+                                    r16
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 5 0))
+                                    \times 6/5
+                                    {
+                                        \override Staff.Accidental.stencil = ##f
+                                        fs,,32
+                                        - \marcato
+                                        - \sharp-articulation
+                                        g,,32
+                                        - \natural-articulation
+                                        af,,32
+                                        - \flat-articulation
+                                        a,,32
+                                        - \natural-articulation
+                                        b,,32
+                                        - \natural-articulation
+                                        \revert Staff.Accidental.stencil
+                                    }
+                                    r16
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 5 0))
+                                    \times 6/5
+                                    {
+                                        \override Staff.Accidental.stencil = ##f
+                                        cs,,32
+                                        - \marcato
+                                        - \sharp-articulation
+                                        ef,,32
+                                        - \flat-articulation
+                                        c,,32
+                                        - \natural-articulation
+                                        cs,,32
+                                        - \sharp-articulation
+                                        ef,,32
+                                        - \flat-articulation
+                                        \revert Staff.Accidental.stencil
+                                    }
+                                    r16
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 5 0))
+                                    \times 6/5
+                                    {
+                                        \override Staff.Accidental.stencil = ##f
+                                        af,,32
+                                        - \flat-articulation
+                                        - \marcato
+                                        e,,32
+                                        - \natural-articulation
+                                        fs,,32
+                                        - \sharp-articulation
+                                        g,,32
+                                        - \natural-articulation
+                                        b,,32
+                                        - \natural-articulation
+                                        \revert Staff.Accidental.stencil
+                                    }
+                                    r16
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 5 0))
+                                    \times 6/5
+                                    {
+                                        \override Staff.Accidental.stencil = ##f
+                                        a,,32
+                                        - \marcato
+                                        - \natural-articulation
+                                        b,,32
+                                        - \natural-articulation
+                                        ef,,32
+                                        - \flat-articulation
+                                        c,,32
+                                        - \natural-articulation
+                                        cs,,32
+                                        - \sharp-articulation
+                                        \revert Staff.Accidental.stencil
+                                    }
+                                    r16
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 5 0))
+                                    \times 6/5
+                                    {
+                                        \override Staff.Accidental.stencil = ##f
+                                        g,,32
+                                        - \marcato
+                                        - \natural-articulation
+                                        af,,32
+                                        - \flat-articulation
+                                        e,,32
+                                        - \natural-articulation
+                                        fs,,32
+                                        - \sharp-articulation
+                                        g,,32
+                                        - \natural-articulation
+                                        \revert Staff.Accidental.stencil
+                                    }
+                                    r16
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 5 0))
+                                    \times 6/5
+                                    {
+                                        \override Staff.Accidental.stencil = ##f
+                                        af,,32
+                                        - \flat-articulation
+                                        - \marcato
+                                        e,,32
+                                        - \natural-articulation
+                                        b,,32
+                                        - \natural-articulation
+                                        a,,32
+                                        - \natural-articulation
+                                        cs,,32
+                                        - \sharp-articulation
+                                        \revert Staff.Accidental.stencil
+                                    }
+                                    r16
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 5 0))
+                                    \times 6/5
+                                    {
+                                        \override Staff.Accidental.stencil = ##f
+                                        ef,,32
+                                        - \flat-articulation
+                                        - \marcato
+                                        c,,32
+                                        - \natural-articulation
+                                        cs,,32
+                                        - \sharp-articulation
+                                        ef,,32
+                                        - \flat-articulation
+                                        e,,32
+                                        - \natural-articulation
+                                        \revert Staff.Accidental.stencil
+                                    }
+                                    r16
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 5 0))
+                                    \times 6/5
+                                    {
+                                        \override Staff.Accidental.stencil = ##f
+                                        fs,,32
+                                        - \marcato
+                                        - \sharp-articulation
+                                        g,,32
+                                        - \natural-articulation
+                                        af,,32
+                                        - \flat-articulation
+                                        a,,32
+                                        - \natural-articulation
+                                        b,,32
+                                        - \natural-articulation
+                                        \revert Staff.Accidental.stencil
+                                    }
+                                    r16
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 5 0))
+                                    \times 6/5
+                                    {
+                                        \override Staff.Accidental.stencil = ##f
+                                        a,,32
+                                        - \marcato
+                                        - \natural-articulation
+                                        ef,,32
+                                        - \flat-articulation
+                                        c,,32
+                                        - \natural-articulation
+                                        cs,,32
+                                        - \sharp-articulation
+                                        af,,32
+                                        - \flat-articulation
+                                        \revert Staff.Accidental.stencil
+                                    }
+                                    r16
+                                    \tweak text #tuplet-number::calc-fraction-text
+                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 5 0))
+                                    \times 6/5
+                                    {
+                                        \override Staff.Accidental.stencil = ##f
+                                        e,,32
+                                        - \marcato
+                                        - \natural-articulation
+                                        fs,,32
+                                        - \sharp-articulation
+                                        g,,32
+                                        - \natural-articulation
+                                        af,,32
+                                        - \flat-articulation
+                                        e,,32
+                                        - \natural-articulation
+                                        ^ \ppp
+                                        \revert Staff.Accidental.stencil
+                                    }
+                                    r16
+                                    ]
+                                }
                             }
-                            r16
-                            \tweak text #tuplet-number::calc-fraction-text
-                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 5 0))
-                            \times 6/5
+                            \context Voice = "delta intermittent voice"
                             {
-                                \override Staff.Accidental.stencil = ##f
-                                a,,32
-                                - \marcato
-                                - \natural-articulation
-                                b,,32
-                                - \natural-articulation
-                                a,,32
-                                - \natural-articulation
-                                ef,,32
-                                - \flat-articulation
-                                c,,32
-                                - \natural-articulation
-                                \revert Staff.Accidental.stencil
+                                \tweak text #tuplet-number::calc-fraction-text
+                                \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 12 12) (ly:make-duration 2 0))
+                                \times 12/12
+                                {
+                                    \ottava -1
+                                    \override Staff.Accidental.transparent = ##t
+                                    \voiceTwo
+                                    r8.
+                                    [
+                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
+                                    \times 2/3
+                                    {
+                                        \once \override Staff.Accidental.stencil = ##f
+                                        \once \override TupletBracket.bracket-visibility = ##f
+                                        c,,32
+                                        - \marcato
+                                        - \natural-articulation
+                                        \override Staff.Accidental.stencil = ##f
+                                        cs,,32
+                                        - \sharp-articulation
+                                        ef,,32
+                                        - \flat-articulation
+                                        \revert Staff.Accidental.stencil
+                                    }
+                                    r8.
+                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
+                                    \times 2/3
+                                    {
+                                        \once \override Staff.Accidental.stencil = ##f
+                                        \once \override TupletBracket.bracket-visibility = ##f
+                                        fs,,32
+                                        - \marcato
+                                        - \sharp-articulation
+                                        \override Staff.Accidental.stencil = ##f
+                                        g,,32
+                                        - \natural-articulation
+                                        af,,32
+                                        - \flat-articulation
+                                        \revert Staff.Accidental.stencil
+                                    }
+                                    r8.
+                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
+                                    \times 2/3
+                                    {
+                                        \once \override Staff.Accidental.stencil = ##f
+                                        \once \override TupletBracket.bracket-visibility = ##f
+                                        e,,32
+                                        - \marcato
+                                        - \natural-articulation
+                                        \override Staff.Accidental.stencil = ##f
+                                        b,,,32
+                                        - \natural-articulation
+                                        a,,,32
+                                        - \natural-articulation
+                                        \revert Staff.Accidental.stencil
+                                    }
+                                    r8.
+                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
+                                    \times 2/3
+                                    {
+                                        \once \override Staff.Accidental.stencil = ##f
+                                        \once \override TupletBracket.bracket-visibility = ##f
+                                        b,,,32
+                                        - \marcato
+                                        - \natural-articulation
+                                        \override Staff.Accidental.stencil = ##f
+                                        ef,,32
+                                        - \flat-articulation
+                                        c,,32
+                                        - \natural-articulation
+                                        \revert Staff.Accidental.stencil
+                                    }
+                                    r8.
+                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
+                                    \times 2/3
+                                    {
+                                        \once \override Staff.Accidental.stencil = ##f
+                                        \once \override TupletBracket.bracket-visibility = ##f
+                                        cs,,32
+                                        - \marcato
+                                        - \sharp-articulation
+                                        \override Staff.Accidental.stencil = ##f
+                                        e,,32
+                                        - \natural-articulation
+                                        fs,,32
+                                        - \sharp-articulation
+                                        \revert Staff.Accidental.stencil
+                                    }
+                                    r8.
+                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
+                                    \times 2/3
+                                    {
+                                        \once \override Staff.Accidental.stencil = ##f
+                                        \once \override TupletBracket.bracket-visibility = ##f
+                                        g,,32
+                                        - \marcato
+                                        - \natural-articulation
+                                        \override Staff.Accidental.stencil = ##f
+                                        af,,32
+                                        - \flat-articulation
+                                        e,,32
+                                        - \natural-articulation
+                                        \revert Staff.Accidental.stencil
+                                    }
+                                    r8.
+                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
+                                    \times 2/3
+                                    {
+                                        \once \override Staff.Accidental.stencil = ##f
+                                        \once \override TupletBracket.bracket-visibility = ##f
+                                        fs,,32
+                                        - \marcato
+                                        - \sharp-articulation
+                                        \override Staff.Accidental.stencil = ##f
+                                        g,,32
+                                        - \natural-articulation
+                                        b,,,32
+                                        - \natural-articulation
+                                        \revert Staff.Accidental.stencil
+                                    }
+                                    r8.
+                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
+                                    \times 2/3
+                                    {
+                                        \once \override Staff.Accidental.stencil = ##f
+                                        \once \override TupletBracket.bracket-visibility = ##f
+                                        a,,,32
+                                        - \marcato
+                                        - \natural-articulation
+                                        \override Staff.Accidental.stencil = ##f
+                                        cs,,32
+                                        - \sharp-articulation
+                                        ef,,32
+                                        - \flat-articulation
+                                        \revert Staff.Accidental.stencil
+                                    }
+                                    r8.
+                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
+                                    \times 2/3
+                                    {
+                                        \once \override Staff.Accidental.stencil = ##f
+                                        \once \override TupletBracket.bracket-visibility = ##f
+                                        c,,32
+                                        - \marcato
+                                        - \natural-articulation
+                                        \override Staff.Accidental.stencil = ##f
+                                        cs,,32
+                                        - \sharp-articulation
+                                        ef,,32
+                                        - \flat-articulation
+                                        \revert Staff.Accidental.stencil
+                                    }
+                                    r8.
+                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
+                                    \times 2/3
+                                    {
+                                        \once \override Staff.Accidental.stencil = ##f
+                                        \once \override TupletBracket.bracket-visibility = ##f
+                                        g,,32
+                                        - \marcato
+                                        - \natural-articulation
+                                        \override Staff.Accidental.stencil = ##f
+                                        af,,32
+                                        - \flat-articulation
+                                        e,,32
+                                        - \natural-articulation
+                                        \revert Staff.Accidental.stencil
+                                    }
+                                    r8.
+                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
+                                    \times 2/3
+                                    {
+                                        \once \override Staff.Accidental.stencil = ##f
+                                        \once \override TupletBracket.bracket-visibility = ##f
+                                        fs,,32
+                                        - \marcato
+                                        - \sharp-articulation
+                                        \override Staff.Accidental.stencil = ##f
+                                        a,,,32
+                                        - \natural-articulation
+                                        b,,,32
+                                        - \natural-articulation
+                                        \revert Staff.Accidental.stencil
+                                    }
+                                    r8.
+                                    \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
+                                    \times 2/3
+                                    {
+                                        \once \override Staff.Accidental.stencil = ##f
+                                        \once \override TupletBracket.bracket-visibility = ##f
+                                        a,,,32
+                                        - \marcato
+                                        - \natural-articulation
+                                        \override Staff.Accidental.stencil = ##f
+                                        ef,,32
+                                        - \flat-articulation
+                                        c,,32
+                                        - \natural-articulation
+                                        ]
+                                        \ottava 0
+                                        \revert Staff.Accidental.stencil
+                                        \revert Staff.Accidental.transparent
+                                    }
+                                }
                             }
-                            r16
-                            \tweak text #tuplet-number::calc-fraction-text
-                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 5 0))
-                            \times 6/5
-                            {
-                                \override Staff.Accidental.stencil = ##f
-                                cs,,32
-                                - \marcato
-                                - \sharp-articulation
-                                fs,,32
-                                - \sharp-articulation
-                                g,,32
-                                - \natural-articulation
-                                af,,32
-                                - \flat-articulation
-                                e,,32
-                                - \natural-articulation
-                                \revert Staff.Accidental.stencil
-                            }
-                            r16
-                            \tweak text #tuplet-number::calc-fraction-text
-                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 5 0))
-                            \times 6/5
-                            {
-                                \override Staff.Accidental.stencil = ##f
-                                fs,,32
-                                - \marcato
-                                - \sharp-articulation
-                                g,,32
-                                - \natural-articulation
-                                af,,32
-                                - \flat-articulation
-                                a,,32
-                                - \natural-articulation
-                                b,,32
-                                - \natural-articulation
-                                \revert Staff.Accidental.stencil
-                            }
-                            r16
-                            \tweak text #tuplet-number::calc-fraction-text
-                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 5 0))
-                            \times 6/5
-                            {
-                                \override Staff.Accidental.stencil = ##f
-                                cs,,32
-                                - \marcato
-                                - \sharp-articulation
-                                ef,,32
-                                - \flat-articulation
-                                c,,32
-                                - \natural-articulation
-                                cs,,32
-                                - \sharp-articulation
-                                ef,,32
-                                - \flat-articulation
-                                \revert Staff.Accidental.stencil
-                            }
-                            r16
-                            \tweak text #tuplet-number::calc-fraction-text
-                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 5 0))
-                            \times 6/5
-                            {
-                                \override Staff.Accidental.stencil = ##f
-                                af,,32
-                                - \flat-articulation
-                                - \marcato
-                                e,,32
-                                - \natural-articulation
-                                fs,,32
-                                - \sharp-articulation
-                                g,,32
-                                - \natural-articulation
-                                b,,32
-                                - \natural-articulation
-                                \revert Staff.Accidental.stencil
-                            }
-                            r16
-                            \tweak text #tuplet-number::calc-fraction-text
-                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 5 0))
-                            \times 6/5
-                            {
-                                \override Staff.Accidental.stencil = ##f
-                                a,,32
-                                - \marcato
-                                - \natural-articulation
-                                b,,32
-                                - \natural-articulation
-                                ef,,32
-                                - \flat-articulation
-                                c,,32
-                                - \natural-articulation
-                                cs,,32
-                                - \sharp-articulation
-                                \revert Staff.Accidental.stencil
-                            }
-                            r16
-                            \tweak text #tuplet-number::calc-fraction-text
-                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 5 0))
-                            \times 6/5
-                            {
-                                \override Staff.Accidental.stencil = ##f
-                                g,,32
-                                - \marcato
-                                - \natural-articulation
-                                af,,32
-                                - \flat-articulation
-                                e,,32
-                                - \natural-articulation
-                                fs,,32
-                                - \sharp-articulation
-                                g,,32
-                                - \natural-articulation
-                                \revert Staff.Accidental.stencil
-                            }
-                            r16
-                            \tweak text #tuplet-number::calc-fraction-text
-                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 5 0))
-                            \times 6/5
-                            {
-                                \override Staff.Accidental.stencil = ##f
-                                af,,32
-                                - \flat-articulation
-                                - \marcato
-                                e,,32
-                                - \natural-articulation
-                                b,,32
-                                - \natural-articulation
-                                a,,32
-                                - \natural-articulation
-                                cs,,32
-                                - \sharp-articulation
-                                \revert Staff.Accidental.stencil
-                            }
-                            r16
-                            \tweak text #tuplet-number::calc-fraction-text
-                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 5 0))
-                            \times 6/5
-                            {
-                                \override Staff.Accidental.stencil = ##f
-                                ef,,32
-                                - \flat-articulation
-                                - \marcato
-                                c,,32
-                                - \natural-articulation
-                                cs,,32
-                                - \sharp-articulation
-                                ef,,32
-                                - \flat-articulation
-                                e,,32
-                                - \natural-articulation
-                                \revert Staff.Accidental.stencil
-                            }
-                            r16
-                            \tweak text #tuplet-number::calc-fraction-text
-                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 5 0))
-                            \times 6/5
-                            {
-                                \override Staff.Accidental.stencil = ##f
-                                fs,,32
-                                - \marcato
-                                - \sharp-articulation
-                                g,,32
-                                - \natural-articulation
-                                af,,32
-                                - \flat-articulation
-                                a,,32
-                                - \natural-articulation
-                                b,,32
-                                - \natural-articulation
-                                \revert Staff.Accidental.stencil
-                            }
-                            r16
-                            \tweak text #tuplet-number::calc-fraction-text
-                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 5 0))
-                            \times 6/5
-                            {
-                                \override Staff.Accidental.stencil = ##f
-                                a,,32
-                                - \marcato
-                                - \natural-articulation
-                                ef,,32
-                                - \flat-articulation
-                                c,,32
-                                - \natural-articulation
-                                cs,,32
-                                - \sharp-articulation
-                                af,,32
-                                - \flat-articulation
-                                \revert Staff.Accidental.stencil
-                            }
-                            r16
-                            \tweak text #tuplet-number::calc-fraction-text
-                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 5 0))
-                            \times 6/5
-                            {
-                                \override Staff.Accidental.stencil = ##f
-                                e,,32
-                                - \marcato
-                                - \natural-articulation
-                                fs,,32
-                                - \sharp-articulation
-                                g,,32
-                                - \natural-articulation
-                                af,,32
-                                - \flat-articulation
-                                e,,32
-                                - \natural-articulation
-                                \ppp
-                                \revert Staff.Accidental.stencil
-                            }
-                            r16
-                            ]
-                            \ottava 0
-                            \revert Staff.TupletBracket.direction
-                        }
+                        >>
+                        \oneVoice
                         <<
                             \context Voice = "13 voice temp 1"
                             {
@@ -3031,17 +3240,14 @@
                             - \natural-articulation
                             \revert Staff.Accidental.stencil
                             r32
-                            \override Staff.Accidental.stencil = ##f
-                            cs,16.
-                            - \sharp-articulation
-                            \revert Staff.Accidental.stencil
-                            r32
                             \tweak text #tuplet-number::calc-fraction-text
                             \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 6 0))
                             \times 6/5
                             {
                                 \once \override TupletBracket.bracket-visibility = ##f
                                 \override Staff.Accidental.stencil = ##f
+                                cs,,64
+                                - \sharp-articulation
                                 af,,64
                                 - \flat-articulation
                                 (
@@ -3051,13 +3257,16 @@
                                 - \sharp-articulation
                                 g,,64
                                 - \natural-articulation
-                                af,,64
-                                - \flat-articulation
-                                \f
-                                )
-                                \ottava 0
                                 \revert Staff.Accidental.stencil
                             }
+                            r32
+                            \override Staff.Accidental.stencil = ##f
+                            af,16.
+                            - \flat-articulation
+                            \f
+                            )
+                            \ottava 0
+                            \revert Staff.Accidental.stencil
                             r32
                             ]
                         }
@@ -3171,170 +3380,12 @@
                         \once \override MultiMeasureRest.transparent = ##t
                         R1 * 5/2
                         \stopStaff \startStaff
-                        \override Staff.TupletBracket.direction = #DOWN
-                        r8.
-                        [
-                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
-                        \times 2/3
-                        {
-                            \staff-line-count 5
-                            \ottava -1
-                            \clef "bass"
-                            c,,32
-                            - \marcato
-                            \override Staff.Accidental.stencil = ##f
-                            cs,,32
-                            - \sharp-articulation
-                            ef,,32
-                            - \flat-articulation
-                            \revert Staff.Accidental.stencil
-                        }
-                        r8.
-                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
-                        \times 2/3
-                        {
-                            fs,,32
-                            - \marcato
-                            \override Staff.Accidental.stencil = ##f
-                            g,,32
-                            - \natural-articulation
-                            af,,32
-                            - \flat-articulation
-                            \revert Staff.Accidental.stencil
-                        }
-                        r8.
-                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
-                        \times 2/3
-                        {
-                            e,,32
-                            - \marcato
-                            \override Staff.Accidental.stencil = ##f
-                            b,,,32
-                            - \natural-articulation
-                            a,,,32
-                            - \natural-articulation
-                            \revert Staff.Accidental.stencil
-                        }
-                        r8.
-                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
-                        \times 2/3
-                        {
-                            b,,,32
-                            - \marcato
-                            \override Staff.Accidental.stencil = ##f
-                            ef,,32
-                            - \flat-articulation
-                            c,,32
-                            - \natural-articulation
-                            \revert Staff.Accidental.stencil
-                        }
-                        r8.
-                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
-                        \times 2/3
-                        {
-                            cs,,32
-                            - \marcato
-                            \override Staff.Accidental.stencil = ##f
-                            e,,32
-                            - \natural-articulation
-                            fs,,32
-                            - \sharp-articulation
-                            \revert Staff.Accidental.stencil
-                        }
-                        r8.
-                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
-                        \times 2/3
-                        {
-                            g,,32
-                            - \marcato
-                            \override Staff.Accidental.stencil = ##f
-                            af,,32
-                            - \flat-articulation
-                            e,,32
-                            - \natural-articulation
-                            \revert Staff.Accidental.stencil
-                        }
-                        r8.
-                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
-                        \times 2/3
-                        {
-                            fs,,32
-                            - \marcato
-                            \override Staff.Accidental.stencil = ##f
-                            g,,32
-                            - \natural-articulation
-                            b,,,32
-                            - \natural-articulation
-                            \revert Staff.Accidental.stencil
-                        }
-                        r8.
-                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
-                        \times 2/3
-                        {
-                            a,,,32
-                            - \marcato
-                            \override Staff.Accidental.stencil = ##f
-                            cs,,32
-                            - \sharp-articulation
-                            ef,,32
-                            - \flat-articulation
-                            \revert Staff.Accidental.stencil
-                        }
-                        r8.
-                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
-                        \times 2/3
-                        {
-                            c,,32
-                            - \marcato
-                            \override Staff.Accidental.stencil = ##f
-                            cs,,32
-                            - \sharp-articulation
-                            ef,,32
-                            - \flat-articulation
-                            \revert Staff.Accidental.stencil
-                        }
-                        r8.
-                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
-                        \times 2/3
-                        {
-                            g,,32
-                            - \marcato
-                            \override Staff.Accidental.stencil = ##f
-                            af,,32
-                            - \flat-articulation
-                            e,,32
-                            - \natural-articulation
-                            \revert Staff.Accidental.stencil
-                        }
-                        r8.
-                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
-                        \times 2/3
-                        {
-                            fs,,32
-                            - \marcato
-                            \override Staff.Accidental.stencil = ##f
-                            a,,,32
-                            - \natural-articulation
-                            b,,,32
-                            - \natural-articulation
-                            \revert Staff.Accidental.stencil
-                        }
-                        r8.
-                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 5 0))
-                        \times 2/3
-                        {
-                            a,,,32
-                            - \marcato
-                            \override Staff.Accidental.stencil = ##f
-                            ef,,32
-                            - \flat-articulation
-                            c,,32
-                            - \natural-articulation
-                            ]
-                            \ottava 0
-                            \revert Staff.Accidental.stencil
-                            \revert Staff.TupletBracket.direction
-                        }
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 3
+                        \stopStaff \startStaff
                         \once \override Staff.BarLine.transparent = ##f
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \once \override Staff.TimeSignature.transparent = ##t
