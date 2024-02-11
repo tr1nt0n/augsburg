@@ -528,7 +528,8 @@ def handle_accidentals(score, force_accidentals=True):
             clef = abjad.get.effective(first_leaf, abjad.Clef)
 
             if (
-                clef.name == "percussion"
+                clef == None
+                or clef.name == "percussion"
                 or first_leaf_pitch.name == previous_leaf_pitch.name
             ):
                 pass
