@@ -2083,76 +2083,488 @@
             {
                 \context Voice = "piano 5 voice"
                 {
-                    \once \override Staff.BarLine.transparent = ##f
-                    \once \revert Staff.StaffSymbol.line-positions
-                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                    \once \override Staff.TimeSignature.transparent = ##t
-                    \once \override MultiMeasureRest.transparent = ##t
-                    R1 * 5/4
-                    \stopStaff \startStaff
-                    \once \override Staff.BarLine.transparent = ##f
-                    \once \revert Staff.StaffSymbol.line-positions
-                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                    \once \override Staff.TimeSignature.transparent = ##t
-                    \once \override MultiMeasureRest.transparent = ##t
-                    R1 * 5/4
-                    \stopStaff \startStaff
-                    \once \override Staff.BarLine.transparent = ##f
-                    \once \revert Staff.StaffSymbol.line-positions
-                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                    \once \override Staff.TimeSignature.transparent = ##t
-                    \once \override MultiMeasureRest.transparent = ##t
-                    R1 * 5/4
-                    \stopStaff \startStaff
-                    \once \override Staff.BarLine.transparent = ##f
-                    \once \revert Staff.StaffSymbol.line-positions
-                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                    \once \override Staff.TimeSignature.transparent = ##t
-                    \once \override MultiMeasureRest.transparent = ##t
-                    R1 * 5/4
-                    \stopStaff \startStaff
-                    \once \override Staff.BarLine.transparent = ##f
-                    \once \revert Staff.StaffSymbol.line-positions
-                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                    \once \override Staff.TimeSignature.transparent = ##t
-                    \once \override MultiMeasureRest.transparent = ##t
-                    R1 * 5/4
-                    \stopStaff \startStaff
-                    \once \override Staff.BarLine.transparent = ##f
-                    \once \revert Staff.StaffSymbol.line-positions
-                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                    \once \override Staff.TimeSignature.transparent = ##t
-                    \once \override MultiMeasureRest.transparent = ##t
-                    R1 * 5/4
-                    \stopStaff \startStaff
-                    \once \override Staff.BarLine.transparent = ##f
-                    \once \revert Staff.StaffSymbol.line-positions
-                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                    \once \override Staff.TimeSignature.transparent = ##t
-                    \once \override MultiMeasureRest.transparent = ##t
-                    R1 * 5/4
-                    \stopStaff \startStaff
-                    \once \override Staff.BarLine.transparent = ##f
-                    \once \revert Staff.StaffSymbol.line-positions
-                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                    \once \override Staff.TimeSignature.transparent = ##t
-                    \once \override MultiMeasureRest.transparent = ##t
-                    R1 * 5/4
-                    \stopStaff \startStaff
-                    \once \override Staff.BarLine.transparent = ##f
-                    \once \revert Staff.StaffSymbol.line-positions
-                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                    \once \override Staff.TimeSignature.transparent = ##t
-                    \once \override MultiMeasureRest.transparent = ##t
-                    R1 * 5/4
-                    \stopStaff \startStaff
-                    \once \override Staff.BarLine.transparent = ##f
-                    \once \revert Staff.StaffSymbol.line-positions
-                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
-                    \once \override Staff.TimeSignature.transparent = ##t
-                    \once \override MultiMeasureRest.transparent = ##t
-                    R1 * 5/4
-                    \stopStaff \startStaff
+                    \override Dots.staff-position = #2
+                    \override Staff.Accidental.stencil = ##f
+                    a'32.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'32
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    g'32.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    d'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    f'32
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'32
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    a'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'32
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    g'32.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    d'32
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    f'32.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'32.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    a'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    g'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    d'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    f'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    a'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'32.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    g'32
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    d'32.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    f'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'32
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    a'32
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    g'32
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    d'32.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    f'32
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'32.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    a'32.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    g'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    d'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    f'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    a'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    g'32.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    d'32
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    f'32.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    a'32
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'64
+                      %! abjad.glissando(7)
+                    - \abjad-zero-padding-glissando
+                      %! abjad.glissando(7)
+                    \glissando
+                    ~
+                      %! abjad.glissando(1)
+                    \hide NoteHead
+                      %! abjad.glissando(1)
+                    \override Accidental.stencil = ##f
+                      %! abjad.glissando(1)
+                    \override NoteColumn.glissando-skip = ##t
+                      %! abjad.glissando(1)
+                    \override NoteHead.no-ledgers = ##t
+                    e'64
+                      %! abjad.glissando(6)
+                    \revert Accidental.stencil
+                      %! abjad.glissando(6)
+                    \revert NoteColumn.glissando-skip
+                      %! abjad.glissando(6)
+                    \revert NoteHead.no-ledgers
+                      %! abjad.glissando(6)
+                    \undo \hide NoteHead
+                    g'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    d'32
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    f'32.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'32
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    a'32.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'32.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    g'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    d'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    f'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    a'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    g'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    d'32.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    f'32
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'32.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    a'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'32
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    g'32
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    d'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    f'32
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'32.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    a'32
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'32.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    g'32.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    d'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    f'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    a'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    g'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    d'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    f'32.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'32
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    a'32.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    g'32
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    d'32
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    f'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'32
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    a'32.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'32
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    g'32.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    d'32.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    f'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    a'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    g'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    d'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    f'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'32.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    a'32
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'32.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    g'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    d'32
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    f'32
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    a'32
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'32.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    g'32
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    d'32.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    f'32.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    a'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    g'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    d'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    f'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    a'32.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'32
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    g'32.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    d'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    f'32
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'32
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    a'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'32
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    g'32.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    d'32
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    f'32.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'32.
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    a'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    g'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    d'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    f'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    e'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    a'64
+                    - \abjad-zero-padding-glissando
+                    \glissando
+                    \revert Dots.staff-position
+                    e'32
+                    \override Dots.staff-position = #2
+                    ef1
+                      %! abjad.glissando(7)
+                    - \abjad-zero-padding-glissando
+                      %! abjad.glissando(7)
+                    \glissando
+                    ~
+                      %! abjad.glissando(1)
+                    \hide NoteHead
+                      %! abjad.glissando(1)
+                    \override Accidental.stencil = ##f
+                      %! abjad.glissando(1)
+                    \override NoteColumn.glissando-skip = ##t
+                      %! abjad.glissando(1)
+                    \override NoteHead.no-ledgers = ##t
+                    ef4
+                    ~
+                    ef1
+                    ~
+                    ef4
+                    ~
+                    ef1
+                    ~
+                    ef4
+                    ~
+                    ef1
+                    ~
+                    ef4
+                    ~
+                    ef1
+                    ~
+                    ef4
+                    ~
+                    ef1
+                    ~
+                    ef4
+                    ~
+                    ef1
+                    ~
+                    \afterGrace
+                    ef4
+                    {
+                        \once \override Stem.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.no-ledgers = ##t
+                        \once \override Accidental.stencil = ##f
+                        \revert Dots.staff-position
+                        \once \override NoteHead.transparent = ##t
+                          %! abjad.glissando(6)
+                        \revert Accidental.stencil
+                          %! abjad.glissando(6)
+                        \revert NoteColumn.glissando-skip
+                          %! abjad.glissando(6)
+                        \revert NoteHead.no-ledgers
+                          %! abjad.glissando(6)
+                        \undo \hide NoteHead
+                        a'16
+                    }
+                    \revert Staff.Accidental.stencil
                     \once \override Staff.BarLine.transparent = ##f
                     \once \revert Staff.StaffSymbol.line-positions
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff

@@ -884,6 +884,29 @@ trinton.make_music(
     voice=score["piano 3 voice"],
 )
 
+# filter music
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1, 3)),
+    evans.RhythmHandler(
+        evans.talea([3, 2, 3, 1, 2, 2, 1, 2, 3, 2, 3, 3, 1, 1, 1, 1, 1, 1, 1], 64),
+    ),
+    evans.PitchHandler([9, 4, 7, 2, 5, 4]),
+    library.low_pass_glissandi(),
+    voice=score["piano 5 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (4, 10)),
+    evans.RhythmHandler(
+        evans.talea([1000], 1),
+    ),
+    trinton.aftergrace_command(invisible=True),
+    evans.PitchHandler([-9, 9]),
+    library.low_pass_glissandi(),
+    voice=score["piano 5 voice"],
+)
+
 # globals
 
 trinton.fermata_measures(
