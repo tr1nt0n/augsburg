@@ -687,7 +687,7 @@
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup { \one-thirty-seven-limit-quarter-tone-up  }
                             f!\breve
-                            ^ \markup \center-align { \concat { F\raise #0.75 { \teeny \smaller \sharp } -49 } }
+                            ^ \markup \center-align { \concat { F\raise #0.75 { \teeny \smaller \accidental #1/2 } -49 } }
                             ~
                             \revert Dots.staff-position
                             \tweak Accidental.stencil #ly:text-interface::print

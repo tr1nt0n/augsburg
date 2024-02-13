@@ -324,8 +324,6 @@
                         }
                         s1 * 1
                         \staff-line-count 1
-                          %! +SCORE
-                        \override Staff.BarLine.bar-extent = #'(-0.01 . 0.01)
                         \override Staff.Stem.direction = #UP
                         \clef "percussion"
                         c'2

@@ -245,6 +245,21 @@ trinton.make_music(
     voice=score["piano 1 voice"],
 )
 
+trinton.make_music(
+    lambda _: trinton.select_target(_, (10, 11)),
+    voice=score["piano 1 voice"],
+    beam_meter=True,
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (12,)),
+    trinton.linear_attachment_command(
+        attachments=[abjad.StartBeam(), abjad.StopBeam()],
+        selector=trinton.select_leaves_by_index([0, 2], grace=False, pitched=True),
+    ),
+    voice=score["piano 1 voice"],
+)
+
 # lh music
 
 trinton.make_music(

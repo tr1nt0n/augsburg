@@ -18,7 +18,7 @@
               \raise #13 \with-dimensions-from \null
               \override #'(font-size . 5.5)
               \concat {
-                  \abjad-metronome-mark-markup #2 #0 #2 #"60"
+                  \abjad-metronome-mark-markup #2 #0 #2 #"60" 
                   [\abjad-metric-modulation-tuplet-lhs #1 #0 #37 #32 #2 #0 #'(1 . 1)]
               }
             }
@@ -52,7 +52,7 @@
               \raise #6 \with-dimensions-from \null
               \override #'(font-size . 5.5)
               \concat {
-                  \abjad-metronome-mark-mixed-number-markup #2 #0 #2 #"97" #"1" #"2"
+                  \abjad-metronome-mark-mixed-number-markup #2 #0 #2 #"97" #"1" #"2" 
                   [\abjad-metric-modulation-tuplet-lhs #2 #0 #37 #26 #2 #0 #'(1 . 1)]
               }
             }
@@ -95,7 +95,7 @@
                                   %! abjad.glissando(7)
                                 \glissando
                                 {
-                                    \once \override Flag.stroke-style = #"grace"
+                                    \once \override Flag.stroke-style = #"grace" 
                                       %! abjad.glissando(1)
                                     \hide NoteHead
                                       %! abjad.glissando(1)
@@ -118,8 +118,8 @@
                             \context Voice = "sounding voice"
                             {
                                 \override Dots.staff-position = #2
-                                \override NoteHead.no-ledgers = ##t
-                                \override Accidental.stencil = ##f
+                                \override Staff.NoteHead.no-ledgers = ##t
+                                \override Staff.Accidental.stencil = ##f
                                 \voiceOne
                                 c''2
                                 _ #(make-dynamic-script
@@ -173,13 +173,13 @@
                                 - \tweak stencil #constante-hairpin
                                 _ \<
                                 {
-                                    \once \override Flag.stroke-style = #"grace"
+                                    \once \override Flag.stroke-style = #"grace" 
                                     \revert Dots.staff-position
                                     g'16
                                     \!
                                     )
-                                    \revert NoteHead.no-ledgers
-                                    \revert Accidental.stencil
+                                    \revert Staff.NoteHead.no-ledgers
+                                    \revert Staff.Accidental.stencil
                                 }
                             }
                         >>
@@ -294,38 +294,56 @@
                             _ #(make-dynamic-script (markup #:whiteout #:italic "ppp"))
                         ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Magnet links }
                         ~
+                        \override Staff.Stem.stemlet-length = 0.75
                         c'16
                         _ #(make-dynamic-script (markup #:whiteout #:normal-text #:italic "cresc. poco a poco ( bis mezzo-forte )"))
+                        [
+                        \revert Staff.Stem.stemlet-length
                         c'8.
+                        ]
+                        \override Staff.Stem.stemlet-length = 0.75
                         c'16.
+                        [
                         c'32
                         ~
                         c'32
                         \override Staff.Accidental.stencil = ##f
+                        \revert Staff.Stem.stemlet-length
                         c'16.
+                        ]
                         ~
                         c'4.
                         \revert Staff.Accidental.stencil
                         c'4.
+                        \override Staff.Stem.stemlet-length = 0.75
                         c'8.
+                        [
+                        \revert Staff.Stem.stemlet-length
+                        c'16
+                        ]
+                        ~
+                        \override Staff.Stem.stemlet-length = 0.75
+                        c'16
+                        [
                         c'16
                         ~
                         c'16
+                        \revert Staff.Stem.stemlet-length
                         c'16
-                        ~
-                        c'16
-                        c'16
+                        ]
                         \staff-line-count 2
                         \once \override Stem.direction = #down
                         \clef "percussion"
                         b32
                         ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #2 { \center-column { \line { 1. Magnetgruppe mit der Handfläche } \line { 2. Magnet rechts }  } }
+                        [
                         \override Staff.Accidental.stencil = ##f
                         \once \override Stem.direction = #down
                         b16.
                         ~
                         \once \override Stem.direction = #down
                         b16.
+                        ]
                         <<
                             \context Voice = "On_Beat_Grace_Container"
                             {
@@ -442,7 +460,7 @@
                         s1 * 3/2
                         \sustainOn
                         {
-                            \once \override Flag.stroke-style = #"grace"
+                            \once \override Flag.stroke-style = #"grace" 
                             \once \override Stem.stencil = ##f
                             \once \override Flag.stencil = ##f
                             \once \override NoteHead.no-ledgers = ##t

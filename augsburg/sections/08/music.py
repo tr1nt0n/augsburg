@@ -218,7 +218,7 @@ trinton.make_music(
                 string=[
                     "Cluster: Die Saiten",
                     "in der höchsten Oktave",
-                    "auf ihrer Rückseite anschlagen",
+                    "auf ihrer Rückseite klimpern",
                 ]
             ),
             library.boxed_markup(string=["Note: Nagel + Vibrator"]),

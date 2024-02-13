@@ -119,8 +119,6 @@
                             \once \override Staff.Clef.X-extent = ##f
                             \once \override Staff.Clef.extra-offset = #'(-2.5 . 0)
                             \staff-line-count 1
-                              %! +SCORE
-                        %%% \override Staff.BarLine.bar-extent = #'(-0.01 . 0.01)
                             \override Staff.Stem.direction = #UP
                             \once \override Beam.grow-direction = #right
                             \clef "percussion"
@@ -668,8 +666,6 @@
                             \once \override Staff.TupletNumber.stencil = ##f
                             \once \override Staff.Beam.stencil = ##f
                             \override Staff.TupletBracket.direction = #DOWN
-                              %! +SCORE
-                        %%% \revert Staff.BarLine.bar-extent
                             \once \override Beam.grow-direction = #right
                             \clef "bass"
                             \once \override Staff.DynamicLineSpanner.staff-padding = 7

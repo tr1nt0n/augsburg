@@ -139,14 +139,12 @@
                         \override Staff.Accidental.X-extent = ##f
                         \key fs \major
                         \revert Staff.Accidental.X-extent
-                        \revert Staff.Accidental.X-extent
                         <as cs' fs' as'>4..
                         - \tenuto
                         \p
                         - \tweak color \四
                         - \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { ( SYNTHESIZER AUS ) }
                         \breathe
-                        \override Staff.Accidental.X-extent = ##f
                         \override Staff.Accidental.X-extent = ##f
                         \revert Staff.Accidental.X-extent
                         <fs as d' fs'>16

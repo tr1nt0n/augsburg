@@ -287,7 +287,7 @@
                         :32
                         - \espressivo
                         \mp
-                        ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #2 { \center-column { \line { Die Saiten in der höchsten Oktave } \line { auf ihrer Rückseite anschlagen }  } }
+                        ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #2 { \center-column { \line { Die Saiten in der höchsten Oktave } \line { auf ihrer Rückseite klimpern }  } }
                         <<
                             \context Voice = "37 voice temp"
                             {
@@ -481,7 +481,7 @@
                         :32
                         - \espressivo
                         \mp
-                        ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #2 { \center-column { \line { Die Saiten in der höchsten Oktave } \line { auf ihrer Rückseite anschlagen }  } }
+                        ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #2 { \center-column { \line { Die Saiten in der höchsten Oktave } \line { auf ihrer Rückseite klimpern }  } }
                         ~
                         \once \override NoteHead.no-ledgers = ##t
                         <

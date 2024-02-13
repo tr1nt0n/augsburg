@@ -520,7 +520,7 @@ def handle_accidentals(score, force_accidentals=True):
             if isinstance(previous_leaf, abjad.Rest) or isinstance(
                 previous_leaf, abjad.Chord
             ):
-                previous_leaf_pitch = abjad.NamedPitch("c,,,,,,,,,,,,,,,,")
+                previous_leaf_pitch = abjad.NamedPitch("bs,,,,,,,,,,,,,,,,")
             else:
                 previous_leaf_pitch = previous_leaf.written_pitch
             first_leaf = tie[0]

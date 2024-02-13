@@ -122,7 +122,7 @@ trinton.make_music(
             library.boxed_markup(
                 string=[
                     "Die Saiten in der höchsten Oktave",
-                    "auf ihrer Rückseite anschlagen",
+                    "auf ihrer Rückseite klimpern",
                 ]
             ),
         ],
@@ -285,7 +285,7 @@ trinton.make_music(
             library.boxed_markup(
                 string=[
                     "Die Saiten in der höchsten Oktave",
-                    "auf ihrer Rückseite anschlagen",
+                    "auf ihrer Rückseite klimpern",
                 ]
             ),
             library.boxed_markup(string=["Magnetgruppe", "mit der Handfläche"]),

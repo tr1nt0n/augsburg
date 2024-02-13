@@ -315,7 +315,7 @@
                             :32
                             - \espressivo
                             \p
-                            ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #2 { \center-column { \line { Cluster: Die Saiten } \line { in der höchsten Oktave } \line { auf ihrer Rückseite anschlagen }  } }
+                            ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #2 { \center-column { \line { Cluster: Die Saiten } \line { in der höchsten Oktave } \line { auf ihrer Rückseite klimpern }  } }
                             ~
                         }
                         \once \override NoteHead.no-ledgers = ##t

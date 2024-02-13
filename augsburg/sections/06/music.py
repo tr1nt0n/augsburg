@@ -32,7 +32,7 @@ score = library.augsburg_score(
 trinton.make_music(
     lambda _: trinton.select_target(_, (1,)),
     evans.RhythmHandler(evans.accelerando([(1, 8), (1, 20), (1, 32)])),
-    trinton.change_lines(lines=1, clef="percussion"),
+    library.change_lines(lines=1, clef="percussion"),
     trinton.linear_attachment_command(
         attachments=[
             library.boxed_markup(string="Tastaturabdeckung"),
@@ -181,7 +181,7 @@ trinton.make_music(
     lambda _: trinton.select_target(_, (1,)),
     evans.RhythmHandler(evans.accelerando([(1, 8), (1, 20), (1, 32)])),
     evans.PitchHandler(pitch_list=["d,"]),
-    trinton.change_lines(lines=5, clef="bass"),
+    library.change_lines(lines=5, clef="bass"),
     trinton.attachment_command(
         attachments=[
             library.clef_whitespace_literal,

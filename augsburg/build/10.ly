@@ -518,8 +518,6 @@
                             \once \override Staff.Clef.extra-offset = #'(-2.5 . 0)
                             \staff-line-count 5
                             \ottava -1
-                              %! +SCORE
-                            \revert Staff.BarLine.bar-extent
                             \clef "bass"
                             fs,2.
                             \pp

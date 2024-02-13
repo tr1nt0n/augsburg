@@ -327,7 +327,7 @@ trinton.make_music(
         octave=-1,
         selector=trinton.select_logical_ties_by_index([53, 54, 65, 66], pitched=True),
     ),
-    trinton.change_lines(
+    library.change_lines(
         lines=5,
         clef="bass",
     ),

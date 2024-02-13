@@ -132,8 +132,8 @@
                             \context Voice = "sounding voice"
                             {
                                 \override Dots.staff-position = #2
-                                \override NoteHead.no-ledgers = ##t
-                                \override Accidental.stencil = ##f
+                                \override Staff.NoteHead.no-ledgers = ##t
+                                \override Staff.Accidental.stencil = ##f
                                 \voiceOne
                                 c''2
                                 _ #(make-dynamic-script
@@ -192,8 +192,8 @@
                                     g'16
                                     \!
                                     )
-                                    \revert NoteHead.no-ledgers
-                                    \revert Accidental.stencil
+                                    \revert Staff.NoteHead.no-ledgers
+                                    \revert Staff.Accidental.stencil
                                 }
                             }
                         >>
@@ -245,7 +245,7 @@
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \one-thirty-seven-limit-quarter-tone-up  }
                         f!2
-                        ^ \markup \center-align { \concat { F\raise #0.75 { \teeny \smaller \sharp } -49 } }
+                        ^ \markup \center-align { \concat { F\raise #0.75 { \teeny \smaller \accidental #1/2 } -49 } }
                         ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Nagel + Vibrator }
                         - \abjad-zero-padding-glissando
                         \glissando
@@ -308,38 +308,56 @@
                             _ #(make-dynamic-script (markup #:whiteout #:italic "ppp"))
                         ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Magnet links }
                         ~
+                        \override Staff.Stem.stemlet-length = 0.75
                         c'16
                         _ #(make-dynamic-script (markup #:whiteout #:normal-text #:italic "cresc. poco a poco ( bis mezzo-forte )"))
+                        [
+                        \revert Staff.Stem.stemlet-length
                         c'8.
+                        ]
+                        \override Staff.Stem.stemlet-length = 0.75
                         c'16.
+                        [
                         c'32
                         ~
                         c'32
                         \override Staff.Accidental.stencil = ##f
+                        \revert Staff.Stem.stemlet-length
                         c'16.
+                        ]
                         ~
                         c'4.
                         \revert Staff.Accidental.stencil
                         c'4.
+                        \override Staff.Stem.stemlet-length = 0.75
                         c'8.
+                        [
+                        \revert Staff.Stem.stemlet-length
+                        c'16
+                        ]
+                        ~
+                        \override Staff.Stem.stemlet-length = 0.75
+                        c'16
+                        [
                         c'16
                         ~
                         c'16
+                        \revert Staff.Stem.stemlet-length
                         c'16
-                        ~
-                        c'16
-                        c'16
+                        ]
                         \staff-line-count 2
                         \once \override Stem.direction = #down
                         \clef "percussion"
                         b32
                         ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #2 { \center-column { \line { 1. Magnetgruppe mit der Handfläche } \line { 2. Magnet rechts }  } }
+                        [
                         \override Staff.Accidental.stencil = ##f
                         \once \override Stem.direction = #down
                         b16.
                         ~
                         \once \override Stem.direction = #down
                         b16.
+                        ]
                         <<
                             \context Voice = "On_Beat_Grace_Container"
                             {

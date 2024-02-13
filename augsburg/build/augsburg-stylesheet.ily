@@ -166,7 +166,7 @@ afterGraceFraction = #(cons 15 16)
         }
         \override StemTremolo.whiteout-style = #'outline
         \override StemTremolo.whiteout = 1
-        \override StemTremolo.layer = 20
+        \override StemTremolo.layer = 2
 
         \override SustainPedal.color = \一
 
@@ -389,7 +389,7 @@ afterGraceFraction = #(cons 15 16)
 	        #:brace "haydn"
 	))
     min-systems-per-page = 3
-    % max-systems-per-page = 3
+    max-systems-per-page = 3
     % system-separator-markup = \markup \fontsize #12 { \tremolo-moderato }
     system-system-spacing = #'((basic-distance . 30) (minimum-distance . 30) (padding . 0) (stretchability . 30))
     indent = 20\mm

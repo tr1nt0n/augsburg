@@ -163,7 +163,7 @@ trinton.make_music(
     lambda _: trinton.select_target(_, (5,)),
     evans.RhythmHandler(evans.talea([1, -1000], 2)),
     trinton.rewrite_meter_command(),
-    trinton.change_lines(lines=1, clef="percussion"),
+    library.change_lines(lines=1, clef="percussion"),
     trinton.linear_attachment_command(
         attachments=[
             library.boxed_markup(string="Tastaturabdeckung"),
