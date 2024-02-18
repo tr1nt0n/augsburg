@@ -118,6 +118,52 @@ def return_clef_whitespace_literal(offset_pair=(-2.5, 0)):
 # notation tools
 
 
+def imbrication_command(
+    indices, period, direction, name, hocket=True, selector=abjad.select.leaves
+):
+    def imbricate(argument):
+        selections = selector(argument)
+
+        evans.imbricate(
+            selections=selections,
+            pitches=indices,
+            name=name,
+            direction=direction,
+            articulation="marcato",
+            beam=True,
+            secondary=False,
+            by_index=True,
+            cyclic_period=period,
+            hocket=hocket,
+            truncate_ties=False,
+            direct_attachments=False,
+        )
+
+        # leaves = abjad.select.leaves(argument, pitched=True)
+        #
+        # all_but_last_leaves = abjad.select.exclude(
+        #     leaves,
+        #     [-1, -2],
+        # )
+        #
+        # for leaf in all_but_last_leaves:
+        #     with_next_leaf = abjad.select.with_next_leaf(
+        #         leaf,
+        #     )
+        #
+        #     if leaf.written_pitch.number >= 10:
+        #         abjad.attach(abjad.StartSlur(), with_next_leaf[1])
+        #     elif with_next_leaf[1].written_pitch.number >= 10:
+        #         abjad.attach(abjad.StopSlur(), with_next_leaf[0])
+        #
+        # if leaves[-2].written_pitch.number >= 10:
+        #     pass
+        # else:
+        #     abjad.attach(abjad.StopSlur(), leaves[-1])
+
+    return imbricate
+
+
 def continuous_pedal(selector=trinton.pleaves()):
     def pedal(argument):
         selections = selector(argument)
@@ -138,7 +184,7 @@ def continuous_pedal(selector=trinton.pleaves()):
     return pedal
 
 
-def low_pass_glissandi(selector=trinton.pleaves(), no_ties=False):
+def low_pass_glissandi(selector=trinton.pleaves(), no_ties=False, tweaks=None):
     def glissando(argument):
         selections = selector(argument)
         dots_selections = abjad.select.leaves(selections)
@@ -161,13 +207,24 @@ def low_pass_glissandi(selector=trinton.pleaves(), no_ties=False):
         for tie in multiples:
             glissando_group = abjad.select.with_next_leaf(tie)
 
-            abjad.glissando(
-                glissando_group,
-                hide_middle_note_heads=True,
-                allow_repeats=True,
-                allow_ties=True,
-                zero_padding=True,
-            )
+            if tweaks is not None:
+                abjad.glissando(
+                    glissando_group,
+                    *tweaks,
+                    hide_middle_note_heads=True,
+                    allow_repeats=True,
+                    allow_ties=True,
+                    zero_padding=True,
+                )
+
+            else:
+                abjad.glissando(
+                    glissando_group,
+                    hide_middle_note_heads=True,
+                    allow_repeats=True,
+                    allow_ties=True,
+                    zero_padding=True,
+                )
 
             if no_ties is True:
                 for leaf in tie:
@@ -425,6 +482,23 @@ def interruptive_polyphony(hand, stage=1, dynamic=True):
                     abjad.LilyPondLiteral(literal_string, site="before"), tie[0]
                 )
 
+            for leaf in abjad.select.leaves(voice):
+                if abjad.get.has_indicator(leaf, abjad.Articulation):
+                    for articulation in abjad.get.indicators(leaf, abjad.Articulation):
+                        bundle = abjad.bundle(articulation, rf"- \tweak color {color}")
+
+                        abjad.detach(abjad.Articulation, leaf)
+
+                        if (
+                            voice.name == "37 voice temp"
+                            or voice.name == "13 voice temp"
+                        ):
+                            direction = abjad.UP
+                        else:
+                            direction = abjad.DOWN
+
+                        abjad.attach(bundle, leaf, direction=direction)
+
     return polyphony
 
 
@@ -517,8 +591,13 @@ def handle_accidentals(score, force_accidentals=True):
 
         for tie in group:
             previous_leaf = abjad.select.with_previous_leaf(tie)[0]
-            if isinstance(previous_leaf, abjad.Rest) or isinstance(
-                previous_leaf, abjad.Chord
+            if (
+                isinstance(previous_leaf, abjad.Rest)
+                or isinstance(
+                    previous_leaf,
+                    abjad.Chord,
+                )
+                or isinstance(previous_leaf, abjad.Skip)
             ):
                 previous_leaf_pitch = abjad.NamedPitch("bs,,,,,,,,,,,,,,,,")
             else:

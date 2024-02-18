@@ -615,6 +615,22 @@ trinton.make_music(
     voice=score["piano 1 voice"],
 )
 
+trinton.make_music(
+    lambda _: trinton.select_target(_, (19,)),
+    trinton.attachment_command(
+        attachments=[
+            library.boxed_markup(string=["Entfernen des Vibrators", "aus den Saiten."]),
+            library.boxed_markup(
+                string="( SYNTHESIZER AUS )",
+                tweaks=[r"- \tweak color \四"],
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        direction=abjad.UP,
+    ),
+    voice=score["piano 2 voice"],
+)
+
 # lh music
 
 trinton.make_music(
@@ -924,17 +940,17 @@ trinton.fermata_measures(
     ],
 )
 
-# for measure in [
-#     1,
-# ]:
-#     trinton.make_music(
-#         lambda _: trinton.select_target(_, (measure,)),
-#         trinton.attachment_command(
-#             attachments=[abjad.LilyPondLiteral(r"\noBreak", site="absolute_after")],
-#             selector=trinton.select_leaves_by_index([0]),
-#         ),
-#         voice=score["Global Context"],
-#     )
+for measure in [
+    18,
+]:
+    trinton.make_music(
+        lambda _: trinton.select_target(_, (measure,)),
+        trinton.attachment_command(
+            attachments=[abjad.LilyPondLiteral(r"\noBreak", site="absolute_after")],
+            selector=trinton.select_leaves_by_index([0]),
+        ),
+        voice=score["Global Context"],
+    )
 
 trinton.make_music(
     lambda _: trinton.select_target(_, (1,)),

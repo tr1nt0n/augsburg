@@ -73,6 +73,7 @@
             ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #3 { \center-column { \line { Inneres Stück: } \line { Trato de recordar que la ira del diablo } \line { también se la dio Dios. }  } }
             \stopTextSpan
             \bar ":|."
+            \noBreak
             \once \override Score.BarLine.transparent = ##f
             \stopMeasureSpanner
             \once \override Score.BarLine.transparent = ##f
@@ -1323,6 +1324,9 @@
                         s1 * 3/4
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
+                        - \tweak color \四
+                        ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { ( SYNTHESIZER AUS ) }
+                        ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #2 { \center-column { \line { Entfernen des Vibrators } \line { aus den Saiten. }  } }
                         \stopStaff \startStaff
                     }
                 }
