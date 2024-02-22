@@ -75,20 +75,12 @@ trinton.make_music(
                 site="absolute_before",
             ),
             abjad.BarLine(":|.", site="absolute_after"),
-            abjad.LilyPondLiteral(
-                r"\once \override Score.BarLine.transparent = ##f",
-                site="absolute_after",
-            ),
             abjad.LilyPondLiteral(r"\stopMeasureSpanner", site="absolute_after"),
         ],
-        selector=trinton.select_leaves_by_index([0, 0, 0, -1, -1, -1]),
+        selector=trinton.select_leaves_by_index([0, 0, 0, -1, -1]),
     ),
     trinton.attachment_command(
         attachments=[
-            abjad.LilyPondLiteral(
-                r"\once \override Score.BarLine.transparent = ##f",
-                site="absolute_before",
-            ),
             abjad.BarLine(":|.|:", site="absolute_after"),
             abjad.LilyPondLiteral(
                 r"\once \override Score.BarLine.transparent = ##f",

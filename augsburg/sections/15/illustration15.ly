@@ -30,7 +30,6 @@
             \abjad-metronome-mark-mixed-number-markup #3 #0 #2 #"75" #"3" #"5"  
               }
             }
-            \once \override Score.BarLine.transparent = ##f
             \set Score.repeatCommands = #'((volta "1 - 3"))
             \time 5/4
             s1 * 5/4
@@ -43,7 +42,6 @@
             \time 3/4
             s1 * 3/4
             \bar ":|."
-            \once \override Score.BarLine.transparent = ##f
             \stopMeasureSpanner
         }
         \context StaffGroup = "Staff Group"
