@@ -28,6 +28,7 @@
             \time 3/4
             s1 * 3/4
             \bar ":|."
+            \once \override Score.BarLine.transparent = ##f
             \stopMeasureSpanner
         }
         \context StaffGroup = "Staff Group"
