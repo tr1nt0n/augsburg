@@ -24,11 +24,11 @@ afterGraceFraction = #(cons 15 16)
         \consists Bar_number_engraver
         \consists Time_signature_engraver
 		\consists Mark_engraver
+        \consists Measure_spanner_engraver
 		\consists Metronome_mark_engraver
         \consists Multi_measure_rest_engraver
 		\consists Text_engraver
 		\consists Text_spanner_engraver
-        \consists Measure_spanner_engraver
         \override BarNumber.stencil = #(make-stencil-circler 0.1 0.75 ly:text-interface::print)
         \override BarNumber.Y-extent = ##f
         \override BarNumber.Y-offset = -12
@@ -61,6 +61,8 @@ afterGraceFraction = #(cons 15 16)
         \Score
         \numericTimeSignature
         \accepts TimeSignatureContext
+        \consists Grid_line_span_engraver
+        % \consists Measure_spanner_engraver
         \remove Bar_number_engraver
         proportionalNotationDuration = #(ly:make-moment 1 20)
         pedalSustainStyle = #'mixed
@@ -103,7 +105,7 @@ afterGraceFraction = #(cons 15 16)
             \char ##xe4D5
         }
 
-        \override Clef.layer = 3
+        \override Clef.layer = 2
         \override Clef.whiteout-style = #'outline
         \override Clef.whiteout = 1
         \override Clef.color = \二
@@ -210,7 +212,9 @@ afterGraceFraction = #(cons 15 16)
         \Staff
         fontSize = #-3.5
         \remove Time_signature_engraver
+        % \consists Measure_spanner_engraver
         \consists Duration_line_engraver
+        \consists Grid_point_engraver
         \consists Grob_pq_engraver
         \consists #Interrupt_heads_engraver
 
@@ -236,6 +240,7 @@ afterGraceFraction = #(cons 15 16)
         \Staff
         \name leftHandStaff
         \alias Staff
+        % \consists Measure_spanner_engraver
         \override TupletBracket.direction = #DOWN
         % \override AccidentalSuggestion.direction = #DOWN
     } % just trying this out
@@ -245,6 +250,7 @@ afterGraceFraction = #(cons 15 16)
         \name timeSignatureStaff
         \type Engraver_group
         \consists Time_signature_engraver
+        % \consists Measure_spanner_engraver
         \omit StaffSymbol
 
         \override Clef.stencil = ##f
@@ -270,6 +276,7 @@ afterGraceFraction = #(cons 15 16)
         \remove #Follow_lines_engraver
         \remove #Switch_heads_engraver
         \remove #Hocket_lines_engraver
+        % \consists Measure_spanner_engraver
 
         \RemoveAllEmptyStaves
 
@@ -287,6 +294,7 @@ afterGraceFraction = #(cons 15 16)
         \remove #Switch_heads_engraver
         \remove #Hocket_lines_engraver
         \remove InterruptiveGroup
+        % \consists Measure_spanner_engraver
         \clef varpercussion
 
         \override Accidental.stencil = ##f
@@ -334,6 +342,7 @@ afterGraceFraction = #(cons 15 16)
         \accepts leftHandStaff
         \accepts thirdStaff
         \accepts InterruptiveGroup
+        % \consists Measure_spanner_engraver
         \consists Grob_pq_engraver
         \consists #Interrupt_heads_engraver
         \consists #Explicit_interrupt_heads_engraver
@@ -354,6 +363,7 @@ afterGraceFraction = #(cons 15 16)
         \accepts thirdStaff
         \accepts InterruptiveGroup
         \consists Grob_pq_engraver
+        % \consists Measure_spanner_engraver
         \consists #Interrupt_heads_engraver
         \consists #Explicit_interrupt_heads_engraver
         \consists #Follow_lines_engraver
@@ -368,6 +378,7 @@ afterGraceFraction = #(cons 15 16)
         \Voice
         \remove Forbid_line_break_engraver
         \consists "Horizontal_bracket_engraver"
+        \consists Measure_spanner_engraver
         \override Accidental.font-size = 1
     }
 

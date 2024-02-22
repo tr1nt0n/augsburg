@@ -103,7 +103,10 @@ for voice_name in ["piano 1 voice", "piano 3 voice"]:
         trinton.attachment_command(
             attachments=[abjad.Tie()], selector=trinton.pleaves(exclude=[-1])
         ),
-        trinton.aftergrace_command(invisible=True),
+        trinton.aftergrace_command(
+            invisible=True,
+            selector=trinton.select_logical_ties_by_index([-1], pitched=True),
+        ),
         library.low_pass_glissandi(no_ties=True),
         library.change_lines(lines=1, clef="percussion"),
         voice=score[voice_name],
@@ -123,7 +126,10 @@ for voice_name in ["piano 1 voice", "piano 3 voice"]:
             trinton.attachment_command(
                 attachments=[abjad.Tie()], selector=trinton.pleaves(exclude=[-1])
             ),
-            trinton.aftergrace_command(invisible=True),
+            trinton.aftergrace_command(
+                invisible=True,
+                selector=trinton.select_logical_ties_by_index([-1], pitched=True),
+            ),
             library.low_pass_glissandi(
                 no_ties=True,
                 tweaks=[abjad.Tweak(r"- \tweak Glissando.style #'dotted-line")],

@@ -71,6 +71,48 @@
             - \tweak font-size #'15
             _ \middle-fermata
             \once \override Score.BarLine.transparent = ##f
+            \time 4/4
+            s1 * 1
+            ^ \markup {
+              \raise #3 \with-dimensions-from \null
+              \override #'(font-size . 5.5)
+              \concat {
+                  \abjad-metronome-mark-mixed-number-markup #2 #0 #2 #"48" #"3" #"4" 
+                  [\abjad-metric-modulation #1 #0 #2 #0 #'(1 . 1)]
+              }
+            }
+            \once \override Score.TimeSignature.stencil = ##f
+            \time 4/4
+            s1 * 1
+            \once \override Score.TimeSignature.stencil = ##f
+            \time 4/4
+            s1 * 1
+            \once \override Score.TimeSignature.stencil = ##f
+            \time 4/4
+            s1 * 1
+            \time 12/8
+            s1 * 3/2
+            \time 4/4
+            s1 * 1
+            \once \override Score.TimeSignature.stencil = ##f
+            \time 4/4
+            s1 * 1
+            \once \override Score.TimeSignature.stencil = ##f
+            \time 4/4
+            s1 * 1
+            \time 2/4
+            s1 * 1/2
+            #(ly:expect-warning "strange time signature found")
+            \time 2/25
+            s1 * 2/25
+            \once \override Score.BarLine.transparent = ##f
+            \once \override MultiMeasureRest.transparent = ##t
+            \once \override Score.TimeSignature.stencil = ##f
+            \time 1/4
+            R1 * 1/4
+            - \tweak font-size #'15
+            _ \extremely-short-fermata
+            \once \override Score.BarLine.transparent = ##f
         }
         \context StaffGroup = "Staff Group"
         <<
@@ -532,6 +574,304 @@
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
+                        \once \override Staff.Clef.X-extent = ##f
+                        \once \override Staff.Clef.extra-offset = #'(-2.5 . 0)
+                        \override Dots.staff-position = #2
+                        \staff-line-count 1
+                        \clef "percussion"
+                        c'4
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.4
+                                    #:dynamic "fffff"
+                                    #:hspace -0.2
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
+                        - \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #2 { \center-column { \line { Auf dem Deckel } \line { mit Styroporkugeln }  } }
+                          %! abjad.glissando(7)
+                        - \tweak Glissando.style #'dotted-line
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        - \tweak padding #3
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Etwa 1 - 2 Klicks pro Puls } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { 7 - 8 Klicks }
+                        \startTextSpan
+                        \>
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        c'4
+                        c'4
+                        c'4
+                        c'4
+                        c'4
+                        c'4
+                        c'4
+                        c'4
+                        c'4
+                        c'4
+                        c'4
+                        c'4
+                        c'4
+                        c'4
+                        \afterGrace
+                        c'4
+                        \stopTextSpan
+                        {
+                            \once \override Flag.stroke-style = #"grace" 
+                            \once \override Stem.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override NoteHead.no-ledgers = ##t
+                            \once \override Accidental.stencil = ##f
+                            \revert Dots.staff-position
+                            \once \override NoteHead.transparent = ##t
+                              %! abjad.glissando(6)
+                            \revert Accidental.stencil
+                              %! abjad.glissando(6)
+                            \revert NoteColumn.glissando-skip
+                              %! abjad.glissando(6)
+                            \revert NoteHead.no-ledgers
+                              %! abjad.glissando(6)
+                            \undo \hide NoteHead
+                            c'16
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.4
+                                        #:dynamic "fff"
+                                        #:hspace -0.2
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
+                        }
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 4 3) (ly:make-duration 3 0))
+                        \times 3/4
+                        {
+                            \change Staff = "piano 1 staff"
+                            \override Score.Stem.direction = #UP
+                            \override Staff.TupletBracket.direction = #UP
+                            r16
+                            [
+                            \change Staff = "piano 3 staff"
+                            \override Staff.Accidental.stencil = ##f
+                            c'16
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.1
+                                        #:dynamic "mf"
+                                        #:hspace -0.2
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
+                            - \tweak padding #2
+                            _ \markup \fontsize #3 \override #'(font-name . "Bodoni72 Book Italic") { \hspace #4 Zirpen }
+                            - \tweak stencil #constante-hairpin
+                            \<
+                            \change Staff = "piano 1 staff"
+                            c'16
+                            \change Staff = "piano 3 staff"
+                            c'16
+                            \change Staff = "piano 1 staff"
+                            c'16
+                            \change Staff = "piano 3 staff"
+                            c'16
+                            \change Staff = "piano 1 staff"
+                            c'16
+                            \change Staff = "piano 3 staff"
+                            c'16
+                            ]
+                            \revert Staff.Accidental.stencil
+                        }
+                        \change Staff = "piano 1 staff"
+                        r16
+                        [
+                        \change Staff = "piano 1 staff"
+                        c'16
+                        \change Staff = "piano 3 staff"
+                        c'16
+                        \change Staff = "piano 1 staff"
+                        c'16
+                        \change Staff = "piano 3 staff"
+                        c'16
+                        \change Staff = "piano 1 staff"
+                        c'16
+                        ]
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 7 6) (ly:make-duration 4 0))
+                        \times 6/7
+                        {
+                            \change Staff = "piano 1 staff"
+                            r16
+                            [
+                            \change Staff = "piano 3 staff"
+                            \override Staff.Accidental.stencil = ##f
+                            c'16
+                            \change Staff = "piano 1 staff"
+                            c'16
+                            \change Staff = "piano 3 staff"
+                            c'16
+                            \change Staff = "piano 1 staff"
+                            c'16
+                            \change Staff = "piano 3 staff"
+                            c'16
+                            \change Staff = "piano 1 staff"
+                            c'16
+                            ]
+                            \revert Staff.Accidental.stencil
+                        }
+                        \change Staff = "piano 1 staff"
+                        r8
+                        [
+                        \change Staff = "piano 3 staff"
+                        c'8
+                        \change Staff = "piano 1 staff"
+                        c'8
+                        \!
+                        ]
+                        \revert Score.Stem.direction
+                        \override Staff.TupletBracket.direction = #UP
+                        \change Staff = "piano 1 staff"
+                        \override Dots.staff-position = #2
+                        c'4
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.4
+                                    #:dynamic "fff"
+                                    #:hspace -0.2
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
+                          %! abjad.glissando(7)
+                        - \tweak Glissando.style #'dotted-line
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        - \tweak padding #3
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Etwa 7 - 8 Klicks pro Puls } \hspace #0.5 }
+                        - \tweak bound-details.right.padding 1.5
+                        \startTextSpan
+                        \>
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        c'4
+                        c'4
+                        c'4
+                        c'4
+                        \override Dots.staff-position = #2
+                        \once \override NoteHead.transparent = ##t
+                          %! abjad.glissando(6)
+                        \revert Accidental.stencil
+                          %! abjad.glissando(6)
+                        \revert NoteColumn.glissando-skip
+                          %! abjad.glissando(6)
+                        \revert NoteHead.no-ledgers
+                          %! abjad.glissando(6)
+                        \undo \hide NoteHead
+                        c'4
+                        \stopTextSpan
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                        - \tweak padding #3
+                        - \abjad-solid-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Kontinuierliche Geräusch } \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Möglichst kontinuierlicher Ton }
+                        - \tweak bound-details.right.padding 1.5
+                        \startTextSpan
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        c'4
+                        c'4
+                        c'4
+                        c'4
+                        c'4
+                        c'4
+                        c'4
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.1
+                                    #:dynamic "mf"
+                                    #:hspace -0.2
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
+                        \stopTextSpan
+                        - \tweak stencil #constante-hairpin
+                        \<
+                        c'4
+                        \tweak edge-height #'(0.7 . 0)
+                        \times 16/25
+                        {
+                            \revert Dots.staff-position
+                            \afterGrace
+                            c'8
+                            {
+                                \once \override Flag.stroke-style = #"grace" 
+                                \once \override Stem.stencil = ##f
+                                \once \override Flag.stencil = ##f
+                                \once \override NoteHead.no-ledgers = ##t
+                                \once \override Accidental.stencil = ##f
+                                \revert Dots.staff-position
+                                \once \override NoteHead.transparent = ##t
+                                  %! abjad.glissando(6)
+                                \revert Accidental.stencil
+                                  %! abjad.glissando(6)
+                                \revert NoteColumn.glissando-skip
+                                  %! abjad.glissando(6)
+                                \revert NoteHead.no-ledgers
+                                  %! abjad.glissando(6)
+                                \undo \hide NoteHead
+                                c'16
+                                \!
+                            }
+                        }
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        s1 * 1/4
+                        \stopStaff \startStaff
                     }
                 }
                 \context timeSignatureStaff = "piano 2 staff"
@@ -547,6 +887,19 @@
                         s1 * 5/4
                         s1 * 5/4
                         s1 * 1/4
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        s1 * 1/4
+                        \stopStaff \startStaff
+                        s1 * 1
+                        s1 * 1
+                        s1 * 1
+                        s1 * 1
+                        s1 * 3/2
+                        s1 * 1
+                        s1 * 1
+                        s1 * 1
+                        s1 * 1/2
+                        s1 * 2/25
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
@@ -666,6 +1019,136 @@
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
+                        \override Dots.staff-position = #2
+                        c'4
+                          %! abjad.glissando(7)
+                        - \tweak Glissando.style #'dotted-line
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        c'4
+                        c'4
+                        c'4
+                        c'4
+                        c'4
+                        c'4
+                        c'4
+                        c'4
+                        c'4
+                        c'4
+                        c'4
+                        c'4
+                        c'4
+                        c'4
+                        \afterGrace
+                        c'4
+                        {
+                            \once \override Flag.stroke-style = #"grace" 
+                            \once \override Stem.stencil = ##f
+                            \once \override Flag.stencil = ##f
+                            \once \override NoteHead.no-ledgers = ##t
+                            \once \override Accidental.stencil = ##f
+                            \revert Dots.staff-position
+                            \once \override NoteHead.transparent = ##t
+                              %! abjad.glissando(6)
+                            \revert Accidental.stencil
+                              %! abjad.glissando(6)
+                            \revert NoteColumn.glissando-skip
+                              %! abjad.glissando(6)
+                            \revert NoteHead.no-ledgers
+                              %! abjad.glissando(6)
+                            \undo \hide NoteHead
+                            c'16
+                        }
+                        s1 * 3/2
+                        \override Dots.staff-position = #2
+                        c'4
+                          %! abjad.glissando(7)
+                        - \tweak Glissando.style #'dotted-line
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        c'4
+                        c'4
+                        c'4
+                        c'4
+                        \override Dots.staff-position = #2
+                        \once \override NoteHead.transparent = ##t
+                          %! abjad.glissando(6)
+                        \revert Accidental.stencil
+                          %! abjad.glissando(6)
+                        \revert NoteColumn.glissando-skip
+                          %! abjad.glissando(6)
+                        \revert NoteHead.no-ledgers
+                          %! abjad.glissando(6)
+                        \undo \hide NoteHead
+                        c'4
+                          %! abjad.glissando(7)
+                        - \abjad-zero-padding-glissando
+                          %! abjad.glissando(7)
+                        \glissando
+                          %! abjad.glissando(1)
+                        \hide NoteHead
+                          %! abjad.glissando(1)
+                        \override Accidental.stencil = ##f
+                          %! abjad.glissando(1)
+                        \override NoteColumn.glissando-skip = ##t
+                          %! abjad.glissando(1)
+                        \override NoteHead.no-ledgers = ##t
+                        c'4
+                        c'4
+                        c'4
+                        c'4
+                        c'4
+                        c'4
+                        c'4
+                        c'4
+                        \tweak edge-height #'(0.7 . 0)
+                        \times 16/25
+                        {
+                            \revert Dots.staff-position
+                            \afterGrace
+                            c'8
+                            {
+                                \once \override Flag.stroke-style = #"grace" 
+                                \once \override Stem.stencil = ##f
+                                \once \override Flag.stencil = ##f
+                                \once \override NoteHead.no-ledgers = ##t
+                                \once \override Accidental.stencil = ##f
+                                \revert Dots.staff-position
+                                \once \override NoteHead.transparent = ##t
+                                  %! abjad.glissando(6)
+                                \revert Accidental.stencil
+                                  %! abjad.glissando(6)
+                                \revert NoteColumn.glissando-skip
+                                  %! abjad.glissando(6)
+                                \revert NoteHead.no-ledgers
+                                  %! abjad.glissando(6)
+                                \undo \hide NoteHead
+                                c'16
+                            }
+                        }
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        s1 * 1/4
+                        \stopStaff \startStaff
                     }
                 }
                 \context thirdStaff = "piano 4 staff"
@@ -725,6 +1208,74 @@
                         \once \override Staff.TimeSignature.transparent = ##t
                         \once \override MultiMeasureRest.transparent = ##t
                         R1 * 1/4
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 1/4
+                        \stopStaff \startStaff
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 1
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 1
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 1
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 1
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 3/2
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 1
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 1
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 1
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 1/2
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 2/25
                         \stopStaff \startStaff
                         \once \override Staff.BarLine.transparent = ##f
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
@@ -831,6 +1382,85 @@
                         \revert Dots.staff-position
                         a'16
                     }
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 1/4
+                    \stopStaff \startStaff
+                    \stopStaff \startStaff
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 1
+                    \stopStaff \startStaff
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 1
+                    \stopStaff \startStaff
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 1
+                    \stopStaff \startStaff
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 1
+                    \stopStaff \startStaff
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 3/2
+                    \stopStaff \startStaff
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 1
+                    \stopStaff \startStaff
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 1
+                    \stopStaff \startStaff
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 1
+                    \stopStaff \startStaff
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 1/2
+                    \stopStaff \startStaff
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 2/25
+                    \stopStaff \startStaff
                     \once \override Staff.BarLine.transparent = ##f
                     \once \revert Staff.StaffSymbol.line-positions
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff

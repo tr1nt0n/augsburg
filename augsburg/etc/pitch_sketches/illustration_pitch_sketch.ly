@@ -18,115 +18,636 @@
         % OPEN_BRACKETS:
         \context TimeSignatureContext = "Global Context"
         {
-            % OPENING:
-            % COMMANDS:
-            \time 4/4
-            s1 * 1
             % BEFORE:
             % COMMANDS:
             \once \override Score.TimeSignature.stencil = ##f
             % OPENING:
             % COMMANDS:
-            \time 4/4
-            s1 * 1
+            \time 4/16
+            s1 * 1/4
             % BEFORE:
             % COMMANDS:
             \once \override Score.TimeSignature.stencil = ##f
             % OPENING:
             % COMMANDS:
-            \time 4/4
-            s1 * 1
+            \time 4/16
+            s1 * 1/4
             % BEFORE:
             % COMMANDS:
             \once \override Score.TimeSignature.stencil = ##f
             % OPENING:
             % COMMANDS:
-            \time 4/4
-            s1 * 1
+            \time 4/16
+            s1 * 1/4
             % BEFORE:
             % COMMANDS:
             \once \override Score.TimeSignature.stencil = ##f
             % OPENING:
             % COMMANDS:
-            \time 4/4
-            s1 * 1
+            \time 4/16
+            s1 * 1/4
             % BEFORE:
             % COMMANDS:
             \once \override Score.TimeSignature.stencil = ##f
             % OPENING:
             % COMMANDS:
-            \time 4/4
-            s1 * 1
+            \time 4/16
+            s1 * 1/4
             % BEFORE:
             % COMMANDS:
             \once \override Score.TimeSignature.stencil = ##f
             % OPENING:
             % COMMANDS:
-            \time 4/4
-            s1 * 1
+            \time 4/16
+            s1 * 1/4
             % BEFORE:
             % COMMANDS:
             \once \override Score.TimeSignature.stencil = ##f
             % OPENING:
             % COMMANDS:
-            \time 4/4
-            s1 * 1
+            \time 4/16
+            s1 * 1/4
             % BEFORE:
             % COMMANDS:
             \once \override Score.TimeSignature.stencil = ##f
             % OPENING:
             % COMMANDS:
-            \time 4/4
-            s1 * 1
+            \time 4/16
+            s1 * 1/4
             % BEFORE:
             % COMMANDS:
             \once \override Score.TimeSignature.stencil = ##f
             % OPENING:
             % COMMANDS:
-            \time 4/4
-            s1 * 1
+            \time 4/16
+            s1 * 1/4
             % BEFORE:
             % COMMANDS:
             \once \override Score.TimeSignature.stencil = ##f
             % OPENING:
             % COMMANDS:
-            \time 4/4
-            s1 * 1
+            \time 4/16
+            s1 * 1/4
             % BEFORE:
             % COMMANDS:
             \once \override Score.TimeSignature.stencil = ##f
             % OPENING:
             % COMMANDS:
-            \time 4/4
-            s1 * 1
+            \time 4/16
+            s1 * 1/4
             % BEFORE:
             % COMMANDS:
             \once \override Score.TimeSignature.stencil = ##f
             % OPENING:
             % COMMANDS:
-            \time 4/4
-            s1 * 1
+            \time 4/16
+            s1 * 1/4
             % BEFORE:
             % COMMANDS:
             \once \override Score.TimeSignature.stencil = ##f
             % OPENING:
             % COMMANDS:
-            \time 4/4
-            s1 * 1
+            \time 4/16
+            s1 * 1/4
             % BEFORE:
             % COMMANDS:
             \once \override Score.TimeSignature.stencil = ##f
             % OPENING:
             % COMMANDS:
-            \time 4/4
-            s1 * 1
+            \time 4/16
+            s1 * 1/4
             % BEFORE:
             % COMMANDS:
             \once \override Score.TimeSignature.stencil = ##f
             % OPENING:
             % COMMANDS:
-            \time 4/4
-            s1 * 1
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
+            % BEFORE:
+            % COMMANDS:
+            \once \override Score.TimeSignature.stencil = ##f
+            % OPENING:
+            % COMMANDS:
+            \time 4/16
+            s1 * 1/4
         % CLOSE_BRACKETS:
         }
         % OPEN_BRACKETS:
@@ -149,11 +670,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <fs! c'! cs'! ef'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        c'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -162,11 +679,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! g'! af'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        e'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -175,11 +688,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! c'! cs'! ef'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        a'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -188,11 +697,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! e'! fs'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        bf'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -201,11 +706,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! c'! cs'! ef'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        f'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -214,11 +715,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! cs'! ef'! fs'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        af'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -227,11 +724,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! ef'! e'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        g'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -240,11 +733,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <g! c'! cs'! e'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        b'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -253,11 +742,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! e'! fs'! g'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        d'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -266,11 +751,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <a! c'! cs'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        ef'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -279,11 +760,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! ef'! e'! fs'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        fs'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -292,11 +769,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! c'! ef'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        cs'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -305,11 +778,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! cs'! e'! fs'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        fs'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -318,11 +787,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! fs'! g'! af'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        cs'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -331,11 +796,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <ef! c'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        d'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -344,11 +805,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! e'! fs'! g'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        ef'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -357,11 +814,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! c'! cs'! ef'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        e'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -370,11 +823,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! e'! fs'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        a'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -383,11 +832,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! cs'! e'! af'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        c'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -396,11 +841,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <ef!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        g'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -409,11 +850,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <fs! c'! cs'! ef'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        b'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -422,11 +859,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! g'! af'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        bf'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -435,11 +868,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! c'! cs'! ef'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        f'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -448,11 +877,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! e'! fs'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        af'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -461,11 +886,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! c'! cs'! ef'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        f'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -474,11 +895,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! cs'! ef'! fs'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        af'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -487,11 +904,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! ef'! e'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        g'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -500,11 +913,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <g! c'! cs'! e'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        b'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -513,11 +922,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! e'! fs'! g'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        bf'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -526,11 +931,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <a! c'! cs'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        d'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -539,11 +940,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! ef'! e'! fs'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        ef'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -552,11 +949,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! c'! ef'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        fs'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -565,11 +958,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! cs'! e'! fs'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        cs'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -578,11 +967,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! fs'! g'! af'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        a'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -591,11 +976,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <ef! c'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        c'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -604,11 +985,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! e'! fs'! g'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        e'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -617,11 +994,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! c'! cs'! ef'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        c'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -630,11 +1003,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! e'! fs'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        e'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -643,11 +1012,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! cs'! e'! af'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        a'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -656,11 +1021,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <ef!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        b'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -669,11 +1030,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <fs! c'! cs'! ef'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        bf'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -682,11 +1039,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! g'! af'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        f'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -695,11 +1048,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! c'! cs'! ef'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        af'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -708,11 +1057,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! e'! fs'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        g'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -721,11 +1066,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! c'! cs'! ef'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        fs'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -734,11 +1075,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! cs'! ef'! fs'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        cs'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -747,11 +1084,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! ef'! e'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        d'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -760,11 +1093,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <g! c'! cs'! e'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        ef'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -773,11 +1102,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! e'! fs'! g'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        d'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -786,11 +1111,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <a! c'! cs'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        ef'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -799,11 +1120,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! ef'! e'! fs'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        fs'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -812,11 +1129,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! c'! ef'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        cs'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -825,11 +1138,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! cs'! e'! fs'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        e'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -838,11 +1147,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! fs'! g'! af'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        a'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -851,11 +1156,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <ef! c'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        c'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -864,11 +1165,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! e'! fs'! g'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        af'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -877,11 +1174,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! c'! cs'! ef'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        g'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -890,11 +1183,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! e'! fs'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        b'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -903,11 +1192,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! cs'! e'! af'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        bf'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -916,11 +1201,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <ef!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        f'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -929,11 +1210,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <fs! c'! cs'! ef'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        bf'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -942,11 +1219,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! g'! af'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        f'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -955,11 +1228,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! c'! cs'! ef'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        af'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -968,11 +1237,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! e'! fs'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        g'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -981,11 +1246,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! c'! cs'! ef'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        b'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -994,11 +1255,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! cs'! ef'! fs'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        fs'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1007,11 +1264,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! ef'! e'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        cs'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1020,11 +1273,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <g! c'! cs'! e'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        d'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1033,11 +1282,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! e'! fs'! g'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        ef'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1046,11 +1291,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <a! c'! cs'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        a'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1059,11 +1300,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! ef'! e'! fs'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        c'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1072,11 +1309,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! c'! ef'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        e'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1085,11 +1318,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! cs'! e'! fs'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        c'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1098,11 +1327,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! fs'! g'! af'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        e'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1111,11 +1336,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <ef! c'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        a'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1124,11 +1345,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! e'! fs'! g'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        g'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1137,11 +1354,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! c'! cs'! ef'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        b'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1150,11 +1363,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! e'! fs'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        bf'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1163,11 +1372,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! cs'! e'! af'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        f'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1176,11 +1381,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <ef!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        af'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1189,11 +1390,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <fs! c'! cs'! ef'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        d'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1202,11 +1399,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! g'! af'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        ef'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1215,11 +1408,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! c'! cs'! ef'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        fs'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1228,11 +1417,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! e'! fs'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        cs'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1241,11 +1426,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! c'! cs'! ef'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        fs'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1254,11 +1435,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! cs'! ef'! fs'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        cs'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1267,11 +1444,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! ef'! e'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        d'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1280,11 +1453,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <g! c'! cs'! e'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        ef'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1293,11 +1462,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! e'! fs'! g'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        e'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1306,11 +1471,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <a! c'! cs'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        a'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1319,11 +1480,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! ef'! e'! fs'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        c'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1332,11 +1489,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! c'! ef'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        f'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1345,11 +1498,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! cs'! e'! fs'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        af'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1358,11 +1507,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! fs'! g'! af'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        g'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1371,11 +1516,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <ef! c'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        b'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1384,11 +1525,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! e'! fs'! g'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        bf'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1397,11 +1534,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! c'! cs'! ef'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        b'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1410,11 +1543,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! e'! fs'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        bf'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1423,11 +1552,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! cs'! e'! af'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        f'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1436,11 +1561,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <ef!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        af'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1449,11 +1570,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <fs! c'! cs'! ef'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        g'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1462,11 +1579,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! g'! af'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        d'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1475,11 +1588,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! c'! cs'! ef'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        ef'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1488,11 +1597,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! e'! fs'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        fs'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1501,11 +1606,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! c'! cs'! ef'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        cs'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1514,11 +1615,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! cs'! ef'! fs'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        a'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1527,11 +1624,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! ef'! e'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        c'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1540,11 +1633,7 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <g! c'! cs'! e'!>16
-                        % AFTER:
-                        % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        e'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1553,11 +1642,16 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! e'! fs'! g'!>16
-                        % AFTER:
+                        c'16
+                        % BEFORE:
                         % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        e'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1566,11 +1660,16 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <a! c'! cs'!>16
-                        % AFTER:
+                        a'16
+                        % BEFORE:
                         % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        af'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1579,11 +1678,16 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! ef'! e'! fs'!>16
-                        % AFTER:
+                        g'16
+                        % BEFORE:
                         % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        b'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1592,11 +1696,16 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! c'! ef'!>16
-                        % AFTER:
+                        bf'16
+                        % BEFORE:
                         % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        f'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1605,11 +1714,16 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! cs'! e'! fs'!>16
-                        % AFTER:
+                        fs'16
+                        % BEFORE:
                         % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        cs'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1618,11 +1732,16 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! fs'! g'! af'!>16
-                        % AFTER:
+                        d'16
+                        % BEFORE:
                         % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        ef'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1631,11 +1750,16 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <ef! c'!>16
-                        % AFTER:
+                        d'16
+                        % BEFORE:
                         % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        ef'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1644,11 +1768,16 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! e'! fs'! g'!>16
-                        % AFTER:
+                        fs'16
+                        % BEFORE:
                         % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        cs'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1657,11 +1786,16 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! c'! cs'! ef'!>16
-                        % AFTER:
+                        e'16
+                        % BEFORE:
                         % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        a'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1670,11 +1804,16 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! e'! fs'!>16
-                        % AFTER:
+                        c'16
+                        % BEFORE:
                         % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        bf'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1683,11 +1822,16 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! cs'! e'! af'!>16
-                        % AFTER:
+                        f'16
+                        % BEFORE:
                         % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        af'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1696,11 +1840,16 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <ef!>16
-                        % AFTER:
+                        g'16
+                        % BEFORE:
                         % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        b'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1709,11 +1858,16 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <fs! c'! cs'! ef'!>16
-                        % AFTER:
+                        g'16
+                        % BEFORE:
                         % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        b'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1722,11 +1876,16 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! g'! af'!>16
-                        % AFTER:
+                        bf'16
+                        % BEFORE:
                         % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        f'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1735,11 +1894,16 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! c'! cs'! ef'!>16
-                        % AFTER:
+                        af'16
+                        % BEFORE:
                         % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        fs'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1748,11 +1912,16 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! e'! fs'!>16
-                        % AFTER:
+                        cs'16
+                        % BEFORE:
                         % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        d'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1761,11 +1930,16 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! c'! cs'! ef'!>16
-                        % AFTER:
+                        ef'16
+                        % BEFORE:
                         % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        a'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1774,11 +1948,16 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <af! cs'! ef'! fs'!>16
-                        % AFTER:
+                        c'16
+                        % BEFORE:
                         % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        e'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1787,11 +1966,16 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <b! ef'! e'!>16
-                        % AFTER:
+                        c'16
+                        % BEFORE:
                         % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        e'16
                         % BEFORE:
                         % COMMANDS:
                         \once \override Beam.stencil = ##f
@@ -1800,279 +1984,1924 @@
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \revert Staff.Accidental.X-extent
-                        <g! c'! cs'! e'!>16
-                        % AFTER:
+                        a'16
+                        % BEFORE:
                         % COMMANDS:
-                        \override Staff.Accidental.X-extent = ##f
-                        % ABSOLUTE_BEFORE:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        f'16
+                        % BEFORE:
                         % COMMANDS:
-                        \set suggestAccidentals = ##t
-                        c'32
-                        % AFTER:
-                        % START_BEAM:
-                        [
-                        cs'32
-                        ef'32
-                        e'32
-                        fs'32
-                        g'32
-                        af'32
-                        a'32
-                        b'32
-                        a'32
-                        ef'32
-                        c'32
-                        cs'32
-                        af'32
-                        e'32
-                        fs'32
-                        g'32
-                        af'32
-                        e'32
-                        fs'32
-                        a'32
-                        b'32
-                        cs'32
-                        ef'32
-                        c'32
-                        cs'32
-                        ef'32
-                        fs'32
-                        g'32
-                        af'32
-                        e'32
-                        b'32
-                        a'32
-                        b'32
-                        ef'32
-                        c'32
-                        cs'32
-                        e'32
-                        fs'32
-                        g'32
-                        af'32
-                        e'32
-                        fs'32
-                        g'32
-                        b'32
-                        a'32
-                        cs'32
-                        ef'32
-                        c'32
-                        cs'32
-                        ef'32
-                        g'32
-                        af'32
-                        e'32
-                        fs'32
-                        a'32
-                        b'32
-                        a'32
-                        ef'32
-                        c'32
-                        cs'32
-                        fs'32
-                        g'32
-                        af'32
-                        e'32
-                        fs'32
-                        g'32
-                        af'32
-                        a'32
-                        b'32
-                        cs'32
-                        ef'32
-                        c'32
-                        cs'32
-                        ef'32
-                        af'32
-                        e'32
-                        fs'32
-                        g'32
-                        b'32
-                        a'32
-                        b'32
-                        ef'32
-                        c'32
-                        cs'32
-                        g'32
-                        af'32
-                        e'32
-                        fs'32
-                        g'32
-                        af'32
-                        e'32
-                        b'32
-                        a'32
-                        cs'32
-                        ef'32
-                        c'32
-                        c'32
-                        cs'32
-                        ef'32
-                        e'32
-                        fs'32
-                        g'32
-                        af'32
-                        a'32
-                        b'32
-                        a'32
-                        ef'32
-                        c'32
-                        cs'32
-                        af'32
-                        e'32
-                        fs'32
-                        g'32
-                        af'32
-                        e'32
-                        fs'32
-                        a'32
-                        b'32
-                        cs'32
-                        ef'32
-                        c'32
-                        cs'32
-                        ef'32
-                        fs'32
-                        g'32
-                        af'32
-                        e'32
-                        b'32
-                        a'32
-                        b'32
-                        ef'32
-                        c'32
-                        cs'32
-                        e'32
-                        fs'32
-                        g'32
-                        af'32
-                        e'32
-                        fs'32
-                        g'32
-                        b'32
-                        a'32
-                        cs'32
-                        ef'32
-                        c'32
-                        cs'32
-                        ef'32
-                        g'32
-                        af'32
-                        e'32
-                        fs'32
-                        a'32
-                        b'32
-                        a'32
-                        ef'32
-                        c'32
-                        cs'32
-                        fs'32
-                        g'32
-                        af'32
-                        e'32
-                        fs'32
-                        g'32
-                        af'32
-                        a'32
-                        b'32
-                        cs'32
-                        ef'32
-                        c'32
-                        cs'32
-                        ef'32
-                        af'32
-                        e'32
-                        fs'32
-                        g'32
-                        b'32
-                        a'32
-                        b'32
-                        ef'32
-                        c'32
-                        cs'32
-                        g'32
-                        af'32
-                        e'32
-                        fs'32
-                        g'32
-                        af'32
-                        e'32
-                        b'32
-                        a'32
-                        cs'32
-                        ef'32
-                        c'32
-                        c'32
-                        cs'32
-                        ef'32
-                        e'32
-                        fs'32
-                        g'32
-                        af'32
-                        a'32
-                        b'32
-                        a'32
-                        ef'32
-                        c'32
-                        cs'32
-                        af'32
-                        e'32
-                        fs'32
-                        g'32
-                        af'32
-                        e'32
-                        fs'32
-                        a'32
-                        b'32
-                        cs'32
-                        ef'32
-                        c'32
-                        cs'32
-                        ef'32
-                        fs'32
-                        g'32
-                        af'32
-                        e'32
-                        b'32
-                        a'32
-                        b'32
-                        ef'32
-                        c'32
-                        cs'32
-                        e'32
-                        fs'32
-                        g'32
-                        af'32
-                        e'32
-                        fs'32
-                        g'32
-                        b'32
-                        a'32
-                        cs'32
-                        ef'32
-                        c'32
-                        cs'32
-                        ef'32
-                        g'32
-                        af'32
-                        e'32
-                        fs'32
-                        a'32
-                        b'32
-                        a'32
-                        ef'32
-                        c'32
-                        cs'32
-                        fs'32
-                        % AFTER:
-                        % STOP_BEAM:
-                        ]
-                        % ABSOLUTE_AFTER:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        af'16
+                        % BEFORE:
                         % COMMANDS:
-                        \set suggestAccidentals = ##f
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        g'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        b'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        bf'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        d'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        ef'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        fs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        cs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        fs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        cs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        d'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        ef'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        e'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        a'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        c'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        b'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        bf'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        f'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        af'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        g'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        af'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        g'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        b'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        bf'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        f'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        d'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        ef'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        fs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        cs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        a'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        c'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        e'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        c'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        e'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        a'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        bf'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        f'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        af'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        g'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        b'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        fs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        cs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        d'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        ef'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        d'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        ef'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        fs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        cs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        e'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        a'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        c'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        g'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        b'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        bf'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        f'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        af'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        f'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        af'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        g'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        b'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        bf'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        fs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        cs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        d'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        ef'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        a'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        c'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        e'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        c'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        e'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        a'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        b'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        bf'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        f'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        af'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        g'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        d'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        ef'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        fs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        cs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        fs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        cs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        d'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        ef'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        e'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        a'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        c'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        af'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        g'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        b'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        bf'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        f'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        bf'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        f'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        af'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        g'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        b'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        d'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        ef'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        fs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        cs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        a'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        c'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        e'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        c'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        e'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        a'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        g'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        b'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        bf'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        f'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        af'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        fs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        cs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        d'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        ef'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        d'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        ef'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        fs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        cs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        e'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        a'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        c'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        f'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        af'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        g'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        b'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        bf'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        b'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        bf'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        f'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        af'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        g'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        fs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        cs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        d'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        ef'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        a'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        c'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        e'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        c'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        e'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        a'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        af'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        g'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        b'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        bf'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        f'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        d'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        ef'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        fs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        cs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        fs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        cs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        d'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        ef'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        e'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        a'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        c'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        bf'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        f'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        af'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        g'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        b'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        g'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        b'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        bf'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        f'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        af'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        d'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        ef'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        fs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        cs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        a'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        c'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        e'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        c'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        e'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        a'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        f'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        af'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        g'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        b'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        bf'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        fs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        cs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        d'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        ef'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        d'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        ef'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        fs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        cs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        e'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        a'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        c'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        b'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        bf'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        f'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        af'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        g'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        af'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        g'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        b'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        bf'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        f'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        fs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        cs'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        d'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        ef'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        a'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        c'16
+                        % BEFORE:
+                        % COMMANDS:
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        e'16
                     % CLOSE_BRACKETS:
                     }
                 % CLOSE_BRACKETS:
@@ -2083,22 +3912,96 @@
                     % OPEN_BRACKETS:
                     \context Voice = "piano 2 voice"
                     {
-                        s1 * 1
-                        s1 * 1
-                        s1 * 1
-                        s1 * 1
-                        s1 * 1
-                        s1 * 1
-                        s1 * 1
-                        s1 * 1
-                        s1 * 1
-                        s1 * 1
-                        s1 * 1
-                        s1 * 1
-                        s1 * 1
-                        s1 * 1
-                        s1 * 1
-                        s1 * 1
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
                     % CLOSE_BRACKETS:
                     }
                 % CLOSE_BRACKETS:
@@ -2109,22 +4012,196 @@
                     % OPEN_BRACKETS:
                     \context Voice = "piano 3 voice"
                     {
-                        s1 * 1
-                        s1 * 1
-                        s1 * 1
-                        s1 * 1
-                        s1 * 1
-                        s1 * 1
-                        s1 * 1
-                        s1 * 1
-                        s1 * 1
-                        s1 * 1
-                        s1 * 1
-                        s1 * 1
-                        s1 * 1
-                        s1 * 1
-                        s1 * 1
-                        s1 * 1
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                    % CLOSE_BRACKETS:
+                    }
+                % CLOSE_BRACKETS:
+                }
+                % OPEN_BRACKETS:
+                \context thirdStaff = "piano 4 staff"
+                {
+                    % OPEN_BRACKETS:
+                    \context Voice = "piano 4 voice"
+                    {
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
+                        s1 * 1/4
                     % CLOSE_BRACKETS:
                     }
                 % CLOSE_BRACKETS:
@@ -2132,27 +4209,101 @@
             % CLOSE_BRACKETS:
             >>
             % OPEN_BRACKETS:
-            \context lowPassStaff = "piano 4 staff"
+            \context lowPassStaff = "piano 5 staff"
             {
                 % OPEN_BRACKETS:
-                \context Voice = "piano 4 voice"
+                \context Voice = "piano 5 voice"
                 {
-                    s1 * 1
-                    s1 * 1
-                    s1 * 1
-                    s1 * 1
-                    s1 * 1
-                    s1 * 1
-                    s1 * 1
-                    s1 * 1
-                    s1 * 1
-                    s1 * 1
-                    s1 * 1
-                    s1 * 1
-                    s1 * 1
-                    s1 * 1
-                    s1 * 1
-                    s1 * 1
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
+                    s1 * 1/4
                 % CLOSE_BRACKETS:
                 }
             % CLOSE_BRACKETS:

@@ -85,3 +85,24 @@ def return_epsilon_chords(index, hand):
             out.append(pair[-1])
 
     return out
+
+
+# hamonshu
+
+row = [0, 4, 9, 10, 5, 8, 7, 11, 2, 3, 6, 1]
+
+partitioned_row = abjad.sequence.partition_by_counts(
+    sequence=row,
+    counts=[3, 5, 4],
+    overhang=True,
+)
+
+helianthated_row = baca.sequence.helianthate(partitioned_row, n=1, m=2)
+
+row_sequence = abjad.sequence.flatten(helianthated_row)
+
+row_sequence = trinton.remove_adjacent(row_sequence)
+
+
+def return_adumbration_pitches(index=0):
+    return trinton.rotated_sequence(row_sequence, index % len(row_sequence))

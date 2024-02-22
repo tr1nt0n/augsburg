@@ -14,12 +14,12 @@ from augsburg import ts
 
 # score
 
-score = library.augsburg_score([(4, 4) for _ in range(0, 16)])
+score = library.augsburg_score([(4, 16) for _ in range(90)])
 
 # sketches
 
 trinton.make_music(
-    lambda _: trinton.select_target(_, (1, 8)),
+    lambda _: trinton.select_target(_, (1, 90)),
     evans.RhythmHandler(
         evans.talea(
             [
@@ -28,23 +28,8 @@ trinton.make_music(
             16,
         )
     ),
-    evans.PitchHandler(pitch_list=pitch.return_e_pentachords(index=0)),
+    evans.PitchHandler(pitch_list=pitch.return_adumbration_pitches(index=0)),
     trinton.noteheads_only(),
-    voice=score["piano 1 voice"],
-)
-
-trinton.make_music(
-    lambda _: trinton.select_target(_, (9, 16)),
-    evans.RhythmHandler(
-        evans.talea(
-            [
-                1,
-            ],
-            32,
-        )
-    ),
-    evans.PitchHandler(pitch_list=pitch.return_seed_pitch_sequence(index=0)),
-    abjad.beam,
     voice=score["piano 1 voice"],
 )
 
@@ -53,6 +38,19 @@ trinton.make_music(
 library.handle_accidentals(score=score)
 
 trinton.remove_redundant_time_signatures(score=score)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1,)),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override Score.TimeSignature.stencil = ##f", site="before"
+            )
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+    ),
+    voice=score["Global Context"],
+)
 
 # persist
 
