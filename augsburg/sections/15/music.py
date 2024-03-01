@@ -24,6 +24,205 @@ score = library.augsburg_score(
 
 # rh music
 
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1,)),
+    evans.RhythmHandler(
+        rhythm.rhythm_a(index=0, stage=2),
+    ),
+    rmakers.unbeam,
+    trinton.notehead_bracket_command(),
+    voice=score["piano 1 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (2, 3)),
+    evans.RhythmHandler(
+        rhythm.rhythm_a(index=8, stage=1),
+    ),
+    rmakers.unbeam,
+    trinton.notehead_bracket_command(),
+    voice=score["piano 1 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1, 4)),
+    trinton.IntermittentVoiceHandler(
+        evans.RhythmHandler(
+            rhythm.rhythm_d(
+                stage=2,
+                hand="rh",
+                tuplet_selector=trinton.select_leaves_by_index(
+                    [0, 1, 2, 4, 6, 9], pitched=True
+                ),
+                inverse_tuplet_directions=False,
+            )
+        ),
+        direction=abjad.DOWN,
+        voice_name="delta voice",
+        preprocessor=trinton.fuse_eighths_preprocessor((9, 10, 7)),
+    ),
+    voice=score["piano 1 voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (2, 4)),
+    rmakers.force_rest,
+    rmakers.rewrite_rest_filled,
+    rmakers.trivialize,
+    rmakers.extract_trivial,
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                [
+                    r"\once \override Voice.Rest.transparent = ##t",
+                    r"\once \override Voice.Dots.transparent = ##t",
+                ],
+                "before",
+            ),
+        ],
+        selector=abjad.select.rests,
+    ),
+    voice=score["delta voice"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1, 4)),
+    evans.PitchHandler(pitch.return_adumbration_pitches(index=0)),
+    trinton.octavation(
+        octave=2, selector=trinton.select_leaves_by_index([0, 2], pitched=True)
+    ),
+    trinton.octavation(
+        octave=1,
+        selector=trinton.select_leaves_by_index(
+            [1, 3, 8, 9, 10, 11, 13, 15, 17, -6, -1], pitched=True
+        ),
+    ),
+    trinton.pitch_with_selector_command(
+        pitch_list=["g'", "g''"],
+        selector=trinton.patterned_tie_index_selector([1, 4], 7),
+    ),
+    library.imbrication_command(
+        indices=[1, 4],
+        period=7,
+        direction=abjad.DOWN,
+        name="alpha imbrication",
+        hocket=False,
+    ),
+    voice=score["piano 1 voice temp"],
+)
+
+for leaf in abjad.select.leaves(score["alpha imbrication"]):
+    for indicator in abjad.get.indicators(leaf, abjad.Articulation):
+        abjad.detach(abjad.Articulation, leaf)
+        abjad.attach(indicator, leaf, direction=abjad.UP)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1,)),
+    trinton.vertical_accidentals(
+        selector=trinton.logical_ties(first=True, pitched=True)
+    ),
+    voice=score["piano 1 voice temp temp"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1, 3)),
+    rmakers.unbeam,
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.StartBeam(),
+            abjad.StopBeam(),
+            abjad.BeamCount(left=1, right=1),
+            abjad.BeamCount(left=1, right=1),
+            abjad.StartBeam(),
+            abjad.StopBeam(),
+        ],
+        selector=trinton.select_leaves_by_index([0, 26, 26, 28, 28, -1]),
+    ),
+    trinton.vertical_accidentals(
+        selector=trinton.select_logical_ties_by_index(
+            [-4, -3, -2, -1], first=True, pitched=True
+        )
+    ),
+    library.color_music(color=r"\一"),
+    voice=score["piano 1 voice temp temp"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1,)),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override Rest.staff-position = #12", site="before"
+            ),
+        ],
+        selector=abjad.select.rests,
+    ),
+    voice=score["piano 1 voice temp temp"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1, 4)),
+    library.manual_beam_positions(positions=(-24, -24)),
+    library.color_music(color=r"\一"),
+    voice=score["alpha imbrication"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1, 4)),
+    evans.PitchHandler(pitch.return_adumbration_pitches(index=28)),
+    trinton.octavation(octave=1, selector=trinton.select_tuplets_by_index([1, 2, 3])),
+    trinton.octavation(octave=1, selector=trinton.pleaves()),
+    trinton.octavation(
+        octave=-1, selector=trinton.select_leaves_by_index([0, 5, 10], pitched=True)
+    ),
+    rmakers.unbeam,
+    trinton.notehead_bracket_command(),
+    trinton.pitch_with_selector_command(
+        pitch_list=["a''", "af''"],
+        selector=trinton.patterned_tie_index_selector([0, 3], 7),
+    ),
+    trinton.vertical_accidentals(
+        selector=trinton.logical_ties(first=True, pitched=True)
+    ),
+    library.color_music(color=r"\三"),
+    library.imbrication_command(
+        indices=[0, 3],
+        period=7,
+        direction=abjad.UP,
+        name="delta imbrication",
+        hocket=False,
+    ),
+    voice=score["delta voice"],
+)
+
+for leaf in abjad.select.leaves(score["delta imbrication"]):
+    for indicator in abjad.get.indicators(leaf, abjad.LilyPondLiteral):
+        abjad.detach(indicator, leaf)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1,)),
+    library.manual_beam_positions(positions=(-9, -9)),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override Rest.staff-position = #-2", site="before"
+            ),
+        ],
+        selector=abjad.select.rests,
+    ),
+    voice=score["delta voice temp"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (1, 4)),
+    library.manual_beam_positions(positions=(26, 26)),
+    trinton.attachment_command(
+        attachments=[abjad.LilyPondLiteral(r"\voiceOne", site="before")],
+        selector=trinton.select_leaves_by_index([0]),
+    ),
+    library.color_music(color=r"\三"),
+    voice=score["delta imbrication"],
+)
 
 # globals
 
@@ -46,7 +245,7 @@ trinton.make_music(
             abjad.LilyPondLiteral(
                 [
                     r"^ \markup {",
-                    r"  \raise #16 \with-dimensions-from \null",
+                    r"  \raise #17 \with-dimensions-from \null",
                     r"  \override #'(font-size . 5.5)",
                     r"  \concat {",
                     r"""\abjad-metronome-mark-mixed-number-markup #3 #0 #2 #"75" #"3" #"5"  """,
@@ -126,7 +325,7 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([0, -1]),
     ),
-    voice=score["piano 1 voice"],
+    voice=score["piano 1 voice temp temp"],
 )
 
 trinton.make_music(
@@ -162,7 +361,7 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([0, -1]),
     ),
-    voice=score["piano 1 voice"],
+    voice=score["piano 1 voice temp temp"],
 )
 
 # trinton.make_music(
@@ -202,7 +401,7 @@ trinton.make_music(
 
 # beautification
 
-library.handle_accidentals(score=score, force_accidentals=False)
+# library.handle_accidentals(score=score, force_accidentals=False)
 
 # trinton.make_music(
 #     lambda _: trinton.select_target(_, (1, 3)),

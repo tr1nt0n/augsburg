@@ -118,6 +118,30 @@ def return_clef_whitespace_literal(offset_pair=(-2.5, 0)):
 # notation tools
 
 
+def manual_beam_positions(positions, selector=abjad.select.leaves):
+    def beaming(argument):
+        selections = selector(argument)
+        leaves = abjad.select.leaves(selections)
+
+        for leaf in leaves:
+            if abjad.get.has_indicator(leaf, abjad.StartBeam):
+                start_beam_leaf = leaf
+                break
+
+        start_beam = abjad.get.indicator(start_beam_leaf, abjad.StartBeam)
+
+        start_beam = abjad.bundle(
+            start_beam,
+            rf"\tweak Beam.positions #'({positions[0]} . {positions[-1]})",
+        )
+
+        abjad.detach(abjad.StartBeam, start_beam_leaf)
+
+        abjad.attach(start_beam, start_beam_leaf)
+
+    return beaming
+
+
 def imbrication_command(
     indices, period, direction, name, hocket=True, selector=abjad.select.leaves
 ):
@@ -386,7 +410,89 @@ def reset_line_positions(score, voice_names):
             abjad.attach(reset, shard[0])
 
 
-def interruptive_polyphony(hand, stage=1, dynamic=True):
+def color_music(color, selector=abjad.select.leaves, dynamic=True):
+    def coloring(argument):
+        selections = selector(argument)
+
+        literal_strings = [
+            rf"\override NoteHead.details.interrupt-color = {color}",
+            rf"\override NoteHead.details.switch-color = {color}",
+            rf"\override NoteHead.details.folow-color = {color}",
+            rf"\override NoteHead.details.hocket-color = {color}",
+            rf"\override Accidental.color = {color}",
+            rf"\override Beam.color = {color}",
+            rf"\override Dots.color = {color}",
+            rf"\override Flag.color = {color}",
+            rf"\override Glissando.color = {color}",
+            rf"\override MultiMeasureRest.color = {color}",
+            rf"\override NoteHead.color = {color}",
+            rf"\override RepeatTie.color = {color}",
+            rf"\override Rest.color = {color}",
+            rf"\override Slur.color = {color}",
+            rf"\override Stem.color = {color}",
+            rf"\override StemTremolo.color = {color}",
+            rf"\override Tie.color = {color}",
+            rf"\override TupletBracket.color = {color}",
+            rf"\override TupletNumber.color = {color}",
+            r"\override Dots.staff-position = #2",
+        ]
+
+        if dynamic is True:
+            literal_strings.append(
+                rf"\override DynamicText.color = {color}",
+            )
+
+        abjad.attach(
+            abjad.LilyPondLiteral(
+                literal_strings,
+                site="before",
+            ),
+            selections[0],
+        )
+
+        abjad.attach(
+            abjad.LilyPondLiteral(
+                [
+                    rf"\revert Accidental.color",
+                    rf"\revert Beam.color",
+                    rf"\revert Dots.color",
+                    rf"\revert Flag.color",
+                    rf"\revert Glissando.color",
+                    rf"\revert MultiMeasureRest.color",
+                    rf"\revert NoteHead.color",
+                    rf"\revert RepeatTie.color",
+                    rf"\revert Rest.color",
+                    rf"\revert Slur.color",
+                    rf"\revert Stem.color",
+                    rf"\revert StemTremolo.color",
+                    rf"\revert Tie.color",
+                    rf"\revert TupletBracket.color",
+                    rf"\revert TupletNumber.color",
+                    rf"\revert DynamicText.color",
+                    r"\revert Dots.staff-position",
+                ],
+                site="absolute_after",
+            ),
+            selections[-1],
+        )
+
+        for leaf in abjad.select.leaves(selections):
+            if abjad.get.has_indicator(leaf, abjad.Articulation):
+                for articulation in abjad.get.indicators(leaf, abjad.Articulation):
+                    bundle = abjad.bundle(articulation, rf"- \tweak color {color}")
+
+                    abjad.detach(abjad.Articulation, leaf)
+
+                    abjad.attach(bundle, leaf)
+
+    return coloring
+
+
+def interruptive_polyphony(
+    hand,
+    stage=1,
+    dynamic=True,
+):
     def polyphony(argument):
         if hand == "rh":
             colors = ["\一", "\三"]
