@@ -208,6 +208,13 @@ trinton.make_music(
     trinton.vertical_accidentals(
         selector=trinton.logical_ties(first=True, pitched=True)
     ),
+    trinton.linear_attachment_command(
+        attachments=[
+            abjad.BeamCount(left=2, right=1),
+            abjad.BeamCount(left=1, right=2),
+        ],
+        selector=trinton.select_logical_ties_by_index([4, 5], first=True, grace=False),
+    ),
     voice=score["piano 1 voice temp temp"],
 )
 
@@ -442,6 +449,11 @@ trinton.make_music(
         selector=trinton.logical_ties(first=True, pitched=True)
     ),
     library.color_music(color=r"\三"),
+    trinton.attachment_command(
+        attachments=[library.boxed_markup(string="Tasten")],
+        selector=trinton.select_leaves_by_index([0]),
+        direction=abjad.DOWN,
+    ),
     voice=score["delta voice temp"],
 )
 

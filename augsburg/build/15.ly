@@ -102,6 +102,8 @@
                                             - \staccato
                                             )
                                             \once \override Staff.Accidental.stencil = ##f
+                                            \set stemLeftBeamCount = 2
+                                            \set stemRightBeamCount = 1
                                             g''16
                                             - \tweak color \一
                                             - \natural-articulation
@@ -111,6 +113,8 @@
                                         \times 6/7
                                         {
                                             \once \override Rest.staff-position = #12
+                                            \set stemLeftBeamCount = 1
+                                            \set stemRightBeamCount = 2
                                             r16
                                             \once \override Staff.Accidental.stencil = ##f
                                             f'16
@@ -688,6 +692,7 @@
                                                 - \tweak color \三
                                                 - \natural-articulation
                                                 _ \fp
+                                                _ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Tasten }
                                                 - \tweak Beam.positions #'(-9 . -9)
                                                 [
                                                 _ \<
