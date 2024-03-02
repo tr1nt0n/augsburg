@@ -163,6 +163,12 @@ trinton.make_music(
         attachments=[abjad.StartBeam(), abjad.StopBeam()],
         selector=trinton.select_leaves_by_index([0, -3], grace=False, pitched=True),
     ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.BeamCount(left=2, right=1),
+        ],
+        selector=trinton.select_leaves_by_index([11], grace=False, pitched=True),
+    ),
     voice=score["piano 1 voice"],
 )
 

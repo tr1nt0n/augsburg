@@ -180,6 +180,8 @@ afterGraceFraction = #(cons 15 16)
         % \shape #'((-2 . 0) (-1 . 0) (-0.5 . 0) (0 . 0)) RepeatTie
         % \override RepeatTie.X-extent = ##f
 
+        \override TrillPitchAccidental.avoid-slur = #'ignore
+
         tupletFullLength = ##t
         \override TupletBracket.full-length-to-extent = ##f
         \override TupletBracket.padding = 2
@@ -379,7 +381,10 @@ afterGraceFraction = #(cons 15 16)
         \remove Forbid_line_break_engraver
         \consists "Horizontal_bracket_engraver"
         \consists Measure_spanner_engraver
+
         \override Accidental.font-size = 1
+
+        \override MeasureSpanner.staff-padding = 30
     }
 
 }

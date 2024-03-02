@@ -173,9 +173,9 @@
                         <<
                             \context Voice = "On_Beat_Grace_Container"
                             {
-                                  %! abjad.on_beat_grace_container(1)
+                                  %! trinton.on_beat_grace_container(1)
                                 \set fontSize = #-5.5
-                                  %! abjad.on_beat_grace_container(2)
+                                  %! trinton.on_beat_grace_container(2)
                                 \my-hack-slash
                                 \override Beam.beam-thickness = #0.48
                                 \override Beam.beam-thickness = #0.48
@@ -183,7 +183,7 @@
                                 \override Beam.length-fraction = #1
                                 \revert Staff.Accidental.X-extent
                                 \once \override NoteHead.no-ledgers = ##t
-                                  %! abjad.on_beat_grace_container(3)
+                                  %! trinton.on_beat_grace_container(3)
                                 \voiceOne
                                 <
                                     \tweak font-size 0
@@ -212,7 +212,7 @@
                                 \revert Staff.Accidental.X-extent
                                 \once \override Stem.direction = #down
                                 \clef "percussion"
-                                  %! abjad.on_beat_grace_container(4)
+                                  %! trinton.on_beat_grace_container(4)
                                 \voiceTwo
                                 c'16.
                                 ^ \f
@@ -227,9 +227,9 @@
                         <<
                             \context Voice = "On_Beat_Grace_Container"
                             {
-                                  %! abjad.on_beat_grace_container(1)
+                                  %! trinton.on_beat_grace_container(1)
                                 \set fontSize = #-5.5
-                                  %! abjad.on_beat_grace_container(2)
+                                  %! trinton.on_beat_grace_container(2)
                                 \my-hack-slash
                                 \override Beam.beam-thickness = #0.48
                                 \override Beam.beam-thickness = #0.48
@@ -237,7 +237,7 @@
                                 \override Beam.length-fraction = #1
                                 \revert Staff.Accidental.X-extent
                                 \once \override NoteHead.no-ledgers = ##t
-                                  %! abjad.on_beat_grace_container(3)
+                                  %! trinton.on_beat_grace_container(3)
                                 \voiceOne
                                 <
                                     \tweak font-size 0
@@ -261,7 +261,7 @@
                             {
                                 \revert Staff.Accidental.X-extent
                                 \once \override Stem.direction = #down
-                                  %! abjad.on_beat_grace_container(4)
+                                  %! trinton.on_beat_grace_container(4)
                                 \voiceTwo
                                 c'4.
                                 ^ \f
@@ -322,6 +322,8 @@
                         :128
                         - \espressivo
                         ~
+                        \set stemLeftBeamCount = 2
+                        \set stemRightBeamCount = 1
                         \once \override Stem.direction = #down
                         \once \override NoteHead.no-ledgers = ##t
                         <
@@ -339,9 +341,9 @@
                         <<
                             \context Voice = "On_Beat_Grace_Container"
                             {
-                                  %! abjad.on_beat_grace_container(1)
+                                  %! trinton.on_beat_grace_container(1)
                                 \set fontSize = #-5.5
-                                  %! abjad.on_beat_grace_container(2)
+                                  %! trinton.on_beat_grace_container(2)
                                 \my-hack-slash
                                 \override Beam.beam-thickness = #0.48
                                 \override Beam.beam-thickness = #0.48
@@ -349,7 +351,7 @@
                                 \override Beam.length-fraction = #1
                                 \revert Staff.Accidental.X-extent
                                 \once \override NoteHead.no-ledgers = ##t
-                                  %! abjad.on_beat_grace_container(3)
+                                  %! trinton.on_beat_grace_container(3)
                                 \voiceOne
                                 <
                                     \tweak font-size 0
@@ -377,7 +379,7 @@
                                 \revert Staff.Accidental.X-extent
                                 \once \override Stem.direction = #down
                                 \clef "percussion"
-                                  %! abjad.on_beat_grace_container(4)
+                                  %! trinton.on_beat_grace_container(4)
                                 \voiceTwo
                                 c'16
                                 ^ \f
@@ -390,9 +392,9 @@
                         <<
                             \context Voice = "On_Beat_Grace_Container"
                             {
-                                  %! abjad.on_beat_grace_container(1)
+                                  %! trinton.on_beat_grace_container(1)
                                 \set fontSize = #-5.5
-                                  %! abjad.on_beat_grace_container(2)
+                                  %! trinton.on_beat_grace_container(2)
                                 \my-hack-slash
                                 \override Beam.beam-thickness = #0.48
                                 \override Beam.beam-thickness = #0.48
@@ -400,7 +402,7 @@
                                 \override Beam.length-fraction = #1
                                 \revert Staff.Accidental.X-extent
                                 \once \override NoteHead.no-ledgers = ##t
-                                  %! abjad.on_beat_grace_container(3)
+                                  %! trinton.on_beat_grace_container(3)
                                 \voiceOne
                                 <
                                     \tweak font-size 0
@@ -426,7 +428,7 @@
                             {
                                 \revert Staff.Accidental.X-extent
                                 \once \override Stem.direction = #down
-                                  %! abjad.on_beat_grace_container(4)
+                                  %! trinton.on_beat_grace_container(4)
                                 \voiceTwo
                                 c'4
                                 ^ \f
@@ -469,9 +471,9 @@
                         <<
                             \context Voice = "On_Beat_Grace_Container"
                             {
-                                  %! abjad.on_beat_grace_container(1)
+                                  %! trinton.on_beat_grace_container(1)
                                 \set fontSize = #-5.5
-                                  %! abjad.on_beat_grace_container(2)
+                                  %! trinton.on_beat_grace_container(2)
                                 \my-hack-slash
                                 \override Beam.beam-thickness = #0.48
                                 \override Beam.beam-thickness = #0.48
@@ -479,7 +481,7 @@
                                 \override Beam.length-fraction = #1
                                 \revert Staff.Accidental.X-extent
                                 \once \override NoteHead.no-ledgers = ##t
-                                  %! abjad.on_beat_grace_container(3)
+                                  %! trinton.on_beat_grace_container(3)
                                 \voiceOne
                                 <
                                     \tweak font-size 0
@@ -507,7 +509,7 @@
                                 \revert Staff.Accidental.X-extent
                                 \once \override Stem.direction = #down
                                 \clef "percussion"
-                                  %! abjad.on_beat_grace_container(4)
+                                  %! trinton.on_beat_grace_container(4)
                                 \voiceTwo
                                 c'32
                                 ^ \f
