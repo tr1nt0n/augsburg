@@ -766,7 +766,7 @@ trinton.make_music(
     ),
     trinton.vertical_accidentals(
         selector=trinton.logical_ties(
-            first=True, pitched=True, grace=False, exclude=[0, -1]
+            first=True, pitched=True, grace=False, exclude=[-1]
         )
     ),
     trinton.linear_attachment_command(

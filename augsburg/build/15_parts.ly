@@ -1550,9 +1550,11 @@
                                 \voiceOne
                                 \override Voice.DynamicLineSpanner.padding = 14
                                 r16
+                                \once \override Staff.Accidental.stencil = ##f
                                 \once \override Stem.direction = #up
                                 \pitchedTrill
                                 ef'16
+                                - \flat-articulation
                                 - \tweak Beam.positions #'(11 . 11)
                                 [
                                 - \tweak circled-tip ##t
