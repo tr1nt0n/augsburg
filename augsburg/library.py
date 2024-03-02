@@ -118,6 +118,49 @@ def return_clef_whitespace_literal(offset_pair=(-2.5, 0)):
 # notation tools
 
 
+def cattenaires_trills(
+    selector=trinton.logical_ties(pitched=True, grace=False), padding=7
+):
+    def trills(argument):
+        selections = selector(argument)
+        logical_ties = abjad.select.logical_ties(selections)
+        intervals = itertools.cycle(
+            [
+                abjad.NamedInterval("m2"),
+                abjad.NamedInterval("M2"),
+                abjad.NamedInterval("m2"),
+                abjad.NamedInterval("m3"),
+            ]
+        )
+
+        for tie, interval in zip(logical_ties, intervals):
+            next_leaf = abjad.select.with_next_leaf(tie)[-1]
+            next_leaf_parent = abjad.get.parentage(next_leaf).parent
+            next = abjad.get.leaf(tie[-1], 1)
+
+            if isinstance(next_leaf_parent, abjad.OnBeatGraceContainer) or next is None:
+                if len(tie) > 1:
+                    trinton.aftergrace_command(notes_string="s16")(tie)
+                    abjad.attach(abjad.StartTrillSpan(interval=interval), tie[0])
+                else:
+                    indicators = abjad.get.indicators(tie[0])
+                    new_note = abjad.Note(abjad.select.leaf(tie, 0))
+                    for indicator in indicators:
+                        abjad.attach(indicator, new_note)
+                    skip = abjad.Skip(1, multiplier=(0, 64))
+                    abjad.attach(abjad.StopTrillSpan(), skip)
+                    components = [new_note, skip]
+                    abjad.attach(abjad.StartTrillSpan(interval=interval), new_note)
+                    abjad.mutate.replace(tie, components)
+            else:
+                next_leaf = abjad.select.with_next_leaf(tie)[-1]
+                abjad.attach(abjad.StopTrillSpan(), next_leaf)
+                start_span = abjad.StartTrillSpan(interval=interval)
+                abjad.attach(start_span, tie[0])
+
+    return trills
+
+
 def manual_beam_positions(positions, selector=abjad.select.leaves):
     def beaming(argument):
         selections = selector(argument)
@@ -481,7 +524,7 @@ def color_music(color, selector=abjad.select.leaves, dynamic=True):
                 for articulation in abjad.get.indicators(leaf, abjad.Articulation):
                     bundle = abjad.bundle(articulation, rf"- \tweak color {color}")
 
-                    abjad.detach(abjad.Articulation, leaf)
+                    abjad.detach(articulation, leaf)
 
                     abjad.attach(bundle, leaf)
 

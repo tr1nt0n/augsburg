@@ -16,6 +16,7 @@
     <<
         \context TimeSignatureContext = "Global Context"
         {
+            \break
             \once \override Score.BarLine.transparent = ##f
             \tweak text "×3" \startMeasureSpanner
             \bar ".|:"
@@ -30,15 +31,18 @@
             \abjad-metronome-mark-mixed-number-markup #3 #0 #2 #"75" #"3" #"5"  
               }
             }
+            \noBreak
             \set Score.repeatCommands = #'((volta "1 - 3"))
             \time 5/4
             s1 * 5/4
             \bar ":|.|:"
+            \noBreak
             \once \override Score.BarLine.transparent = ##f
             \set Score.repeatCommands = #'((volta "4"))
             \time 7/8
             s1 * 7/8
             \set Score.repeatCommands = #'((volta #f))
+            \noBreak
             \time 3/4
             s1 * 3/4
             \bar ":|."
@@ -90,18 +94,27 @@
                                             \voiceOne
                                             r16
                                             [
+                                            \staff-line-count 5
                                             \once \override Staff.Accidental.stencil = ##f
+                                            \clef "treble"
                                             g'16
                                             - \tweak color \一
                                             - \natural-articulation
+                                            ^ \ff
+                                            - \tweak stencil #constante-hairpin
+                                            ^ \<
                                             \once \override Staff.Accidental.stencil = ##f
                                             e''16
                                             - \tweak color \一
                                             - \natural-articulation
+                                            (
                                             \once \override Staff.Accidental.stencil = ##f
                                             a'''16
                                             - \tweak color \一
                                             - \natural-articulation
+                                            - \tweak color \一
+                                            - \staccato
+                                            )
                                             \once \override Staff.Accidental.stencil = ##f
                                             g''16
                                             - \tweak color \一
@@ -117,10 +130,14 @@
                                             f'16
                                             - \tweak color \一
                                             - \natural-articulation
+                                            (
                                             \once \override Staff.Accidental.stencil = ##f
                                             af'16
                                             - \tweak color \一
                                             - \flat-articulation
+                                            - \tweak color \一
+                                            - \staccato
+                                            )
                                             \once \override Staff.Accidental.stencil = ##f
                                             g'16
                                             - \tweak color \一
@@ -129,10 +146,14 @@
                                             b'16
                                             - \tweak color \一
                                             - \natural-articulation
+                                            (
                                             \once \override Staff.Accidental.stencil = ##f
                                             d''16
                                             - \tweak color \一
                                             - \natural-articulation
+                                            - \tweak color \一
+                                            - \staccato
+                                            )
                                             \once \override Staff.Accidental.stencil = ##f
                                             g''16
                                             - \tweak color \一
@@ -144,19 +165,32 @@
                                         fs''8
                                         - \tweak color \一
                                         - \sharp-articulation
+                                        (
+                                        ^ \>
                                         \once \override Staff.Accidental.stencil = ##f
                                         cs''8
                                         - \tweak color \一
                                         - \sharp-articulation
+                                        - \tweak color \一
+                                        - \staccato
+                                        )
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 7 8) (ly:make-duration 4 0))
                                         \times 8/7
                                         {
                                             r8
                                             fs'16
+                                            _ (
                                             cs''16
+                                            - \tweak color \一
+                                            - \staccato
+                                            ^ \p
+                                            )
                                             r16
                                             d'16
+                                            - \tweak color \一
+                                            - \staccato
+                                            ^ \pp
                                             r16
                                         }
                                         \tweak text #tuplet-number::calc-fraction-text
@@ -165,18 +199,27 @@
                                         {
                                             r8
                                             g'8
+                                            ^ \ff
                                             r8
                                             e'8
+                                            - \tweak color \一
+                                            - \tenuto
+                                            ^ \mp
                                             r8
                                             \set stemLeftBeamCount = 1
                                             \set stemRightBeamCount = 1
                                             a''8
+                                            - \tweak color \一
+                                            - \staccato
                                             ]
                                             r4
                                             \set stemLeftBeamCount = 1
                                             \set stemRightBeamCount = 1
                                             c'8
+                                            ^ \ppp
                                             [
+                                            ^ \<
+                                            _ (
                                             \stopMeasureSpanner
                                         }
                                         \tweak text #tuplet-number::calc-fraction-text
@@ -200,26 +243,37 @@
                                             \times 8/9
                                             {
                                                 g''16
+                                                ^ \ff
+                                                )
                                                 r16
                                                 \once \override Staff.Accidental.stencil = ##f
                                                 f'16
                                                 - \tweak color \一
                                                 - \natural-articulation
+                                                - \tweak color \一
+                                                - \staccato
+                                                ^ \f
                                                 r16
                                                 \once \override Staff.Accidental.stencil = ##f
                                                 af'16
                                                 - \tweak color \一
                                                 - \flat-articulation
+                                                - \tweak color \一
+                                                - \staccato
                                                 r16
                                                 \once \override Staff.Accidental.stencil = ##f
                                                 g'16
                                                 - \tweak color \一
                                                 - \natural-articulation
+                                                - \tweak color \一
+                                                - \staccato
                                                 r16
                                                 \once \override Staff.Accidental.stencil = ##f
                                                 b''16
                                                 - \tweak color \一
                                                 - \natural-articulation
+                                                - \tweak color \一
+                                                - \staccato
                                                 ]
                                                 \revert Accidental.color
                                                 \revert Beam.color
@@ -240,8 +294,205 @@
                                                 \revert Dots.staff-position
                                             }
                                         }
-                                        s1 * 3/4
+                                        \once \override Staff.Accidental.stencil = ##f
+                                        \once \override Stem.direction = #down
+                                        \pitchedTrill
+                                        f'16
+                                        - \natural-articulation
+                                        _ \fp
+                                        _ [
+                                        - \tweak stencil #abjad-flared-hairpin
+                                        _ \<
+                                        _ (
+                                        \startTrillSpan gf'
+                                        \once \override Staff.Accidental.stencil = ##f
+                                        \once \override Stem.direction = #down
+                                        \pitchedTrill
+                                        ef'16
+                                        - \flat-articulation
+                                        \stopTrillSpan
+                                        \startTrillSpan f'
+                                        \once \override Staff.Accidental.stencil = ##f
+                                        \once \override Stem.direction = #down
+                                        \pitchedTrill
+                                        f'16
+                                        - \natural-articulation
+                                        \stopTrillSpan
+                                        \startTrillSpan gf'
+                                        \once \override Staff.Accidental.stencil = ##f
+                                        \once \override Stem.direction = #down
+                                        \pitchedTrill
+                                        ef'16
+                                        - \flat-articulation
+                                        \stopTrillSpan
+                                        \startTrillSpan gf'
+                                        \once \override Staff.Accidental.stencil = ##f
+                                        \once \override Stem.direction = #down
+                                        \pitchedTrill
+                                        f'16
+                                        - \natural-articulation
+                                        \stopTrillSpan
+                                        \startTrillSpan gf'
+                                        s1 * 0
+                                        _ \mp
+                                        \stopTrillSpan
+                                        <<
+                                            \context Voice = "On_Beat_Grace_Container"
+                                            {
+                                                  %! abjad.on_beat_grace_container(1)
+                                                \set fontSize = #-5.5
+                                                \my-hack-slash
+                                                \override Beam.beam-thickness = #0.48
+                                                \override Beam.beam-thickness = #0.48
+                                                \override Beam.length-fraction = #1
+                                                \override Beam.length-fraction = #1
+                                                \voiceOne
+                                                ef'16 * 1/3
+                                                [
+                                                (
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                e'16 * 1/3
+                                                - \natural-articulation
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                a'16 * 1/3
+                                                - \natural-articulation
+                                                )
+                                                ]
+                                                \revert Beam.length-fraction
+                                                \revert Beam.length-fraction
+                                                \revert Beam.thickness
+                                                \revert Beam.thickness
+                                            }
+                                            \context Voice = "RhythmMaker.Music Anchor"
+                                            {
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                \once \override Stem.direction = #down
+                                                \voiceTwo
+                                                ef'16
+                                                - \accent
+                                                - \flat-articulation
+                                            }
+                                        >>
+                                        \once \override Staff.Accidental.stencil = ##f
+                                        \once \override Stem.direction = #down
+                                        \pitchedTrill
+                                        f'16
+                                        - \natural-articulation
+                                        _ \fp
+                                        _ \<
+                                        \startTrillSpan g'
+                                        \once \override Staff.Accidental.stencil = ##f
+                                        \once \override Stem.direction = #down
+                                        \pitchedTrill
+                                        ef'16
+                                        - \flat-articulation
+                                        \stopTrillSpan
+                                        \startTrillSpan ff'
+                                        s1 * 0
+                                        _ \mf
+                                        \stopTrillSpan
+                                        <<
+                                            \context Voice = "On_Beat_Grace_Container"
+                                            {
+                                                  %! abjad.on_beat_grace_container(1)
+                                                \set fontSize = #-5.5
+                                                \my-hack-slash
+                                                \override Beam.beam-thickness = #0.48
+                                                \override Beam.beam-thickness = #0.48
+                                                \override Beam.length-fraction = #1
+                                                \override Beam.length-fraction = #1
+                                                \voiceOne
+                                                f'16 * 1/4
+                                                [
+                                                (
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                f''16 * 1/4
+                                                - \natural-articulation
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                af'16 * 1/4
+                                                - \flat-articulation
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                g''16 * 1/4
+                                                - \natural-articulation
+                                                )
+                                                ]
+                                                \revert Beam.length-fraction
+                                                \revert Beam.length-fraction
+                                                \revert Beam.thickness
+                                                \revert Beam.thickness
+                                            }
+                                            \context Voice = "RhythmMaker.Music Anchor"
+                                            {
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                \once \override Stem.direction = #down
+                                                \voiceTwo
+                                                f'16
+                                                - \accent
+                                                - \natural-articulation
+                                            }
+                                        >>
+                                        \once \override Staff.Accidental.stencil = ##f
+                                        \once \override Stem.direction = #down
+                                        \pitchedTrill
+                                        ef'16
+                                        - \flat-articulation
+                                        \startTrillSpan gf'
+                                        s1 * 0
+                                        \stopTrillSpan
+                                        <<
+                                            \context Voice = "On_Beat_Grace_Container"
+                                            {
+                                                  %! abjad.on_beat_grace_container(1)
+                                                \set fontSize = #-5.5
+                                                \my-hack-slash
+                                                \override Beam.beam-thickness = #0.48
+                                                \override Beam.beam-thickness = #0.48
+                                                \override Beam.length-fraction = #1
+                                                \override Beam.length-fraction = #1
+                                                \voiceOne
+                                                f'16 * 1/5
+                                                [
+                                                (
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                d''16 * 1/5
+                                                - \natural-articulation
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                ef''16 * 1/5
+                                                - \flat-articulation
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                fs''16 * 1/5
+                                                - \sharp-articulation
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                cs'''16 * 1/5
+                                                - \sharp-articulation
+                                                )
+                                                ]
+                                                \revert Beam.length-fraction
+                                                \revert Beam.length-fraction
+                                                \revert Beam.thickness
+                                                \revert Beam.thickness
+                                            }
+                                            \context Voice = "RhythmMaker.Music Anchor"
+                                            {
+                                                \once \override Staff.Accidental.stencil = ##f
+                                                \once \override Stem.direction = #down
+                                                \voiceTwo
+                                                f'16
+                                                - \accent
+                                                - \natural-articulation
+                                            }
+                                        >>
+                                        \once \override Staff.Accidental.stencil = ##f
+                                        \once \override Stem.direction = #down
+                                        \pitchedTrill
+                                        ef'16
+                                        - \flat-articulation
+                                        )
+                                        ]
+                                        \startTrillSpan ff'
                                         \stopMeasureSpanner
+                                        s1 * 0
+                                        \stopTrillSpan
                                     }
                                     \context Voice = "alpha imbrication"
                                     \with
@@ -279,10 +530,12 @@
                                             s16
                                             \tweak Beam.positions #'(-24 . -24)
                                             [
+                                            \staff-line-count 5
                                               %! rmakers.beam_groups()
                                             \set stemLeftBeamCount = 2
                                               %! rmakers.beam_groups()
                                             \set stemRightBeamCount = 2
+                                            \clef "treble"
                                             g'16
                                             - \tweak color \一
                                             - \marcato
@@ -389,26 +642,26 @@
                                                 s16
                                                   %! rmakers.beam_groups()
                                                 ]
+                                                \revert Accidental.color
+                                                \revert Beam.color
+                                                \revert Dots.color
+                                                \revert Flag.color
+                                                \revert Glissando.color
+                                                \revert MultiMeasureRest.color
+                                                \revert NoteHead.color
+                                                \revert RepeatTie.color
+                                                \revert Rest.color
+                                                \revert Slur.color
+                                                \revert Stem.color
+                                                \revert StemTremolo.color
+                                                \revert Tie.color
+                                                \revert TupletBracket.color
+                                                \revert TupletNumber.color
+                                                \revert DynamicText.color
+                                                \revert Dots.staff-position
                                             }
                                         }
                                         s1 * 3/4
-                                        \revert Accidental.color
-                                        \revert Beam.color
-                                        \revert Dots.color
-                                        \revert Flag.color
-                                        \revert Glissando.color
-                                        \revert MultiMeasureRest.color
-                                        \revert NoteHead.color
-                                        \revert RepeatTie.color
-                                        \revert Rest.color
-                                        \revert Slur.color
-                                        \revert Stem.color
-                                        \revert StemTremolo.color
-                                        \revert Tie.color
-                                        \revert TupletBracket.color
-                                        \revert TupletNumber.color
-                                        \revert DynamicText.color
-                                        \revert Dots.staff-position
                                     }
                                 >>
                                 \oneVoice
@@ -457,8 +710,10 @@
                                                 a''64
                                                 - \tweak color \三
                                                 - \natural-articulation
+                                                _ \fp
                                                 \tweak Beam.positions #'(-9 . -9)
                                                 [
+                                                _ \<
                                                 \once \override Staff.Accidental.stencil = ##f
                                                   %! rmakers.beam_groups()
                                                 \set stemLeftBeamCount = 4
@@ -467,6 +722,7 @@
                                                 d'''64
                                                 - \tweak color \三
                                                 - \natural-articulation
+                                                (
                                                 \once \override Staff.Accidental.stencil = ##f
                                                   %! rmakers.beam_groups()
                                                 \set stemLeftBeamCount = 4
@@ -475,6 +731,10 @@
                                                 ef'''64
                                                 - \tweak color \三
                                                 - \flat-articulation
+                                                _ \mf
+                                                )
+                                                - \tweak circled-tip ##t
+                                                _ \>
                                                 \once \override Staff.Accidental.stencil = ##f
                                                   %! rmakers.beam_groups()
                                                 \set stemLeftBeamCount = 4
@@ -491,6 +751,8 @@
                                                 cs'''64
                                                 - \tweak color \三
                                                 - \sharp-articulation
+                                                \!
+                                                (
                                             }
                                             \once \override Rest.staff-position = #-2
                                             r32
@@ -506,6 +768,9 @@
                                                 a''64
                                                 - \tweak color \三
                                                 - \natural-articulation
+                                                _ \fp
+                                                )
+                                                _ \<
                                                 \once \override Staff.Accidental.stencil = ##f
                                                   %! rmakers.beam_groups()
                                                 \set stemLeftBeamCount = 4
@@ -522,6 +787,10 @@
                                                 e'''64
                                                 - \tweak color \三
                                                 - \natural-articulation
+                                                _ \f
+                                                (
+                                                - \tweak circled-tip ##t
+                                                _ \>
                                                 \once \override Staff.Accidental.stencil = ##f
                                                   %! rmakers.beam_groups()
                                                 \set stemLeftBeamCount = 4
@@ -530,6 +799,7 @@
                                                 c'''64
                                                 - \tweak color \三
                                                 - \natural-articulation
+                                                )
                                                 \once \override Staff.Accidental.stencil = ##f
                                                   %! rmakers.beam_groups()
                                                 \set stemLeftBeamCount = 4
@@ -538,6 +808,7 @@
                                                 af''64
                                                 - \tweak color \三
                                                 - \flat-articulation
+                                                \!
                                             }
                                             \once \override Rest.staff-position = #-2
                                             r32
@@ -553,6 +824,8 @@
                                                 a''64
                                                 - \tweak color \三
                                                 - \natural-articulation
+                                                (
+                                                _ \<
                                                 \once \override Staff.Accidental.stencil = ##f
                                                   %! rmakers.beam_groups()
                                                 \set stemLeftBeamCount = 4
@@ -561,14 +834,17 @@
                                                 b'''64
                                                 - \tweak color \三
                                                 - \natural-articulation
+                                                )
                                                 \once \override Staff.Accidental.stencil = ##f
                                                   %! rmakers.beam_groups()
                                                 \set stemLeftBeamCount = 4
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 4
                                                 a''64
+                                                    _ #(make-dynamic-script (markup #:whiteout #:italic "s. f"))
                                                 - \tweak color \三
                                                 - \natural-articulation
+                                                _ \<
                                                 \once \override Staff.Accidental.stencil = ##f
                                                   %! rmakers.beam_groups()
                                                 \set stemLeftBeamCount = 4
@@ -577,6 +853,7 @@
                                                 f'''64
                                                 - \tweak color \三
                                                 - \natural-articulation
+                                                (
                                                 \once \override Staff.Accidental.stencil = ##f
                                                   %! rmakers.beam_groups()
                                                 \set stemLeftBeamCount = 4
@@ -585,6 +862,7 @@
                                                 af'''64
                                                 - \tweak color \三
                                                 - \flat-articulation
+                                                \!
                                             }
                                             \once \override Rest.staff-position = #-2
                                             r32
@@ -592,6 +870,7 @@
                                             g''16.
                                             - \tweak color \三
                                             - \natural-articulation
+                                            _ \mp
                                             \once \override Rest.staff-position = #-2
                                             r32
                                             \tweak text #tuplet-number::calc-fraction-text
@@ -606,12 +885,14 @@
                                                 fs''64
                                                 - \tweak color \三
                                                 - \sharp-articulation
+                                                )
                                                 \once \override Staff.Accidental.stencil = ##f
                                                   %! rmakers.beam_groups()
                                                 \set stemLeftBeamCount = 4
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 4
                                                 af''64
+                                                    _ #(make-dynamic-script (markup #:whiteout #:italic "s. f"))
                                                 - \tweak color \三
                                                 - \flat-articulation
                                                 \once \override Staff.Accidental.stencil = ##f
@@ -622,6 +903,8 @@
                                                 d''64
                                                 - \tweak color \三
                                                 - \natural-articulation
+                                                _ \mp
+                                                (
                                                 \once \override Staff.Accidental.stencil = ##f
                                                   %! rmakers.beam_groups()
                                                 \set stemLeftBeamCount = 4
@@ -630,12 +913,14 @@
                                                 ef''64
                                                 - \tweak color \三
                                                 - \flat-articulation
+                                                )
                                                 \once \override Staff.Accidental.stencil = ##f
                                                   %! rmakers.beam_groups()
                                                 \set stemLeftBeamCount = 4
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 1
                                                 a''64
+                                                    _ #(make-dynamic-script (markup #:whiteout #:italic "s. f"))
                                                 - \tweak color \三
                                                 - \natural-articulation
                                             }
@@ -645,6 +930,9 @@
                                             ef''16.
                                             - \tweak color \三
                                             - \flat-articulation
+                                            - \tweak color \三
+                                            - \tenuto
+                                            _ \mp
                                             \once \override Rest.staff-position = #-2
                                             r32
                                             \tweak text #tuplet-number::calc-fraction-text
@@ -657,6 +945,7 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 4
                                                 af''64
+                                                    _ #(make-dynamic-script (markup #:whiteout #:italic "s. f"))
                                                 - \tweak color \三
                                                 - \flat-articulation
                                                 \once \override Staff.Accidental.stencil = ##f
@@ -667,6 +956,9 @@
                                                 cs''64
                                                 - \tweak color \三
                                                 - \sharp-articulation
+                                                _ \p
+                                                (
+                                                _ \<
                                                 \once \override Staff.Accidental.stencil = ##f
                                                   %! rmakers.beam_groups()
                                                 \set stemLeftBeamCount = 4
@@ -675,6 +967,7 @@
                                                 e''64
                                                 - \tweak color \三
                                                 - \natural-articulation
+                                                )
                                                 \once \override Staff.Accidental.stencil = ##f
                                                   %! rmakers.beam_groups()
                                                 \set stemLeftBeamCount = 4
@@ -683,6 +976,7 @@
                                                 a''64
                                                 - \tweak color \三
                                                 - \natural-articulation
+                                                _ \ff
                                                 \once \override Staff.Accidental.stencil = ##f
                                                   %! rmakers.beam_groups()
                                                 \set stemLeftBeamCount = 4
@@ -691,6 +985,8 @@
                                                 c''64
                                                 - \tweak color \三
                                                 - \natural-articulation
+                                                _ \f
+                                                (
                                             }
                                             \once \override Rest.staff-position = #-2
                                             r32
@@ -704,6 +1000,7 @@
                                             g''16.
                                             - \tweak color \三
                                             - \natural-articulation
+                                            )
                                             \once \override Rest.staff-position = #-2
                                             r32
                                             \tweak text #tuplet-number::calc-fraction-text
@@ -718,6 +1015,8 @@
                                                 af''64
                                                 - \tweak color \三
                                                 - \flat-articulation
+                                                _ \fp
+                                                _ \<
                                                 \once \override Staff.Accidental.stencil = ##f
                                                   %! rmakers.beam_groups()
                                                 \set stemLeftBeamCount = 4
@@ -726,6 +1025,7 @@
                                                 bf''64
                                                 - \tweak color \三
                                                 - \flat-articulation
+                                                (
                                                 \once \override Staff.Accidental.stencil = ##f
                                                   %! rmakers.beam_groups()
                                                 \set stemLeftBeamCount = 4
@@ -734,6 +1034,9 @@
                                                 f''64
                                                 - \tweak color \三
                                                 - \natural-articulation
+                                                _ \f
+                                                - \tweak circled-tip ##t
+                                                _ \>
                                                 \once \override Staff.Accidental.stencil = ##f
                                                   %! rmakers.beam_groups()
                                                 \set stemLeftBeamCount = 4
@@ -742,6 +1045,7 @@
                                                 bf''64
                                                 - \tweak color \三
                                                 - \flat-articulation
+                                                )
                                                 \once \override Staff.Accidental.stencil = ##f
                                                   %! rmakers.beam_groups()
                                                 \set stemLeftBeamCount = 4
@@ -750,11 +1054,29 @@
                                                 a''64
                                                 - \tweak color \三
                                                 - \natural-articulation
+                                                _ \f
                                                   %! rmakers.beam_groups()
                                                 ]
                                             }
                                             \once \override Rest.staff-position = #-2
                                             r32
+                                            \revert Accidental.color
+                                            \revert Beam.color
+                                            \revert Dots.color
+                                            \revert Flag.color
+                                            \revert Glissando.color
+                                            \revert MultiMeasureRest.color
+                                            \revert NoteHead.color
+                                            \revert RepeatTie.color
+                                            \revert Rest.color
+                                            \revert Slur.color
+                                            \revert Stem.color
+                                            \revert StemTremolo.color
+                                            \revert Tie.color
+                                            \revert TupletBracket.color
+                                            \revert TupletNumber.color
+                                            \revert DynamicText.color
+                                            \revert Dots.staff-position
                                         }
                                         \once \override Voice.Rest.transparent = ##t
                                         \once \override Voice.Dots.transparent = ##t
@@ -768,23 +1090,6 @@
                                         \once \override Voice.Rest.transparent = ##t
                                         \once \override Voice.Dots.transparent = ##t
                                         r2.
-                                        \revert Accidental.color
-                                        \revert Beam.color
-                                        \revert Dots.color
-                                        \revert Flag.color
-                                        \revert Glissando.color
-                                        \revert MultiMeasureRest.color
-                                        \revert NoteHead.color
-                                        \revert RepeatTie.color
-                                        \revert Rest.color
-                                        \revert Slur.color
-                                        \revert Stem.color
-                                        \revert StemTremolo.color
-                                        \revert Tie.color
-                                        \revert TupletBracket.color
-                                        \revert TupletNumber.color
-                                        \revert DynamicText.color
-                                        \revert Dots.staff-position
                                     }
                                     \context Voice = "delta imbrication"
                                     \with
@@ -1007,10 +1312,90 @@
                 {
                     \context Voice = "piano 3 voice"
                     {
-                        s1 * 9/8
-                        s1 * 5/4
-                        s1 * 7/8
-                        s1 * 3/4
+                        <<
+                            \context Voice = "piano 3 voice temp"
+                            {
+                                <<
+                                    \context Voice = "piano 3 voice temp temp"
+                                    {
+                                        \staff-line-count 5
+                                        \clef "bass"
+                                        \voiceOne
+                                        \voiceTwo
+                                        <d,, d,>2.
+                                            _ #(make-dynamic-script (markup #:whiteout #:italic "sffz"))
+                                        - \accent
+                                        \laissezVibrer
+                                        ~
+                                        <d,, d,>4.
+                                    }
+                                    \context Voice = "bottom voice"
+                                    {
+                                        \tweak text #tuplet-number::calc-fraction-text
+                                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 6 5) (ly:make-duration 3 0))
+                                        \times 5/6
+                                        {
+                                            \once \override NoteHead.duration-log = 1
+                                            \voiceTwo
+                                            <d,, d,>16.
+                                            [
+                                            r32
+                                            e,16.
+                                            r32
+                                            a,16.
+                                            r32
+                                            b,16.
+                                            r32
+                                            bf,16.
+                                            r32
+                                            f16.
+                                            r32
+                                            ]
+                                        }
+                                        af8.
+                                        [
+                                        r16
+                                        g8.
+                                        r16
+                                        ]
+                                    }
+                                >>
+                                \oneVoice
+                            }
+                            \context Voice = "top voice"
+                            {
+                                \voiceOne
+                                r16.
+                                [
+                                c'32
+                                r16.
+                                c'32
+                                r16.
+                                c'32
+                                r16.
+                                c'32
+                                r16.
+                                c'32
+                                ]
+                                r4.
+                                c'8
+                            }
+                        >>
+                        \oneVoice
+                        <c,, c,>2.
+                            _ #(make-dynamic-script (markup #:whiteout #:italic "sffz"))
+                        - \accent
+                        \laissezVibrer
+                        ~
+                        <c,, c,>2
+                        <c,, c,>2..
+                            _ #(make-dynamic-script (markup #:whiteout #:italic "sffz"))
+                        - \accent
+                        \laissezVibrer
+                        <d,, d,>2.
+                            _ #(make-dynamic-script (markup #:whiteout #:italic "sffz"))
+                        - \accent
+                        \laissezVibrer
                     }
                 }
                 \context thirdStaff = "piano 4 staff"

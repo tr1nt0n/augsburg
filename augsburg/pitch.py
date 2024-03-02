@@ -106,3 +106,28 @@ row_sequence = trinton.remove_adjacent(row_sequence)
 
 def return_adumbration_pitches(index=0):
     return trinton.rotated_sequence(row_sequence, index % len(row_sequence))
+
+
+# cleaning graces
+
+
+def pitch_cattenaires_graces(selector=trinton.logical_ties(pitched=True, grace=True)):
+    def pitch_graces(argument):
+        selections = selector(argument)
+        grace_notes = abjad.select.leaves(selections, grace=True)
+        grouped_graces = abjad.select.group_by_contiguity(grace_notes)
+
+        for group in grouped_graces:
+            fundamental = abjad.select.with_next_leaf(group[-1])[-1]
+            abjad.attach(abjad.Articulation(">"), fundamental)
+            pitch_list = [fundamental.written_pitch.name]
+            handler = evans.PitchHandler(pitch_list)
+            handler(group[0])
+
+            group_sans_0 = group[1:]
+
+            trinton.vertical_accidentals(
+                selector=trinton.logical_ties(pitched=True, first=True)
+            )(group_sans_0)
+
+    return pitch_graces

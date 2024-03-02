@@ -387,7 +387,7 @@ def rhythm_b(
 
         if stage == 3:
             talea_durations = [1]
-            talea_denominator = 4
+            talea_denominator = 16
 
         components = rmakers.talea(durations, talea_durations, talea_denominator)
         components = abjad.Container(components)
