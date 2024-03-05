@@ -149,21 +149,19 @@ def cattenaires_trills(
                 or tie == last_tie
             ):
                 indicators = abjad.get.indicators(tie[0])
-                new_note = abjad.Note(abjad.select.leaf(tie, 0))
+                new_note = abjad.mutate.copy(abjad.select.leaves(tie))
                 for indicator in indicators:
-                    abjad.attach(indicator, new_note)
+                    abjad.attach(indicator, abjad.select.leaf(new_note, 0))
                 skip = abjad.Skip(1, multiplier=(0, 64))
                 abjad.attach(abjad.StopTrillSpan(), skip)
-                components = [new_note, skip]
+                components = [*new_note, skip]
                 abjad.attach(
                     abjad.StartTrillSpan(interval=interval),
-                    new_note,
+                    abjad.select.leaf(new_note, 0),
                     direction=direction,
                 )
                 abjad.mutate.replace(tie, components)
             else:
-                # next_leaf = abjad.select.with_next_leaf(tie)[-1]
-                # abjad.attach(abjad.StopTrillSpan(), next_leaf)
                 start_span = abjad.StartTrillSpan(interval=interval)
                 abjad.attach(start_span, tie[0], direction=direction)
 

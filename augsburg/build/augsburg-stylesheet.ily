@@ -12,7 +12,7 @@
 afterGraceFraction = #(cons 15 16)
 
 \header {
-    dedication = \markup \fontsize #4 \center-column {\line \override #'(font-name . "Bodoni72 Book Italic") { { für } \override #'(font-name . "Bodoni72 Book") { Paula Rocosa Gáñez } } \with-color #white "."}
+    dedication = \markup \fontsize #4 \center-column {\line \override #'(font-name . "Bodoni72 Book Italic") { { für } \override #'(font-name . "Bodoni72 Book") { Ginnie Prater } } \with-color #white "."}
     title = \markup \override #'(font-name . "Bodoni72 Book") \center-column { \line \fontsize #14 {  D A S \hspace #5 W U N D E R Z E I C H E N B U C H } \with-color #white \fontsize #4 "." }
     subtitle = \markup \center-column { \line \fontsize #6 { \override #'(font-name . "Bodoni72 Book") { oder: } \override #'(font-name . "Bodoni72 Book Italic") { "\" tres soles llamados \'Paraphog\' \"" } } \with-color #white \fontsize #4 "."}
     composer = \markup \override #'(font-name . "Bodoni72") \fontsize #4 {"Trinton Hlynn (*2000)"}
@@ -144,6 +144,10 @@ afterGraceFraction = #(cons 15 16)
 
         \override NoteCollision.merge-differently-dotted = ##t
         \override NoteCollision.merge-differently-headed = ##t
+
+        \override OttavaBracket.layer = 2
+        \override OttavaBracket.whiteout-style = #'outline
+        \override OttavaBracket.whiteout = 1
 
         \override PianoPedalBracket.shorten-pair = #'(0 . -4)
         \override PianoPedalBracket.color = \一

@@ -111,7 +111,9 @@ def return_adumbration_pitches(index=0):
 # cleaning graces
 
 
-def pitch_cattenaires_graces(selector=trinton.logical_ties(pitched=True, grace=True)):
+def pitch_cattenaires_graces(
+    selector=trinton.logical_ties(pitched=True, grace=True), articulation=">"
+):
     def pitch_graces(argument):
         selections = selector(argument)
         grace_notes = abjad.select.leaves(selections, grace=True)
@@ -119,7 +121,7 @@ def pitch_cattenaires_graces(selector=trinton.logical_ties(pitched=True, grace=T
 
         for group in grouped_graces:
             fundamental = abjad.select.with_next_leaf(group[-1])[-1]
-            abjad.attach(abjad.Articulation(">"), fundamental)
+            abjad.attach(abjad.Articulation(articulation), fundamental)
             pitch_list = [fundamental.written_pitch.name]
             handler = evans.PitchHandler(pitch_list)
             handler(group[0])

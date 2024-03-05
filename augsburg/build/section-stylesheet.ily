@@ -138,6 +138,10 @@ afterGraceFraction = #(cons 15 16)
         \override NoteCollision.merge-differently-dotted = ##t
         \override NoteCollision.merge-differently-headed = ##t
 
+        \override OttavaBracket.layer = 2
+        \override OttavaBracket.whiteout-style = #'outline
+        \override OttavaBracket.whiteout = 1
+
         \override PianoPedalBracket.shorten-pair = #'(0 . -4)
         \override PianoPedalBracket.color = \一
 

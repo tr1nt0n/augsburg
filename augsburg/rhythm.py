@@ -351,6 +351,7 @@ def rhythm_b(
     grace_selector=None,
     before_grace=False,
     after_grace=False,
+    custom_talea_denominator=None,
 ):
     def rhythm(durations):
         if stage == 1:
@@ -358,7 +359,10 @@ def rhythm_b(
             talea_durations = trinton.rotated_sequence(
                 talea_durations, index % len(talea_durations)
             )
-            talea_denominator = 32
+            if custom_talea_denominator is None:
+                talea_denominator = 32
+            else:
+                talea_denominator = custom_talea_denominator
 
         if stage == 2:
             root_talea_durations = [8, 7, 6, 5, 4, 3, 2]
@@ -383,11 +387,17 @@ def rhythm_b(
             talea_durations = trinton.rotated_sequence(
                 rotated_talea_durations, index % len(rotated_talea_durations)
             )
-            talea_denominator = 8
+            if custom_talea_denominator is None:
+                talea_denominator = 8
+            else:
+                talea_denominator = custom_talea_denominator
 
         if stage == 3:
             talea_durations = [1]
-            talea_denominator = 16
+            if custom_talea_denominator is None:
+                talea_denominator = 16
+            else:
+                talea_denominator = custom_talea_denominator
 
         components = rmakers.talea(durations, talea_durations, talea_denominator)
         components = abjad.Container(components)
