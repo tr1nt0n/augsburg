@@ -485,6 +485,17 @@ trinton.make_music(
 # lh music commands
 
 trinton.make_music(
+    lambda _: trinton.select_target(_, (1,)),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(r"\revert Staff.Accidental.stencil", site="before"),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+    ),
+    voice=score["piano 3 voice"],
+)
+
+trinton.make_music(
     lambda _: trinton.select_target(_, (3, 7)),
     evans.RhythmHandler(
         evans.talea([-9, -7], 16, treat_tuplets=False),

@@ -725,6 +725,7 @@
                 {
                     \context Voice = "piano 3 voice"
                     {
+                        \revert Staff.Accidental.stencil
                         s1 * 1
                         s1 * 1
                         \once \override Dots.transparent = ##t
