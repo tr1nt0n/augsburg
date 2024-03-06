@@ -276,7 +276,7 @@ trinton.make_music(
     ),
     trinton.attachment_command(
         attachments=[abjad.BeamCount(left=1, right=2)],
-        selector=trinton.select_leaves_by_index([3, 6], pitched=True, grace=False),
+        selector=trinton.select_leaves_by_index([1, 3, 6], pitched=True, grace=False),
     ),
     trinton.attachment_command(
         attachments=[abjad.BeamCount(left=2, right=1)],
@@ -439,6 +439,12 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([0, -1], pitched=True, grace=False),
     ),
+    library.manual_beam_positions(
+        positions=(-10, -10),
+        selector=trinton.select_logical_ties_by_index(
+            [0, 1, 2, 3, 4], pitched=True, grace=False
+        ),
+    ),
     trinton.linear_attachment_command(
         attachments=[
             abjad.StartHairpin("<|"),
@@ -515,17 +521,19 @@ trinton.make_music(
 
 trinton.make_music(
     lambda _: trinton.select_target(_, (8, 12)),
-    evans.RhythmHandler(evans.talea([1, -36], 32)),
+    evans.RhythmHandler(
+        evans.talea(
+            [
+                -17,
+                1,
+                -19,
+            ],
+            16,
+            extra_counts=[3],
+        ),
+    ),
     trinton.rewrite_meter_command(),
     evans.PitchHandler(["d,,,,"]),
-    trinton.attachment_command(
-        attachments=[
-            abjad.LilyPondLiteral(
-                r"\once \override Rest.staff-position = #-30", site="before"
-            ),
-        ],
-        selector=abjad.select.rests,
-    ),
     trinton.attachment_command(
         attachments=[
             abjad.LilyPondLiteral(
@@ -542,13 +550,22 @@ trinton.make_music(
         selector=trinton.select_leaves_by_index([0, -1], pitched=True, grace=False),
     ),
     trinton.linear_attachment_command(
-        attachments=itertools.cycle(
-            [
-                abjad.StartPianoPedal(),
-                abjad.StopPianoPedal(),
-            ]
-        ),
-        selector=trinton.select_leaves_by_index([0, 1, 4, 5, 9, 10, 14, 15, 18, 19]),
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\override Voice.Rest.staff-position = #-30", site="before"
+            ),
+            abjad.LilyPondLiteral(
+                r"\revert Voice.Rest.staff-position", site="absolute_after"
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0, -1], pitched=False, grace=False),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            abjad.StartPianoPedal(),
+            abjad.LaissezVibrer(),
+        ],
+        selector=trinton.pleaves(),
         direction=abjad.DOWN,
     ),
     trinton.linear_attachment_command(
@@ -560,29 +577,45 @@ trinton.make_music(
         selector=trinton.select_leaves_by_index([0, 0, -1], pitched=True),
         direction=abjad.DOWN,
     ),
+    trinton.notehead_bracket_command(),
     voice=score["piano 3 voice"],
+    preprocessor=trinton.fuse_sixteenths_preprocessor((13,)),
 )
+
+pedal_rests = abjad.select.rests(score["piano 3 voice"])
 
 pedal_leaves = abjad.select.leaves(score["piano 3 voice"], pitched=True, grace=False)
 
 for leaf in pedal_leaves:
     abjad.overrides.override(leaf).Stem.direction = abjad.DOWN
 
+for leaf in pedal_rests:
+    previous_leaf = abjad.select.with_previous_leaf(leaf)[0]
+    if isinstance(previous_leaf, abjad.Note):
+        abjad.attach(abjad.StopPianoPedal(), leaf)
+
 # globals
 
-# for measure in [
-#     1,
-#     2,
-#     3,
-# ]:
-#     trinton.make_music(
-#         lambda _: trinton.select_target(_, (measure,)),
-#         trinton.attachment_command(
-#             attachments=[abjad.LilyPondLiteral(r"\noBreak", site="absolute_after")],
-#             selector=trinton.select_leaves_by_index([0]),
-#         ),
-#         voice=score["Global Context"],
-#     )
+for measure in [
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    9,
+    10,
+    11,
+]:
+    trinton.make_music(
+        lambda _: trinton.select_target(_, (measure,)),
+        trinton.attachment_command(
+            attachments=[abjad.LilyPondLiteral(r"\noBreak", site="absolute_after")],
+            selector=trinton.select_leaves_by_index([0]),
+        ),
+        voice=score["Global Context"],
+    )
 
 trinton.make_music(
     lambda _: trinton.select_target(_, (1,)),

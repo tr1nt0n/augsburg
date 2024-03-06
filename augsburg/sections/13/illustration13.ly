@@ -20,7 +20,7 @@
             \time 37/14
             s1 * 37/14
             ^ \markup {
-              \raise #9.5 \with-dimensions-from \null
+              \raise #21 \with-dimensions-from \null
               \override #'(font-size . 5.5)
               \concat {
                   \abjad-metronome-mark-markup #2 #0 #2 #"60" 
@@ -134,7 +134,7 @@
                                     \clef "percussion"
                                     \voiceTwo
                                     c'\breve
-                                    - \tweak padding #25
+                                    - \tweak padding #25.5
                                     ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Maultrommel + Vibrator }
                                       %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -214,6 +214,11 @@
                                     - \abjad-zero-padding-glissando
                                       %! abjad.glissando(7)
                                     \glissando
+                                    - \tweak padding #19.65
+                                    - \abjad-dashed-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \jawharp-crook \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -3
+                                    \startTextSpan
                                     _ \<
                                     ~
                                       %! abjad.glissando(1)
@@ -287,6 +292,7 @@
                                                 )
                                             )
                                         )
+                                        \stopTextSpan
                                         \breathe
                                         \revert Staff.NoteHead.no-ledgers
                                         \revert Staff.Accidental.stencil

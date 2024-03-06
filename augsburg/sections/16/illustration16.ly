@@ -25,36 +25,46 @@
                   \abjad-metronome-mark-mixed-number-markup #2 #0 #2 #"97" #"1" #"2" 
               }
             }
+            \noBreak
+            \once \override Score.TimeSignature.stencil = ##f
+            \time 4/4
+            s1 * 1
+            \noBreak
+            \once \override Score.TimeSignature.stencil = ##f
+            \time 4/4
+            s1 * 1
+            \noBreak
+            \once \override Score.TimeSignature.stencil = ##f
+            \time 4/4
+            s1 * 1
+            \noBreak
+            \once \override Score.TimeSignature.stencil = ##f
+            \time 4/4
+            s1 * 1
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 4/4
             s1 * 1
             \once \override Score.TimeSignature.stencil = ##f
             \time 4/4
             s1 * 1
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 4/4
             s1 * 1
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 4/4
             s1 * 1
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 4/4
             s1 * 1
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 4/4
             s1 * 1
-            \once \override Score.TimeSignature.stencil = ##f
-            \time 4/4
-            s1 * 1
-            \once \override Score.TimeSignature.stencil = ##f
-            \time 4/4
-            s1 * 1
-            \once \override Score.TimeSignature.stencil = ##f
-            \time 4/4
-            s1 * 1
-            \once \override Score.TimeSignature.stencil = ##f
-            \time 4/4
-            s1 * 1
+            \noBreak
             \once \override Score.TimeSignature.stencil = ##f
             \time 4/4
             s1 * 1
@@ -295,8 +305,11 @@
                         \<
                         ~
                         \startTrillSpan ef
+                        \set stemLeftBeamCount = 1
+                        \set stemRightBeamCount = 2
                         \once \override Stem.direction = #down
                         d16
+                        - \tweak Beam.positions #'(-10 . -10)
                         [
                         s1 * 0
                         \ff
@@ -775,69 +788,62 @@
                         \once \override Rest.transparent = ##t
                         \clef "bass"
                         r4..
-                        \once \override NoteHead.no-ledgers = ##t
-                        \slapped
-                        \once \override Stem.direction = #down
-                        d,,,,32
-                        _ \ppp
-                        - \tweak stencil #constante-hairpin
-                        _ \<
-                        \sustainOn
-                        \once \override Rest.staff-position = #-30
-                        r2....
-                        \sustainOff
-                        \once \override Rest.staff-position = #-30
-                        r8
-                        \once \override Rest.staff-position = #-30
-                        r32
-                        \once \override NoteHead.no-ledgers = ##t
-                        \once \override Stem.direction = #down
-                        d,,,,32
-                        \sustainOn
-                        \once \override Rest.staff-position = #-30
-                        r16
-                        \sustainOff
-                        \once \override Rest.staff-position = #-30
+                        \override Voice.Rest.staff-position = #-30
                         r2.
-                        \once \override Rest.staff-position = #-30
-                        r4
-                        \once \override Rest.staff-position = #-30
                         r16
-                        \once \override NoteHead.no-ledgers = ##t
-                        \once \override Stem.direction = #down
-                        d,,,,32
-                        \sustainOn
-                        \once \override Rest.staff-position = #-30
-                        r32
-                        \sustainOff
-                        \once \override Rest.staff-position = #-30
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 16 13) (ly:make-duration 4 0))
+                        \times 13/16
+                        {
+                            r16
+                            \once \override NoteHead.no-ledgers = ##t
+                            \slapped
+                            \once \override Stem.direction = #down
+                            d,,,,16
+                            \laissezVibrer
+                            _ \ppp
+                            - \tweak stencil #constante-hairpin
+                            _ \<
+                            \sustainOn
+                            r2..
+                            \sustainOff
+                        }
+                        r4.
+                        r4..
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 16 13) (ly:make-duration 4 0))
+                        \times 13/16
+                        {
+                            r4.
+                            \once \override NoteHead.no-ledgers = ##t
+                            \once \override Stem.direction = #down
+                            d,,,,16
+                            \laissezVibrer
+                            \sustainOn
+                            r2
+                            \sustainOff
+                            r16
+                        }
+                        r2.
+                        r16
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 16 13) (ly:make-duration 4 0))
+                        \times 13/16
+                        {
+                            r2
+                            r8.
+                            \once \override NoteHead.no-ledgers = ##t
+                            \once \override Stem.direction = #down
+                            d,,,,16
+                            \!
+                            \laissezVibrer
+                            \sustainOn
+                            \revert-noteheads
+                            r4
+                            \sustainOff
+                        }
                         r8
-                        \once \override Rest.staff-position = #-30
-                        r2
-                        \once \override Rest.staff-position = #-30
-                        r4...
-                        \once \override NoteHead.no-ledgers = ##t
-                        \once \override Stem.direction = #down
-                        d,,,,32
-                        \sustainOn
-                        \once \override Rest.staff-position = #-30
-                        r2
-                        \sustainOff
-                        \once \override Rest.staff-position = #-30
-                        r2
-                        \once \override Rest.staff-position = #-30
-                        r8
-                        \once \override NoteHead.no-ledgers = ##t
-                        \once \override Stem.direction = #down
-                        d,,,,32
-                        \!
-                        \sustainOn
-                        \revert-noteheads
-                        \once \override Rest.staff-position = #-30
-                        r16.
-                        \sustainOff
-                        \once \override Rest.staff-position = #-30
-                        r4
+                        \revert Voice.Rest.staff-position
                     }
                 }
                 \context thirdStaff = "piano 4 staff"

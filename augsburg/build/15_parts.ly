@@ -33,6 +33,7 @@
             s1 * 3/4
             \bar ":|."
             \once \override Score.BarLine.transparent = ##f
+            \once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((Y-offset . 130))
             \stopMeasureSpanner
         }
         \context StaffGroup = "Staff Group"

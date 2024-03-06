@@ -832,7 +832,7 @@ trinton.make_music(
             library.metronome_markups(
                 tempo_string="60",
                 previous_tempo_string=None,
-                padding=10.5,
+                padding=5.5,
                 string_only=False,
                 parenthesis=False,
             ),
@@ -847,7 +847,7 @@ trinton.make_music(
     trinton.hooked_spanner_command(
         string=r"\markup \fontsize #7 { Rall. }",
         selector=trinton.select_leaves_by_index([0, -1]),
-        padding=18,
+        padding=14,
         right_padding=0,
         full_string=True,
     ),

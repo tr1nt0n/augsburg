@@ -75,6 +75,18 @@ boxed-markup = #(
           (markup #:override '(baseline-skip . 2.5) #:number
                   (#:line ((#:fontsize 1 #:column ("X" "X")))))))
 
+jawharp-crook = \markup {
+    \epsfile #X #7 "/Users/trintonprater/scores/augsburg/augsburg/etc/graphics/crook.eps"
+}
+
+jawharp-waist = \markup {
+    \epsfile #X #7 "/Users/trintonprater/scores/augsburg/augsburg/etc/graphics/waist.eps"
+}
+
+jawharp-string = \markup {
+    \epsfile #X #7 "/Users/trintonprater/scores/augsburg/augsburg/etc/graphics/string.eps"
+}
+
 一 = #(rgb-color 190/255 132/255 170/255)
 二 = #(rgb-color 170/255 165/255 230/255)
 三 = #(rgb-color 125/255 200/255 240/255)

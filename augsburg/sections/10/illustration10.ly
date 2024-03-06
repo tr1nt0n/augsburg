@@ -99,7 +99,7 @@
             \time 4/4
             s1 * 1
             ^ \markup {
-              \raise #10 \with-dimensions-from \null
+              \raise #19 \with-dimensions-from \null
               \override #'(font-size . 5.5)
               \concat {
                   \abjad-metronome-mark-markup #2 #0 #2 #"33" 
@@ -404,6 +404,11 @@
                                 - \abjad-zero-padding-glissando
                                   %! abjad.glissando(7)
                                 \glissando
+                                - \tweak padding #20
+                                - \abjad-dashed-line-with-hook
+                                - \tweak bound-details.left.text \markup \concat { \jawharp-crook \hspace #0.5 }
+                                - \tweak bound-details.right.padding -7
+                                \startTextSpan
                                 _ \>
                                   %! abjad.glissando(1)
                                 \hide NoteHead
@@ -515,6 +520,7 @@
                                         )
                                     )
                                 )
+                                \stopTextSpan
                                 ]
                                 \revert Staff.NoteHead.no-ledgers
                                 \revert Staff.Accidental.stencil
@@ -3154,6 +3160,7 @@
                                 \override Dots.staff-position = #2
                                 \override Staff.NoteHead.no-ledgers = ##t
                                 \override Staff.Accidental.stencil = ##f
+                                \textSpannerDown
                                 \voiceOne
                                 g'8
                                 _ #(make-dynamic-script
@@ -3174,6 +3181,11 @@
                                 (
                                 - \abjad-zero-padding-glissando
                                 \glissando
+                                - \tweak padding #15
+                                - \abjad-dashed-line-with-up-hook
+                                - \tweak bound-details.left.text \markup \concat { \jawharp-crook \hspace #0.5 }
+                                - \tweak bound-details.right.padding -3
+                                \startTextSpan
                                 _ \<
                                 c''8
                                 _ #(make-dynamic-script
@@ -3206,7 +3218,9 @@
                                         )
                                     )
                                 )
+                                \stopTextSpan
                                 ]
+                                \textSpannerUp
                                 \revert Staff.NoteHead.no-ledgers
                                 \revert Staff.Accidental.stencil
                                 \once \override Rest.transparent = ##t

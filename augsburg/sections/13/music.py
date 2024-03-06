@@ -42,7 +42,7 @@ trinton.make_music(
     trinton.attachment_command(
         attachments=[
             library.boxed_markup(
-                string="Maultrommel + Vibrator", tweaks=[r"- \tweak padding #25"]
+                string="Maultrommel + Vibrator", tweaks=[r"- \tweak padding #25.5"]
             ),
             library.clef_whitespace_literal,
         ],
@@ -86,6 +86,14 @@ trinton.make_music(
         direction=abjad.DOWN,
     ),
     abjad.slur,
+    trinton.hooked_spanner_command(
+        string=r"\jawharp-crook",
+        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+        padding=19.65,
+        right_padding=3,
+        full_string=True,
+        style="dashed-line-with-hook",
+    ),
     voice=score["sounding voice"],
 )
 
@@ -515,7 +523,7 @@ trinton.make_music(
             library.metronome_markups(
                 tempo_string="60",
                 previous_tempo_string=None,
-                padding=9.5,
+                padding=21,
                 string_only=False,
                 parenthesis=False,
             ),

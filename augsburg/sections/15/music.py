@@ -949,6 +949,20 @@ trinton.make_music(
     voice=score["piano 1 voice temp temp"],
 )
 
+trinton.make_music(
+    lambda _: trinton.select_target(_, (4,)),
+    trinton.attachment_command(
+        attachments=[
+            abjad.LilyPondLiteral(
+                r"\once \override Score.NonMusicalPaperColumn.line-break-system-details = #'((Y-offset . 130))",
+                site="absolute_after",
+            )
+        ],
+        selector=trinton.select_leaves_by_index([-1]),
+    ),
+    voice=score["Global Context"],
+)
+
 # trinton.make_music(
 #     lambda _: trinton.select_target(_, (1,)),
 #     trinton.attachment_command(

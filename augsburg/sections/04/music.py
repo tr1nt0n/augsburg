@@ -73,6 +73,14 @@ trinton.make_music(
         direction=abjad.DOWN,
     ),
     abjad.slur,
+    trinton.hooked_spanner_command(
+        string=r"\jawharp-crook",
+        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+        padding=20,
+        right_padding=2,
+        full_string=True,
+        style="dashed-line-with-hook",
+    ),
     voice=score["sounding voice"],
 )
 

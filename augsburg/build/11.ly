@@ -5,7 +5,7 @@
             \time 4/4
             s1 * 1
             ^ \markup {
-              \raise #10.5 \with-dimensions-from \null
+              \raise #5.5 \with-dimensions-from \null
               \override #'(font-size . 5.5)
               \concat {
                   \abjad-metronome-mark-markup #2 #0 #2 #"60" 
@@ -16,7 +16,7 @@
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
-            - \tweak padding #18
+            - \tweak padding #14
             - \abjad-dashed-line-with-hook
             - \tweak bound-details.left.text \markup \concat { \fontsize #7 { Rall. } \hspace #0.5 }
             \startTextSpan

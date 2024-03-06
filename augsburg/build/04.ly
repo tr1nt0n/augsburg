@@ -137,6 +137,11 @@
                                 (
                                 - \abjad-zero-padding-glissando
                                 \glissando
+                                - \tweak padding #20
+                                - \abjad-dashed-line-with-hook
+                                - \tweak bound-details.left.text \markup \concat { \jawharp-crook \hspace #0.5 }
+                                - \tweak bound-details.right.padding -2
+                                \startTextSpan
                                 _ \<
                                 f''2
                                 _ #(make-dynamic-script
@@ -178,6 +183,7 @@
                                     g'16
                                     \!
                                     )
+                                    \stopTextSpan
                                     \revert Staff.NoteHead.no-ledgers
                                     \revert Staff.Accidental.stencil
                                 }
@@ -347,7 +353,7 @@
                         <<
                             \context Voice = "On_Beat_Grace_Container"
                             {
-                                  %! abjad.on_beat_grace_container(1)
+                                  %! trinton.on_beat_grace_container(1)
                                 \set fontSize = #-5.5
                                 \my-hack-slash
                                 \override Beam.beam-thickness = #0.48
@@ -388,7 +394,7 @@
                         <<
                             \context Voice = "On_Beat_Grace_Container"
                             {
-                                  %! abjad.on_beat_grace_container(1)
+                                  %! trinton.on_beat_grace_container(1)
                                 \set fontSize = #-5.5
                                 \my-hack-slash
                                 \override Beam.beam-thickness = #0.48

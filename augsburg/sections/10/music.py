@@ -269,6 +269,14 @@ trinton.make_music(
     ),
     library.low_pass_glissandi(no_ties=True),
     abjad.slur,
+    trinton.hooked_spanner_command(
+        string=r"\jawharp-crook",
+        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+        padding=20,
+        right_padding=7,
+        full_string=True,
+        style="dashed-line-with-hook",
+    ),
     voice=score["sounding voice"],
     beam_meter=True,
 )
@@ -1226,6 +1234,15 @@ trinton.make_music(
     ),
     library.low_pass_glissandi(no_ties=True),
     trinton.beam_groups(),
+    trinton.hooked_spanner_command(
+        string=r"\jawharp-crook",
+        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
+        padding=15,
+        direction="down",
+        right_padding=3,
+        full_string=True,
+        style="dashed-line-with-up-hook",
+    ),
     voice=score["sounding voice 1"],
 )
 
@@ -1451,7 +1468,7 @@ trinton.make_music(
             library.metronome_markups(
                 tempo_string="33",
                 previous_tempo_string="60",
-                padding=10,
+                padding=19,
                 string_only=False,
                 parenthesis=False,
             ),
