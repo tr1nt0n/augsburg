@@ -39,10 +39,10 @@
             \once \override Score.BarLine.transparent = ##f
             \time 5/8
             s1 * 5/8
-            - \tweak padding 23
+            - \tweak padding 20
             ^ \markup \override #'(font-name . " Bodoni72 Book Italic ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #3 { \center-column { \line { Endstück: } \line { Paraphog. }  } }
             ^ \markup {
-              \raise #33 \with-dimensions-from \null
+              \raise #31 \with-dimensions-from \null
               \override #'(font-size . 5.5)
               \concat {
                   \abjad-metronome-mark-markup #2 #0 #2 #"33" 
@@ -114,8 +114,16 @@
             \noBreak
             \once \override Score.BarLine.transparent = ##f
             \once \override Score.BarLine.transparent = ##f
+            \tweak text "×9" \startMeasureSpanner
+            \bar ".|:"
+            \time 9/8
+            s1 * 9/8
+            \bar ":|."
+            \noBreak
+            \once \override Score.BarLine.transparent = ##f
+            \stopMeasureSpanner
+            \once \override Score.BarLine.transparent = ##f
             \once \override MultiMeasureRest.transparent = ##t
-            \once \override Score.TimeSignature.stencil = ##f
             \once \override Score.TimeSignature.stencil = ##f
             \time 1/4
             R1 * 1/4
@@ -906,7 +914,7 @@
                         - \abjad-zero-padding-glissando
                           %! abjad.glissando(7)
                         \glissando
-                        - \tweak padding #12
+                        - \tweak padding #15
                         - \abjad-solid-line-with-arrow
                         - \tweak bound-details.left.text \markup \concat { \jawharp-crook \hspace #0.5 }
                         \startTextSpan
@@ -940,7 +948,7 @@
                                 )
                             )
                         \stopTextSpan
-                        - \tweak padding #12
+                        - \tweak padding #15
                         - \abjad-solid-line-with-arrow
                         - \tweak bound-details.left.text \markup \concat { \jawharp-waist \hspace #0.5 }
                         \startTextSpan
@@ -966,7 +974,7 @@
                                 )
                             )
                         \stopTextSpan
-                        - \tweak padding #12
+                        - \tweak padding #15
                         - \abjad-dashed-line-with-hook
                         - \tweak bound-details.left.text \markup \concat { \jawharp-string \hspace #0.5 }
                         - \tweak bound-details.right.padding -1.5
@@ -982,7 +990,6 @@
                         \once \override Tie.stencil = ##f
                         \afterGrace
                         c'8
-                        - \tweak circled-tip ##t
                         \>
                         {
                             \once \override Flag.stroke-style = #"grace" 
@@ -1000,11 +1007,86 @@
                               %! abjad.glissando(6)
                             \undo \hide NoteHead
                             c'16
-                            \!
+                            _ #(make-dynamic-script
+                                (markup
+                                    #:whiteout
+                                    #:line (
+                                        #:general-align Y -2 #:normal-text #:larger "“"
+                                        #:hspace -0.1
+                                        #:dynamic "mf"
+                                        #:hspace -0.2
+                                        #:general-align Y -2 #:normal-text #:larger "”"
+                                        )
+                                    )
+                                )
+                            - \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #2 { \center-column { \line { ( Den Vibrator nach Beendigung der Phrase } \line { auf den Saiten in der Nähe der Maultrommel belassen ) }  } }
                             \stopTextSpan
                         }
+                        r8
+                        \once \override Staff.Clef.X-extent = ##f
+                        \once \override Staff.Clef.extra-offset = #'(-4.5 . 0)
+                        \staff-line-count 5
+                        \textSpannerDown
+                        \clef "treble"
+                        <a e' bf' d'' ef''>8
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.1
+                                    #:dynamic "pp"
+                                    #:hspace -0.25
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
+                        ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #2 { \center-column { \line { Bogen mit Schmuckdraht, } \line { die Enden des Drahtes so weit wie möglich auseinander halten }  } }
+                        [
+                        - \tweak padding #15
+                        - \abjad-dashed-line-with-up-hook
+                        - \tweak bound-details.left.text \markup \concat { \upright { "so viel Draht wie möglich pro Bogen verwenden" } \hspace #0.5 }
+                        - \tweak bound-details.right.padding -3
+                        \startTextSpan
+                        \<
+                        r8
+                        <a e' bf' d'' ef''>8
+                        r8
+                        <a e' bf' d'' ef''>8
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.1
+                                    #:dynamic "mp"
+                                    #:hspace -0.25
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
+                        \>
+                        r8
+                        <a e' bf' d'' ef''>8
+                        _ #(make-dynamic-script
+                            (markup
+                                #:whiteout
+                                #:line (
+                                    #:general-align Y -2 #:normal-text #:larger "“"
+                                    #:hspace -0.1
+                                    #:dynamic "ppp"
+                                    #:hspace -0.25
+                                    #:general-align Y -2 #:normal-text #:larger "”"
+                                    )
+                                )
+                            )
+                        \stopTextSpan
+                        ]
+                        \textSpannerUp
+                        r8
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
+                        _ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #2 { \center-column { \line { ( Entfernen des } \line { Vibrators aus } \line { den Saiten ) }  } }
                         \stopStaff \startStaff
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                             {
@@ -1044,15 +1126,11 @@
                             }
                         \times 1/1
                         {
-                            \once \override Staff.Clef.X-extent = ##f
-                            \once \override Staff.Clef.extra-offset = #'(-2.5 . 0)
-                            \staff-line-count 5
                             \once \override Beam.grow-direction = #right
-                            \clef "treble"
                             \tweak style #'harmonic
                             c'''''32 * 15/4
                             \ppppp
-                            - \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { ( Harmonisches Glissando auf der höchsten Saite ) }
+                            - \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #2 { \center-column { \line { R.H. Tasten, } \line { L.H. Harmonisches Glissando } \line { auf der höchsten Saite }  } }
                             [
                               %! abjad.glissando(7)
                             - \abjad-zero-padding-glissando
@@ -1166,6 +1244,7 @@
                         s1 * 1/4
                         s1 * 1/4
                         s1 * 1/4
+                        s1 * 9/8
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
@@ -1534,39 +1613,40 @@
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
-                        \afterGrace
-                        s1 * 1/4
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
+                        r4
                         \sustainOn
-                        {
-                            \once \override Flag.stroke-style = #"grace" 
-                            \once \override Stem.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.transparent = ##t
-                            c'16
-                        }
                         \once \override Beam.stencil = ##f
                         \once \override Dots.stencil = ##f
                         \once \override Flag.stencil = ##f
                         \once \override NoteHead.duration-log = 2
                         \once \override Stem.stencil = ##f
                         \once \override Tie.stencil = ##f
-                        \afterGrace
                         <d,, d,>4
+                            _ #(make-dynamic-script (markup #:whiteout #:italic "sffz"))
                         - \accent
                         \laissezVibrer
-                        {
-                            \once \override Flag.stroke-style = #"grace" 
-                            \once \override Stem.stencil = ##f
-                            \once \override Flag.stencil = ##f
-                            \once \override NoteHead.no-ledgers = ##t
-                            \once \override Accidental.stencil = ##f
-                            \once \override NoteHead.transparent = ##t
-                            c'16
-                        }
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
+                        r8.
+                        \once \override Beam.stencil = ##f
+                        \once \override Dots.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
+                        \once \override Stem.stencil = ##f
+                        \once \override Tie.stencil = ##f
+                        <d,, d,>16
+                            _ #(make-dynamic-script (markup #:whiteout #:italic "sffz"))
+                        - \accent
+                        \laissezVibrer
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
+                        r1
+                        \once \override Dots.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \afterGrace
-                        s1 * 1/4
+                        r8
                         {
                             \once \override Flag.stroke-style = #"grace" 
                             \once \override Stem.stencil = ##f
@@ -1663,6 +1743,12 @@
                         \once \override Staff.TimeSignature.transparent = ##t
                         \once \override MultiMeasureRest.transparent = ##t
                         R1 * 1/4
+                        \stopStaff \startStaff
+                        \once \override Staff.BarLine.transparent = ##f
+                        \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                        \once \override Staff.TimeSignature.transparent = ##t
+                        \once \override MultiMeasureRest.transparent = ##t
+                        R1 * 9/8
                         \stopStaff \startStaff
                         \once \override Staff.BarLine.transparent = ##f
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
@@ -1803,6 +1889,13 @@
                     \once \override Staff.TimeSignature.transparent = ##t
                     \once \override MultiMeasureRest.transparent = ##t
                     R1 * 1/4
+                    \stopStaff \startStaff
+                    \once \override Staff.BarLine.transparent = ##f
+                    \once \revert Staff.StaffSymbol.line-positions
+                    \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                    \once \override Staff.TimeSignature.transparent = ##t
+                    \once \override MultiMeasureRest.transparent = ##t
+                    R1 * 9/8
                     \stopStaff \startStaff
                     \once \override Staff.BarLine.transparent = ##f
                     \once \revert Staff.StaffSymbol.line-positions
