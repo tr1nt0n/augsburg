@@ -1696,7 +1696,7 @@
                     \stopStaff \startStaff
                     \stopStaff \startStaff
                     \override Dots.staff-position = #2
-                    ef2
+                    e2
                       %! abjad.glissando(7)
                     - \abjad-zero-padding-glissando
                       %! abjad.glissando(7)
@@ -1711,7 +1711,7 @@
                       %! abjad.glissando(1)
                     \override NoteHead.no-ledgers = ##t
                     \afterGrace
-                    ef8
+                    e8
                     {
                         \revert Dots.staff-position
                           %! abjad.glissando(6)
@@ -1735,7 +1735,7 @@
                     \stopStaff \startStaff
                     \override Dots.staff-position = #2
                     \afterGrace
-                    ef2.
+                    e2.
                     - \abjad-zero-padding-glissando
                     \glissando
                     {
@@ -1753,7 +1753,7 @@
                     \stopStaff \startStaff
                     \override Dots.staff-position = #2
                     \afterGrace
-                    ef2..
+                    e2..
                     - \abjad-zero-padding-glissando
                     \glissando
                     {

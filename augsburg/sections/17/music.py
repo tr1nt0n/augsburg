@@ -625,7 +625,7 @@ for measure, final_pitch in zip([3, 5, 7], [-3, 0, 9]):
         lambda _: trinton.select_target(_, (measure,)),
         evans.RhythmHandler(rmakers.note),
         trinton.aftergrace_command(),
-        evans.PitchHandler([-9, final_pitch]),
+        evans.PitchHandler([-8, final_pitch]),
         library.low_pass_glissandi(),
         voice=score["piano 5 voice"],
     )
