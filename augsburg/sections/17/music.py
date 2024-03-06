@@ -180,7 +180,7 @@ for measure in [3, 5, 7]:
         trinton.aftergrace_command(
             selector=trinton.select_logical_ties_by_index([-1], pitched=True)
         ),
-        library.low_pass_glissandi(),
+        library.low_pass_glissandi(no_ties=True),
         voice=score[rf"piano 1 voice temp {counter}"],
     )
 
@@ -192,7 +192,7 @@ for measure in [3, 5, 7]:
         trinton.aftergrace_command(
             selector=trinton.select_logical_ties_by_index([-1], pitched=True)
         ),
-        library.low_pass_glissandi(),
+        library.low_pass_glissandi(no_ties=True),
         voice=score[rf"sounding voice {counter}"],
     )
 
@@ -873,6 +873,8 @@ trinton.make_music(
 # library.handle_accidentals(score=score, force_accidentals=False)
 
 library.clean_graces(score=score)
+
+library.clean_time_signatures(score=score)
 
 trinton.remove_redundant_time_signatures(score=score)
 

@@ -2,6 +2,7 @@
     <<
         \context TimeSignatureContext = "Global Context"
         {
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             #(ly:expect-warning "strange time signature found")
             \time 37/12
             s1 * 37/12
@@ -22,6 +23,7 @@
             \abjad-metronome-mark-markup #2 #0 #2 #"72" 
               }
             }
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 11/16
             s1 * 11/16
             - \tweak padding #23
@@ -31,9 +33,11 @@
             \startTextSpan
             \time 7/8
             s1 * 7/8
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 13/16
             s1 * 13/16
             \stopTextSpan
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 7/16
             s1 * 7/16
             \time 3/8

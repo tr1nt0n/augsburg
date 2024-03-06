@@ -18,6 +18,7 @@
         {
             \time 1/4
             s1 * 1/4
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 9/16
             s1 * 9/16
             ^ \markup {
@@ -31,16 +32,22 @@
             s1 * 5/8
             \time 3/8
             s1 * 3/8
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 8/16
             s1 * 1/2
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 7/16
             s1 * 7/16
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 3/16
             s1 * 3/16
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 5/16
             s1 * 5/16
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 4/16
             s1 * 1/4
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 11/16
             s1 * 11/16
             \time 7/8
@@ -53,6 +60,7 @@
             - \tweak font-size #'15
             _ \middle-fermata
             \once \override Score.BarLine.transparent = ##f
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 13/8
             s1 * 13/8
             ^ \markup {
@@ -71,6 +79,7 @@
             - \tweak font-size #'15
             _ \middle-fermata
             \once \override Score.BarLine.transparent = ##f
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 11/8
             s1 * 11/8
             - \tweak padding #16.5

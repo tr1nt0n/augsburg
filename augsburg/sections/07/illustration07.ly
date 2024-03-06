@@ -26,6 +26,7 @@
                   [\abjad-metric-modulation-tuplet-lhs #1 #0 #8 #11 #2 #0 #'(1 . 1)]
               }
             }
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 13/16
             s1 * 13/16
             ^ \markup {
@@ -35,6 +36,7 @@
                   \abjad-metronome-mark-mixed-number-markup #2 #0 #2 #"138" #"3" #"4" 
               }
             }
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 11/16
             s1 * 11/16
             ^ \markup {
@@ -55,6 +57,7 @@
                   [\abjad-metric-modulation-tuplet-lhs #3 #0 #32 #37 #2 #0 #'(1 . 1)]
               }
             }
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 9/16
             s1 * 9/16
             ^ \markup {
@@ -65,6 +68,7 @@
                   [\abjad-metric-modulation-tuplet-lhs #1 #0 #37 #32 #2 #0 #'(1 . 1)]
               }
             }
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 8/16
             s1 * 1/2
             ^ \markup {
@@ -76,6 +80,7 @@
               }
             }
             \noBreak
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 7/16
             s1 * 7/16
             ^ \markup {
@@ -97,6 +102,7 @@
                   [\abjad-metric-modulation-tuplet-lhs #1 #0 #32 #35 #2 #0 #'(1 . 1)]
               }
             }
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 5/16
             s1 * 5/16
             ^ \markup {
@@ -106,6 +112,7 @@
                   \abjad-metronome-mark-mixed-number-markup #2 #0 #2 #"138" #"3" #"4" 
               }
             }
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 4/16
             s1 * 1/4
             ^ \markup {

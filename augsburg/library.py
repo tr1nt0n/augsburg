@@ -118,6 +118,25 @@ def return_clef_whitespace_literal(offset_pair=(-2.5, 0)):
 # notation tools
 
 
+def clean_time_signatures(score):
+    for leaf in abjad.select.leaves(score["Global Context"]):
+        if abjad.get.has_indicator(leaf, abjad.TimeSignature):
+            time_signature = abjad.get.indicator(leaf, abjad.TimeSignature)
+            numerator = time_signature.numerator
+            denominator = time_signature.denominator
+
+            if numerator > 9 or denominator > 9:
+                abjad.attach(
+                    abjad.LilyPondLiteral(
+                        [
+                            r"\once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)"
+                        ],
+                        site="before",
+                    ),
+                    leaf,
+                )
+
+
 def cattenaires_trills(
     selector=trinton.logical_ties(pitched=True, grace=False), direction=abjad.UP
 ):

@@ -16,6 +16,7 @@
     <<
         \context TimeSignatureContext = "Global Context"
         {
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 11/4
             s1 * 11/4
             ^ \markup {
@@ -62,12 +63,15 @@
             s1 * 7/8
             \time 2/8
             s1 * 1/4
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 15/16
             s1 * 15/16
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 3/16
             s1 * 3/16
             \time 7/4
             s1 * 7/4
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 3/16
             s1 * 3/16
             \time 3/4

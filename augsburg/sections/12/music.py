@@ -1085,6 +1085,8 @@ trinton.make_music(
 
 library.clean_graces(score=score)
 
+library.clean_time_signatures(score=score)
+
 trinton.remove_redundant_time_signatures(score=score)
 
 library.reset_line_positions(score=score, voice_names=["piano 5 voice"])

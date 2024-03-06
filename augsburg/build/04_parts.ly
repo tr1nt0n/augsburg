@@ -22,6 +22,7 @@
                   [\abjad-metric-modulation-tuplet-lhs #1 #0 #37 #32 #2 #0 #'(1 . 1)]
               }
             }
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 3/16
             s1 * 3/16
             - \tweak padding #12
@@ -31,8 +32,10 @@
             \startTextSpan
             \time 5/4
             s1 * 5/4
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 4/16
             s1 * 1/4
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 11/4
             s1 * 11/4
             \time 7/4

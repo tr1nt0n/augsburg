@@ -2,6 +2,7 @@
     <<
         \context TimeSignatureContext = "Global Context"
         {
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 4/16
             s1 * 1/4
             ^ \markup {
@@ -13,11 +14,14 @@
             }
             \noBreak
             \once \override Score.TimeSignature.stencil = ##f
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 4/16
             s1 * 1/4
             \once \override Score.TimeSignature.stencil = ##f
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 4/16
             s1 * 1/4
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 13/8
             s1 * 13/8
             \once \override Score.BarLine.transparent = ##f
@@ -47,11 +51,14 @@
             s1 * 5/8
             \time 4/8
             s1 * 1/2
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 7/16
             s1 * 7/16
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 6/16
             s1 * 3/8
             \once \override Score.TimeSignature.stencil = ##f
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 6/16
             s1 * 3/8
             - \tweak padding #18
@@ -59,6 +66,7 @@
             - \tweak bound-details.left.text \markup \concat { { \override #'(font-size . 5.5) \concat { ( \abjad-metronome-mark-markup #2 #0 #2 #"60"  ) } } \hspace #0.5 }
             - \tweak bound-details.right.text \markup { \override #'(font-size . 5.5) \concat { \abjad-metronome-mark-mixed-number-markup #2 #0 #2 #"48" #"3" #"4"  [\abjad-metric-modulation-tuplet-lhs #2 #0 #16 #13 #2 #0 #'(1 . 1)] } }
             \startTextSpan
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 7/16
             s1 * 7/16
             \time 4/8
@@ -70,6 +78,7 @@
             \stopTextSpan
             \time 7/4
             s1 * 7/4
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 10/4
             s1 * 5/2
             ^ \markup {
@@ -80,6 +89,7 @@
                   [\abjad-metric-modulation-tuplet-lhs #2 #0 #13 #16 #2 #0 #'(1 . 1)]
               }
             }
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 12/4
             s1 * 3
             \time 4/4

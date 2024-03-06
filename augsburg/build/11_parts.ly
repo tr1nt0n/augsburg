@@ -16,7 +16,7 @@
             \once \override Score.TimeSignature.stencil = ##f
             \time 3/4
             s1 * 3/4
-            - \tweak padding #14
+            - \tweak padding #12
             - \abjad-dashed-line-with-hook
             - \tweak bound-details.left.text \markup \concat { \fontsize #7 { Rall. } \hspace #0.5 }
             \startTextSpan
@@ -26,12 +26,13 @@
             s1 * 3/2
             \stopTextSpan
             ^ \markup {
-              \raise #11 \with-dimensions-from \null
+              \raise #7 \with-dimensions-from \null
               \override #'(font-size . 5.5)
               \concat {
             \abjad-metronome-mark-markup #2 #0 #2 #"72" 
               }
             }
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             #(ly:expect-warning "strange time signature found")
             \time 37/12
             s1 * 37/12
@@ -42,9 +43,11 @@
                   \abjad-metronome-mark-markup #2 #0 #2 #"60" 
               }
             }
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             #(ly:expect-warning "strange time signature found")
             \time 37/20
             s1 * 37/20
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 5/16
             s1 * 5/16
             ^ \markup {
@@ -56,6 +59,7 @@
               }
             }
             \noBreak
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 11/8
             s1 * 11/8
             \noBreak
@@ -65,6 +69,7 @@
             \time 5/4
             s1 * 5/4
             \noBreak
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 7/16
             s1 * 7/16
             \noBreak
@@ -745,20 +750,25 @@
                                     \override DynamicText.color = \一
                                     \voiceOne
                                     a''''4
-                                    ^ \mp
-                                    - \tweak stencil #constante-hairpin
-                                    ^ \<
+                                    - \tweak padding #15.5
+                                    - \tweak whiteout-style #'outline- \tweak layer 2
+                                    - \abjad-solid-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \fontsize #-2 \with-color \一 { \musicglyph #"m" \musicglyph #"p" } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -2
+                                    \startTextSpan
                                     \hocket
                                     a''''8
                                     ~
                                 }
                                 a''''8
-                                \!
+                                \stopTextSpan
                                 \hocket
                                 a''''4
-                                ^ \pppp
-                                - \tweak stencil #constante-hairpin
-                                ^ \<
+                                - \tweak padding #15.5
+                                - \abjad-solid-line-with-hook
+                                - \tweak bound-details.left.text \markup \concat { \fontsize #-2 \with-color \一 { \musicglyph #"p" \musicglyph #"p" \musicglyph #"p" \musicglyph #"p" } \hspace #0.5 }
+                                - \tweak bound-details.right.padding -2
+                                \startTextSpan
                                 \hocket
                                 a''''4
                                 \hocket
@@ -767,16 +777,19 @@
                                 a''''4
                                 \hocket
                                 a''''4
-                                \!
+                                \stopTextSpan
                                 \tweak text #tuplet-number::calc-fraction-text
                                 \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 4 0))
                                 \times 6/5
                                 {
                                     \hocket
                                     a''''8
-                                    ^ \mp
-                                    - \tweak stencil #constante-hairpin
-                                    ^ \<
+                                    - \tweak padding #15.5
+                                    - \tweak whiteout-style #'outline- \tweak layer 2
+                                    - \abjad-solid-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \fontsize #-2 \with-color \一 { \musicglyph #"m" \musicglyph #"p" } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -2
+                                    \startTextSpan
                                     \hocket
                                     a''''8
                                     \hocket
@@ -788,12 +801,14 @@
                                 \times 10/11
                                 {
                                     a''''8
-                                    \!
+                                    \stopTextSpan
                                     \hocket
                                     a''''4
-                                    ^ \pppp
-                                    - \tweak stencil #constante-hairpin
-                                    ^ \<
+                                    - \tweak padding #15.5
+                                    - \abjad-solid-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \fontsize #-2 \with-color \一 { \musicglyph #"p" \musicglyph #"p" \musicglyph #"p" \musicglyph #"p" } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -2
+                                    \startTextSpan
                                     \hocket
                                     a''''4
                                     \hocket
@@ -802,16 +817,19 @@
                                     a''''4
                                     \hocket
                                     a''''4
-                                    \!
+                                    \stopTextSpan
                                 }
                                 \hocket
                                 g''''8..
-                                ^ \mp
-                                - \tweak stencil #constante-hairpin
-                                ^ \<
+                                - \tweak padding #15.5
+                                - \tweak whiteout-style #'outline- \tweak layer 2
+                                - \abjad-solid-line-with-hook
+                                - \tweak bound-details.left.text \markup \concat { \fontsize #-2 \with-color \一 { \musicglyph #"m" \musicglyph #"p" } \hspace #0.5 }
+                                - \tweak bound-details.right.padding -2
+                                \startTextSpan
                                 \hocket
                                 g''''8..
-                                \!
+                                \stopTextSpan
                                 \revert Accidental.color
                                 \revert Beam.color
                                 \revert Dots.color
@@ -1384,9 +1402,12 @@
                                     \override DynamicText.color = \二
                                     \voiceOne
                                     e''4
-                                    ^ \f
-                                    - \tweak stencil #constante-hairpin
-                                    ^ \<
+                                    - \tweak padding #12
+                                    - \tweak whiteout-style #'outline- \tweak layer 2
+                                    - \abjad-solid-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \fontsize #-2 \with-color \二 { \musicglyph #"f" } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -1
+                                    \startTextSpan
                                     \hocket
                                     e''16.
                                     ~
@@ -1398,13 +1419,15 @@
                                     e''4
                                     ~
                                     e''16
-                                    \!
+                                    \stopTextSpan
                                     \hocket
                                     \override Staff.Accidental.stencil = ##f
                                     e''2
-                                    ^ \pp
-                                    - \tweak stencil #constante-hairpin
-                                    ^ \<
+                                    - \tweak padding #12
+                                    - \abjad-solid-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \fontsize #-2 \with-color \二 { \musicglyph #"p" \musicglyph #"p" } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -1
+                                    \startTextSpan
                                     \revert Staff.Accidental.stencil
                                     \hocket
                                     e''2
@@ -1420,12 +1443,15 @@
                                 {
                                     \ottava 1
                                     e''16
-                                    \!
+                                    \stopTextSpan
                                     \hocket
                                     e'''8
-                                    ^ \f
-                                    - \tweak stencil #constante-hairpin
-                                    ^ \<
+                                    - \tweak padding #12
+                                    - \tweak whiteout-style #'outline- \tweak layer 2
+                                    - \abjad-solid-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \fontsize #-2 \with-color \二 { \musicglyph #"f" } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -1
+                                    \startTextSpan
                                     \hocket
                                     e''8
                                     \hocket
@@ -1437,12 +1463,14 @@
                                 \times 40/33
                                 {
                                     e''''8..
-                                    \!
+                                    \stopTextSpan
                                     \hocket
                                     e'''4
-                                    ^ \pp
-                                    - \tweak stencil #constante-hairpin
-                                    ^ \<
+                                    - \tweak padding #12
+                                    - \abjad-solid-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \fontsize #-2 \with-color \二 { \musicglyph #"p" \musicglyph #"p" } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -1
+                                    \startTextSpan
                                     \hocket
                                     e''''4
                                     \hocket
@@ -1456,17 +1484,20 @@
                                 \times 14/19
                                 {
                                     e'''8.
-                                    \!
+                                    \stopTextSpan
                                     \hocket
                                     e''''4
-                                    ^ \f
-                                    - \tweak stencil #constante-hairpin
-                                    ^ \<
+                                    - \tweak padding #12
+                                    - \tweak whiteout-style #'outline- \tweak layer 2
+                                    - \abjad-solid-line-with-hook
+                                    - \tweak bound-details.left.text \markup \concat { \fontsize #-2 \with-color \二 { \musicglyph #"f" } \hspace #0.5 }
+                                    - \tweak bound-details.right.padding -1
+                                    \startTextSpan
                                     \hocket
                                     e''''8
                                     ~
                                     e''''32
-                                    \!
+                                    \stopTextSpan
                                     \ottava 0
                                     \revert Accidental.color
                                     \revert Beam.color

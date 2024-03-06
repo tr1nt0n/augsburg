@@ -76,6 +76,7 @@
             \once \override Score.TimeSignature.stencil = ##f
             \time 4/4
             s1 * 1
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 12/8
             s1 * 3/2
             \time 4/4
@@ -88,6 +89,7 @@
             s1 * 1
             \time 2/4
             s1 * 1/2
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             #(ly:expect-warning "strange time signature found")
             \time 2/25
             s1 * 2/25
@@ -214,7 +216,7 @@
                         <<
                             \context Voice = "On_Beat_Grace_Container"
                             {
-                                  %! abjad.on_beat_grace_container(1)
+                                  %! trinton.on_beat_grace_container(1)
                                 \set fontSize = #-5.5
                                 \my-hack-slash
                                 \override Beam.beam-thickness = #0.48
@@ -302,7 +304,7 @@
                         <<
                             \context Voice = "On_Beat_Grace_Container"
                             {
-                                  %! abjad.on_beat_grace_container(1)
+                                  %! trinton.on_beat_grace_container(1)
                                 \set fontSize = #-5.5
                                 \my-hack-slash
                                 \override Beam.beam-thickness = #0.48

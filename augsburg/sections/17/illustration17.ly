@@ -16,6 +16,7 @@
     <<
         \context TimeSignatureContext = "Global Context"
         {
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 37/4
             s1 * 37/4
             ^ \markup {
@@ -567,7 +568,6 @@
                                 - \abjad-zero-padding-glissando
                                   %! abjad.glissando(7)
                                 \glissando
-                                ~
                                   %! abjad.glissando(1)
                                 \hide NoteHead
                                   %! abjad.glissando(1)

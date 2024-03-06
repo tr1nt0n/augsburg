@@ -2,6 +2,7 @@
     <<
         \context TimeSignatureContext = "Global Context"
         {
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             #(ly:expect-warning "strange time signature found")
             \time 37/14
             s1 * 37/14
@@ -20,6 +21,7 @@
             - \tweak font-size #'15
             _ \short-fermata
             \once \override Score.BarLine.transparent = ##f
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 13/4
             s1 * 13/4
             ^ \markup {

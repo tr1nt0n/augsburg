@@ -746,8 +746,18 @@ trinton.make_music(
 # polyphonic dynamics
 
 for voice_name, dynamic_pair in zip(
-    ["37 voice temp", "35 voice", "13 voice temp", "4 voice"],
-    [("mp", "pppp"), ("mf", "ppp"), ("f", "pp"), ("ff", "p")],
+    [
+        # "37 voice temp",
+        "35 voice",
+        # "13 voice temp",
+        "4 voice",
+    ],
+    [
+        # ("mp", "pppp"),
+        ("mf", "ppp"),
+        # ("f", "pp"),
+        ("ff", "p"),
+    ],
 ):
     measures = abjad.select.group_by_measure(score[voice_name])
 
@@ -773,6 +783,66 @@ for voice_name, dynamic_pair in zip(
             abjad.StartHairpin("--"), first_leaf_of_first_tie, direction=direction
         )
         abjad.attach(abjad.StopHairpin(), last_leaf_of_last_tie, direction=direction)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (8, 12)),
+    trinton.hooked_spanner_command(
+        string=r'\markup \fontsize #-2 \with-color \二 { \musicglyph #"f" }',
+        selector=trinton.select_leaves_by_index([0, 3, 9, 12, 18, 20], pitched=True),
+        padding=12,
+        right_padding=1,
+        full_string=True,
+        style="solid-line-with-hook",
+        tweaks=[r"- \tweak whiteout-style #'outline" r"- \tweak layer 2"],
+    ),
+    trinton.hooked_spanner_command(
+        string=r"""\markup \fontsize #-2 \with-color \二 { \musicglyph #"p" \musicglyph #"p" }""",
+        selector=trinton.select_leaves_by_index(
+            [
+                4,
+                8,
+                13,
+                17,
+            ],
+            pitched=True,
+        ),
+        padding=12,
+        right_padding=1,
+        full_string=True,
+        style="solid-line-with-hook",
+    ),
+    voice=score["13 voice temp"],
+)
+
+trinton.make_music(
+    lambda _: trinton.select_target(_, (8, 12)),
+    trinton.hooked_spanner_command(
+        string=r'\markup \fontsize #-2 \with-color \一 { \musicglyph #"m" \musicglyph #"p" }',
+        selector=trinton.select_leaves_by_index([0, 2, 8, 11, 17, 18], pitched=True),
+        padding=15.5,
+        right_padding=2,
+        full_string=True,
+        style="solid-line-with-hook",
+        tweaks=[r"- \tweak whiteout-style #'outline" r"- \tweak layer 2"],
+    ),
+    trinton.hooked_spanner_command(
+        string=r"""\markup \fontsize #-2 \with-color \一 { \musicglyph #"p" \musicglyph #"p" \musicglyph #"p" \musicglyph #"p" }""",
+        selector=trinton.select_leaves_by_index(
+            [
+                3,
+                7,
+                12,
+                16,
+            ],
+            pitched=True,
+        ),
+        padding=15.5,
+        right_padding=2,
+        full_string=True,
+        style="solid-line-with-hook",
+    ),
+    voice=score["37 voice temp"],
+)
 
 # filter music
 
@@ -847,7 +917,7 @@ trinton.make_music(
     trinton.hooked_spanner_command(
         string=r"\markup \fontsize #7 { Rall. }",
         selector=trinton.select_leaves_by_index([0, -1]),
-        padding=14,
+        padding=12,
         right_padding=0,
         full_string=True,
     ),
@@ -861,7 +931,7 @@ trinton.make_music(
             abjad.LilyPondLiteral(
                 [
                     r"^ \markup {",
-                    r"  \raise #11 \with-dimensions-from \null",
+                    r"  \raise #7 \with-dimensions-from \null",
                     r"  \override #'(font-size . 5.5)",
                     r"  \concat {",
                     r"""\abjad-metronome-mark-markup #2 #0 #2 #"72" """,
@@ -925,6 +995,8 @@ for measure in [8, 9, 10, 11, 12]:
 library.handle_accidentals(score=score, force_accidentals=False)
 
 library.clean_graces(score=score)
+
+library.clean_time_signatures(score=score)
 
 trinton.remove_redundant_time_signatures(score=score)
 

@@ -59,6 +59,7 @@
             s1 * 3/8
             \time 5/8
             s1 * 5/8
+            \once \override timeSignatureStaff.TimeSignature.X-extent = #'(3.58 . 3.58)
             \time 13/8
             s1 * 13/8
             \once \override Score.BarLine.transparent = ##f

@@ -985,6 +985,8 @@ for measure in [7, 8, 11, 12, 13, 14]:
 
 # beautification
 
+library.clean_time_signatures(score=score)
+
 # library.handle_accidentals(score=score, force_accidentals=False)
 
 library.clean_graces(score=score)
