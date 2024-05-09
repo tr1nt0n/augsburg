@@ -487,6 +487,7 @@ trinton.fermata_measures(
         "piano 4 voice",
         "piano 5 voice",
     ],
+    tag=None,
 )
 
 trinton.fermata_measures(
@@ -502,6 +503,7 @@ trinton.fermata_measures(
         "piano 4 voice",
         "piano 5 voice",
     ],
+    tag=None,
 )
 
 for measure in [

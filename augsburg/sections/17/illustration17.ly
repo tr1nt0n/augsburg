@@ -161,26 +161,47 @@
                                 \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 26 37) (ly:make-duration 4 0))
                                 \times 37/26
                                 {
+                                      %! +SCORE
                                     \override NoteHead.details.interrupt-color = \三
+                                      %! +SCORE
                                     \override NoteHead.details.switch-color = \三
+                                      %! +SCORE
                                     \override NoteHead.details.folow-color = \三
+                                      %! +SCORE
                                     \override NoteHead.details.hocket-color = \三
+                                      %! +SCORE
                                     \override Accidental.color = \三
+                                      %! +SCORE
                                     \override Beam.color = \三
+                                      %! +SCORE
                                     \override Dots.color = \三
+                                      %! +SCORE
                                     \override Flag.color = \三
+                                      %! +SCORE
                                     \override Glissando.color = \三
+                                      %! +SCORE
                                     \override MultiMeasureRest.color = \三
+                                      %! +SCORE
                                     \override NoteHead.color = \三
+                                      %! +SCORE
                                     \override RepeatTie.color = \三
+                                      %! +SCORE
                                     \override Rest.color = \三
+                                      %! +SCORE
                                     \override Slur.color = \三
+                                      %! +SCORE
                                     \override Stem.color = \三
+                                      %! +SCORE
                                     \override StemTremolo.color = \三
+                                      %! +SCORE
                                     \override Tie.color = \三
+                                      %! +SCORE
                                     \override TupletBracket.color = \三
+                                      %! +SCORE
                                     \override TupletNumber.color = \三
+                                      %! +SCORE
                                     \override Dots.staff-position = #2
+                                      %! +SCORE
                                     \override DynamicText.color = \三
                                     \revert Staff.Accidental.X-extent
                                     \clef "treble"
@@ -188,53 +209,101 @@
                                     r8
                                     <e' a' d''>8
                                         _ #(make-dynamic-script (markup #:whiteout #:italic "sffz"))
+                                      %! +PARTS
+                                %%% - \tenuto
+                                      %! +SCORE
                                     - \tweak color \三
+                                      %! +SCORE
                                     - \tenuto
                                     [
                                     (
                                     <e' a' d''>8
                                         _ #(make-dynamic-script (markup #:whiteout #:italic "sffz"))
+                                      %! +PARTS
+                                %%% - \tenuto
+                                      %! +SCORE
                                     - \tweak color \三
+                                      %! +SCORE
                                     - \tenuto
                                     <e' a' d''>8
                                         _ #(make-dynamic-script (markup #:whiteout #:italic "sffz"))
+                                      %! +PARTS
+                                %%% - \tenuto
+                                      %! +SCORE
                                     - \tweak color \三
+                                      %! +SCORE
                                     - \tenuto
                                     <e' a' d''>8
                                         _ #(make-dynamic-script (markup #:whiteout #:italic "sffz"))
+                                      %! +PARTS
+                                %%% - \tenuto
+                                      %! +SCORE
                                     - \tweak color \三
+                                      %! +SCORE
                                     - \tenuto
                                     <e' a' d''>8
                                         _ #(make-dynamic-script (markup #:whiteout #:italic "sffz"))
+                                      %! +PARTS
+                                %%% - \tenuto
+                                      %! +SCORE
                                     - \tweak color \三
+                                      %! +SCORE
                                     - \tenuto
                                     <e' a' d''>8
                                         _ #(make-dynamic-script (markup #:whiteout #:italic "sffz"))
+                                      %! +PARTS
+                                %%% - \tenuto
+                                      %! +SCORE
                                     - \tweak color \三
+                                      %! +SCORE
                                     - \tenuto
                                     <e' a' d''>8
                                         _ #(make-dynamic-script (markup #:whiteout #:italic "sffz"))
+                                      %! +PARTS
+                                %%% - \tenuto
+                                      %! +SCORE
                                     - \tweak color \三
+                                      %! +SCORE
                                     - \tenuto
                                     <e' a' d''>8
                                         _ #(make-dynamic-script (markup #:whiteout #:italic "sffz"))
+                                      %! +PARTS
+                                %%% - \tenuto
+                                      %! +SCORE
                                     - \tweak color \三
+                                      %! +SCORE
                                     - \tenuto
                                     <e' a' d''>8
                                         _ #(make-dynamic-script (markup #:whiteout #:italic "sffz"))
+                                      %! +PARTS
+                                %%% - \tenuto
+                                      %! +SCORE
                                     - \tweak color \三
+                                      %! +SCORE
                                     - \tenuto
                                     <e' a' d''>8
                                         _ #(make-dynamic-script (markup #:whiteout #:italic "sffz"))
+                                      %! +PARTS
+                                %%% - \tenuto
+                                      %! +SCORE
                                     - \tweak color \三
+                                      %! +SCORE
                                     - \tenuto
                                     <e' a' d''>8
                                         _ #(make-dynamic-script (markup #:whiteout #:italic "sffz"))
+                                      %! +PARTS
+                                %%% - \tenuto
+                                      %! +SCORE
                                     - \tweak color \三
+                                      %! +SCORE
                                     - \tenuto
                                     <e' a' d''>8
                                         _ #(make-dynamic-script (markup #:whiteout #:italic "sffz"))
+                                      %! +PARTS
+                                %%% - \tenuto
+                                      %! +SCORE
                                     - \tweak color \三
+                                      %! +SCORE
                                     - \tenuto
                                     ]
                                 }
@@ -244,31 +313,59 @@
                                 {
                                     <e' a' d''>4
                                         _ #(make-dynamic-script (markup #:whiteout #:italic "sffz"))
+                                      %! +PARTS
+                                %%% - \tenuto
+                                      %! +SCORE
                                     - \tweak color \三
+                                      %! +SCORE
                                     - \tenuto
                                     <e' a' d''>4
                                         _ #(make-dynamic-script (markup #:whiteout #:italic "sffz"))
+                                      %! +PARTS
+                                %%% - \tenuto
+                                      %! +SCORE
                                     - \tweak color \三
+                                      %! +SCORE
                                     - \tenuto
                                     <e' a' d''>4
                                         _ #(make-dynamic-script (markup #:whiteout #:italic "sffz"))
+                                      %! +PARTS
+                                %%% - \tenuto
+                                      %! +SCORE
                                     - \tweak color \三
+                                      %! +SCORE
                                     - \tenuto
                                     <e' a' d''>4
                                         _ #(make-dynamic-script (markup #:whiteout #:italic "sffz"))
+                                      %! +PARTS
+                                %%% - \tenuto
+                                      %! +SCORE
                                     - \tweak color \三
+                                      %! +SCORE
                                     - \tenuto
                                     <e' a' d''>4
                                         _ #(make-dynamic-script (markup #:whiteout #:italic "sffz"))
+                                      %! +PARTS
+                                %%% - \tenuto
+                                      %! +SCORE
                                     - \tweak color \三
+                                      %! +SCORE
                                     - \tenuto
                                     <e' a' d''>4
                                         _ #(make-dynamic-script (markup #:whiteout #:italic "sffz"))
+                                      %! +PARTS
+                                %%% - \tenuto
+                                      %! +SCORE
                                     - \tweak color \三
+                                      %! +SCORE
                                     - \tenuto
                                     <e' a' d''>8
                                         _ #(make-dynamic-script (markup #:whiteout #:italic "sffz"))
+                                      %! +PARTS
+                                %%% - \tenuto
+                                      %! +SCORE
                                     - \tweak color \三
+                                      %! +SCORE
                                     - \tenuto
                                     ~
                                 }
@@ -284,22 +381,39 @@
                                 r\breve
                                 r4
                                 r16
+                                  %! +SCORE
                                 \revert Accidental.color
+                                  %! +SCORE
                                 \revert Beam.color
+                                  %! +SCORE
                                 \revert Dots.color
+                                  %! +SCORE
                                 \revert Flag.color
+                                  %! +SCORE
                                 \revert Glissando.color
+                                  %! +SCORE
                                 \revert MultiMeasureRest.color
+                                  %! +SCORE
                                 \revert NoteHead.color
+                                  %! +SCORE
                                 \revert RepeatTie.color
+                                  %! +SCORE
                                 \revert Rest.color
+                                  %! +SCORE
                                 \revert Slur.color
+                                  %! +SCORE
                                 \revert Stem.color
+                                  %! +SCORE
                                 \revert StemTremolo.color
+                                  %! +SCORE
                                 \revert Tie.color
+                                  %! +SCORE
                                 \revert TupletBracket.color
+                                  %! +SCORE
                                 \revert TupletNumber.color
+                                  %! +SCORE
                                 \revert DynamicText.color
+                                  %! +SCORE
                                 \revert Dots.staff-position
                             }
                             \context Voice = "35 voice"
@@ -308,212 +422,531 @@
                                 \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 35 37) (ly:make-duration 4 0))
                                 \times 37/35
                                 {
+                                      %! +SCORE
                                     \override NoteHead.details.interrupt-color = \一
+                                      %! +SCORE
                                     \override NoteHead.details.switch-color = \一
+                                      %! +SCORE
                                     \override NoteHead.details.folow-color = \一
+                                      %! +SCORE
                                     \override NoteHead.details.hocket-color = \一
+                                      %! +SCORE
                                     \override Accidental.color = \一
+                                      %! +SCORE
                                     \override Beam.color = \一
+                                      %! +SCORE
                                     \override Dots.color = \一
+                                      %! +SCORE
                                     \override Flag.color = \一
+                                      %! +SCORE
                                     \override Glissando.color = \一
+                                      %! +SCORE
                                     \override MultiMeasureRest.color = \一
+                                      %! +SCORE
                                     \override NoteHead.color = \一
+                                      %! +SCORE
                                     \override RepeatTie.color = \一
+                                      %! +SCORE
                                     \override Rest.color = \一
+                                      %! +SCORE
                                     \override Slur.color = \一
+                                      %! +SCORE
                                     \override Stem.color = \一
+                                      %! +SCORE
                                     \override StemTremolo.color = \一
+                                      %! +SCORE
                                     \override Tie.color = \一
+                                      %! +SCORE
                                     \override TupletBracket.color = \一
+                                      %! +SCORE
                                     \override TupletNumber.color = \一
+                                      %! +SCORE
                                     \override Dots.staff-position = #2
+                                      %! +SCORE
                                     \override DynamicText.color = \一
                                     \override Staff.Stem.stemlet-length = 0.75
                                     \voiceOne
                                     <fs' g' as' b' cs''>16
+                                      %! +PARTS
+                                %%% - \accent
+                                      %! +PARTS
+                                %%% - \staccato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \accent
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \staccato
                                     [
+                                      %! +SCORE
                                     - \tweak padding #13.5
+                                      %! +SCORE
                                     - \abjad-solid-line-with-hook
+                                      %! +SCORE
                                     - \tweak bound-details.left.text \markup \concat { \fontsize #-2 \with-color \一 { \musicglyph #"f" } \hspace #0.5 }
+                                      %! +SCORE
                                     - \tweak bound-details.right.padding -3
+                                      %! +SCORE
                                     \startTextSpan
+                                      %! +PARTS
+                                %%% - \tweak padding #13.5
+                                      %! +PARTS
+                                %%% - \abjad-solid-line-with-hook
+                                      %! +PARTS
+                                %%% - \tweak bound-details.left.text \markup \concat { \fontsize #-2 { \musicglyph #"f" } \hspace #0.5 }
+                                      %! +PARTS
+                                %%% - \tweak bound-details.right.padding -3
+                                      %! +PARTS
+                                %%% \startTextSpan
                                     <fs' g' as' b' cs''>16
+                                      %! +PARTS
+                                %%% - \accent
+                                      %! +PARTS
+                                %%% - \staccato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \accent
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \staccato
                                     <fs' g' as' b' cs''>16
+                                      %! +PARTS
+                                %%% - \accent
+                                      %! +PARTS
+                                %%% - \staccato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \accent
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \staccato
                                     <fs' g' as' b' cs''>16
+                                      %! +PARTS
+                                %%% - \accent
+                                      %! +PARTS
+                                %%% - \staccato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \accent
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \staccato
                                     <fs' g' as' b' cs''>16
+                                      %! +PARTS
+                                %%% - \accent
+                                      %! +PARTS
+                                %%% - \staccato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \accent
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \staccato
                                     <fs' g' as' b' cs''>16
+                                      %! +PARTS
+                                %%% - \accent
+                                      %! +PARTS
+                                %%% - \staccato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \accent
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \staccato
                                     <fs' g' as' b' cs''>16
+                                      %! +PARTS
+                                %%% - \accent
+                                      %! +PARTS
+                                %%% - \staccato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \accent
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \staccato
                                     <fs' g' as' b' cs''>16
+                                      %! +PARTS
+                                %%% - \accent
+                                      %! +PARTS
+                                %%% - \staccato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \accent
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \staccato
                                     <fs' g' as' b' cs''>16
+                                      %! +PARTS
+                                %%% - \accent
+                                      %! +PARTS
+                                %%% - \staccato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \accent
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \staccato
                                     <fs' g' as' b' cs''>16
+                                      %! +PARTS
+                                %%% - \accent
+                                      %! +PARTS
+                                %%% - \staccato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \accent
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \staccato
                                     <fs' g' as' b' cs''>16
+                                      %! +PARTS
+                                %%% - \accent
+                                      %! +PARTS
+                                %%% - \staccato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \accent
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \staccato
                                     <fs' g' as' b' cs''>16
+                                      %! +PARTS
+                                %%% - \accent
+                                      %! +PARTS
+                                %%% - \staccato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \accent
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \staccato
                                     <fs' g' as' b' cs''>16
+                                      %! +PARTS
+                                %%% - \accent
+                                      %! +PARTS
+                                %%% - \staccato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \accent
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \staccato
                                     <fs' g' as' b' cs''>16
+                                      %! +PARTS
+                                %%% - \accent
+                                      %! +PARTS
+                                %%% - \staccato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \accent
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \staccato
                                     <fs' g' as' b' cs''>16
+                                      %! +PARTS
+                                %%% - \accent
+                                      %! +PARTS
+                                %%% - \staccato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \accent
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \staccato
                                     <fs' g' as' b' cs''>16
+                                      %! +PARTS
+                                %%% - \accent
+                                      %! +PARTS
+                                %%% - \staccato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \accent
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \staccato
                                     <fs' g' as' b' cs''>16
+                                      %! +PARTS
+                                %%% - \accent
+                                      %! +PARTS
+                                %%% - \staccato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \accent
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \staccato
                                     <fs' g' as' b' cs''>16
+                                      %! +PARTS
+                                %%% - \accent
+                                      %! +PARTS
+                                %%% - \staccato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \accent
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \staccato
                                     <fs' g' as' b' cs''>16
+                                      %! +PARTS
+                                %%% - \accent
+                                      %! +PARTS
+                                %%% - \staccato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \accent
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \staccato
                                     <fs' g' as' b' cs''>16
+                                      %! +PARTS
+                                %%% - \accent
+                                      %! +PARTS
+                                %%% - \staccato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \accent
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \staccato
                                     <fs' g' as' b' cs''>16
+                                      %! +PARTS
+                                %%% - \accent
+                                      %! +PARTS
+                                %%% - \staccato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \accent
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \staccato
                                     <fs' g' as' b' cs''>16
+                                      %! +PARTS
+                                %%% - \accent
+                                      %! +PARTS
+                                %%% - \staccato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \accent
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \staccato
                                     <fs' g' as' b' cs''>16
+                                      %! +PARTS
+                                %%% - \accent
+                                      %! +PARTS
+                                %%% - \staccato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \accent
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \staccato
                                     <fs' g' as' b' cs''>16
+                                      %! +PARTS
+                                %%% - \accent
+                                      %! +PARTS
+                                %%% - \staccato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \accent
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \staccato
                                     <fs' g' as' b' cs''>16
+                                      %! +PARTS
+                                %%% - \accent
+                                      %! +PARTS
+                                %%% - \staccato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \accent
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \staccato
                                     <fs' g' as' b' cs''>16
+                                      %! +PARTS
+                                %%% - \accent
+                                      %! +PARTS
+                                %%% - \staccato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \accent
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \staccato
                                     <fs' g' as' b' cs''>16
+                                      %! +PARTS
+                                %%% - \accent
+                                      %! +PARTS
+                                %%% - \staccato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \accent
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \staccato
                                     <fs' g' as' b' cs''>16
+                                      %! +PARTS
+                                %%% - \accent
+                                      %! +PARTS
+                                %%% - \staccato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \accent
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \staccato
                                     <fs' g' as' b' cs''>16
+                                      %! +PARTS
+                                %%% - \accent
+                                      %! +PARTS
+                                %%% - \staccato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \accent
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \staccato
                                     <fs' g' as' b' cs''>16
+                                      %! +PARTS
+                                %%% - \accent
+                                      %! +PARTS
+                                %%% - \staccato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \accent
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \staccato
                                     <fs' g' as' b' cs''>16
+                                      %! +PARTS
+                                %%% - \accent
+                                      %! +PARTS
+                                %%% - \staccato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \accent
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \staccato
                                     <fs' g' as' b' cs''>16
+                                      %! +PARTS
+                                %%% - \accent
+                                      %! +PARTS
+                                %%% - \staccato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \accent
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \staccato
                                     <fs' g' as' b' cs''>16
+                                      %! +PARTS
+                                %%% - \accent
+                                      %! +PARTS
+                                %%% - \staccato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \accent
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \staccato
                                     <fs' g' as' b' cs''>16
+                                      %! +PARTS
+                                %%% - \accent
+                                      %! +PARTS
+                                %%% - \staccato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \accent
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \staccato
                                     \revert Staff.Stem.stemlet-length
                                     <fs' g' as' b' cs''>16
+                                      %! +PARTS
+                                %%% - \accent
+                                      %! +PARTS
+                                %%% - \staccato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \accent
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     - \staccato
+                                      %! +SCORE
                                     \stopTextSpan
+                                      %! +PARTS
+                                %%% \stopTextSpan
                                     ]
                                 }
                                 \once \override Dots.transparent = ##t
@@ -543,28 +976,51 @@
                                 \once \override Dots.transparent = ##t
                                 \once \override Rest.transparent = ##t
                                 r16
+                                  %! +SCORE
                                 \revert Accidental.color
+                                  %! +SCORE
                                 \revert Beam.color
+                                  %! +SCORE
                                 \revert Dots.color
+                                  %! +SCORE
                                 \revert Flag.color
+                                  %! +SCORE
                                 \revert Glissando.color
+                                  %! +SCORE
                                 \revert MultiMeasureRest.color
+                                  %! +SCORE
                                 \revert NoteHead.color
+                                  %! +SCORE
                                 \revert RepeatTie.color
+                                  %! +SCORE
                                 \revert Rest.color
+                                  %! +SCORE
                                 \revert Slur.color
+                                  %! +SCORE
                                 \revert Stem.color
+                                  %! +SCORE
                                 \revert StemTremolo.color
+                                  %! +SCORE
                                 \revert Tie.color
+                                  %! +SCORE
                                 \revert TupletBracket.color
+                                  %! +SCORE
                                 \revert TupletNumber.color
+                                  %! +SCORE
                                 \revert DynamicText.color
+                                  %! +SCORE
                                 \revert Dots.staff-position
                             }
                         >>
                         \oneVoice
+                          %! +SCORE
+                        \once \override MultiMeasureRest.transparent = ##t
+                          %! +SCORE
+                        \once \override Rest.transparent = ##t
+                          %! +SCORE
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
+                          %! +SCORE
                         \stopStaff \startStaff
                         <<
                             \context Voice = "piano 1 voice temp 1"
@@ -689,8 +1145,14 @@
                             }
                         >>
                         \oneVoice
+                          %! +SCORE
+                        \once \override MultiMeasureRest.transparent = ##t
+                          %! +SCORE
+                        \once \override Rest.transparent = ##t
+                          %! +SCORE
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
+                          %! +SCORE
                         \stopStaff \startStaff
                         <<
                             \context Voice = "piano 1 voice temp 2"
@@ -786,8 +1248,14 @@
                             }
                         >>
                         \oneVoice
+                          %! +SCORE
+                        \once \override MultiMeasureRest.transparent = ##t
+                          %! +SCORE
+                        \once \override Rest.transparent = ##t
+                          %! +SCORE
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
+                          %! +SCORE
                         \stopStaff \startStaff
                         <<
                             \context Voice = "piano 1 voice temp 3"
@@ -888,15 +1356,22 @@
                             }
                         >>
                         \oneVoice
+                          %! +SCORE
+                        \once \override MultiMeasureRest.transparent = ##t
+                          %! +SCORE
+                        \once \override Rest.transparent = ##t
+                          %! +SCORE
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
+                          %! +SCORE
                         \stopStaff \startStaff
-                        \once \override Beam.stencil = ##f
-                        \once \override Dots.stencil = ##f
-                        \once \override Flag.stencil = ##f
-                        \once \override NoteHead.duration-log = 2
+                        \once \override RepeatTie.transparent = ##t
                         \once \override Stem.stencil = ##f
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override Dots.stencil = ##f
                         \once \override Tie.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
                         c'4
                         _ #(make-dynamic-script
                             (markup
@@ -919,13 +1394,14 @@
                         - \tweak bound-details.left.text \markup \concat { \jawharp-crook \hspace #0.5 }
                         \startTextSpan
                         \<
-                        \once \override Beam.stencil = ##f
                         \once \override Dots.staff-position = #2
-                        \once \override Dots.stencil = ##f
-                        \once \override Flag.stencil = ##f
-                        \once \override NoteHead.duration-log = 2
+                        \once \override RepeatTie.transparent = ##t
                         \once \override Stem.stencil = ##f
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override Dots.stencil = ##f
                         \once \override Tie.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
                           %! abjad.glissando(1)
                         \hide NoteHead
                           %! abjad.glissando(1)
@@ -953,13 +1429,14 @@
                         - \tweak bound-details.left.text \markup \concat { \jawharp-waist \hspace #0.5 }
                         \startTextSpan
                         \<
-                        \once \override Beam.stencil = ##f
                         \once \override Dots.staff-position = #2
-                        \once \override Dots.stencil = ##f
-                        \once \override Flag.stencil = ##f
-                        \once \override NoteHead.duration-log = 2
+                        \once \override RepeatTie.transparent = ##t
                         \once \override Stem.stencil = ##f
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override Dots.stencil = ##f
                         \once \override Tie.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
                         c'8
                         _ #(make-dynamic-script
                             (markup
@@ -981,13 +1458,14 @@
                         \startTextSpan
                         - \tweak stencil #constante-hairpin
                         \<
-                        \once \override Beam.stencil = ##f
                         \once \override Dots.staff-position = #2
-                        \once \override Dots.stencil = ##f
-                        \once \override Flag.stencil = ##f
-                        \once \override NoteHead.duration-log = 2
+                        \once \override RepeatTie.transparent = ##t
                         \once \override Stem.stencil = ##f
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override Dots.stencil = ##f
                         \once \override Tie.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
                         \afterGrace
                         c'8
                         \>
@@ -1084,9 +1562,15 @@
                         ]
                         \textSpannerUp
                         r8
+                          %! +SCORE
+                        \once \override MultiMeasureRest.transparent = ##t
+                          %! +SCORE
+                        \once \override Rest.transparent = ##t
+                          %! +SCORE
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         _ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #2 { \center-column { \line { ( Entfernen des } \line { Vibrators aus } \line { den Saiten ) }  } }
+                          %! +SCORE
                         \stopStaff \startStaff
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                             {
@@ -1216,8 +1700,14 @@
                             ]
                         }
                         \revert TupletNumber.text
+                          %! +SCORE
+                        \once \override MultiMeasureRest.transparent = ##t
+                          %! +SCORE
+                        \once \override Rest.transparent = ##t
+                          %! +SCORE
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
+                          %! +SCORE
                         \stopStaff \startStaff
                     }
                 }
@@ -1226,31 +1716,67 @@
                     \context Voice = "piano 2 voice"
                     {
                         s1 * 37/4
+                          %! +SCORE
+                        \once \override MultiMeasureRest.transparent = ##t
+                          %! +SCORE
+                        \once \override Rest.transparent = ##t
+                          %! +SCORE
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
+                          %! +SCORE
                         \stopStaff \startStaff
                         s1 * 5/8
+                          %! +SCORE
+                        \once \override MultiMeasureRest.transparent = ##t
+                          %! +SCORE
+                        \once \override Rest.transparent = ##t
+                          %! +SCORE
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
+                          %! +SCORE
                         \stopStaff \startStaff
                         s1 * 3/4
+                          %! +SCORE
+                        \once \override MultiMeasureRest.transparent = ##t
+                          %! +SCORE
+                        \once \override Rest.transparent = ##t
+                          %! +SCORE
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
+                          %! +SCORE
                         \stopStaff \startStaff
                         s1 * 7/8
+                          %! +SCORE
+                        \once \override MultiMeasureRest.transparent = ##t
+                          %! +SCORE
+                        \once \override Rest.transparent = ##t
+                          %! +SCORE
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
+                          %! +SCORE
                         \stopStaff \startStaff
                         s1 * 1/4
                         s1 * 1/4
                         s1 * 1/4
                         s1 * 9/8
+                          %! +SCORE
+                        \once \override MultiMeasureRest.transparent = ##t
+                          %! +SCORE
+                        \once \override Rest.transparent = ##t
+                          %! +SCORE
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
+                          %! +SCORE
                         \stopStaff \startStaff
                         s1 * 1/2
+                          %! +SCORE
+                        \once \override MultiMeasureRest.transparent = ##t
+                          %! +SCORE
+                        \once \override Rest.transparent = ##t
+                          %! +SCORE
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
+                          %! +SCORE
                         \stopStaff \startStaff
                     }
                 }
@@ -1263,26 +1789,47 @@
                             {
                                 \once \override NoteHead.no-ledgers = ##t
                                 \once \override Voice.Accidental.stencil = ##f
+                                  %! +SCORE
                                 \override NoteHead.details.interrupt-color = \四
+                                  %! +SCORE
                                 \override NoteHead.details.switch-color = \四
+                                  %! +SCORE
                                 \override NoteHead.details.folow-color = \四
+                                  %! +SCORE
                                 \override NoteHead.details.hocket-color = \四
+                                  %! +SCORE
                                 \override Accidental.color = \四
+                                  %! +SCORE
                                 \override Beam.color = \四
+                                  %! +SCORE
                                 \override Dots.color = \四
+                                  %! +SCORE
                                 \override Flag.color = \四
+                                  %! +SCORE
                                 \override Glissando.color = \四
+                                  %! +SCORE
                                 \override MultiMeasureRest.color = \四
+                                  %! +SCORE
                                 \override NoteHead.color = \四
+                                  %! +SCORE
                                 \override RepeatTie.color = \四
+                                  %! +SCORE
                                 \override Rest.color = \四
+                                  %! +SCORE
                                 \override Slur.color = \四
+                                  %! +SCORE
                                 \override Stem.color = \四
+                                  %! +SCORE
                                 \override StemTremolo.color = \四
+                                  %! +SCORE
                                 \override Tie.color = \四
+                                  %! +SCORE
                                 \override TupletBracket.color = \四
+                                  %! +SCORE
                                 \override TupletNumber.color = \四
+                                  %! +SCORE
                                 \override Dots.staff-position = #2
+                                  %! +SCORE
                                 \override DynamicText.color = \四
                                 \slapped
                                 \clef "bass"
@@ -1411,159 +1958,346 @@
                                 \sustainOff
                                 \once \override Rest.staff-position = #-20
                                 r8
+                                  %! +SCORE
                                 \revert Accidental.color
+                                  %! +SCORE
                                 \revert Beam.color
+                                  %! +SCORE
                                 \revert Dots.color
+                                  %! +SCORE
                                 \revert Flag.color
+                                  %! +SCORE
                                 \revert Glissando.color
+                                  %! +SCORE
                                 \revert MultiMeasureRest.color
+                                  %! +SCORE
                                 \revert NoteHead.color
+                                  %! +SCORE
                                 \revert RepeatTie.color
+                                  %! +SCORE
                                 \revert Rest.color
+                                  %! +SCORE
                                 \revert Slur.color
+                                  %! +SCORE
                                 \revert Stem.color
+                                  %! +SCORE
                                 \revert StemTremolo.color
+                                  %! +SCORE
                                 \revert Tie.color
+                                  %! +SCORE
                                 \revert TupletBracket.color
+                                  %! +SCORE
                                 \revert TupletNumber.color
+                                  %! +SCORE
                                 \revert DynamicText.color
+                                  %! +SCORE
                                 \revert Dots.staff-position
                             }
                             \context Voice = "4 voice"
                             {
+                                  %! +SCORE
                                 \override NoteHead.details.interrupt-color = \二
+                                  %! +SCORE
                                 \override NoteHead.details.switch-color = \二
+                                  %! +SCORE
                                 \override NoteHead.details.folow-color = \二
+                                  %! +SCORE
                                 \override NoteHead.details.hocket-color = \二
+                                  %! +SCORE
                                 \override Accidental.color = \二
+                                  %! +SCORE
                                 \override Beam.color = \二
+                                  %! +SCORE
                                 \override Dots.color = \二
+                                  %! +SCORE
                                 \override Flag.color = \二
+                                  %! +SCORE
                                 \override Glissando.color = \二
+                                  %! +SCORE
                                 \override MultiMeasureRest.color = \二
+                                  %! +SCORE
                                 \override NoteHead.color = \二
+                                  %! +SCORE
                                 \override RepeatTie.color = \二
+                                  %! +SCORE
                                 \override Rest.color = \二
+                                  %! +SCORE
                                 \override Slur.color = \二
+                                  %! +SCORE
                                 \override Stem.color = \二
+                                  %! +SCORE
                                 \override StemTremolo.color = \二
+                                  %! +SCORE
                                 \override Tie.color = \二
+                                  %! +SCORE
                                 \override TupletBracket.color = \二
+                                  %! +SCORE
                                 \override TupletNumber.color = \二
+                                  %! +SCORE
                                 \override Dots.staff-position = #2
+                                  %! +SCORE
                                 \override DynamicText.color = \二
                                 \voiceOne
                                 <c,, c,>4
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \二
+                                  %! +SCORE
                                 - \marcato
+                                  %! +SCORE
                                 - \tweak padding #6.5
+                                  %! +SCORE
                                 - \abjad-solid-line-with-hook
+                                  %! +SCORE
                                 - \tweak bound-details.left.text \markup \concat { \fontsize #-2 \with-color \二 { \musicglyph #"m" \musicglyph #"f" } \hspace #0.5 }
+                                  %! +SCORE
                                 - \tweak bound-details.right.padding -3
+                                  %! +SCORE
                                 \startTextSpan
+                                  %! +PARTS
+                            %%% - \tweak padding #6.5
+                                  %! +PARTS
+                            %%% - \abjad-solid-line-with-hook
+                                  %! +PARTS
+                            %%% - \tweak bound-details.left.text \markup \concat { \fontsize #-2 { \musicglyph #"m" \musicglyph #"f" } \hspace #0.5 }
+                                  %! +PARTS
+                            %%% - \tweak bound-details.right.padding -3
+                                  %! +PARTS
+                            %%% \startTextSpan
                                 <e,, e,>4
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \二
+                                  %! +SCORE
                                 - \marcato
                                 <a,, a,>4
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \二
+                                  %! +SCORE
                                 - \marcato
                                 <bf,, bf,>4
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \二
+                                  %! +SCORE
                                 - \marcato
                                 <f,, f,>4
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \二
+                                  %! +SCORE
                                 - \marcato
                                 <af,, af,>4
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \二
+                                  %! +SCORE
                                 - \marcato
                                 <g, g>4
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \二
+                                  %! +SCORE
                                 - \marcato
                                 <b, b>4
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \二
+                                  %! +SCORE
                                 - \marcato
                                 <d,, d,>4
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \二
+                                  %! +SCORE
                                 - \marcato
                                 <ef,, ef,>4
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \二
+                                  %! +SCORE
                                 - \marcato
                                 <gf,, gf,>4
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \二
+                                  %! +SCORE
                                 - \marcato
                                 <df, df>4
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \二
+                                  %! +SCORE
                                 - \marcato
                                 <c,, c,>4
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \二
+                                  %! +SCORE
                                 - \marcato
                                 <e,, e,>4
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \二
+                                  %! +SCORE
                                 - \marcato
                                 <a,, a,>4
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \二
+                                  %! +SCORE
                                 - \marcato
                                 <bf,, bf,>4
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \二
+                                  %! +SCORE
                                 - \marcato
                                 <f,, f,>4
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \二
+                                  %! +SCORE
                                 - \marcato
                                 <af,, af,>4
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \二
+                                  %! +SCORE
                                 - \marcato
                                 <g, g>4
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \二
+                                  %! +SCORE
                                 - \marcato
                                 <b, b>4
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \二
+                                  %! +SCORE
                                 - \marcato
                                 <d,, d,>4
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \二
+                                  %! +SCORE
                                 - \marcato
                                 <ef,, ef,>4
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \二
+                                  %! +SCORE
                                 - \marcato
                                 <gf,, gf,>4
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \二
+                                  %! +SCORE
                                 - \marcato
                                 <df, df>4
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \二
+                                  %! +SCORE
                                 - \marcato
                                 <c,, c,>4
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \二
+                                  %! +SCORE
                                 - \marcato
                                 <e,, e,>4
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \二
+                                  %! +SCORE
                                 - \marcato
                                 <a,, a,>4
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \二
+                                  %! +SCORE
                                 - \marcato
+                                  %! +SCORE
                                 \stopTextSpan
+                                  %! +PARTS
+                            %%% \stopTextSpan
                                 r\breve
                                 r2
+                                  %! +SCORE
                                 \revert Accidental.color
+                                  %! +SCORE
                                 \revert Beam.color
+                                  %! +SCORE
                                 \revert Dots.color
+                                  %! +SCORE
                                 \revert Flag.color
+                                  %! +SCORE
                                 \revert Glissando.color
+                                  %! +SCORE
                                 \revert MultiMeasureRest.color
+                                  %! +SCORE
                                 \revert NoteHead.color
+                                  %! +SCORE
                                 \revert RepeatTie.color
+                                  %! +SCORE
                                 \revert Rest.color
+                                  %! +SCORE
                                 \revert Slur.color
+                                  %! +SCORE
                                 \revert Stem.color
+                                  %! +SCORE
                                 \revert StemTremolo.color
+                                  %! +SCORE
                                 \revert Tie.color
+                                  %! +SCORE
                                 \revert TupletBracket.color
+                                  %! +SCORE
                                 \revert TupletNumber.color
+                                  %! +SCORE
                                 \revert DynamicText.color
+                                  %! +SCORE
                                 \revert Dots.staff-position
                             }
                         >>
                         \oneVoice
+                          %! +SCORE
+                        \once \override MultiMeasureRest.transparent = ##t
+                          %! +SCORE
+                        \once \override Rest.transparent = ##t
+                          %! +SCORE
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
+                          %! +SCORE
                         \stopStaff \startStaff
                         \afterGrace
                         s1 * 5/8
@@ -1578,8 +2312,14 @@
                             c'16
                             \sustainOff
                         }
+                          %! +SCORE
+                        \once \override MultiMeasureRest.transparent = ##t
+                          %! +SCORE
+                        \once \override Rest.transparent = ##t
+                          %! +SCORE
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
+                          %! +SCORE
                         \stopStaff \startStaff
                         \afterGrace
                         s1 * 3/4
@@ -1594,8 +2334,14 @@
                             c'16
                             \sustainOff
                         }
+                          %! +SCORE
+                        \once \override MultiMeasureRest.transparent = ##t
+                          %! +SCORE
+                        \once \override Rest.transparent = ##t
+                          %! +SCORE
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
+                          %! +SCORE
                         \stopStaff \startStaff
                         \afterGrace
                         s1 * 7/8
@@ -1610,19 +2356,26 @@
                             c'16
                             \sustainOff
                         }
+                          %! +SCORE
+                        \once \override MultiMeasureRest.transparent = ##t
+                          %! +SCORE
+                        \once \override Rest.transparent = ##t
+                          %! +SCORE
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
+                          %! +SCORE
                         \stopStaff \startStaff
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r4
                         \sustainOn
-                        \once \override Beam.stencil = ##f
-                        \once \override Dots.stencil = ##f
-                        \once \override Flag.stencil = ##f
-                        \once \override NoteHead.duration-log = 2
+                        \once \override RepeatTie.transparent = ##t
                         \once \override Stem.stencil = ##f
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override Dots.stencil = ##f
                         \once \override Tie.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
                         <d,, d,>4
                             _ #(make-dynamic-script (markup #:whiteout #:italic "sffz"))
                         - \accent
@@ -1630,12 +2383,13 @@
                         \once \override Dots.transparent = ##t
                         \once \override Rest.transparent = ##t
                         r8.
-                        \once \override Beam.stencil = ##f
-                        \once \override Dots.stencil = ##f
-                        \once \override Flag.stencil = ##f
-                        \once \override NoteHead.duration-log = 2
+                        \once \override RepeatTie.transparent = ##t
                         \once \override Stem.stencil = ##f
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override Dots.stencil = ##f
                         \once \override Tie.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
                         <d,, d,>16
                             _ #(make-dynamic-script (markup #:whiteout #:italic "sffz"))
                         - \accent
@@ -1657,12 +2411,24 @@
                             c'16
                             \sustainOff
                         }
+                          %! +SCORE
+                        \once \override MultiMeasureRest.transparent = ##t
+                          %! +SCORE
+                        \once \override Rest.transparent = ##t
+                          %! +SCORE
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
+                          %! +SCORE
                         \stopStaff \startStaff
                         s1 * 1/2
+                          %! +SCORE
+                        \once \override MultiMeasureRest.transparent = ##t
+                          %! +SCORE
+                        \once \override Rest.transparent = ##t
+                          %! +SCORE
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
+                          %! +SCORE
                         \stopStaff \startStaff
                     }
                 }
@@ -1677,6 +2443,8 @@
                         R1 * 37/4
                         \stopStaff \startStaff
                         \once \override Staff.BarLine.transparent = ##f
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \once \override Staff.TimeSignature.transparent = ##t
@@ -1691,6 +2459,8 @@
                         R1 * 5/8
                         \stopStaff \startStaff
                         \once \override Staff.BarLine.transparent = ##f
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \once \override Staff.TimeSignature.transparent = ##t
@@ -1705,6 +2475,8 @@
                         R1 * 3/4
                         \stopStaff \startStaff
                         \once \override Staff.BarLine.transparent = ##f
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \once \override Staff.TimeSignature.transparent = ##t
@@ -1719,6 +2491,8 @@
                         R1 * 7/8
                         \stopStaff \startStaff
                         \once \override Staff.BarLine.transparent = ##f
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \once \override Staff.TimeSignature.transparent = ##t
@@ -1751,6 +2525,8 @@
                         R1 * 9/8
                         \stopStaff \startStaff
                         \once \override Staff.BarLine.transparent = ##f
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \once \override Staff.TimeSignature.transparent = ##t
@@ -1765,6 +2541,8 @@
                         R1 * 1/2
                         \stopStaff \startStaff
                         \once \override Staff.BarLine.transparent = ##f
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \once \override Staff.TimeSignature.transparent = ##t
@@ -1787,6 +2565,8 @@
                     R1 * 37/4
                     \stopStaff \startStaff
                     \once \override Staff.BarLine.transparent = ##f
+                    \once \override MultiMeasureRest.transparent = ##t
+                    \once \override Rest.transparent = ##t
                     \once \revert Staff.StaffSymbol.line-positions
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
@@ -1825,6 +2605,8 @@
                         a16
                     }
                     \once \override Staff.BarLine.transparent = ##f
+                    \once \override MultiMeasureRest.transparent = ##t
+                    \once \override Rest.transparent = ##t
                     \once \revert Staff.StaffSymbol.line-positions
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
@@ -1843,6 +2625,8 @@
                         c'16
                     }
                     \once \override Staff.BarLine.transparent = ##f
+                    \once \override MultiMeasureRest.transparent = ##t
+                    \once \override Rest.transparent = ##t
                     \once \revert Staff.StaffSymbol.line-positions
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
@@ -1861,6 +2645,8 @@
                         a'16
                     }
                     \once \override Staff.BarLine.transparent = ##f
+                    \once \override MultiMeasureRest.transparent = ##t
+                    \once \override Rest.transparent = ##t
                     \once \revert Staff.StaffSymbol.line-positions
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
@@ -1898,6 +2684,8 @@
                     R1 * 9/8
                     \stopStaff \startStaff
                     \once \override Staff.BarLine.transparent = ##f
+                    \once \override MultiMeasureRest.transparent = ##t
+                    \once \override Rest.transparent = ##t
                     \once \revert Staff.StaffSymbol.line-positions
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
@@ -1914,6 +2702,8 @@
                     R1 * 1/2
                     \stopStaff \startStaff
                     \once \override Staff.BarLine.transparent = ##f
+                    \once \override MultiMeasureRest.transparent = ##t
+                    \once \override Rest.transparent = ##t
                     \once \revert Staff.StaffSymbol.line-positions
                     \override Staff.TextScript.whiteout = 0
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff

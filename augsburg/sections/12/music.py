@@ -32,7 +32,7 @@ trinton.make_music(
         selector=trinton.select_logical_ties_by_index([0], pitched=True, grace=False)
     ),
     trinton.pitch_with_selector_command(
-        pitch_list=["df,"],
+        pitch_list=["df"],
         selector=trinton.select_logical_ties_by_index(
             [1, 5, 11], pitched=True, grace=False
         ),
@@ -140,6 +140,17 @@ trinton.make_music(
             ),
         ],
         selector=trinton.select_leaves_by_index([0]),
+        tag=abjad.Tag("+SCORE"),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            library.boxed_markup(
+                string="( SYNTHESIZER EIN )",
+                # tweaks=[r"- \tweak color \四"],
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        tag=abjad.Tag("+PARTS"),
     ),
     trinton.linear_attachment_command(
         attachments=[
@@ -205,7 +216,7 @@ trinton.make_music(
     trinton.rewrite_meter_command(),
     evans.PitchHandler(
         [
-            "df,",
+            "df",
         ]
     ),
     evans.PitchHandler(
@@ -287,7 +298,7 @@ trinton.make_music(
     ),
     evans.PitchHandler(
         [
-            "df,",
+            "df",
         ]
     ),
     evans.PitchHandler(
@@ -633,6 +644,19 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([0]),
         direction=abjad.UP,
+        tag=abjad.Tag("+SCORE"),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            library.boxed_markup(string=["Entfernen des Vibrators", "aus den Saiten."]),
+            library.boxed_markup(
+                string="( SYNTHESIZER AUS )",
+                # tweaks=[r"- \tweak color \四"],
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        direction=abjad.UP,
+        tag=abjad.Tag("+PARTS"),
     ),
     voice=score["piano 2 voice"],
 )
@@ -944,6 +968,7 @@ trinton.fermata_measures(
         "piano 4 voice",
         "piano 5 voice",
     ],
+    tag=None,
 )
 
 for measure in [

@@ -214,6 +214,27 @@ trinton.make_music(
     ),
     trinton.linear_attachment_command(
         attachments=[
+            library.boxed_markup(
+                string="( Prolatiert mit der Taktart nicht )",
+                tweaks=[r"- \tweak padding #1"],
+            ),
+            library.boxed_markup(
+                string="Tasten",
+            ),
+            abjad.Clef("treble"),
+        ],
+        selector=trinton.select_leaves_by_index(
+            [
+                0,
+                1,
+                1,
+            ],
+            pitched=True,
+        ),
+        direction=abjad.UP,
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
             abjad.LilyPondLiteral(
                 [
                     r"\override NoteHead.details.interrupt-color = \四",
@@ -240,14 +261,6 @@ trinton.make_music(
                 ],
                 site="before",
             ),
-            library.boxed_markup(
-                string="( Prolatiert mit der Taktart nicht )",
-                tweaks=[r"- \tweak padding #1"],
-            ),
-            library.boxed_markup(
-                string="Tasten",
-            ),
-            abjad.Clef("treble"),
             abjad.LilyPondLiteral(
                 [
                     r"\revert NoteHead.details.interrupt-color",
@@ -275,8 +288,9 @@ trinton.make_music(
                 site="absolute_after",
             ),
         ],
-        selector=trinton.select_leaves_by_index([0, 0, 1, 1, -1], pitched=True),
+        selector=trinton.select_leaves_by_index([0, -1], pitched=True),
         direction=abjad.UP,
+        tag=abjad.Tag("+SCORE"),
     ),
     trinton.linear_attachment_command(
         attachments=[
@@ -794,6 +808,17 @@ trinton.make_music(
         full_string=True,
         style="solid-line-with-hook",
         tweaks=[r"- \tweak whiteout-style #'outline" r"- \tweak layer 2"],
+        tag=abjad.Tag("+SCORE"),
+    ),
+    trinton.hooked_spanner_command(
+        string=r'\markup \fontsize #-2 { \musicglyph #"f" }',
+        selector=trinton.select_leaves_by_index([0, 3, 9, 12, 18, 20], pitched=True),
+        padding=12,
+        right_padding=1,
+        full_string=True,
+        style="solid-line-with-hook",
+        tweaks=[r"- \tweak whiteout-style #'outline" r"- \tweak layer 2"],
+        tag=abjad.Tag("+PARTS"),
     ),
     trinton.hooked_spanner_command(
         string=r"""\markup \fontsize #-2 \with-color \二 { \musicglyph #"p" \musicglyph #"p" }""",
@@ -810,6 +835,24 @@ trinton.make_music(
         right_padding=1,
         full_string=True,
         style="solid-line-with-hook",
+        tag=abjad.Tag("+SCORE"),
+    ),
+    trinton.hooked_spanner_command(
+        string=r"""\markup \fontsize #-2 { \musicglyph #"p" \musicglyph #"p" }""",
+        selector=trinton.select_leaves_by_index(
+            [
+                4,
+                8,
+                13,
+                17,
+            ],
+            pitched=True,
+        ),
+        padding=12,
+        right_padding=1,
+        full_string=True,
+        style="solid-line-with-hook",
+        tag=abjad.Tag("+PARTS"),
     ),
     voice=score["13 voice temp"],
 )
@@ -824,6 +867,17 @@ trinton.make_music(
         full_string=True,
         style="solid-line-with-hook",
         tweaks=[r"- \tweak whiteout-style #'outline" r"- \tweak layer 2"],
+        tag=abjad.Tag("+SCORE"),
+    ),
+    trinton.hooked_spanner_command(
+        string=r'\markup \fontsize #-2 { \musicglyph #"m" \musicglyph #"p" }',
+        selector=trinton.select_leaves_by_index([0, 2, 8, 11, 17, 18], pitched=True),
+        padding=15.5,
+        right_padding=2,
+        full_string=True,
+        style="solid-line-with-hook",
+        tweaks=[r"- \tweak whiteout-style #'outline" r"- \tweak layer 2"],
+        tag=abjad.Tag("+PARTS"),
     ),
     trinton.hooked_spanner_command(
         string=r"""\markup \fontsize #-2 \with-color \一 { \musicglyph #"p" \musicglyph #"p" \musicglyph #"p" \musicglyph #"p" }""",
@@ -840,6 +894,24 @@ trinton.make_music(
         right_padding=2,
         full_string=True,
         style="solid-line-with-hook",
+        tag=abjad.Tag("+SCORE"),
+    ),
+    trinton.hooked_spanner_command(
+        string=r"""\markup \fontsize #-2{ \musicglyph #"p" \musicglyph #"p" \musicglyph #"p" \musicglyph #"p" }""",
+        selector=trinton.select_leaves_by_index(
+            [
+                3,
+                7,
+                12,
+                16,
+            ],
+            pitched=True,
+        ),
+        padding=15.5,
+        right_padding=2,
+        full_string=True,
+        style="solid-line-with-hook",
+        tag=abjad.Tag("+PARTS"),
     ),
     voice=score["37 voice temp"],
 )

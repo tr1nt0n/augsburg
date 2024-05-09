@@ -167,25 +167,45 @@
                                 {
                                     \interrupt
                                     \ottava 2
+                                      %! +SCORE
                                     \override NoteHead.details.interrupt-color = \一
+                                      %! +SCORE
                                     \override NoteHead.details.switch-color = \一
+                                      %! +SCORE
                                     \override NoteHead.details.folow-color = \一
+                                      %! +SCORE
                                     \override NoteHead.details.hocket-color = \一
+                                      %! +SCORE
                                     \override Accidental.color = \一
+                                      %! +SCORE
                                     \override Beam.color = \一
+                                      %! +SCORE
                                     \override Dots.color = \一
+                                      %! +SCORE
                                     \override Flag.color = \一
+                                      %! +SCORE
                                     \override Glissando.color = \一
+                                      %! +SCORE
                                     \override MultiMeasureRest.color = \一
+                                      %! +SCORE
                                     \override NoteHead.color = \一
+                                      %! +SCORE
                                     \override RepeatTie.color = \一
+                                      %! +SCORE
                                     \override Rest.color = \一
+                                      %! +SCORE
                                     \override Slur.color = \一
+                                      %! +SCORE
                                     \override Stem.color = \一
+                                      %! +SCORE
                                     \override StemTremolo.color = \一
+                                      %! +SCORE
                                     \override Tie.color = \一
+                                      %! +SCORE
                                     \override TupletBracket.color = \一
+                                      %! +SCORE
                                     \override TupletNumber.color = \一
+                                      %! +SCORE
                                     \override Dots.staff-position = #2
                                     \clef "treble"
                                     \voiceOne
@@ -223,25 +243,45 @@
                                 \times 8/11
                                 {
                                     \interrupt
+                                      %! +SCORE
                                     \override NoteHead.details.interrupt-color = \三
+                                      %! +SCORE
                                     \override NoteHead.details.switch-color = \三
+                                      %! +SCORE
                                     \override NoteHead.details.folow-color = \三
+                                      %! +SCORE
                                     \override NoteHead.details.hocket-color = \三
+                                      %! +SCORE
                                     \override Accidental.color = \三
+                                      %! +SCORE
                                     \override Beam.color = \三
+                                      %! +SCORE
                                     \override Dots.color = \三
+                                      %! +SCORE
                                     \override Flag.color = \三
+                                      %! +SCORE
                                     \override Glissando.color = \三
+                                      %! +SCORE
                                     \override MultiMeasureRest.color = \三
+                                      %! +SCORE
                                     \override NoteHead.color = \三
+                                      %! +SCORE
                                     \override RepeatTie.color = \三
+                                      %! +SCORE
                                     \override Rest.color = \三
+                                      %! +SCORE
                                     \override Slur.color = \三
+                                      %! +SCORE
                                     \override Stem.color = \三
+                                      %! +SCORE
                                     \override StemTremolo.color = \三
+                                      %! +SCORE
                                     \override Tie.color = \三
+                                      %! +SCORE
                                     \override TupletBracket.color = \三
+                                      %! +SCORE
                                     \override TupletNumber.color = \三
+                                      %! +SCORE
                                     \override Dots.staff-position = #2
                                     \voiceTwo
                                     g''''4
@@ -537,6 +577,8 @@
                             }
                         >>
                         \oneVoice
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
@@ -1072,8 +1114,8 @@
                         c'64
                         ]
                         ~
-                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 4 0))
-                        \times 2/3
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 6 4) (ly:make-duration 5 0))
+                        \times 4/6
                         {
                             \once \override TupletBracket.bracket-visibility = ##f
                             \once \override TupletBracket.bracket-visibility = ##f
@@ -1627,7 +1669,6 @@
                                 \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 37 32) (ly:make-duration 5 0))
                                 \times 32/37
                                 {
-                                    \hocket
                                     \ottava 2
                                     \override NoteHead.details.interrupt-color = \一
                                     \override NoteHead.details.switch-color = \一
@@ -1655,13 +1696,9 @@
                                     a''''4
                                     ^ \ppp
                                     ^ \<
-                                    \hocket
                                     a''''4
-                                    \hocket
                                     a''''4
-                                    \hocket
                                     a''''4
-                                    \hocket
                                     a''''8
                                     ~
                                     a''''32
@@ -1672,17 +1709,12 @@
                                 \times 48/37
                                 {
                                     a''''32.
-                                    \hocket
                                     \override Staff.Accidental.stencil = ##f
                                     a''''8
                                     \revert Staff.Accidental.stencil
-                                    \hocket
                                     a''''8
-                                    \hocket
                                     a''''8
-                                    \hocket
                                     a''''8
-                                    \hocket
                                     a''''32
                                     ^ \mp
                                     \revert Accidental.color
@@ -1709,7 +1741,6 @@
                                 \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 35 32) (ly:make-duration 5 0))
                                 \times 32/35
                                 {
-                                    \hocket
                                     \override NoteHead.details.interrupt-color = \三
                                     \override NoteHead.details.switch-color = \三
                                     \override NoteHead.details.folow-color = \三
@@ -1735,13 +1766,9 @@
                                     g'''4
                                     _ \pp
                                     _ \<
-                                    \hocket
                                     g''''4
-                                    \hocket
                                     g'''4
-                                    \hocket
                                     g'''4
-                                    \hocket
                                     g''''16.
                                     ~
                                 }
@@ -1752,15 +1779,11 @@
                                     g''''8
                                     ~
                                     g''''32
-                                    \hocket
                                     \override Staff.Accidental.stencil = ##f
                                     g'''4
                                     \revert Staff.Accidental.stencil
-                                    \hocket
                                     g'''4
-                                    \hocket
                                     g''''4
-                                    \hocket
                                     g'''8.
                                     _ \mf
                                     \ottava 0
@@ -1785,6 +1808,8 @@
                             }
                         >>
                         \oneVoice
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
@@ -1827,6 +1852,8 @@
                                     )
                                 )
                         }
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
@@ -1840,6 +1867,8 @@
                         s1 * 1/4
                         s1 * 1/4
                         s1 * 13/8
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
@@ -1861,10 +1890,14 @@
                         s1 * 3
                         s1 * 1
                         s1 * 3/4
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
                         s1 * 7/8
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
@@ -1883,25 +1916,45 @@
                                 {
                                     \interrupt
                                     \ottava 2
+                                      %! +SCORE
                                     \override NoteHead.details.interrupt-color = \二
+                                      %! +SCORE
                                     \override NoteHead.details.switch-color = \二
+                                      %! +SCORE
                                     \override NoteHead.details.folow-color = \二
+                                      %! +SCORE
                                     \override NoteHead.details.hocket-color = \二
+                                      %! +SCORE
                                     \override Accidental.color = \二
+                                      %! +SCORE
                                     \override Beam.color = \二
+                                      %! +SCORE
                                     \override Dots.color = \二
+                                      %! +SCORE
                                     \override Flag.color = \二
+                                      %! +SCORE
                                     \override Glissando.color = \二
+                                      %! +SCORE
                                     \override MultiMeasureRest.color = \二
+                                      %! +SCORE
                                     \override NoteHead.color = \二
+                                      %! +SCORE
                                     \override RepeatTie.color = \二
+                                      %! +SCORE
                                     \override Rest.color = \二
+                                      %! +SCORE
                                     \override Slur.color = \二
+                                      %! +SCORE
                                     \override Stem.color = \二
+                                      %! +SCORE
                                     \override StemTremolo.color = \二
+                                      %! +SCORE
                                     \override Tie.color = \二
+                                      %! +SCORE
                                     \override TupletBracket.color = \二
+                                      %! +SCORE
                                     \override TupletNumber.color = \二
+                                      %! +SCORE
                                     \override Dots.staff-position = #2
                                     \clef "treble"
                                     \voiceOne
@@ -1941,25 +1994,45 @@
                             \context Voice = "4 voice"
                             {
                                 \interrupt
+                                  %! +SCORE
                                 \override NoteHead.details.interrupt-color = \四
+                                  %! +SCORE
                                 \override NoteHead.details.switch-color = \四
+                                  %! +SCORE
                                 \override NoteHead.details.folow-color = \四
+                                  %! +SCORE
                                 \override NoteHead.details.hocket-color = \四
+                                  %! +SCORE
                                 \override Accidental.color = \四
+                                  %! +SCORE
                                 \override Beam.color = \四
+                                  %! +SCORE
                                 \override Dots.color = \四
+                                  %! +SCORE
                                 \override Flag.color = \四
+                                  %! +SCORE
                                 \override Glissando.color = \四
+                                  %! +SCORE
                                 \override MultiMeasureRest.color = \四
+                                  %! +SCORE
                                 \override NoteHead.color = \四
+                                  %! +SCORE
                                 \override RepeatTie.color = \四
+                                  %! +SCORE
                                 \override Rest.color = \四
+                                  %! +SCORE
                                 \override Slur.color = \四
+                                  %! +SCORE
                                 \override Stem.color = \四
+                                  %! +SCORE
                                 \override StemTremolo.color = \四
+                                  %! +SCORE
                                 \override Tie.color = \四
+                                  %! +SCORE
                                 \override TupletBracket.color = \四
+                                  %! +SCORE
                                 \override TupletNumber.color = \四
+                                  %! +SCORE
                                 \override Dots.staff-position = #2
                                 \voiceTwo
                                 g''''4
@@ -2010,6 +2083,8 @@
                         \sustainOn
                         \override Staff.Accidental.X-extent = ##f
                         s1 * 13/8
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \sustainOff
@@ -2339,8 +2414,8 @@
                         - \tweak circled-tip ##t
                         \>
                         ~
-                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 2 0))
-                        \times 2/3
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 6 4) (ly:make-duration 3 0))
+                        \times 4/6
                         {
                             c'4
                             r8
@@ -2811,7 +2886,6 @@
                                 \times 2/3
                                 {
                                     \once \override Staff.Accidental.stencil = ##f
-                                    \once \override TupletBracket.bracket-visibility = ##f
                                     c,,32
                                     - \marcato
                                     - \natural-articulation
@@ -2827,7 +2901,6 @@
                                 \times 2/3
                                 {
                                     \once \override Staff.Accidental.stencil = ##f
-                                    \once \override TupletBracket.bracket-visibility = ##f
                                     fs,,32
                                     - \marcato
                                     - \sharp-articulation
@@ -2843,7 +2916,6 @@
                                 \times 2/3
                                 {
                                     \once \override Staff.Accidental.stencil = ##f
-                                    \once \override TupletBracket.bracket-visibility = ##f
                                     e,,32
                                     - \marcato
                                     - \natural-articulation
@@ -2859,7 +2931,6 @@
                                 \times 2/3
                                 {
                                     \once \override Staff.Accidental.stencil = ##f
-                                    \once \override TupletBracket.bracket-visibility = ##f
                                     b,,,32
                                     - \marcato
                                     - \natural-articulation
@@ -2875,7 +2946,6 @@
                                 \times 2/3
                                 {
                                     \once \override Staff.Accidental.stencil = ##f
-                                    \once \override TupletBracket.bracket-visibility = ##f
                                     cs,,32
                                     - \marcato
                                     - \sharp-articulation
@@ -2891,7 +2961,6 @@
                                 \times 2/3
                                 {
                                     \once \override Staff.Accidental.stencil = ##f
-                                    \once \override TupletBracket.bracket-visibility = ##f
                                     g,,32
                                     - \marcato
                                     - \natural-articulation
@@ -2907,7 +2976,6 @@
                                 \times 2/3
                                 {
                                     \once \override Staff.Accidental.stencil = ##f
-                                    \once \override TupletBracket.bracket-visibility = ##f
                                     fs,,32
                                     - \marcato
                                     - \sharp-articulation
@@ -2923,7 +2991,6 @@
                                 \times 2/3
                                 {
                                     \once \override Staff.Accidental.stencil = ##f
-                                    \once \override TupletBracket.bracket-visibility = ##f
                                     a,,,32
                                     - \marcato
                                     - \natural-articulation
@@ -2939,7 +3006,6 @@
                                 \times 2/3
                                 {
                                     \once \override Staff.Accidental.stencil = ##f
-                                    \once \override TupletBracket.bracket-visibility = ##f
                                     c,,32
                                     - \marcato
                                     - \natural-articulation
@@ -2955,7 +3021,6 @@
                                 \times 2/3
                                 {
                                     \once \override Staff.Accidental.stencil = ##f
-                                    \once \override TupletBracket.bracket-visibility = ##f
                                     g,,32
                                     - \marcato
                                     - \natural-articulation
@@ -2971,7 +3036,6 @@
                                 \times 2/3
                                 {
                                     \once \override Staff.Accidental.stencil = ##f
-                                    \once \override TupletBracket.bracket-visibility = ##f
                                     fs,,32
                                     - \marcato
                                     - \sharp-articulation
@@ -2987,7 +3051,6 @@
                                 \times 2/3
                                 {
                                     \once \override Staff.Accidental.stencil = ##f
-                                    \once \override TupletBracket.bracket-visibility = ##f
                                     a,,,32
                                     - \marcato
                                     - \natural-articulation
@@ -3011,7 +3074,6 @@
                                 \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 13 16) (ly:make-duration 4 0))
                                 \times 16/13
                                 {
-                                    \hocket
                                     \override NoteHead.details.interrupt-color = \二
                                     \override NoteHead.details.switch-color = \二
                                     \override NoteHead.details.folow-color = \二
@@ -3039,11 +3101,8 @@
                                     ^ \p
                                     \sustainOn
                                     ^ \<
-                                    \hocket
                                     e''4
-                                    \hocket
                                     e''4
-                                    \hocket
                                     e''16
                                     ~
                                 }
@@ -3052,11 +3111,8 @@
                                 \times 12/13
                                 {
                                     e''8.
-                                    \hocket
                                     e''4
-                                    \hocket
                                     e''4
-                                    \hocket
                                     e''8
                                     ^ \f
                                     \sustainOff
@@ -3081,7 +3137,6 @@
                             }
                             \context Voice = "4 voice 1"
                             {
-                                \hocket
                                 \override NoteHead.details.interrupt-color = \四
                                 \override NoteHead.details.switch-color = \四
                                 \override NoteHead.details.folow-color = \四
@@ -3107,17 +3162,11 @@
                                 ds'4
                                 _ \mp
                                 _ \<
-                                \hocket
                                 ds'4
-                                \hocket
                                 ds''4
-                                \hocket
                                 ds'4
-                                \hocket
                                 ds'4
-                                \hocket
                                 ds''4
-                                \hocket
                                 ds'4
                                 _ \ff
                                 \revert Accidental.color
@@ -3140,6 +3189,8 @@
                             }
                         >>
                         \oneVoice
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
@@ -3160,7 +3211,7 @@
                                 \clef "treble"
                                 \tweak Accidental.stencil #ly:text-interface::print
                                 \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
-                                f!4.
+                                f'!4.
                                 \mp
                                 ^ \markup \center-align { \concat { -14 } }
                                 ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Nagel + Vibrator }
@@ -3185,8 +3236,12 @@
                                             )
                                         )
                                     )
+                                  %! +SCORE
                                 - \tweak color \四
+                                  %! +SCORE
                                 ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { ( SYNTHESIZER EIN ) }
+                                  %! +PARTS
+                            %%% ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { ( SYNTHESIZER EIN ) }
                                 [
                                 (
                                 - \abjad-zero-padding-glissando
@@ -3238,10 +3293,16 @@
                             }
                         >>
                         \oneVoice
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
+                          %! +SCORE
                         - \tweak color \四
+                          %! +SCORE
                         ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { ( SYNTHESIZER AUS ) }
+                          %! +PARTS
+                    %%% ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { ( SYNTHESIZER AUS ) }
                         \stopStaff \startStaff
                     }
                 }
@@ -3275,7 +3336,6 @@
                             \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 6 0))
                             \times 6/5
                             {
-                                \once \override TupletBracket.bracket-visibility = ##f
                                 \override Staff.Accidental.stencil = ##f
                                 cs,,64
                                 - \sharp-articulation
@@ -3314,6 +3374,8 @@
                         R1 * 13/8
                         \stopStaff \startStaff
                         \once \override Staff.BarLine.transparent = ##f
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \once \override Staff.TimeSignature.transparent = ##t
@@ -3430,6 +3492,8 @@
                         R1 * 3/4
                         \stopStaff \startStaff
                         \once \override Staff.BarLine.transparent = ##f
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \once \override Staff.TimeSignature.transparent = ##t
@@ -3444,6 +3508,8 @@
                         R1 * 7/8
                         \stopStaff \startStaff
                         \once \override Staff.BarLine.transparent = ##f
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \once \override Staff.TimeSignature.transparent = ##t
@@ -3489,6 +3555,8 @@
                     R1 * 13/8
                     \stopStaff \startStaff
                     \once \override Staff.BarLine.transparent = ##f
+                    \once \override MultiMeasureRest.transparent = ##t
+                    \once \override Rest.transparent = ##t
                     \once \revert Staff.StaffSymbol.line-positions
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
@@ -3641,6 +3709,8 @@
                     R1 * 3/4
                     \stopStaff \startStaff
                     \once \override Staff.BarLine.transparent = ##f
+                    \once \override MultiMeasureRest.transparent = ##t
+                    \once \override Rest.transparent = ##t
                     \once \revert Staff.StaffSymbol.line-positions
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
@@ -3657,6 +3727,8 @@
                     R1 * 7/8
                     \stopStaff \startStaff
                     \once \override Staff.BarLine.transparent = ##f
+                    \once \override MultiMeasureRest.transparent = ##t
+                    \once \override Rest.transparent = ##t
                     \once \revert Staff.StaffSymbol.line-positions
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff

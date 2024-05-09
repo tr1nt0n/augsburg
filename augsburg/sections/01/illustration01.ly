@@ -18,12 +18,28 @@
         {
             \time 4/4
             s1 * 1
+              %! +SCORE
             - \tweak color \四
+              %! +SCORE
             - \tweak padding #10
+              %! +SCORE
             - \abjad-solid-line-with-hook
+              %! +SCORE
             - \tweak bound-details.left.text \markup \concat { \with-color \四 \override #'(font-name . "Bodoni72 Book") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line {{ ( ZUSPIEL ) }} \hspace #0.5 }
+              %! +SCORE
             - \tweak bound-details.right.padding -45
+              %! +SCORE
             \startTextSpan
+              %! +PARTS
+        %%% - \tweak padding #10
+              %! +PARTS
+        %%% - \abjad-solid-line-with-hook
+              %! +PARTS
+        %%% - \tweak bound-details.left.text \markup \concat { \override #'(font-name . "Bodoni72 Book") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line {{ ( ZUSPIEL ) }} \hspace #0.5 }
+              %! +PARTS
+        %%% - \tweak bound-details.right.padding -45
+              %! +PARTS
+        %%% \startTextSpan
             ^ \markup {
               \raise #13.5 \with-dimensions-from \null
               \override #'(font-size . 5.5)
@@ -49,7 +65,10 @@
             \once \override Score.TimeSignature.stencil = ##f
             \time 4/4
             s1 * 1
+              %! +SCORE
             \stopTextSpan
+              %! +PARTS
+        %%% \stopTextSpan
             \once \override Score.TimeSignature.stencil = ##f
             \time 4/4
             s1 * 1
@@ -283,7 +302,6 @@
                             \once \override Beam.grow-direction = #right
                             c'32 * 117/32
                             \p
-                            [
                             \<
                             \once \override Accidental.stencil = ##f
                             c'32 * 99/32
@@ -294,7 +312,6 @@
                             \once \override Accidental.stencil = ##f
                             \override Staff.Accidental.stencil = ##f
                             c'32 * 47/32
-                            ]
                         }
                         \revert TupletNumber.text
                         \once \override Accidental.stencil = ##f

@@ -240,7 +240,7 @@ trinton.make_music(
     trinton.attachment_command(
         attachments=[abjad.Tie()], selector=trinton.pleaves(exclude=[3, -4, -3, -2, -1])
     ),
-    evans.PitchHandler(pitch_list=["fs", "ef,", "ef,", "ef,"]),
+    evans.PitchHandler(pitch_list=["fs'", "ef", "ef", "ef"]),
     trinton.pitch_with_selector_command(
         pitch_list=["35/8", "35/8", "37/16"],
         as_ratios=True,
@@ -259,7 +259,10 @@ trinton.make_music(
     ),
     library.low_pass_glissandi(),
     trinton.attachment_command(
-        attachments=[library.boxed_markup(string="Nagel + Vibrator")],
+        attachments=[
+            library.boxed_markup(string="Nagel + Vibrator"),
+            abjad.Clef("treble"),
+        ],
         selector=trinton.select_leaves_by_index([0]),
         direction=abjad.UP,
     ),
@@ -278,6 +281,17 @@ trinton.make_music(
             ),
         ],
         selector=trinton.select_leaves_by_index([0]),
+        tag=abjad.Tag("+SCORE"),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            library.boxed_markup(
+                string="( SYNTHESIZER AUS )",
+                # tweaks=[r"- \tweak color \四"],
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        tag=abjad.Tag("+PARTS"),
     ),
     voice=score["piano 1 voice"],
 )
@@ -486,6 +500,7 @@ trinton.fermata_measures(
         "piano 4 voice",
         "piano 5 voice",
     ],
+    tag=None,
 )
 
 trinton.fermata_measures(
@@ -502,6 +517,7 @@ trinton.fermata_measures(
         "piano 4 voice",
         "piano 5 voice",
     ],
+    tag=None,
 )
 
 trinton.fermata_measures(
@@ -517,6 +533,7 @@ trinton.fermata_measures(
         "piano 4 voice",
         "piano 5 voice",
     ],
+    tag=None,
 )
 
 trinton.make_music(

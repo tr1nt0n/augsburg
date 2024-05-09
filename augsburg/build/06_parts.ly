@@ -210,8 +210,8 @@
                         c'32
                         ]
                         ~
-                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 4 0))
-                        \times 2/3
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 6 4) (ly:make-duration 5 0))
+                        \times 4/6
                         {
                             \once \override TupletBracket.bracket-visibility = ##f
                             \once \override TupletBracket.bracket-visibility = ##f
@@ -567,8 +567,8 @@
                         \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 7 5) (ly:make-duration 2 0))
                         \times 5/7
                         {
-                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 6 4) (ly:make-duration 2 0))
-                            \times 4/6
+                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 1 0))
+                            \times 2/3
                             {
                                 r4
                                 c'4
@@ -813,8 +813,8 @@
                                     )
                                 )
                             )
-                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 2 0))
-                        \times 2/3
+                        \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 6 4) (ly:make-duration 3 0))
+                        \times 4/6
                         {
                             r8
                             c'4
@@ -924,8 +924,8 @@
                             r8
                             c'4
                             ~
-                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 6 4) (ly:make-duration 3 0))
-                            \times 4/6
+                            \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 3 2) (ly:make-duration 2 0))
+                            \times 2/3
                             {
                                 c'2
                                 r8

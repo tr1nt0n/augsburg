@@ -207,6 +207,8 @@
                             }
                         >>
                         \oneVoice
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
@@ -244,7 +246,11 @@
                         }
                         s1 * 3/16
                         r4
+                          %! +PARTS
+                    %%% - \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { ( SYNTHESIZER EIN ) }
+                          %! +SCORE
                         - \tweak color \四
+                          %! +SCORE
                         - \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { ( SYNTHESIZER EIN ) }
                         \once \override Staff.Clef.X-extent = ##f
                         \once \override Staff.Clef.extra-offset = #'(-5 . 0)
@@ -253,7 +259,7 @@
                         \clef "treble"
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \one-thirty-seven-limit-quarter-tone-up  }
-                        f!2
+                        f'!2
                         ^ \markup \center-align { \concat { F\raise #0.75 { \teeny \smaller \accidental #1/2 } -49 } }
                         ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Nagel + Vibrator }
                         - \abjad-zero-padding-glissando
@@ -296,16 +302,22 @@
                             \once \override Voice.Accidental.font-size = 5
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \flat-one-syntonic-comma-down  }
-                            ef'!1
+                            ef''!1
                             ^ \markup \center-align { \concat { -45 } }
                             ~
                             \revert Dots.staff-position
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \flat-one-syntonic-comma-down  }
-                            ef'8
+                            ef''8
+                              %! +PARTS
+                        %%% - \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { ( SYNTHESIZER AUS ) }
+                              %! +SCORE
                             - \tweak color \四
+                              %! +SCORE
                             - \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { ( SYNTHESIZER AUS ) }
                         }
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
@@ -445,6 +457,8 @@
                                 \override Staff.Accidental.X-extent = ##f
                             }
                         >>
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
@@ -455,6 +469,8 @@
                     \context Voice = "piano 2 voice"
                     {
                         s1 * 3/2
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
@@ -464,12 +480,16 @@
                         s1 * 1/4
                         s1 * 11/4
                         s1 * 7/4
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
                         s1 * 5/4
                         s1 * 5/4
                         s1 * 5/4
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
@@ -492,6 +512,8 @@
                             c'16
                             \sustainOff
                         }
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
@@ -575,6 +597,8 @@
                             }
                         >>
                         \oneVoice
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
@@ -598,6 +622,8 @@
                         c'4
                         c'4
                         \sustainOff
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
@@ -614,6 +640,8 @@
                         R1 * 3/2
                         \stopStaff \startStaff
                         \once \override Staff.BarLine.transparent = ##f
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \once \override Staff.TimeSignature.transparent = ##t
@@ -658,6 +686,8 @@
                         R1 * 7/4
                         \stopStaff \startStaff
                         \once \override Staff.BarLine.transparent = ##f
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \once \override Staff.TimeSignature.transparent = ##t
@@ -684,6 +714,8 @@
                         R1 * 5/4
                         \stopStaff \startStaff
                         \once \override Staff.BarLine.transparent = ##f
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \once \override Staff.TimeSignature.transparent = ##t
@@ -706,6 +738,8 @@
                     R1 * 3/2
                     \stopStaff \startStaff
                     \once \override Staff.BarLine.transparent = ##f
+                    \once \override MultiMeasureRest.transparent = ##t
+                    \once \override Rest.transparent = ##t
                     \once \revert Staff.StaffSymbol.line-positions
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
@@ -774,6 +808,8 @@
                     R1 * 7/4
                     \stopStaff \startStaff
                     \once \override Staff.BarLine.transparent = ##f
+                    \once \override MultiMeasureRest.transparent = ##t
+                    \once \override Rest.transparent = ##t
                     \once \revert Staff.StaffSymbol.line-positions
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
@@ -839,6 +875,8 @@
                         g16
                     }
                     \once \override Staff.BarLine.transparent = ##f
+                    \once \override MultiMeasureRest.transparent = ##t
+                    \once \override Rest.transparent = ##t
                     \once \revert Staff.StaffSymbol.line-positions
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff

@@ -115,7 +115,7 @@ for measures in [(5,), (7, 8)]:
 
 trinton.make_music(
     lambda _: trinton.select_target(_, (5, 8)),
-    evans.PitchHandler(["ef,", "e'", "e'", "b'", "b'", "df'"]),
+    evans.PitchHandler(["ef", "e'", "e'", "b'", "b'", "df''"]),
     trinton.pitch_with_selector_command(
         pitch_list=["37/16", "13/8", "13/8", "37/32", "37/32", "35/32"],
         as_ratios=True,
@@ -160,6 +160,21 @@ trinton.make_music(
             ),
         ],
         selector=trinton.select_leaves_by_index([0, -1]),
+        tag=abjad.Tag("+SCORE"),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
+            library.boxed_markup(
+                string="( SYNTHESIZER EIN )",
+                # tweaks=[r"- \tweak color \四"],
+            ),
+            library.boxed_markup(
+                string="( SYNTHESIZER AUS )",
+                # tweaks=[r"- \tweak color \四"],
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0, -1]),
+        tag=abjad.Tag("+PARTS"),
     ),
     voice=score["piano 1 voice"],
 )
@@ -480,6 +495,7 @@ trinton.fermata_measures(
         "piano 4 voice",
         "piano 5 voice",
     ],
+    tag=None,
 )
 
 trinton.fermata_measures(
@@ -497,6 +513,7 @@ trinton.fermata_measures(
         "piano 4 voice",
         "piano 5 voice",
     ],
+    tag=None,
 )
 
 trinton.make_music(

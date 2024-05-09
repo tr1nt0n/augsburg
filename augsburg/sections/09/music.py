@@ -55,11 +55,11 @@ trinton.make_music(
     evans.PitchHandler(
         [
             "ef,,",
-            "f,",
-            "f,",
+            "f",
+            "f",
             "c'",
-            "f,",
-            "b,,",
+            "f",
+            "b,",
             ["d'''", "f'''", "a'''", "c''''"],
         ]
     ),
@@ -238,7 +238,7 @@ trinton.make_music(
             pitched=True,
         ),
     ),
-    evans.PitchHandler(["b,,", "b,,", ["d'''", "f'''", "a'''", "c''''"], "c'", "b,,"]),
+    evans.PitchHandler(["b,", "b,", ["d'''", "f'''", "a'''", "c''''"], "c'", "b,"]),
     trinton.pitch_with_selector_command(
         pitch_list=["3/1", "11/4", "11/4"],
         as_ratios=True,
@@ -405,7 +405,7 @@ trinton.make_music(
         attachments=[abjad.Tie()],
         selector=trinton.select_leaves_by_index([0, 1], pitched=True),
     ),
-    evans.PitchHandler(["b,,", "df,", "c'"]),
+    evans.PitchHandler(["b,", "df", "c'"]),
     trinton.pitch_with_selector_command(
         pitch_list=["11/4", "5/2"],
         as_ratios=True,
@@ -880,6 +880,7 @@ trinton.fermata_measures(
         "piano 4 voice",
         "piano 5 voice",
     ],
+    tag=None,
 )
 
 # trinton.make_music(

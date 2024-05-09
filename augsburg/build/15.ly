@@ -57,26 +57,47 @@
                                             \staff-line-count 5
                                             \tweak text "×4" \startMeasureSpanner
                                             \once \override Rest.staff-position = #12
+                                              %! +SCORE
                                             \override NoteHead.details.interrupt-color = \一
+                                              %! +SCORE
                                             \override NoteHead.details.switch-color = \一
+                                              %! +SCORE
                                             \override NoteHead.details.folow-color = \一
+                                              %! +SCORE
                                             \override NoteHead.details.hocket-color = \一
+                                              %! +SCORE
                                             \override Accidental.color = \一
+                                              %! +SCORE
                                             \override Beam.color = \一
+                                              %! +SCORE
                                             \override Dots.color = \一
+                                              %! +SCORE
                                             \override Flag.color = \一
+                                              %! +SCORE
                                             \override Glissando.color = \一
+                                              %! +SCORE
                                             \override MultiMeasureRest.color = \一
+                                              %! +SCORE
                                             \override NoteHead.color = \一
+                                              %! +SCORE
                                             \override RepeatTie.color = \一
+                                              %! +SCORE
                                             \override Rest.color = \一
+                                              %! +SCORE
                                             \override Slur.color = \一
+                                              %! +SCORE
                                             \override Stem.color = \一
+                                              %! +SCORE
                                             \override StemTremolo.color = \一
+                                              %! +SCORE
                                             \override Tie.color = \一
+                                              %! +SCORE
                                             \override TupletBracket.color = \一
+                                              %! +SCORE
                                             \override TupletNumber.color = \一
+                                              %! +SCORE
                                             \override Dots.staff-position = #2
+                                              %! +SCORE
                                             \override DynamicText.color = \一
                                             \voiceOne
                                             \clef "treble"
@@ -85,28 +106,48 @@
                                             [
                                             \once \override Staff.Accidental.stencil = ##f
                                             g'16
+                                              %! +PARTS
+                                        %%% - \natural-articulation
+                                              %! +SCORE
                                             - \tweak color \一
+                                              %! +SCORE
                                             - \natural-articulation
                                             ^ \ff
                                             - \tweak stencil #constante-hairpin
                                             ^ \<
                                             \once \override Staff.Accidental.stencil = ##f
                                             e''16
+                                              %! +PARTS
+                                        %%% - \natural-articulation
+                                              %! +SCORE
                                             - \tweak color \一
+                                              %! +SCORE
                                             - \natural-articulation
                                             (
                                             \once \override Staff.Accidental.stencil = ##f
                                             a'''16
+                                              %! +PARTS
+                                        %%% - \natural-articulation
+                                              %! +PARTS
+                                        %%% - \staccato
+                                              %! +SCORE
                                             - \tweak color \一
+                                              %! +SCORE
                                             - \natural-articulation
+                                              %! +SCORE
                                             - \tweak color \一
+                                              %! +SCORE
                                             - \staccato
                                             )
                                             \once \override Staff.Accidental.stencil = ##f
                                             \set stemLeftBeamCount = 2
                                             \set stemRightBeamCount = 1
                                             g''16
+                                              %! +PARTS
+                                        %%% - \natural-articulation
+                                              %! +SCORE
                                             - \tweak color \一
+                                              %! +SCORE
                                             - \natural-articulation
                                         }
                                         \tweak text #tuplet-number::calc-fraction-text
@@ -119,50 +160,94 @@
                                             r16
                                             \once \override Staff.Accidental.stencil = ##f
                                             f'16
+                                              %! +PARTS
+                                        %%% - \natural-articulation
+                                              %! +SCORE
                                             - \tweak color \一
+                                              %! +SCORE
                                             - \natural-articulation
                                             (
                                             \once \override Staff.Accidental.stencil = ##f
                                             af'16
+                                              %! +PARTS
+                                        %%% - \flat-articulation
+                                              %! +PARTS
+                                        %%% - \staccato
+                                              %! +SCORE
                                             - \tweak color \一
+                                              %! +SCORE
                                             - \flat-articulation
+                                              %! +SCORE
                                             - \tweak color \一
+                                              %! +SCORE
                                             - \staccato
                                             )
                                             \once \override Staff.Accidental.stencil = ##f
                                             g'16
+                                              %! +PARTS
+                                        %%% - \natural-articulation
+                                              %! +SCORE
                                             - \tweak color \一
+                                              %! +SCORE
                                             - \natural-articulation
                                             \once \override Staff.Accidental.stencil = ##f
                                             b'16
+                                              %! +PARTS
+                                        %%% - \natural-articulation
+                                              %! +SCORE
                                             - \tweak color \一
+                                              %! +SCORE
                                             - \natural-articulation
                                             (
                                             \once \override Staff.Accidental.stencil = ##f
                                             d''16
+                                              %! +PARTS
+                                        %%% - \natural-articulation
+                                              %! +PARTS
+                                        %%% - \staccato
+                                              %! +SCORE
                                             - \tweak color \一
+                                              %! +SCORE
                                             - \natural-articulation
+                                              %! +SCORE
                                             - \tweak color \一
+                                              %! +SCORE
                                             - \staccato
                                             )
                                             \once \override Staff.Accidental.stencil = ##f
                                             g''16
+                                              %! +PARTS
+                                        %%% - \natural-articulation
+                                              %! +SCORE
                                             - \tweak color \一
+                                              %! +SCORE
                                             - \natural-articulation
                                         }
                                         \once \override Rest.staff-position = #12
                                         r8
                                         \once \override Staff.Accidental.stencil = ##f
                                         fs''8
+                                          %! +PARTS
+                                    %%% - \sharp-articulation
+                                          %! +SCORE
                                         - \tweak color \一
+                                          %! +SCORE
                                         - \sharp-articulation
                                         (
                                         ^ \>
                                         \once \override Staff.Accidental.stencil = ##f
                                         cs''8
+                                          %! +PARTS
+                                    %%% - \sharp-articulation
+                                          %! +PARTS
+                                    %%% - \staccato
+                                          %! +SCORE
                                         - \tweak color \一
+                                          %! +SCORE
                                         - \sharp-articulation
+                                          %! +SCORE
                                         - \tweak color \一
+                                          %! +SCORE
                                         - \staccato
                                         )
                                         \tweak text #tuplet-number::calc-fraction-text
@@ -173,13 +258,21 @@
                                             fs'16
                                             _ (
                                             cs''16
+                                              %! +PARTS
+                                        %%% - \staccato
+                                              %! +SCORE
                                             - \tweak color \一
+                                              %! +SCORE
                                             - \staccato
                                             ^ \p
                                             )
                                             r16
                                             d'16
+                                              %! +PARTS
+                                        %%% - \staccato
+                                              %! +SCORE
                                             - \tweak color \一
+                                              %! +SCORE
                                             - \staccato
                                             ^ \pp
                                             r16
@@ -193,14 +286,22 @@
                                             ^ \ff
                                             r8
                                             e'8
+                                              %! +PARTS
+                                        %%% - \tenuto
+                                              %! +SCORE
                                             - \tweak color \一
+                                              %! +SCORE
                                             - \tenuto
                                             ^ \mp
                                             r8
                                             \set stemLeftBeamCount = 1
                                             \set stemRightBeamCount = 1
                                             a''8
+                                              %! +PARTS
+                                        %%% - \staccato
+                                              %! +SCORE
                                             - \tweak color \一
+                                              %! +SCORE
                                             - \staccato
                                             ]
                                             r4
@@ -239,49 +340,98 @@
                                                 r16
                                                 \once \override Staff.Accidental.stencil = ##f
                                                 f'16
+                                                  %! +PARTS
+                                            %%% - \natural-articulation
+                                                  %! +PARTS
+                                            %%% - \staccato
+                                                  %! +SCORE
                                                 - \tweak color \一
+                                                  %! +SCORE
                                                 - \natural-articulation
+                                                  %! +SCORE
                                                 - \tweak color \一
+                                                  %! +SCORE
                                                 - \staccato
                                                 ^ \f
                                                 r16
                                                 \once \override Staff.Accidental.stencil = ##f
                                                 af'16
+                                                  %! +PARTS
+                                            %%% - \flat-articulation
+                                                  %! +PARTS
+                                            %%% - \staccato
+                                                  %! +SCORE
                                                 - \tweak color \一
+                                                  %! +SCORE
                                                 - \flat-articulation
+                                                  %! +SCORE
                                                 - \tweak color \一
+                                                  %! +SCORE
                                                 - \staccato
                                                 r16
                                                 \once \override Staff.Accidental.stencil = ##f
                                                 g'16
+                                                  %! +PARTS
+                                            %%% - \natural-articulation
+                                                  %! +PARTS
+                                            %%% - \staccato
+                                                  %! +SCORE
                                                 - \tweak color \一
+                                                  %! +SCORE
                                                 - \natural-articulation
+                                                  %! +SCORE
                                                 - \tweak color \一
+                                                  %! +SCORE
                                                 - \staccato
                                                 r16
                                                 \once \override Staff.Accidental.stencil = ##f
                                                 b''16
+                                                  %! +PARTS
+                                            %%% - \natural-articulation
+                                                  %! +PARTS
+                                            %%% - \staccato
+                                                  %! +SCORE
                                                 - \tweak color \一
+                                                  %! +SCORE
                                                 - \natural-articulation
+                                                  %! +SCORE
                                                 - \tweak color \一
+                                                  %! +SCORE
                                                 - \staccato
                                                 ]
+                                                  %! +SCORE
                                                 \revert Accidental.color
+                                                  %! +SCORE
                                                 \revert Beam.color
+                                                  %! +SCORE
                                                 \revert Dots.color
+                                                  %! +SCORE
                                                 \revert Flag.color
+                                                  %! +SCORE
                                                 \revert Glissando.color
+                                                  %! +SCORE
                                                 \revert MultiMeasureRest.color
+                                                  %! +SCORE
                                                 \revert NoteHead.color
+                                                  %! +SCORE
                                                 \revert RepeatTie.color
+                                                  %! +SCORE
                                                 \revert Rest.color
+                                                  %! +SCORE
                                                 \revert Slur.color
+                                                  %! +SCORE
                                                 \revert Stem.color
+                                                  %! +SCORE
                                                 \revert StemTremolo.color
+                                                  %! +SCORE
                                                 \revert Tie.color
+                                                  %! +SCORE
                                                 \revert TupletBracket.color
+                                                  %! +SCORE
                                                 \revert TupletNumber.color
+                                                  %! +SCORE
                                                 \revert DynamicText.color
+                                                  %! +SCORE
                                                 \revert Dots.staff-position
                                             }
                                         }
@@ -489,26 +639,47 @@
                                         \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 4 0))
                                         \times 6/5
                                         {
+                                              %! +SCORE
                                             \override NoteHead.details.interrupt-color = \一
+                                              %! +SCORE
                                             \override NoteHead.details.switch-color = \一
+                                              %! +SCORE
                                             \override NoteHead.details.folow-color = \一
+                                              %! +SCORE
                                             \override NoteHead.details.hocket-color = \一
+                                              %! +SCORE
                                             \override Accidental.color = \一
+                                              %! +SCORE
                                             \override Beam.color = \一
+                                              %! +SCORE
                                             \override Dots.color = \一
+                                              %! +SCORE
                                             \override Flag.color = \一
+                                              %! +SCORE
                                             \override Glissando.color = \一
+                                              %! +SCORE
                                             \override MultiMeasureRest.color = \一
+                                              %! +SCORE
                                             \override NoteHead.color = \一
+                                              %! +SCORE
                                             \override RepeatTie.color = \一
+                                              %! +SCORE
                                             \override Rest.color = \一
+                                              %! +SCORE
                                             \override Slur.color = \一
+                                              %! +SCORE
                                             \override Stem.color = \一
+                                              %! +SCORE
                                             \override StemTremolo.color = \一
+                                              %! +SCORE
                                             \override Tie.color = \一
+                                              %! +SCORE
                                             \override TupletBracket.color = \一
+                                              %! +SCORE
                                             \override TupletNumber.color = \一
+                                              %! +SCORE
                                             \override Dots.staff-position = #2
+                                              %! +SCORE
                                             \override DynamicText.color = \一
                                             \voiceTwo
                                             s16
@@ -519,7 +690,11 @@
                                               %! rmakers.beam_groups()
                                             \set stemRightBeamCount = 2
                                             g'16
+                                              %! +PARTS
+                                        %%% - \marcato
+                                              %! +SCORE
                                             - \tweak color \一
+                                              %! +SCORE
                                             - \marcato
                                             s16
                                             s16
@@ -528,7 +703,11 @@
                                               %! rmakers.beam_groups()
                                             \set stemRightBeamCount = 1
                                             g''16
+                                              %! +PARTS
+                                        %%% - \marcato
+                                              %! +SCORE
                                             - \tweak color \一
+                                              %! +SCORE
                                             - \marcato
                                         }
                                         \tweak text #tuplet-number::calc-fraction-text
@@ -543,7 +722,11 @@
                                               %! rmakers.beam_groups()
                                             \set stemRightBeamCount = 2
                                             g'16
+                                              %! +PARTS
+                                        %%% - \marcato
+                                              %! +SCORE
                                             - \tweak color \一
+                                              %! +SCORE
                                             - \marcato
                                             s16
                                             s16
@@ -552,7 +735,11 @@
                                               %! rmakers.beam_groups()
                                             \set stemRightBeamCount = 1
                                             g''16
+                                              %! +PARTS
+                                        %%% - \marcato
+                                              %! +SCORE
                                             - \tweak color \一
+                                              %! +SCORE
                                             - \marcato
                                         }
                                         s8
@@ -579,7 +766,11 @@
                                               %! rmakers.beam_groups()
                                             \set stemRightBeamCount = 1
                                             g'8
+                                              %! +PARTS
+                                        %%% - \marcato
+                                              %! +SCORE
                                             - \tweak color \一
+                                              %! +SCORE
                                             - \marcato
                                             s8
                                             s8
@@ -612,7 +803,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 2
                                                 g''16
+                                                  %! +PARTS
+                                            %%% - \marcato
+                                                  %! +SCORE
                                                 - \tweak color \一
+                                                  %! +SCORE
                                                 - \marcato
                                                 s16
                                                 s16
@@ -624,22 +819,39 @@
                                                 s16
                                                   %! rmakers.beam_groups()
                                                 ]
+                                                  %! +SCORE
                                                 \revert Accidental.color
+                                                  %! +SCORE
                                                 \revert Beam.color
+                                                  %! +SCORE
                                                 \revert Dots.color
+                                                  %! +SCORE
                                                 \revert Flag.color
+                                                  %! +SCORE
                                                 \revert Glissando.color
+                                                  %! +SCORE
                                                 \revert MultiMeasureRest.color
+                                                  %! +SCORE
                                                 \revert NoteHead.color
+                                                  %! +SCORE
                                                 \revert RepeatTie.color
+                                                  %! +SCORE
                                                 \revert Rest.color
+                                                  %! +SCORE
                                                 \revert Slur.color
+                                                  %! +SCORE
                                                 \revert Stem.color
+                                                  %! +SCORE
                                                 \revert StemTremolo.color
+                                                  %! +SCORE
                                                 \revert Tie.color
+                                                  %! +SCORE
                                                 \revert TupletBracket.color
+                                                  %! +SCORE
                                                 \revert TupletNumber.color
+                                                  %! +SCORE
                                                 \revert DynamicText.color
+                                                  %! +SCORE
                                                 \revert Dots.staff-position
                                             }
                                         }
@@ -662,26 +874,47 @@
                                             \times 6/5
                                             {
                                                 \once \override Staff.Accidental.stencil = ##f
+                                                  %! +SCORE
                                                 \override NoteHead.details.interrupt-color = \三
+                                                  %! +SCORE
                                                 \override NoteHead.details.switch-color = \三
+                                                  %! +SCORE
                                                 \override NoteHead.details.folow-color = \三
+                                                  %! +SCORE
                                                 \override NoteHead.details.hocket-color = \三
+                                                  %! +SCORE
                                                 \override Accidental.color = \三
+                                                  %! +SCORE
                                                 \override Beam.color = \三
+                                                  %! +SCORE
                                                 \override Dots.color = \三
+                                                  %! +SCORE
                                                 \override Flag.color = \三
+                                                  %! +SCORE
                                                 \override Glissando.color = \三
+                                                  %! +SCORE
                                                 \override MultiMeasureRest.color = \三
+                                                  %! +SCORE
                                                 \override NoteHead.color = \三
+                                                  %! +SCORE
                                                 \override RepeatTie.color = \三
+                                                  %! +SCORE
                                                 \override Rest.color = \三
+                                                  %! +SCORE
                                                 \override Slur.color = \三
+                                                  %! +SCORE
                                                 \override Stem.color = \三
+                                                  %! +SCORE
                                                 \override StemTremolo.color = \三
+                                                  %! +SCORE
                                                 \override Tie.color = \三
+                                                  %! +SCORE
                                                 \override TupletBracket.color = \三
+                                                  %! +SCORE
                                                 \override TupletNumber.color = \三
+                                                  %! +SCORE
                                                 \override Dots.staff-position = #2
+                                                  %! +SCORE
                                                 \override DynamicText.color = \三
                                                   %! rmakers.beam_groups()
                                                 \set stemLeftBeamCount = 0
@@ -690,7 +923,11 @@
                                                 \voiceTwo
                                                 \voiceTwo
                                                 a''64
+                                                  %! +PARTS
+                                            %%% - \natural-articulation
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \natural-articulation
                                                 _ \fp
                                                 _ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Tasten }
@@ -703,7 +940,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 4
                                                 d'''64
+                                                  %! +PARTS
+                                            %%% - \natural-articulation
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \natural-articulation
                                                 (
                                                 \once \override Staff.Accidental.stencil = ##f
@@ -712,7 +953,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 4
                                                 ef'''64
+                                                  %! +PARTS
+                                            %%% - \flat-articulation
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \flat-articulation
                                                 _ \mf
                                                 )
@@ -724,7 +969,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 4
                                                 af''64
+                                                  %! +PARTS
+                                            %%% - \flat-articulation
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \flat-articulation
                                                 \once \override Staff.Accidental.stencil = ##f
                                                   %! rmakers.beam_groups()
@@ -732,7 +981,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 1
                                                 cs'''64
+                                                  %! +PARTS
+                                            %%% - \sharp-articulation
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \sharp-articulation
                                                 \!
                                                 (
@@ -749,7 +1002,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 4
                                                 a''64
+                                                  %! +PARTS
+                                            %%% - \natural-articulation
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \natural-articulation
                                                 _ \fp
                                                 )
@@ -760,7 +1017,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 4
                                                 a''64
+                                                  %! +PARTS
+                                            %%% - \natural-articulation
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \natural-articulation
                                                 \once \override Staff.Accidental.stencil = ##f
                                                   %! rmakers.beam_groups()
@@ -768,7 +1029,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 4
                                                 e'''64
+                                                  %! +PARTS
+                                            %%% - \natural-articulation
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \natural-articulation
                                                 _ \f
                                                 (
@@ -780,7 +1045,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 4
                                                 c'''64
+                                                  %! +PARTS
+                                            %%% - \natural-articulation
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \natural-articulation
                                                 )
                                                 \once \override Staff.Accidental.stencil = ##f
@@ -789,7 +1058,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 1
                                                 af''64
+                                                  %! +PARTS
+                                            %%% - \flat-articulation
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \flat-articulation
                                                 \!
                                             }
@@ -805,7 +1078,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 4
                                                 a''64
+                                                  %! +PARTS
+                                            %%% - \natural-articulation
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \natural-articulation
                                                 (
                                                 _ \<
@@ -815,7 +1092,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 4
                                                 b'''64
+                                                  %! +PARTS
+                                            %%% - \natural-articulation
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \natural-articulation
                                                 )
                                                 \once \override Staff.Accidental.stencil = ##f
@@ -825,7 +1106,11 @@
                                                 \set stemRightBeamCount = 4
                                                 a''64
                                                     _ #(make-dynamic-script (markup #:whiteout #:italic "s. f"))
+                                                  %! +PARTS
+                                            %%% - \natural-articulation
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \natural-articulation
                                                 _ \<
                                                 \once \override Staff.Accidental.stencil = ##f
@@ -834,7 +1119,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 4
                                                 f'''64
+                                                  %! +PARTS
+                                            %%% - \natural-articulation
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \natural-articulation
                                                 (
                                                 \once \override Staff.Accidental.stencil = ##f
@@ -843,7 +1132,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 1
                                                 af'''64
+                                                  %! +PARTS
+                                            %%% - \flat-articulation
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \flat-articulation
                                                 \!
                                             }
@@ -851,7 +1144,11 @@
                                             r32
                                             \once \override Staff.Accidental.stencil = ##f
                                             g''16.
+                                              %! +PARTS
+                                        %%% - \natural-articulation
+                                              %! +SCORE
                                             - \tweak color \三
+                                              %! +SCORE
                                             - \natural-articulation
                                             _ \mp
                                             \once \override Rest.staff-position = #-2
@@ -866,7 +1163,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 4
                                                 fs''64
+                                                  %! +PARTS
+                                            %%% - \sharp-articulation
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \sharp-articulation
                                                 )
                                                 \once \override Staff.Accidental.stencil = ##f
@@ -876,7 +1177,11 @@
                                                 \set stemRightBeamCount = 4
                                                 af''64
                                                     _ #(make-dynamic-script (markup #:whiteout #:italic "s. f"))
+                                                  %! +PARTS
+                                            %%% - \flat-articulation
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \flat-articulation
                                                 \once \override Staff.Accidental.stencil = ##f
                                                   %! rmakers.beam_groups()
@@ -884,7 +1189,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 4
                                                 d''64
+                                                  %! +PARTS
+                                            %%% - \natural-articulation
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \natural-articulation
                                                 _ \mp
                                                 (
@@ -894,7 +1203,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 4
                                                 ef''64
+                                                  %! +PARTS
+                                            %%% - \flat-articulation
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \flat-articulation
                                                 )
                                                 \once \override Staff.Accidental.stencil = ##f
@@ -904,16 +1217,28 @@
                                                 \set stemRightBeamCount = 1
                                                 a''64
                                                     _ #(make-dynamic-script (markup #:whiteout #:italic "s. f"))
+                                                  %! +PARTS
+                                            %%% - \natural-articulation
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \natural-articulation
                                             }
                                             \once \override Rest.staff-position = #-2
                                             r32
                                             \once \override Staff.Accidental.stencil = ##f
                                             ef''16.
+                                              %! +PARTS
+                                        %%% - \flat-articulation
+                                              %! +PARTS
+                                        %%% - \tenuto
+                                              %! +SCORE
                                             - \tweak color \三
+                                              %! +SCORE
                                             - \flat-articulation
+                                              %! +SCORE
                                             - \tweak color \三
+                                              %! +SCORE
                                             - \tenuto
                                             _ \mp
                                             \once \override Rest.staff-position = #-2
@@ -929,7 +1254,11 @@
                                                 \set stemRightBeamCount = 4
                                                 af''64
                                                     _ #(make-dynamic-script (markup #:whiteout #:italic "s. f"))
+                                                  %! +PARTS
+                                            %%% - \flat-articulation
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \flat-articulation
                                                 \once \override Staff.Accidental.stencil = ##f
                                                   %! rmakers.beam_groups()
@@ -937,7 +1266,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 4
                                                 cs''64
+                                                  %! +PARTS
+                                            %%% - \sharp-articulation
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \sharp-articulation
                                                 _ \p
                                                 (
@@ -948,7 +1281,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 4
                                                 e''64
+                                                  %! +PARTS
+                                            %%% - \natural-articulation
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \natural-articulation
                                                 )
                                                 \once \override Staff.Accidental.stencil = ##f
@@ -957,7 +1294,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 4
                                                 a''64
+                                                  %! +PARTS
+                                            %%% - \natural-articulation
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \natural-articulation
                                                 _ \ff
                                                 \once \override Staff.Accidental.stencil = ##f
@@ -966,7 +1307,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 1
                                                 c''64
+                                                  %! +PARTS
+                                            %%% - \natural-articulation
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \natural-articulation
                                                 _ \f
                                                 (
@@ -975,13 +1320,21 @@
                                             r32
                                             \once \override Staff.Accidental.stencil = ##f
                                             af''16.
+                                              %! +PARTS
+                                        %%% - \flat-articulation
+                                              %! +SCORE
                                             - \tweak color \三
+                                              %! +SCORE
                                             - \flat-articulation
                                             \once \override Rest.staff-position = #-2
                                             r32
                                             \once \override Staff.Accidental.stencil = ##f
                                             g''16.
+                                              %! +PARTS
+                                        %%% - \natural-articulation
+                                              %! +SCORE
                                             - \tweak color \三
+                                              %! +SCORE
                                             - \natural-articulation
                                             )
                                             \once \override Rest.staff-position = #-2
@@ -996,7 +1349,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 4
                                                 af''64
+                                                  %! +PARTS
+                                            %%% - \flat-articulation
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \flat-articulation
                                                 _ \fp
                                                 _ \<
@@ -1006,7 +1363,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 4
                                                 bf''64
+                                                  %! +PARTS
+                                            %%% - \flat-articulation
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \flat-articulation
                                                 (
                                                 \once \override Staff.Accidental.stencil = ##f
@@ -1015,7 +1376,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 4
                                                 f''64
+                                                  %! +PARTS
+                                            %%% - \natural-articulation
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \natural-articulation
                                                 _ \f
                                                 - \tweak circled-tip ##t
@@ -1026,7 +1391,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 4
                                                 bf''64
+                                                  %! +PARTS
+                                            %%% - \flat-articulation
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \flat-articulation
                                                 )
                                                 \once \override Staff.Accidental.stencil = ##f
@@ -1035,7 +1404,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 0
                                                 a''64
+                                                  %! +PARTS
+                                            %%% - \natural-articulation
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \natural-articulation
                                                 _ \f
                                                   %! rmakers.beam_groups()
@@ -1043,22 +1416,39 @@
                                             }
                                             \once \override Rest.staff-position = #-2
                                             r32
+                                              %! +SCORE
                                             \revert Accidental.color
+                                              %! +SCORE
                                             \revert Beam.color
+                                              %! +SCORE
                                             \revert Dots.color
+                                              %! +SCORE
                                             \revert Flag.color
+                                              %! +SCORE
                                             \revert Glissando.color
+                                              %! +SCORE
                                             \revert MultiMeasureRest.color
+                                              %! +SCORE
                                             \revert NoteHead.color
+                                              %! +SCORE
                                             \revert RepeatTie.color
+                                              %! +SCORE
                                             \revert Rest.color
+                                              %! +SCORE
                                             \revert Slur.color
+                                              %! +SCORE
                                             \revert Stem.color
+                                              %! +SCORE
                                             \revert StemTremolo.color
+                                              %! +SCORE
                                             \revert Tie.color
+                                              %! +SCORE
                                             \revert TupletBracket.color
+                                              %! +SCORE
                                             \revert TupletNumber.color
+                                              %! +SCORE
                                             \revert DynamicText.color
+                                              %! +SCORE
                                             \revert Dots.staff-position
                                         }
                                         \once \override Voice.Rest.transparent = ##t
@@ -1089,26 +1479,47 @@
                                             \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 6 0))
                                             \times 6/5
                                             {
+                                                  %! +SCORE
                                                 \override NoteHead.details.interrupt-color = \三
+                                                  %! +SCORE
                                                 \override NoteHead.details.switch-color = \三
+                                                  %! +SCORE
                                                 \override NoteHead.details.folow-color = \三
+                                                  %! +SCORE
                                                 \override NoteHead.details.hocket-color = \三
+                                                  %! +SCORE
                                                 \override Accidental.color = \三
+                                                  %! +SCORE
                                                 \override Beam.color = \三
+                                                  %! +SCORE
                                                 \override Dots.color = \三
+                                                  %! +SCORE
                                                 \override Flag.color = \三
+                                                  %! +SCORE
                                                 \override Glissando.color = \三
+                                                  %! +SCORE
                                                 \override MultiMeasureRest.color = \三
+                                                  %! +SCORE
                                                 \override NoteHead.color = \三
+                                                  %! +SCORE
                                                 \override RepeatTie.color = \三
+                                                  %! +SCORE
                                                 \override Rest.color = \三
+                                                  %! +SCORE
                                                 \override Slur.color = \三
+                                                  %! +SCORE
                                                 \override Stem.color = \三
+                                                  %! +SCORE
                                                 \override StemTremolo.color = \三
+                                                  %! +SCORE
                                                 \override Tie.color = \三
+                                                  %! +SCORE
                                                 \override TupletBracket.color = \三
+                                                  %! +SCORE
                                                 \override TupletNumber.color = \三
+                                                  %! +SCORE
                                                 \override Dots.staff-position = #2
+                                                  %! +SCORE
                                                 \override DynamicText.color = \三
                                                   %! rmakers.beam_groups()
                                                 \set stemLeftBeamCount = 0
@@ -1116,7 +1527,11 @@
                                                 \set stemRightBeamCount = 4
                                                 \voiceOne
                                                 a''64
+                                                  %! +PARTS
+                                            %%% - \marcato
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \marcato
                                                 - \tweak Beam.positions #'(26 . 26)
                                                 [
@@ -1127,7 +1542,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 4
                                                 af''64
+                                                  %! +PARTS
+                                            %%% - \marcato
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \marcato
                                                 s64
                                             }
@@ -1142,7 +1561,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 4
                                                 a''64
+                                                  %! +PARTS
+                                            %%% - \marcato
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \marcato
                                                 s64
                                                 s64
@@ -1151,7 +1574,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 1
                                                 af''64
+                                                  %! +PARTS
+                                            %%% - \marcato
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \marcato
                                             }
                                             s32
@@ -1166,7 +1593,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 4
                                                 a''64
+                                                  %! +PARTS
+                                            %%% - \marcato
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \marcato
                                                 s64
                                                 s64
@@ -1184,7 +1615,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 4
                                                 af''64
+                                                  %! +PARTS
+                                            %%% - \marcato
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \marcato
                                                 s64
                                                 s64
@@ -1193,7 +1628,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 1
                                                 a''64
+                                                  %! +PARTS
+                                            %%% - \marcato
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \marcato
                                             }
                                             s32
@@ -1208,7 +1647,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 4
                                                 af''64
+                                                  %! +PARTS
+                                            %%% - \marcato
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \marcato
                                                 s64
                                                 s64
@@ -1217,7 +1660,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 4
                                                 a''64
+                                                  %! +PARTS
+                                            %%% - \marcato
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \marcato
                                                 s64
                                             }
@@ -1235,7 +1682,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 4
                                                 af''64
+                                                  %! +PARTS
+                                            %%% - \marcato
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \marcato
                                                 s64
                                                 s64
@@ -1245,7 +1696,11 @@
                                                   %! rmakers.beam_groups()
                                                 \set stemRightBeamCount = 0
                                                 a''64
+                                                  %! +PARTS
+                                            %%% - \marcato
+                                                  %! +SCORE
                                                 - \tweak color \三
+                                                  %! +SCORE
                                                 - \marcato
                                                   %! rmakers.beam_groups()
                                                 ]
@@ -1256,22 +1711,39 @@
                                         s4
                                         s2..
                                         s2.
+                                          %! +SCORE
                                         \revert Accidental.color
+                                          %! +SCORE
                                         \revert Beam.color
+                                          %! +SCORE
                                         \revert Dots.color
+                                          %! +SCORE
                                         \revert Flag.color
+                                          %! +SCORE
                                         \revert Glissando.color
+                                          %! +SCORE
                                         \revert MultiMeasureRest.color
+                                          %! +SCORE
                                         \revert NoteHead.color
+                                          %! +SCORE
                                         \revert RepeatTie.color
+                                          %! +SCORE
                                         \revert Rest.color
+                                          %! +SCORE
                                         \revert Slur.color
+                                          %! +SCORE
                                         \revert Stem.color
+                                          %! +SCORE
                                         \revert StemTremolo.color
+                                          %! +SCORE
                                         \revert Tie.color
+                                          %! +SCORE
                                         \revert TupletBracket.color
+                                          %! +SCORE
                                         \revert TupletNumber.color
+                                          %! +SCORE
                                         \revert DynamicText.color
+                                          %! +SCORE
                                         \revert Dots.staff-position
                                     }
                                 >>
@@ -1319,26 +1791,47 @@
                                         \times 5/6
                                         {
                                             \once \override NoteHead.duration-log = 1
+                                              %! +SCORE
                                             \override NoteHead.details.interrupt-color = \四
+                                              %! +SCORE
                                             \override NoteHead.details.switch-color = \四
+                                              %! +SCORE
                                             \override NoteHead.details.folow-color = \四
+                                              %! +SCORE
                                             \override NoteHead.details.hocket-color = \四
+                                              %! +SCORE
                                             \override Accidental.color = \四
+                                              %! +SCORE
                                             \override Beam.color = \四
+                                              %! +SCORE
                                             \override Dots.color = \四
+                                              %! +SCORE
                                             \override Flag.color = \四
+                                              %! +SCORE
                                             \override Glissando.color = \四
+                                              %! +SCORE
                                             \override MultiMeasureRest.color = \四
+                                              %! +SCORE
                                             \override NoteHead.color = \四
+                                              %! +SCORE
                                             \override RepeatTie.color = \四
+                                              %! +SCORE
                                             \override Rest.color = \四
+                                              %! +SCORE
                                             \override Slur.color = \四
+                                              %! +SCORE
                                             \override Stem.color = \四
+                                              %! +SCORE
                                             \override StemTremolo.color = \四
+                                              %! +SCORE
                                             \override Tie.color = \四
+                                              %! +SCORE
                                             \override TupletBracket.color = \四
+                                              %! +SCORE
                                             \override TupletNumber.color = \四
+                                              %! +SCORE
                                             \override Dots.staff-position = #2
+                                              %! +SCORE
                                             \override DynamicText.color = \四
                                             \voiceTwo
                                             <d,, d,>16.
@@ -1346,53 +1839,94 @@
                                             r32
                                             e,16.
                                                 _ #(make-dynamic-script (markup #:whiteout #:italic "sffz pp"))
+                                              %! +PARTS
+                                        %%% - \accent
+                                              %! +SCORE
                                             - \tweak color \四
+                                              %! +SCORE
                                             - \accent
                                             _ \<
                                             r32
                                             a,16.
                                             r32
                                             b,16.
+                                              %! +PARTS
+                                        %%% - \accent
+                                              %! +SCORE
                                             - \tweak color \四
+                                              %! +SCORE
                                             - \accent
                                             r32
                                             \once \override Staff.Accidental.stencil = ##f
                                             bf,16.
+                                              %! +PARTS
+                                        %%% - \flat-articulation
+                                              %! +SCORE
                                             - \tweak color \四
+                                              %! +SCORE
                                             - \flat-articulation
                                             r32
                                             f16.
+                                              %! +PARTS
+                                        %%% - \accent
+                                              %! +SCORE
                                             - \tweak color \四
+                                              %! +SCORE
                                             - \accent
                                             r32
                                         }
                                         \once \override Staff.Accidental.stencil = ##f
                                         af8.
+                                          %! +PARTS
+                                    %%% - \flat-articulation
+                                          %! +SCORE
                                         - \tweak color \四
+                                          %! +SCORE
                                         - \flat-articulation
                                         r16
                                         g8.
+                                          %! +PARTS
+                                    %%% - \accent
+                                          %! +SCORE
                                         - \tweak color \四
+                                          %! +SCORE
                                         - \accent
                                         _ \f
                                         r16
                                         ]
+                                          %! +SCORE
                                         \revert Accidental.color
+                                          %! +SCORE
                                         \revert Beam.color
+                                          %! +SCORE
                                         \revert Dots.color
+                                          %! +SCORE
                                         \revert Flag.color
+                                          %! +SCORE
                                         \revert Glissando.color
+                                          %! +SCORE
                                         \revert MultiMeasureRest.color
+                                          %! +SCORE
                                         \revert NoteHead.color
+                                          %! +SCORE
                                         \revert RepeatTie.color
+                                          %! +SCORE
                                         \revert Rest.color
+                                          %! +SCORE
                                         \revert Slur.color
+                                          %! +SCORE
                                         \revert Stem.color
+                                          %! +SCORE
                                         \revert StemTremolo.color
+                                          %! +SCORE
                                         \revert Tie.color
+                                          %! +SCORE
                                         \revert TupletBracket.color
+                                          %! +SCORE
                                         \revert TupletNumber.color
+                                          %! +SCORE
                                         \revert DynamicText.color
+                                          %! +SCORE
                                         \revert Dots.staff-position
                                     }
                                 >>
@@ -1400,26 +1934,47 @@
                             }
                             \context Voice = "top voice"
                             {
+                                  %! +SCORE
                                 \override NoteHead.details.interrupt-color = \二
+                                  %! +SCORE
                                 \override NoteHead.details.switch-color = \二
+                                  %! +SCORE
                                 \override NoteHead.details.folow-color = \二
+                                  %! +SCORE
                                 \override NoteHead.details.hocket-color = \二
+                                  %! +SCORE
                                 \override Accidental.color = \二
+                                  %! +SCORE
                                 \override Beam.color = \二
+                                  %! +SCORE
                                 \override Dots.color = \二
+                                  %! +SCORE
                                 \override Flag.color = \二
+                                  %! +SCORE
                                 \override Glissando.color = \二
+                                  %! +SCORE
                                 \override MultiMeasureRest.color = \二
+                                  %! +SCORE
                                 \override NoteHead.color = \二
+                                  %! +SCORE
                                 \override RepeatTie.color = \二
+                                  %! +SCORE
                                 \override Rest.color = \二
+                                  %! +SCORE
                                 \override Slur.color = \二
+                                  %! +SCORE
                                 \override Stem.color = \二
+                                  %! +SCORE
                                 \override StemTremolo.color = \二
+                                  %! +SCORE
                                 \override Tie.color = \二
+                                  %! +SCORE
                                 \override TupletBracket.color = \二
+                                  %! +SCORE
                                 \override TupletNumber.color = \二
+                                  %! +SCORE
                                 \override Dots.staff-position = #2
+                                  %! +SCORE
                                 \override DynamicText.color = \二
                                 \voiceOne
                                 r16.
@@ -1433,7 +1988,11 @@
                                     \tweak style #'la
                                     c
                                 >32
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \二
+                                  %! +SCORE
                                 - \marcato
                                 ^ \ff
                                 - \tweak stencil #constante-hairpin
@@ -1448,7 +2007,11 @@
                                     \tweak style #'la
                                     g
                                 >32
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \二
+                                  %! +SCORE
                                 - \marcato
                                 r16.
                                 \once \override Accidental.stencil = ##f
@@ -1460,7 +2023,11 @@
                                     \tweak style #'la
                                     e
                                 >32
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \二
+                                  %! +SCORE
                                 - \marcato
                                 ^ \>
                                 r16.
@@ -1473,7 +2040,11 @@
                                     \tweak style #'la
                                     g
                                 >32
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \二
+                                  %! +SCORE
                                 - \marcato
                                 r16.
                                 \once \override Accidental.stencil = ##f
@@ -1487,7 +2058,11 @@
                                     \tweak style #'la
                                     d'
                                 >32
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \二
+                                  %! +SCORE
                                 - \marcato
                                 ]
                                 r4.
@@ -1502,27 +2077,48 @@
                                     \tweak style #'la
                                     a'
                                 >8
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \二
+                                  %! +SCORE
                                 - \marcato
                                 ^ \mp
                                 [
                                 ]
+                                  %! +SCORE
                                 \revert Accidental.color
+                                  %! +SCORE
                                 \revert Beam.color
+                                  %! +SCORE
                                 \revert Dots.color
+                                  %! +SCORE
                                 \revert Flag.color
+                                  %! +SCORE
                                 \revert Glissando.color
+                                  %! +SCORE
                                 \revert MultiMeasureRest.color
+                                  %! +SCORE
                                 \revert NoteHead.color
+                                  %! +SCORE
                                 \revert RepeatTie.color
+                                  %! +SCORE
                                 \revert Rest.color
+                                  %! +SCORE
                                 \revert Slur.color
+                                  %! +SCORE
                                 \revert Stem.color
+                                  %! +SCORE
                                 \revert StemTremolo.color
+                                  %! +SCORE
                                 \revert Tie.color
+                                  %! +SCORE
                                 \revert TupletBracket.color
+                                  %! +SCORE
                                 \revert TupletNumber.color
+                                  %! +SCORE
                                 \revert DynamicText.color
+                                  %! +SCORE
                                 \revert Dots.staff-position
                             }
                         >>

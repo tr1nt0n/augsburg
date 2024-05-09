@@ -320,6 +320,17 @@ trinton.make_music(
         full_string=True,
         style="solid-line-with-hook",
         tweaks=[r"- \tweak color \四"],
+        tag=abjad.Tag("+SCORE"),
+    ),
+    trinton.hooked_spanner_command(
+        string=r"""\markup \override #'(font-name . "Bodoni72 Book") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line {{ ( ZUSPIEL ) }}""",
+        selector=trinton.select_leaves_by_index([0, -1]),
+        padding=10,
+        right_padding=45,
+        full_string=True,
+        style="solid-line-with-hook",
+        # tweaks=[r"- \tweak color \四"],
+        tag=abjad.Tag("+PARTS"),
     ),
     voice=score["Global Context"],
 )

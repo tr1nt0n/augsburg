@@ -108,7 +108,11 @@
                     \context Voice = "piano 1 voice"
                     {
                         r2.
+                          %! +PARTS
+                    %%% - \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { ( SYNTHESIZER EIN ) }
+                          %! +SCORE
                         - \tweak color \四
+                          %! +SCORE
                         - \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { ( SYNTHESIZER EIN ) }
                         r16
                         \revert Staff.Accidental.X-extent
@@ -137,7 +141,7 @@
                         \once \override Stem.direction = #down
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
-                        f!16.
+                        f'!16.
                         ^ \markup \center-align { \concat { -14 } }
                         ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Nagel + Vibrator }
                         \revert Staff.Accidental.X-extent
@@ -274,7 +278,7 @@
                         \clef "treble"
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
-                        f!8.
+                        f'!8.
                         ^ \markup \center-align { \concat { -14 } }
                         \revert Staff.Accidental.X-extent
                         \once \override Stem.direction = #down
@@ -459,13 +463,13 @@
                         \once \override Stem.direction = #down
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
-                        f!16.
+                        f'!16.
                         ^ \markup \center-align { \concat { -14 } }
                         ~
                         \once \override Stem.direction = #down
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
-                        f16.
+                        f'16.
                         \!
                         ]
                         <<
@@ -528,7 +532,7 @@
                         \clef "treble"
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
-                        f!4.
+                        f'!4.
                         ^ \markup \center-align { \concat { -14 } }
                         ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { ( Nagel + Vibrator ) }
                         - \abjad-zero-padding-glissando
@@ -536,35 +540,35 @@
                         \once \override Voice.Accidental.font-size = 5
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \flat-one-syntonic-comma-down  }
-                        ef!4
+                        ef'!4
                         ^ \markup \center-align { \concat { -18 } }
                         - \abjad-zero-padding-glissando
                         \glissando
                         \once \override Voice.Accidental.font-size = 5
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-thirty-seven-limit-quarter-tone-up \hspace #0.125 \one-septimal-comma-up \hspace #0.125 \flat-one-syntonic-comma-up  }
-                        df'!4.
+                        df''!4.
                         ^ \markup \center-align { \concat { D-4 } }
                         - \abjad-zero-padding-glissando
                         \glissando
                         \once \override Voice.Accidental.font-size = 5
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
-                        c'!8
+                        c''!8
                         ^ \markup \center-align { \concat { -12 } }
                         - \abjad-zero-padding-glissando
                         \glissando
                         \once \override Voice.Accidental.font-size = 5
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \abjad-flat  }
-                        af'!4
+                        af''!4
                         ^ \markup \center-align { \concat { +2 } }
                         - \abjad-zero-padding-glissando
                         \glissando
                         \once \override Voice.Accidental.font-size = 5
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
-                        g'!4
+                        g''!4
                         ^ \markup \center-align { \concat { -10 } }
                         - \abjad-zero-padding-glissando
                         \glissando
@@ -572,7 +576,7 @@
                         \override Staff.Stem.stemlet-length = 0.75
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-down \hspace #0.125 \one-septimal-comma-up \hspace #0.125 \abjad-flat  }
-                        bf'!8
+                        bf''!8
                         ^ \markup \center-align { \concat { -20 } }
                         [
                         - \abjad-zero-padding-glissando
@@ -581,7 +585,7 @@
                         \revert Staff.Stem.stemlet-length
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \abjad-flat  }
-                        af'!8
+                        af''!8
                         ^ \markup \center-align { \concat { +2 } }
                         ]
                           %! abjad.glissando(7)
@@ -599,7 +603,7 @@
                         \override NoteHead.no-ledgers = ##t
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \abjad-flat  }
-                        af'8
+                        af''8
                         \once \override Voice.Accidental.font-size = 5
                           %! abjad.glissando(6)
                         \revert Accidental.stencil
@@ -611,21 +615,21 @@
                         \undo \hide NoteHead
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-twenty-three-limit-comma-up \hspace #0.125 \one-undecimal-quarter-tone-up  }
-                        c''!4.
+                        c'''!4.
                         ^ \markup \center-align { \concat { C\raise #0.75 { \teeny \smaller \accidental #1/2 } -20 } }
                         - \abjad-zero-padding-glissando
                         \glissando
                         \once \override Voice.Accidental.font-size = 5
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-undecimal-quarter-tone-down \hspace #0.125 \one-septimal-comma-up \hspace #0.125 \abjad-flat  }
-                        bf'!4
+                        bf''!4
                         ^ \markup \center-align { \concat { -20 } }
                         - \abjad-zero-padding-glissando
                         \glissando
                         \once \override Voice.Accidental.font-size = 5
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \abjad-flat  }
-                        ef''!4
+                        ef'''!4
                         ^ \markup \center-align { \concat { +4 } }
                           %! abjad.glissando(7)
                         - \abjad-zero-padding-glissando
@@ -643,7 +647,7 @@
                         \override Staff.Stem.stemlet-length = 0.75
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \abjad-flat  }
-                        ef''8
+                        ef'''8
                         [
                         \once \override Voice.Accidental.font-size = 5
                           %! abjad.glissando(6)
@@ -657,7 +661,7 @@
                         \revert Staff.Stem.stemlet-length
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \flat-one-syntonic-comma-down  }
-                        df''!8
+                        df'''!8
                         ^ \markup \center-align { \concat { -22 } }
                         ]
                           %! abjad.glissando(7)
@@ -675,7 +679,7 @@
                         \override NoteHead.no-ledgers = ##t
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \flat-one-syntonic-comma-down  }
-                        df''8
+                        df'''8
                         \once \override Voice.Accidental.font-size = 5
                           %! abjad.glissando(6)
                         \revert Accidental.stencil
@@ -687,7 +691,7 @@
                         \undo \hide NoteHead
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
-                        f''!4.
+                        f'''!4.
                         ^ \markup \center-align { \concat { -14 } }
                         - \abjad-zero-padding-glissando
                         \glissando
@@ -695,7 +699,7 @@
                         \override Staff.Stem.stemlet-length = 0.75
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \abjad-flat  }
-                        ef''!8
+                        ef'''!8
                         ^ \markup \center-align { \concat { +4 } }
                         [
                         - \abjad-zero-padding-glissando
@@ -704,7 +708,7 @@
                         \revert Staff.Stem.stemlet-length
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
-                        f''!8
+                        f'''!8
                         ^ \markup \center-align { \concat { -14 } }
                         ]
                           %! abjad.glissando(7)
@@ -723,7 +727,7 @@
                         \override Staff.Stem.stemlet-length = 0.75
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
-                        f''8
+                        f'''8
                         [
                         \once \override Voice.Accidental.font-size = 5
                         \revert Dots.staff-position
@@ -738,7 +742,7 @@
                         \revert Staff.Stem.stemlet-length
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \abjad-flat  }
-                        ef''!8
+                        ef'''!8
                         ^ \markup \center-align { \concat { +4 } }
                         ]
                         r4.
@@ -746,21 +750,21 @@
                         \once \override Voice.Accidental.font-size = 5
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \abjad-flat  }
-                        ef''!8
+                        ef'''!8
                         ^ \markup \center-align { \concat { +4 } }
                         - \abjad-zero-padding-glissando
                         \glissando
                         \once \override Voice.Accidental.font-size = 5
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
-                        f''!4
+                        f'''!4
                         ^ \markup \center-align { \concat { -14 } }
                         - \abjad-zero-padding-glissando
                         \glissando
                         \once \override Voice.Accidental.font-size = 5
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \abjad-flat  }
-                        ef''!4
+                        ef'''!4
                         ^ \markup \center-align { \concat { +4 } }
                         - \abjad-zero-padding-glissando
                         \glissando
@@ -768,7 +772,7 @@
                         \override Staff.Stem.stemlet-length = 0.75
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
-                        f''!8
+                        f'''!8
                         ^ \markup \center-align { \concat { -14 } }
                         [
                         - \abjad-zero-padding-glissando
@@ -778,7 +782,7 @@
                         \revert Staff.Stem.stemlet-length
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \abjad-flat  }
-                        ef''!8
+                        ef'''!8
                         ^ \markup \center-align { \concat { +4 } }
                         ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #2 { \center-column { \line { ( den Vibrator auf die Saiten } \line { legen und dort belassen ) }  } }
                         ]
@@ -1311,6 +1315,8 @@
                         )
                         ]
                         \override Staff.Accidental.X-extent = ##f
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
@@ -1338,11 +1344,20 @@
                         s1 * 5/4
                         s1 * 5/4
                         s1 * 3/4
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
+                          %! +SCORE
                         - \tweak color \四
+                          %! +SCORE
                         ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { ( SYNTHESIZER AUS ) }
+                          %! +SCORE
                         ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #2 { \center-column { \line { Entfernen des Vibrators } \line { aus den Saiten. }  } }
+                          %! +PARTS
+                    %%% ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \box \fontsize #2 { \center-column { \line { Entfernen des Vibrators } \line { aus den Saiten. }  } }
+                          %! +PARTS
+                    %%% ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { ( SYNTHESIZER AUS ) }
                         \stopStaff \startStaff
                     }
                 }
@@ -1970,6 +1985,8 @@
                         )
                         ]
                         \override Staff.Accidental.X-extent = ##f
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \sustainOff
@@ -2089,6 +2106,8 @@
                         R1 * 3/4
                         \stopStaff \startStaff
                         \once \override Staff.BarLine.transparent = ##f
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \once \override Staff.TimeSignature.transparent = ##t
@@ -2642,6 +2661,8 @@
                     R1 * 3/4
                     \stopStaff \startStaff
                     \once \override Staff.BarLine.transparent = ##f
+                    \once \override MultiMeasureRest.transparent = ##t
+                    \once \override Rest.transparent = ##t
                     \once \revert Staff.StaffSymbol.line-positions
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff

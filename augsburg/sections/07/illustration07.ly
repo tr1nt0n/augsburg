@@ -216,25 +216,45 @@
                                 \times 28/35
                                 {
                                     \interrupt
+                                      %! +SCORE
                                     \override NoteHead.details.interrupt-color = \三
+                                      %! +SCORE
                                     \override NoteHead.details.switch-color = \三
+                                      %! +SCORE
                                     \override NoteHead.details.folow-color = \三
+                                      %! +SCORE
                                     \override NoteHead.details.hocket-color = \三
+                                      %! +SCORE
                                     \override Accidental.color = \三
+                                      %! +SCORE
                                     \override Beam.color = \三
+                                      %! +SCORE
                                     \override Dots.color = \三
+                                      %! +SCORE
                                     \override Flag.color = \三
+                                      %! +SCORE
                                     \override Glissando.color = \三
+                                      %! +SCORE
                                     \override MultiMeasureRest.color = \三
+                                      %! +SCORE
                                     \override NoteHead.color = \三
+                                      %! +SCORE
                                     \override RepeatTie.color = \三
+                                      %! +SCORE
                                     \override Rest.color = \三
+                                      %! +SCORE
                                     \override Slur.color = \三
+                                      %! +SCORE
                                     \override Stem.color = \三
+                                      %! +SCORE
                                     \override StemTremolo.color = \三
+                                      %! +SCORE
                                     \override Tie.color = \三
+                                      %! +SCORE
                                     \override TupletBracket.color = \三
+                                      %! +SCORE
                                     \override TupletNumber.color = \三
+                                      %! +SCORE
                                     \override Dots.staff-position = #2
                                     \voiceTwo
                                     g''''4
@@ -550,26 +570,47 @@
                                 {
                                     \interrupt
                                     \ottava 2
+                                      %! +SCORE
                                     \override NoteHead.details.interrupt-color = \一
+                                      %! +SCORE
                                     \override NoteHead.details.switch-color = \一
+                                      %! +SCORE
                                     \override NoteHead.details.folow-color = \一
+                                      %! +SCORE
                                     \override NoteHead.details.hocket-color = \一
+                                      %! +SCORE
                                     \override Accidental.color = \一
+                                      %! +SCORE
                                     \override Beam.color = \一
+                                      %! +SCORE
                                     \override Dots.color = \一
+                                      %! +SCORE
                                     \override Flag.color = \一
+                                      %! +SCORE
                                     \override Glissando.color = \一
+                                      %! +SCORE
                                     \override MultiMeasureRest.color = \一
+                                      %! +SCORE
                                     \override NoteHead.color = \一
+                                      %! +SCORE
                                     \override RepeatTie.color = \一
+                                      %! +SCORE
                                     \override Rest.color = \一
+                                      %! +SCORE
                                     \override Slur.color = \一
+                                      %! +SCORE
                                     \override Stem.color = \一
+                                      %! +SCORE
                                     \override StemTremolo.color = \一
+                                      %! +SCORE
                                     \override Tie.color = \一
+                                      %! +SCORE
                                     \override TupletBracket.color = \一
+                                      %! +SCORE
                                     \override TupletNumber.color = \一
+                                      %! +SCORE
                                     \override Dots.staff-position = #2
+                                      %! +SCORE
                                     \override DynamicText.color = \一
                                     \clef "treble"
                                     \voiceOne
@@ -730,33 +771,52 @@
                                 \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 13 16) (ly:make-duration 6 0))
                                 \times 16/13
                                 {
-                                    \hocket
                                     \ottava 2
+                                      %! +SCORE
                                     \override NoteHead.details.interrupt-color = \一
+                                      %! +SCORE
                                     \override NoteHead.details.switch-color = \一
+                                      %! +SCORE
                                     \override NoteHead.details.folow-color = \一
+                                      %! +SCORE
                                     \override NoteHead.details.hocket-color = \一
+                                      %! +SCORE
                                     \override Accidental.color = \一
+                                      %! +SCORE
                                     \override Beam.color = \一
+                                      %! +SCORE
                                     \override Dots.color = \一
+                                      %! +SCORE
                                     \override Flag.color = \一
+                                      %! +SCORE
                                     \override Glissando.color = \一
+                                      %! +SCORE
                                     \override MultiMeasureRest.color = \一
+                                      %! +SCORE
                                     \override NoteHead.color = \一
+                                      %! +SCORE
                                     \override RepeatTie.color = \一
+                                      %! +SCORE
                                     \override Rest.color = \一
+                                      %! +SCORE
                                     \override Slur.color = \一
+                                      %! +SCORE
                                     \override Stem.color = \一
+                                      %! +SCORE
                                     \override StemTremolo.color = \一
+                                      %! +SCORE
                                     \override Tie.color = \一
+                                      %! +SCORE
                                     \override TupletBracket.color = \一
+                                      %! +SCORE
                                     \override TupletNumber.color = \一
+                                      %! +SCORE
                                     \override Dots.staff-position = #2
+                                      %! +SCORE
                                     \override DynamicText.color = \一
                                     \voiceOne
                                     a''''8
                                     ^ \p
-                                    \hocket
                                     a''''16
                                     ~
                                     a''''64
@@ -784,7 +844,6 @@
                                 \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 11 8) (ly:make-duration 5 0))
                                 \times 8/11
                                 {
-                                    \hocket
                                     \override NoteHead.details.interrupt-color = \三
                                     \override NoteHead.details.switch-color = \三
                                     \override NoteHead.details.folow-color = \三
@@ -809,7 +868,6 @@
                                     \voiceTwo
                                     g''''4
                                     _ \mp
-                                    \hocket
                                     g''''16.
                                     \ottava 0
                                     \revert Accidental.color
@@ -834,7 +892,11 @@
                         >>
                         \oneVoice
                         r2
+                          %! +PARTS
+                    %%% - \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { ( SYNTHESIZER EIN ) }
+                          %! +SCORE
                         - \tweak color \四
+                          %! +SCORE
                         - \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { ( SYNTHESIZER EIN ) }
                         \tweak text #tuplet-number::calc-fraction-text
                         \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 5 6) (ly:make-duration 3 0))
@@ -844,7 +906,7 @@
                             \once \override Voice.Accidental.font-size = 5
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \flat-one-syntonic-comma-down  }
-                            ef'!4.
+                            ef''!4.
                             ^ \markup \center-align { \concat { -45 } }
                             ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Nagel + Vibrator }
                             - \abjad-zero-padding-glissando
@@ -852,7 +914,7 @@
                             \once \override Voice.Accidental.font-size = 5
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup { \one-tridecimal-third-tone-down  }
-                            c'!4
+                            c''!4
                             ^ \markup \center-align { \concat { B+41 } }
                               %! abjad.glissando(7)
                             - \abjad-zero-padding-glissando
@@ -870,7 +932,7 @@
                         \override NoteHead.no-ledgers = ##t
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \one-tridecimal-third-tone-down  }
-                        c'4
+                        c''4
                         \once \override Voice.Accidental.font-size = 5
                           %! abjad.glissando(6)
                         \revert Accidental.stencil
@@ -882,7 +944,7 @@
                         \undo \hide NoteHead
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-thirty-seven-limit-quarter-tone-up \hspace #0.125 \abjad-flat  }
-                        bf!4
+                        bf'!4
                         ^ \markup \center-align { \concat { +49 } }
                           %! abjad.glissando(7)
                         - \abjad-zero-padding-glissando
@@ -902,7 +964,7 @@
                             \override NoteHead.no-ledgers = ##t
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup \concat { \one-thirty-seven-limit-quarter-tone-up \hspace #0.125 \abjad-flat  }
-                            bf8
+                            bf'8
                             \once \override Voice.Accidental.font-size = 5
                               %! abjad.glissando(6)
                             \revert Accidental.stencil
@@ -914,7 +976,7 @@
                             \undo \hide NoteHead
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup \concat { \one-tridecimal-third-tone-up \hspace #0.125 \one-septimal-comma-down \hspace #0.125 \flat-one-syntonic-comma-down  }
-                            af!4
+                            af'!4
                             ^ \markup \center-align { \concat { +15 } }
                               %! abjad.glissando(7)
                             - \abjad-zero-padding-glissando
@@ -932,7 +994,7 @@
                         \override NoteHead.no-ledgers = ##t
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-tridecimal-third-tone-up \hspace #0.125 \one-septimal-comma-down \hspace #0.125 \flat-one-syntonic-comma-down  }
-                        af4
+                        af'4
                         \once \override Voice.Accidental.font-size = 5
                           %! abjad.glissando(6)
                         \revert Accidental.stencil
@@ -944,7 +1006,7 @@
                         \undo \hide NoteHead
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-thirty-seven-limit-quarter-tone-down \hspace #0.125 \one-septimal-comma-down \hspace #0.125 \flat-one-syntonic-comma-down  }
-                        ef!4
+                        ef''!4
                         ^ \markup \center-align { \concat { D+4 } }
                           %! abjad.glissando(7)
                         - \abjad-zero-padding-glissando
@@ -964,7 +1026,7 @@
                             \override NoteHead.no-ledgers = ##t
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup \concat { \one-thirty-seven-limit-quarter-tone-down \hspace #0.125 \one-septimal-comma-down \hspace #0.125 \flat-one-syntonic-comma-down  }
-                            ef4
+                            ef''4
                             \once \override Voice.Accidental.font-size = 5
                               %! abjad.glissando(6)
                             \revert Accidental.stencil
@@ -976,7 +1038,7 @@
                             \undo \hide NoteHead
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup { \one-tridecimal-third-tone-down  }
-                            c'!2
+                            c''!2
                             ^ \markup \center-align { \concat { B+41 } }
                               %! abjad.glissando(7)
                             - \abjad-zero-padding-glissando
@@ -994,7 +1056,7 @@
                         \override NoteHead.no-ledgers = ##t
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \one-tridecimal-third-tone-down  }
-                        c'4
+                        c''4
                         \once \override Voice.Accidental.font-size = 5
                           %! abjad.glissando(6)
                         \revert Accidental.stencil
@@ -1006,7 +1068,7 @@
                         \undo \hide NoteHead
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \natural-one-syntonic-comma-down  }
-                        f'!4.
+                        f''!4.
                         ^ \markup \center-align { \concat { -45 } }
                         - \abjad-zero-padding-glissando
                         \glissando
@@ -1051,25 +1113,45 @@
                                     \staff-line-count 5
                                     \interrupt
                                     \ottava 2
+                                      %! +SCORE
                                     \override NoteHead.details.interrupt-color = \二
+                                      %! +SCORE
                                     \override NoteHead.details.switch-color = \二
+                                      %! +SCORE
                                     \override NoteHead.details.folow-color = \二
+                                      %! +SCORE
                                     \override NoteHead.details.hocket-color = \二
+                                      %! +SCORE
                                     \override Accidental.color = \二
+                                      %! +SCORE
                                     \override Beam.color = \二
+                                      %! +SCORE
                                     \override Dots.color = \二
+                                      %! +SCORE
                                     \override Flag.color = \二
+                                      %! +SCORE
                                     \override Glissando.color = \二
+                                      %! +SCORE
                                     \override MultiMeasureRest.color = \二
+                                      %! +SCORE
                                     \override NoteHead.color = \二
+                                      %! +SCORE
                                     \override RepeatTie.color = \二
+                                      %! +SCORE
                                     \override Rest.color = \二
+                                      %! +SCORE
                                     \override Slur.color = \二
+                                      %! +SCORE
                                     \override Stem.color = \二
+                                      %! +SCORE
                                     \override StemTremolo.color = \二
+                                      %! +SCORE
                                     \override Tie.color = \二
+                                      %! +SCORE
                                     \override TupletBracket.color = \二
+                                      %! +SCORE
                                     \override TupletNumber.color = \二
+                                      %! +SCORE
                                     \override Dots.staff-position = #2
                                     \clef "treble"
                                     \voiceOne
@@ -1385,26 +1467,47 @@
                                 {
                                     \interrupt
                                     \ottava 2
+                                      %! +SCORE
                                     \override NoteHead.details.interrupt-color = \二
+                                      %! +SCORE
                                     \override NoteHead.details.switch-color = \二
+                                      %! +SCORE
                                     \override NoteHead.details.folow-color = \二
+                                      %! +SCORE
                                     \override NoteHead.details.hocket-color = \二
+                                      %! +SCORE
                                     \override Accidental.color = \二
+                                      %! +SCORE
                                     \override Beam.color = \二
+                                      %! +SCORE
                                     \override Dots.color = \二
+                                      %! +SCORE
                                     \override Flag.color = \二
+                                      %! +SCORE
                                     \override Glissando.color = \二
+                                      %! +SCORE
                                     \override MultiMeasureRest.color = \二
+                                      %! +SCORE
                                     \override NoteHead.color = \二
+                                      %! +SCORE
                                     \override RepeatTie.color = \二
+                                      %! +SCORE
                                     \override Rest.color = \二
+                                      %! +SCORE
                                     \override Slur.color = \二
+                                      %! +SCORE
                                     \override Stem.color = \二
+                                      %! +SCORE
                                     \override StemTremolo.color = \二
+                                      %! +SCORE
                                     \override Tie.color = \二
+                                      %! +SCORE
                                     \override TupletBracket.color = \二
+                                      %! +SCORE
                                     \override TupletNumber.color = \二
+                                      %! +SCORE
                                     \override Dots.staff-position = #2
+                                      %! +SCORE
                                     \override DynamicText.color = \二
                                     \clef "treble"
                                     \voiceOne

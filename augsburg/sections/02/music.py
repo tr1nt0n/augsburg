@@ -444,6 +444,7 @@ trinton.fermata_measures(
     fermata="middle-fermata",
     font_size=15,
     clef_whitespace=True,
+    tag=None,
 )
 
 trinton.make_music(

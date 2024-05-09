@@ -1122,7 +1122,7 @@ trinton.make_music(
 trinton.make_music(
     lambda _: trinton.select_target(_, (25,)),
     evans.RhythmHandler(evans.talea([3, -1, 3], 8)),
-    evans.PitchHandler(["c'", "df,"]),
+    evans.PitchHandler(["c'", "df"]),
     trinton.pitch_with_selector_command(
         pitch_list=["5/2"],
         as_ratios=True,
@@ -1185,18 +1185,45 @@ trinton.make_music(
             7,
         ]
     ),
-    trinton.linear_attachment_command(
+    trinton.attachment_command(
         attachments=[
             library.boxed_markup(
                 string="( SYNTHESIZER EIN )",
                 tweaks=[r"- \tweak color \四"],
             ),
+        ],
+        selector=trinton.select_leaves_by_index(
+            [
+                0,
+            ],
+            pitched=True,
+        ),
+        direction=abjad.UP,
+        tag=abjad.Tag("+SCORE"),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            library.boxed_markup(
+                string="( SYNTHESIZER EIN )",
+                # tweaks=[r"- \tweak color \四"],
+            ),
+        ],
+        selector=trinton.select_leaves_by_index(
+            [
+                0,
+            ],
+            pitched=True,
+        ),
+        direction=abjad.UP,
+        tag=abjad.Tag("+PARTS"),
+    ),
+    trinton.linear_attachment_command(
+        attachments=[
             library.start_jaw_harp_literal,
             library.stop_jaw_harp_literal,
         ],
         selector=trinton.select_leaves_by_index(
             [
-                0,
                 0,
                 -1,
             ],
@@ -1257,6 +1284,18 @@ trinton.make_music(
         ],
         selector=trinton.select_leaves_by_index([0]),
         direction=abjad.UP,
+        tag=abjad.Tag("+SCORE"),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            library.boxed_markup(
+                string="( SYNTHESIZER AUS )",
+                # tweaks=[r"- \tweak color \四"],
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        direction=abjad.UP,
+        tag=abjad.Tag("+PARTS"),
     ),
     voice=score["piano 3 voice"],
 )
@@ -1296,6 +1335,7 @@ trinton.fermata_measures(
         "piano 4 voice",
         "piano 5 voice",
     ],
+    tag=None,
 )
 
 trinton.fermata_measures(
@@ -1311,6 +1351,7 @@ trinton.fermata_measures(
         "piano 4 voice",
         "piano 5 voice",
     ],
+    tag=None,
 )
 
 trinton.fermata_measures(
@@ -1326,6 +1367,7 @@ trinton.fermata_measures(
         "piano 4 voice",
         "piano 5 voice",
     ],
+    tag=None,
 )
 
 trinton.make_music(

@@ -93,7 +93,6 @@
                                 {
                                     \once \override Staff.Clef.X-extent = ##f
                                     \once \override Staff.Clef.extra-offset = #'(-2.5 . 0)
-                                    \hocket
                                     \ottava 2
                                     \override NoteHead.details.interrupt-color = \一
                                     \override NoteHead.details.switch-color = \一
@@ -121,9 +120,7 @@
                                     \pp
                                     - \tweak stencil #constante-hairpin
                                     \<
-                                    \hocket
                                     a''''4
-                                    \hocket
                                     a''''8
                                     ~
                                     a''''32
@@ -152,7 +149,6 @@
                                 \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 19 16) (ly:make-duration 5 0))
                                 \times 16/19
                                 {
-                                    \hocket
                                     \override NoteHead.details.interrupt-color = \三
                                     \override NoteHead.details.switch-color = \三
                                     \override NoteHead.details.folow-color = \三
@@ -175,9 +171,7 @@
                                     \override Dots.staff-position = #2
                                     \voiceTwo
                                     g''''4
-                                    \hocket
                                     g''''4
-                                    \hocket
                                     g''''16.
                                     \ottava 0
                                     \revert Accidental.color
@@ -201,6 +195,8 @@
                             }
                         >>
                         \oneVoice
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
@@ -588,12 +584,13 @@
                             }
                         }
                         \staff-line-count 5
-                        \once \override Beam.stencil = ##f
-                        \once \override Dots.stencil = ##f
-                        \once \override Flag.stencil = ##f
-                        \once \override NoteHead.duration-log = 2
+                        \once \override RepeatTie.transparent = ##t
                         \once \override Stem.stencil = ##f
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override Dots.stencil = ##f
                         \once \override Tie.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
                         \revert Staff.Accidental.X-extent
                         \clef "bass"
                         <g! c'! df'!>4
@@ -602,8 +599,11 @@
                         \laissezVibrer
                         - \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Tasten }
                         \override Staff.Accidental.X-extent = ##f
+                        \once \override Staff.Clef.X-extent = ##f
+                        \once \override Staff.Clef.extra-offset = #'(-2.5 . 0)
                         \override Dots.staff-position = #2
-                        fs!2.
+                        \clef "treble"
+                        fs'!2.
                         ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Nagel + Vibrator }
                           %! abjad.glissando(7)
                         - \abjad-zero-padding-glissando
@@ -618,12 +618,12 @@
                         \override NoteColumn.glissando-skip = ##t
                           %! abjad.glissando(1)
                         \override NoteHead.no-ledgers = ##t
-                        fs4
+                        fs'4
                         ~
-                        fs4
+                        fs'4
                         ~
                         \override Staff.Stem.stemlet-length = 0.75
-                        fs8
+                        fs'8
                         [
                         \once \override Voice.Accidental.font-size = 5
                           %! abjad.glissando(6)
@@ -637,7 +637,7 @@
                         \revert Staff.Stem.stemlet-length
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \natural-one-syntonic-comma-down  }
-                        f'!8
+                        f''!8
                         ^ \markup \center-align { \concat { -45 } }
                         ]
                           %! abjad.glissando(7)
@@ -655,15 +655,15 @@
                         \override NoteHead.no-ledgers = ##t
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \natural-one-syntonic-comma-down  }
-                        f'4
+                        f''4
                         ~
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \natural-one-syntonic-comma-down  }
-                        f'4
+                        f''4
                         ~
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \natural-one-syntonic-comma-down  }
-                        f'4
+                        f''4
                         \tweak text #tuplet-number::calc-fraction-text
                         \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 6 5) (ly:make-duration 1 0))
                         \times 5/6
@@ -680,24 +680,30 @@
                             \once \override Voice.Accidental.font-size = 5
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \natural-one-syntonic-comma-down  }
-                            f'!4.
+                            f''!4.
                             ^ \markup \center-align { \concat { -45 } }
                             - \abjad-zero-padding-glissando
                             \glissando
                             \once \override Voice.Accidental.font-size = 5
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup { \one-thirty-seven-limit-quarter-tone-up  }
-                            f!\breve
+                            f'!\breve
                             ^ \markup \center-align { \concat { F\raise #0.75 { \teeny \smaller \accidental #1/2 } -49 } }
                             ~
                             \revert Dots.staff-position
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup { \one-thirty-seven-limit-quarter-tone-up  }
-                            f4.
+                            f'4.
                         }
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
+                          %! +PARTS
+                    %%% - \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { ( SYNTHESIZER AUS ) }
+                          %! +SCORE
                         - \tweak color \四
+                          %! +SCORE
                         - \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { ( SYNTHESIZER AUS ) }
                         \stopStaff \startStaff
                     }
@@ -707,6 +713,8 @@
                     \context Voice = "piano 2 voice"
                     {
                         s1 * 1/2
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
@@ -723,6 +731,8 @@
                         s1 * 1/4
                         s1 * 9/4
                         s1 * 5/2
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
@@ -741,7 +751,6 @@
                                 {
                                     \once \override Staff.Clef.X-extent = ##f
                                     \once \override Staff.Clef.extra-offset = #'(-2.5 . 0)
-                                    \hocket
                                     \ottava 2
                                     \override NoteHead.details.interrupt-color = \二
                                     \override NoteHead.details.switch-color = \二
@@ -767,11 +776,8 @@
                                     \voiceOne
                                     e''''8
                                     \sustainOn
-                                    \hocket
                                     e''''8
-                                    \hocket
                                     e''''8
-                                    \hocket
                                     e''''32
                                     \sustainOff
                                     \revert Accidental.color
@@ -795,7 +801,6 @@
                             }
                             \context Voice = "4 voice"
                             {
-                                \hocket
                                 \override NoteHead.details.interrupt-color = \四
                                 \override NoteHead.details.switch-color = \四
                                 \override NoteHead.details.folow-color = \四
@@ -818,7 +823,6 @@
                                 \override Dots.staff-position = #2
                                 \voiceTwo
                                 ds''''4
-                                \hocket
                                 ds''''4
                                 \ottava 0
                                 \revert Accidental.color
@@ -841,6 +845,8 @@
                             }
                         >>
                         \oneVoice
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
@@ -898,12 +904,13 @@
                         \revert Score.Stem.direction
                         \override Staff.TupletBracket.direction = #DOWN
                         \staff-line-count 5
-                        \once \override Beam.stencil = ##f
-                        \once \override Dots.stencil = ##f
-                        \once \override Flag.stencil = ##f
-                        \once \override NoteHead.duration-log = 2
+                        \once \override RepeatTie.transparent = ##t
                         \once \override Stem.stencil = ##f
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override Dots.stencil = ##f
                         \once \override Tie.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
                         \ottava -1
                         \clef "bass"
                         ef,,4
@@ -952,6 +959,8 @@
                             }
                         >>
                         \oneVoice
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
@@ -968,6 +977,8 @@
                         R1 * 1/2
                         \stopStaff \startStaff
                         \once \override Staff.BarLine.transparent = ##f
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \once \override Staff.TimeSignature.transparent = ##t
@@ -1054,6 +1065,8 @@
                         R1 * 5/2
                         \stopStaff \startStaff
                         \once \override Staff.BarLine.transparent = ##f
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \once \override Staff.TimeSignature.transparent = ##t
@@ -1076,6 +1089,8 @@
                         b16
                     }
                     \once \override Staff.BarLine.transparent = ##f
+                    \once \override MultiMeasureRest.transparent = ##t
+                    \once \override Rest.transparent = ##t
                     \once \revert Staff.StaffSymbol.line-positions
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
@@ -1294,6 +1309,8 @@
                         ef16
                     }
                     \once \override Staff.BarLine.transparent = ##f
+                    \once \override MultiMeasureRest.transparent = ##t
+                    \once \override Rest.transparent = ##t
                     \once \revert Staff.StaffSymbol.line-positions
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff

@@ -150,7 +150,7 @@
                         \undo \hide NoteHead
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \natural-one-syntonic-comma-down  }
-                        g!4
+                        g'!4
                         ^ \markup \center-align { \concat { -45 } }
                           %! abjad.glissando(7)
                         - \abjad-zero-padding-glissando
@@ -167,7 +167,7 @@
                         \override NoteHead.no-ledgers = ##t
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \natural-one-syntonic-comma-down  }
-                        g4.
+                        g'4.
                         \once \override Voice.Accidental.font-size = 5
                           %! abjad.glissando(6)
                         \revert Accidental.stencil
@@ -179,7 +179,7 @@
                         \undo \hide NoteHead
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \abjad-flat  }
-                        ef'!8
+                        ef''!8
                         ^ \markup \center-align { \concat { -31 } }
                           %! abjad.glissando(7)
                         - \abjad-zero-padding-glissando
@@ -196,7 +196,7 @@
                         \override NoteHead.no-ledgers = ##t
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \abjad-flat  }
-                        ef'2
+                        ef''2
                           %! abjad.glissando(6)
                         \revert Accidental.stencil
                           %! abjad.glissando(6)
@@ -224,7 +224,7 @@
                         \clef "treble"
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \abjad-flat  }
-                        ef'!4
+                        ef''!4
                         ^ \markup \center-align { \concat { -31 } }
                         ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Nagel + Vibrator }
                           %! abjad.glissando(7)
@@ -242,7 +242,7 @@
                         \override NoteHead.no-ledgers = ##t
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \abjad-flat  }
-                        ef'4.
+                        ef''4.
                         \once \override Voice.Accidental.font-size = 5
                         \revert Dots.staff-position
                           %! abjad.glissando(6)
@@ -255,7 +255,7 @@
                         \undo \hide NoteHead
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \abjad-sharp  }
-                        fs!8
+                        fs'!8
                         ^ \markup \center-align { \concat { +2 } }
                         r2
                         \once \override NoteHead.duration-log = 2
@@ -344,26 +344,47 @@
                                 \times 32/35
                                 {
                                     \interrupt
+                                      %! +SCORE
                                     \override NoteHead.details.interrupt-color = \三
+                                      %! +SCORE
                                     \override NoteHead.details.switch-color = \三
+                                      %! +SCORE
                                     \override NoteHead.details.folow-color = \三
+                                      %! +SCORE
                                     \override NoteHead.details.hocket-color = \三
+                                      %! +SCORE
                                     \override Accidental.color = \三
+                                      %! +SCORE
                                     \override Beam.color = \三
+                                      %! +SCORE
                                     \override Dots.color = \三
+                                      %! +SCORE
                                     \override Flag.color = \三
+                                      %! +SCORE
                                     \override Glissando.color = \三
+                                      %! +SCORE
                                     \override MultiMeasureRest.color = \三
+                                      %! +SCORE
                                     \override NoteHead.color = \三
+                                      %! +SCORE
                                     \override RepeatTie.color = \三
+                                      %! +SCORE
                                     \override Rest.color = \三
+                                      %! +SCORE
                                     \override Slur.color = \三
+                                      %! +SCORE
                                     \override Stem.color = \三
+                                      %! +SCORE
                                     \override StemTremolo.color = \三
+                                      %! +SCORE
                                     \override Tie.color = \三
+                                      %! +SCORE
                                     \override TupletBracket.color = \三
+                                      %! +SCORE
                                     \override TupletNumber.color = \三
+                                      %! +SCORE
                                     \override Dots.staff-position = #2
+                                      %! +SCORE
                                     \override DynamicText.color = \三
                                     \voiceTwo
                                     g''''4
@@ -406,7 +427,7 @@
                         \once \override Voice.Accidental.font-size = 5
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \abjad-sharp  }
-                        fs!4
+                        fs'!4
                         ^ \markup \center-align { \concat { +2 } }
                         ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Nagel + Vibrator }
                           %! abjad.glissando(7)
@@ -424,19 +445,19 @@
                         \override NoteHead.no-ledgers = ##t
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \abjad-sharp  }
-                        fs4
+                        fs'4
                         ~
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \abjad-sharp  }
-                        fs4
+                        fs'4
                         ~
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \abjad-sharp  }
-                        fs4
+                        fs'4
                         ~
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \abjad-sharp  }
-                        fs4.
+                        fs'4.
                         \once \override Voice.Accidental.font-size = 5
                         \revert Dots.staff-position
                           %! abjad.glissando(6)
@@ -449,7 +470,7 @@
                         \undo \hide NoteHead
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \one-undecimal-quarter-tone-up  }
-                        e!8
+                        e'!8
                         ^ \markup \center-align { \concat { F-49 } }
                         r2
                         r8
@@ -497,13 +518,13 @@
                         \clef "treble"
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \one-undecimal-quarter-tone-up  }
-                        e!8
+                        e'!8
                         ^ \markup \center-align { \concat { F-49 } }
                         ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Nagel + Vibrator }
                         ~
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \one-undecimal-quarter-tone-up  }
-                        e2
+                        e'2
                         <<
                             \context Voice = "37 voice temp 1"
                             {
@@ -694,7 +715,7 @@
                         \once \override Voice.Accidental.font-size = 5
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \one-undecimal-quarter-tone-up  }
-                        e!8
+                        e'!8
                         ^ \markup \center-align { \concat { F-49 } }
                         ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Nagel + Vibrator }
                           %! abjad.glissando(7)
@@ -712,11 +733,11 @@
                         \override NoteHead.no-ledgers = ##t
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \one-undecimal-quarter-tone-up  }
-                        e4
+                        e'4
                         ~
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \one-undecimal-quarter-tone-up  }
-                        e4
+                        e'4
                         \once \override Voice.Accidental.font-size = 5
                         \revert Dots.staff-position
                           %! abjad.glissando(6)
@@ -729,7 +750,7 @@
                         \undo \hide NoteHead
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
-                        f!8
+                        f'!8
                         ^ \markup \center-align { \concat { -14 } }
                         \staff-line-count 1
                         \clef "percussion"
@@ -744,7 +765,6 @@
                                 \times 32/37
                                 {
                                     \staff-line-count 5
-                                    \hocket
                                     \ottava 2
                                     \override NoteHead.details.interrupt-color = \一
                                     \override NoteHead.details.switch-color = \一
@@ -773,13 +793,9 @@
                                     ^ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Tasten }
                                     - \tweak stencil #constante-hairpin
                                     _ \<
-                                    \hocket
                                     a''''4
-                                    \hocket
                                     a''''4
-                                    \hocket
                                     a''''4
-                                    \hocket
                                     a''''8
                                     ~
                                     a''''32
@@ -789,15 +805,10 @@
                                 \times 32/37
                                 {
                                     a''''16.
-                                    \hocket
                                     a''''4
-                                    \hocket
                                     a''''4
-                                    \hocket
                                     a''''4
-                                    \hocket
                                     a''''4
-                                    \hocket
                                     a''''16
                                     ~
                                 }
@@ -805,13 +816,9 @@
                                 \times 32/37
                                 {
                                     a''''8.
-                                    \hocket
                                     a''''4
-                                    \hocket
                                     a''''4
-                                    \hocket
                                     a''''4
-                                    \hocket
                                     a''''8..
                                     ~
                                 }
@@ -819,15 +826,10 @@
                                 \times 32/37
                                 {
                                     a''''32
-                                    \hocket
                                     a''''4
-                                    \hocket
                                     a''''4
-                                    \hocket
                                     a''''4
-                                    \hocket
                                     a''''4
-                                    \hocket
                                     a''''8
                                     ~
                                 }
@@ -835,15 +837,10 @@
                                 \times 32/37
                                 {
                                     a''''8
-                                    \hocket
                                     a''''4
-                                    \hocket
                                     a''''4
-                                    \hocket
                                     a''''4
-                                    \hocket
                                     a''''4
-                                    \hocket
                                     a''''32
                                     \!
                                     \revert Accidental.color
@@ -870,7 +867,6 @@
                                 \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 35 32) (ly:make-duration 5 0))
                                 \times 32/35
                                 {
-                                    \hocket
                                     \override NoteHead.details.interrupt-color = \三
                                     \override NoteHead.details.switch-color = \三
                                     \override NoteHead.details.folow-color = \三
@@ -893,13 +889,9 @@
                                     \override Dots.staff-position = #2
                                     \voiceTwo
                                     g'''4
-                                    \hocket
                                     g'''4
-                                    \hocket
                                     g''''4
-                                    \hocket
                                     g'''4
-                                    \hocket
                                     g''''16.
                                     ~
                                 }
@@ -909,13 +901,9 @@
                                     g''''8
                                     ~
                                     g''''32
-                                    \hocket
                                     g'''4
-                                    \hocket
                                     g'''4
-                                    \hocket
                                     g'''4
-                                    \hocket
                                     g'''8.
                                     ~
                                 }
@@ -923,15 +911,10 @@
                                 \times 32/35
                                 {
                                     g'''16
-                                    \hocket
                                     g''''4
-                                    \hocket
                                     g'''4
-                                    \hocket
                                     g''''4
-                                    \hocket
                                     g'''4
-                                    \hocket
                                     g'''32
                                     ~
                                 }
@@ -939,13 +922,9 @@
                                 \times 32/35
                                 {
                                     g'''8..
-                                    \hocket
                                     g'''4
-                                    \hocket
                                     g'''4
-                                    \hocket
                                     g''''4
-                                    \hocket
                                     g'''8
                                     ~
                                 }
@@ -953,13 +932,9 @@
                                 \times 32/35
                                 {
                                     g'''8
-                                    \hocket
                                     g''''4
-                                    \hocket
                                     g'''4
-                                    \hocket
                                     g'''4
-                                    \hocket
                                     g'''8..
                                     \ottava 0
                                     \revert Accidental.color
@@ -983,6 +958,8 @@
                             }
                         >>
                         \oneVoice
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
@@ -1007,6 +984,8 @@
                         s1 * 1
                         s1 * 1
                         s1 * 1
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
@@ -1364,7 +1343,6 @@
                                 \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 13 16) (ly:make-duration 4 0))
                                 \times 16/13
                                 {
-                                    \hocket
                                     \ottava 2
                                     \override NoteHead.details.interrupt-color = \二
                                     \override NoteHead.details.switch-color = \二
@@ -1389,11 +1367,8 @@
                                     \clef "treble"
                                     \voiceOne
                                     e''''4
-                                    \hocket
                                     e''''4
-                                    \hocket
                                     e''''4
-                                    \hocket
                                     e''''16
                                     ~
                                 }
@@ -1402,11 +1377,8 @@
                                 \times 16/13
                                 {
                                     e''''8.
-                                    \hocket
                                     e'''4
-                                    \hocket
                                     e'''4
-                                    \hocket
                                     e''''8
                                     ~
                                 }
@@ -1417,12 +1389,9 @@
                                     e''''8
                                     \sustainOn
                                     \ottava 0
-                                    \hocket
                                     \ottava 1
                                     e'''4
-                                    \hocket
                                     e'''4
-                                    \hocket
                                     e'''8.
                                     ~
                                 }
@@ -1431,24 +1400,17 @@
                                 \times 16/13
                                 {
                                     e'''16
-                                    \hocket
                                     e'''4
-                                    \hocket
                                     e'''4
-                                    \hocket
                                     e'''4
                                 }
                                 \tweak text #tuplet-number::calc-fraction-text
                                 \tweak TupletNumber.text #(tuplet-number::append-note-wrapper(tuplet-number::non-default-tuplet-fraction-text 13 16) (ly:make-duration 4 0))
                                 \times 16/13
                                 {
-                                    \hocket
                                     e'''4
-                                    \hocket
                                     e'''4
-                                    \hocket
                                     e'''4
-                                    \hocket
                                     e'''16
                                     \sustainOff
                                     \ottava 0
@@ -1473,7 +1435,6 @@
                             }
                             \context Voice = "4 voice 2"
                             {
-                                \hocket
                                 \override NoteHead.details.interrupt-color = \四
                                 \override NoteHead.details.switch-color = \四
                                 \override NoteHead.details.folow-color = \四
@@ -1496,43 +1457,24 @@
                                 \override Dots.staff-position = #2
                                 \voiceTwo
                                 ds'''4
-                                \hocket
                                 ds'''4
-                                \hocket
                                 ds'''4
-                                \hocket
                                 ds'''4
-                                \hocket
                                 ds'''4
-                                \hocket
                                 ds'''4
-                                \hocket
                                 ds'''4
-                                \hocket
                                 ds'''4
-                                \hocket
                                 ds'''4
-                                \hocket
                                 ds''4
-                                \hocket
                                 ds''4
-                                \hocket
                                 ds''4
-                                \hocket
                                 ds'''4
-                                \hocket
                                 ds''4
-                                \hocket
                                 ds''4
-                                \hocket
                                 ds''4
-                                \hocket
                                 ds'''4
-                                \hocket
                                 ds''4
-                                \hocket
                                 ds''4
-                                \hocket
                                 ds''4
                                 \revert Accidental.color
                                 \revert Beam.color
@@ -1554,6 +1496,8 @@
                             }
                         >>
                         \oneVoice
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
@@ -1654,6 +1598,8 @@
                         R1 * 1
                         \stopStaff \startStaff
                         \once \override Staff.BarLine.transparent = ##f
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \once \override Staff.TimeSignature.transparent = ##t
@@ -1800,6 +1746,8 @@
                     R1 * 1
                     \stopStaff \startStaff
                     \once \override Staff.BarLine.transparent = ##f
+                    \once \override MultiMeasureRest.transparent = ##t
+                    \once \override Rest.transparent = ##t
                     \once \revert Staff.StaffSymbol.line-positions
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff

@@ -518,6 +518,7 @@ def color_music(color, selector=abjad.select.leaves, dynamic=True):
                 site="before",
             ),
             selections[0],
+            tag=abjad.Tag("+SCORE"),
         )
 
         abjad.attach(
@@ -544,6 +545,7 @@ def color_music(color, selector=abjad.select.leaves, dynamic=True):
                 site="absolute_after",
             ),
             selections[-1],
+            tag=abjad.Tag("+SCORE"),
         )
 
         for leaf in abjad.select.leaves(selections):
@@ -553,7 +555,8 @@ def color_music(color, selector=abjad.select.leaves, dynamic=True):
 
                     abjad.detach(articulation, leaf)
 
-                    abjad.attach(bundle, leaf)
+                    abjad.attach(bundle, leaf, tag=abjad.Tag("+SCORE"))
+                    abjad.attach(articulation, leaf, tag=abjad.Tag("+PARTS"))
 
     return coloring
 
@@ -608,6 +611,7 @@ def interruptive_polyphony(
                     site="before",
                 ),
                 leaves[0],
+                tag=abjad.Tag("+SCORE"),
             )
 
             abjad.attach(
@@ -634,29 +638,19 @@ def interruptive_polyphony(
                     site="absolute_after",
                 ),
                 leaves[-1],
+                tag=abjad.Tag("+SCORE"),
             )
-
-            # abjad.attach(
-            #     abjad.LilyPondLiteral(r"\start-explicit-interrupt", "before"),
-            #     leaves[0]
-            # )
-            #
-            # abjad.attach(
-            #     abjad.LilyPondLiteral(r"\stop-explicit-interrupt", "after"),
-            #     leaves[-1]
-            # )
 
             ties = abjad.select.logical_ties(leaves)
 
             for tie in ties:
-                if stage == 1:
-                    literal_string = r"\interrupt"
-                else:
-                    literal_string = r"\hocket"
+                literal_string = r"\interrupt"
 
-                abjad.attach(
-                    abjad.LilyPondLiteral(literal_string, site="before"), tie[0]
-                )
+                if stage == 1:
+                    abjad.attach(
+                        abjad.LilyPondLiteral(literal_string, site="before"),
+                        tie[0],
+                    )
 
             for leaf in abjad.select.leaves(voice):
                 if abjad.get.has_indicator(leaf, abjad.Articulation):
@@ -673,7 +667,10 @@ def interruptive_polyphony(
                         else:
                             direction = abjad.DOWN
 
-                        abjad.attach(bundle, leaf, direction=direction)
+                        abjad.attach(
+                            bundle, leaf, direction=direction, tag=abjad.Tag("+SCORE")
+                        )
+                        abjad.attach(articulation, leaf, tag=abjad.Tag("+PARTS"))
 
     return polyphony
 

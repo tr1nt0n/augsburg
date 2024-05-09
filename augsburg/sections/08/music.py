@@ -83,6 +83,17 @@ trinton.make_music(
             ),
         ],
         selector=trinton.select_leaves_by_index([0]),
+        tag=abjad.Tag("+SCORE"),
+    ),
+    trinton.attachment_command(
+        attachments=[
+            library.boxed_markup(
+                string="( SYNTHESIZER AUS )",
+                # tweaks=[r"- \tweak color \四"],
+            ),
+        ],
+        selector=trinton.select_leaves_by_index([0]),
+        tag=abjad.Tag("+PARTS"),
     ),
     voice=score["piano 1 voice"],
 )
@@ -600,6 +611,7 @@ trinton.fermata_measures(
         "piano 4 voice",
         "piano 5 voice",
     ],
+    tag=None,
 )
 
 trinton.fermata_measures(
@@ -615,6 +627,7 @@ trinton.fermata_measures(
         "piano 4 voice",
         "piano 5 voice",
     ],
+    tag=None,
 )
 
 trinton.make_music(

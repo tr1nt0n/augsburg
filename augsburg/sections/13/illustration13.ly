@@ -367,6 +367,8 @@
                             c'16
                             \!
                         }
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
@@ -448,6 +450,8 @@
                         gs'2.
                             _ #(make-dynamic-script (markup #:whiteout #:italic "sffz pp"))
                         :32
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
@@ -540,49 +544,89 @@
                                     \staff-line-count 5
                                     \interrupt
                                     \ottava 2
+                                      %! +SCORE
                                     \override NoteHead.details.interrupt-color = \一
+                                      %! +SCORE
                                     \override NoteHead.details.switch-color = \一
+                                      %! +SCORE
                                     \override NoteHead.details.folow-color = \一
+                                      %! +SCORE
                                     \override NoteHead.details.hocket-color = \一
+                                      %! +SCORE
                                     \override Accidental.color = \一
+                                      %! +SCORE
                                     \override Beam.color = \一
+                                      %! +SCORE
                                     \override Dots.color = \一
+                                      %! +SCORE
                                     \override Flag.color = \一
+                                      %! +SCORE
                                     \override Glissando.color = \一
+                                      %! +SCORE
                                     \override MultiMeasureRest.color = \一
+                                      %! +SCORE
                                     \override NoteHead.color = \一
+                                      %! +SCORE
                                     \override RepeatTie.color = \一
+                                      %! +SCORE
                                     \override Rest.color = \一
+                                      %! +SCORE
                                     \override Slur.color = \一
+                                      %! +SCORE
                                     \override Stem.color = \一
+                                      %! +SCORE
                                     \override StemTremolo.color = \一
+                                      %! +SCORE
                                     \override Tie.color = \一
+                                      %! +SCORE
                                     \override TupletBracket.color = \一
+                                      %! +SCORE
                                     \override TupletNumber.color = \一
+                                      %! +SCORE
                                     \override Dots.staff-position = #2
                                     \clef "treble"
                                     \voiceOne
                                     g''''4
+                                      %! +PARTS
+                                %%% - \marcato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     ^ \marcato
                                     _ \pp
                                     _ \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { Tasten }
                                     _ \<
                                     \interrupt
                                     g''''4
+                                      %! +PARTS
+                                %%% - \marcato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     ^ \marcato
                                     \interrupt
                                     g''''4
+                                      %! +PARTS
+                                %%% - \marcato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     ^ \marcato
                                     \interrupt
                                     a''''4
+                                      %! +PARTS
+                                %%% - \marcato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     ^ \marcato
                                     \interrupt
                                     a''''8
+                                      %! +PARTS
+                                %%% - \marcato
+                                      %! +SCORE
                                     - \tweak color \一
+                                      %! +SCORE
                                     ^ \marcato
                                     ~
                                     a''''32
@@ -612,45 +656,85 @@
                                 \times 32/35
                                 {
                                     \interrupt
+                                      %! +SCORE
                                     \override NoteHead.details.interrupt-color = \三
+                                      %! +SCORE
                                     \override NoteHead.details.switch-color = \三
+                                      %! +SCORE
                                     \override NoteHead.details.folow-color = \三
+                                      %! +SCORE
                                     \override NoteHead.details.hocket-color = \三
+                                      %! +SCORE
                                     \override Accidental.color = \三
+                                      %! +SCORE
                                     \override Beam.color = \三
+                                      %! +SCORE
                                     \override Dots.color = \三
+                                      %! +SCORE
                                     \override Flag.color = \三
+                                      %! +SCORE
                                     \override Glissando.color = \三
+                                      %! +SCORE
                                     \override MultiMeasureRest.color = \三
+                                      %! +SCORE
                                     \override NoteHead.color = \三
+                                      %! +SCORE
                                     \override RepeatTie.color = \三
+                                      %! +SCORE
                                     \override Rest.color = \三
+                                      %! +SCORE
                                     \override Slur.color = \三
+                                      %! +SCORE
                                     \override Stem.color = \三
+                                      %! +SCORE
                                     \override StemTremolo.color = \三
+                                      %! +SCORE
                                     \override Tie.color = \三
+                                      %! +SCORE
                                     \override TupletBracket.color = \三
+                                      %! +SCORE
                                     \override TupletNumber.color = \三
+                                      %! +SCORE
                                     \override Dots.staff-position = #2
                                     \voiceTwo
                                     g''''4
+                                      %! +PARTS
+                                %%% - \marcato
+                                      %! +SCORE
                                     - \tweak color \三
+                                      %! +SCORE
                                     _ \marcato
                                     \interrupt
                                     g''''4
+                                      %! +PARTS
+                                %%% - \marcato
+                                      %! +SCORE
                                     - \tweak color \三
+                                      %! +SCORE
                                     _ \marcato
                                     \interrupt
                                     g''''4
+                                      %! +PARTS
+                                %%% - \marcato
+                                      %! +SCORE
                                     - \tweak color \三
+                                      %! +SCORE
                                     _ \marcato
                                     \interrupt
                                     g''''4
+                                      %! +PARTS
+                                %%% - \marcato
+                                      %! +SCORE
                                     - \tweak color \三
+                                      %! +SCORE
                                     _ \marcato
                                     \interrupt
                                     g''''16.
+                                      %! +PARTS
+                                %%% - \marcato
+                                      %! +SCORE
                                     - \tweak color \三
+                                      %! +SCORE
                                     _ \marcato
                                     \ottava 0
                                     \revert Accidental.color
@@ -1615,6 +1699,8 @@
                             }
                         >>
                         \oneVoice
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
@@ -1627,12 +1713,16 @@
                         s1 * 37/14
                         s1 * 1/4
                         s1 * 13/4
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
                         s1 * 1
                         s1 * 1
                         s1 * 1
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
@@ -1641,6 +1731,8 @@
                         s1 * 1
                         s1 * 1
                         s1 * 1
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
@@ -1695,12 +1787,13 @@
                             }
                             \override Staff.Accidental.X-extent = ##f
                         }
-                        \once \override Beam.stencil = ##f
-                        \once \override Dots.stencil = ##f
-                        \once \override Flag.stencil = ##f
-                        \once \override NoteHead.duration-log = 2
+                        \once \override RepeatTie.transparent = ##t
                         \once \override Stem.stencil = ##f
+                        \once \override Beam.stencil = ##f
+                        \once \override Flag.stencil = ##f
+                        \once \override Dots.stencil = ##f
                         \once \override Tie.stencil = ##f
+                        \once \override NoteHead.duration-log = 2
                         \revert Staff.Accidental.X-extent
                         \afterGrace
                         <e,, d,>4
@@ -1779,6 +1872,8 @@
                             \undo \hide NoteHead
                             c'16
                         }
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
@@ -1830,6 +1925,8 @@
                         }
                         s1 * 1
                         \sustainOn
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \sustainOff
@@ -1892,43 +1989,79 @@
                                     \staff-line-count 5
                                     \interrupt
                                     \ottava 2
+                                      %! +SCORE
                                     \override NoteHead.details.interrupt-color = \二
+                                      %! +SCORE
                                     \override NoteHead.details.switch-color = \二
+                                      %! +SCORE
                                     \override NoteHead.details.folow-color = \二
+                                      %! +SCORE
                                     \override NoteHead.details.hocket-color = \二
+                                      %! +SCORE
                                     \override Accidental.color = \二
+                                      %! +SCORE
                                     \override Beam.color = \二
+                                      %! +SCORE
                                     \override Dots.color = \二
+                                      %! +SCORE
                                     \override Flag.color = \二
+                                      %! +SCORE
                                     \override Glissando.color = \二
+                                      %! +SCORE
                                     \override MultiMeasureRest.color = \二
+                                      %! +SCORE
                                     \override NoteHead.color = \二
+                                      %! +SCORE
                                     \override RepeatTie.color = \二
+                                      %! +SCORE
                                     \override Rest.color = \二
+                                      %! +SCORE
                                     \override Slur.color = \二
+                                      %! +SCORE
                                     \override Stem.color = \二
+                                      %! +SCORE
                                     \override StemTremolo.color = \二
+                                      %! +SCORE
                                     \override Tie.color = \二
+                                      %! +SCORE
                                     \override TupletBracket.color = \二
+                                      %! +SCORE
                                     \override TupletNumber.color = \二
+                                      %! +SCORE
                                     \override Dots.staff-position = #2
                                     \clef "treble"
                                     \voiceOne
                                     g''''4
+                                      %! +PARTS
+                                %%% - \marcato
+                                      %! +SCORE
                                     - \tweak color \二
+                                      %! +SCORE
                                     ^ \marcato
                                     \sustainOn
                                     \interrupt
                                     g''''4
+                                      %! +PARTS
+                                %%% - \marcato
+                                      %! +SCORE
                                     - \tweak color \二
+                                      %! +SCORE
                                     ^ \marcato
                                     \interrupt
                                     g''''4
+                                      %! +PARTS
+                                %%% - \marcato
+                                      %! +SCORE
                                     - \tweak color \二
+                                      %! +SCORE
                                     ^ \marcato
                                     \interrupt
                                     g''''16
+                                      %! +PARTS
+                                %%% - \marcato
+                                      %! +SCORE
                                     - \tweak color \二
+                                      %! +SCORE
                                     ^ \marcato
                                     \revert Accidental.color
                                     \revert Beam.color
@@ -1952,41 +2085,77 @@
                             \context Voice = "4 voice"
                             {
                                 \interrupt
+                                  %! +SCORE
                                 \override NoteHead.details.interrupt-color = \四
+                                  %! +SCORE
                                 \override NoteHead.details.switch-color = \四
+                                  %! +SCORE
                                 \override NoteHead.details.folow-color = \四
+                                  %! +SCORE
                                 \override NoteHead.details.hocket-color = \四
+                                  %! +SCORE
                                 \override Accidental.color = \四
+                                  %! +SCORE
                                 \override Beam.color = \四
+                                  %! +SCORE
                                 \override Dots.color = \四
+                                  %! +SCORE
                                 \override Flag.color = \四
+                                  %! +SCORE
                                 \override Glissando.color = \四
+                                  %! +SCORE
                                 \override MultiMeasureRest.color = \四
+                                  %! +SCORE
                                 \override NoteHead.color = \四
+                                  %! +SCORE
                                 \override RepeatTie.color = \四
+                                  %! +SCORE
                                 \override Rest.color = \四
+                                  %! +SCORE
                                 \override Slur.color = \四
+                                  %! +SCORE
                                 \override Stem.color = \四
+                                  %! +SCORE
                                 \override StemTremolo.color = \四
+                                  %! +SCORE
                                 \override Tie.color = \四
+                                  %! +SCORE
                                 \override TupletBracket.color = \四
+                                  %! +SCORE
                                 \override TupletNumber.color = \四
+                                  %! +SCORE
                                 \override Dots.staff-position = #2
                                 \voiceTwo
                                 g''''4
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \四
+                                  %! +SCORE
                                 _ \marcato
                                 \interrupt
                                 g''''4
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \四
+                                  %! +SCORE
                                 _ \marcato
                                 \interrupt
                                 g''''4
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \四
+                                  %! +SCORE
                                 _ \marcato
                                 \interrupt
                                 g''''4
+                                  %! +PARTS
+                            %%% - \marcato
+                                  %! +SCORE
                                 - \tweak color \四
+                                  %! +SCORE
                                 _ \marcato
                                 \ottava 0
                                 \revert Accidental.color
@@ -2022,6 +2191,8 @@
                             c'16
                             \sustainOff
                         }
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         s1 * 1/4
                         \stopStaff \startStaff
@@ -2050,6 +2221,8 @@
                         R1 * 13/4
                         \stopStaff \startStaff
                         \once \override Staff.BarLine.transparent = ##f
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \once \override Staff.TimeSignature.transparent = ##t
@@ -2076,6 +2249,8 @@
                         R1 * 1
                         \stopStaff \startStaff
                         \once \override Staff.BarLine.transparent = ##f
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \once \override Staff.TimeSignature.transparent = ##t
@@ -2114,6 +2289,8 @@
                         R1 * 1
                         \stopStaff \startStaff
                         \once \override Staff.BarLine.transparent = ##f
+                        \once \override MultiMeasureRest.transparent = ##t
+                        \once \override Rest.transparent = ##t
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                         \once \override Staff.TimeSignature.transparent = ##t
@@ -2170,6 +2347,8 @@
                     \revert Dots.staff-position
                     a'4
                     \once \override Staff.BarLine.transparent = ##f
+                    \once \override MultiMeasureRest.transparent = ##t
+                    \once \override Rest.transparent = ##t
                     \once \revert Staff.StaffSymbol.line-positions
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
@@ -2205,6 +2384,8 @@
                     \revert Dots.staff-position
                     a'8
                     \once \override Staff.BarLine.transparent = ##f
+                    \once \override MultiMeasureRest.transparent = ##t
+                    \once \override Rest.transparent = ##t
                     \once \revert Staff.StaffSymbol.line-positions
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
@@ -2249,6 +2430,8 @@
                     R1 * 1
                     \stopStaff \startStaff
                     \once \override Staff.BarLine.transparent = ##f
+                    \once \override MultiMeasureRest.transparent = ##t
+                    \once \override Rest.transparent = ##t
                     \once \revert Staff.StaffSymbol.line-positions
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                     \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
