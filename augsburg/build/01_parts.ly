@@ -30,7 +30,7 @@
               \raise #13.5 \with-dimensions-from \null
               \override #'(font-size . 5.5)
               \concat {
-            \abjad-metronome-mark-markup #2 #0 #2 #"77"
+            \abjad-metronome-mark-markup #2 #0 #2 #"77" 
               }
             }
             \once \override Score.TimeSignature.stencil = ##f
@@ -74,7 +74,7 @@
                         cs'4
                         :32
                         \pp
-                        % - \tweak color \四
+                        - \tweak color \四
                         - \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { ( SYNTHESIZER EIN ) }
                         (
                         - \tweak stencil #constante-hairpin
@@ -128,7 +128,7 @@
                         \glissando
                         \<
                         {
-                            \once \override Flag.stroke-style = #"grace"
+                            \once \override Flag.stroke-style = #"grace" 
                             \hide NoteHead
                             \override Accidental.stencil = ##f
                             \override NoteColumn.glissando-skip = ##t
@@ -147,7 +147,7 @@
                         <as cs' fs' as'>4..
                         - \tenuto
                         \p
-                        % - \tweak color \四
+                        - \tweak color \四
                         - \markup \override #'(font-name . " Bodoni72 Book ") \override #'(style . "box") \override #'(box-padding . 0.5) \whiteout \fontsize #2 \box \line { ( SYNTHESIZER AUS ) }
                         \breathe
                         \override Staff.Accidental.X-extent = ##f
@@ -288,6 +288,7 @@
                             \once \override Beam.grow-direction = #right
                             c'32 * 117/32
                             \p
+                            [
                             \<
                             \once \override Accidental.stencil = ##f
                             c'32 * 99/32
@@ -298,6 +299,7 @@
                             \once \override Accidental.stencil = ##f
                             \override Staff.Accidental.stencil = ##f
                             c'32 * 47/32
+                            ]
                         }
                         \revert TupletNumber.text
                         \once \override Accidental.stencil = ##f

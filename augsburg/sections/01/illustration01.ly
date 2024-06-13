@@ -302,6 +302,7 @@
                             \once \override Beam.grow-direction = #right
                             c'32 * 117/32
                             \p
+                            [
                             \<
                             \once \override Accidental.stencil = ##f
                             c'32 * 99/32
@@ -312,6 +313,7 @@
                             \once \override Accidental.stencil = ##f
                             \override Staff.Accidental.stencil = ##f
                             c'32 * 47/32
+                            ]
                         }
                         \revert TupletNumber.text
                         \once \override Accidental.stencil = ##f

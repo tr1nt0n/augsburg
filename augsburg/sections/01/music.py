@@ -155,6 +155,14 @@ trinton.make_music(
     trinton.pitch_with_selector_command(
         pitch_list=[["cs,", "cs,,"]], selector=trinton.select_leaves_by_index([0])
     ),
+    trinton.call_rmaker(
+        rmaker=rmakers.beam,
+        selector=abjad.select.tuplets
+    ),
+    trinton.call_rmaker(
+        rmaker=rmakers.feather_beam,
+        selector=abjad.select.tuplets
+    ),
     library.change_lines(
         lines=1,
         clef="percussion",
