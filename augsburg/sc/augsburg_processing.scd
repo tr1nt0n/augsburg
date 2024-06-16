@@ -30,24 +30,21 @@ SynthDef.new(
 	\chorale,
 	{
 		arg hardwareInput, inputGain=1, outputBus, amp=0, frequencyMultiplier=exprand(7, 13);
-		var trackedSignal, frequency, envelope, subEnvelope, synthSignal;
+		var trackedSignal, initFreq, initSine, frequency, envelope, synthSignal;
 
 		trackedSignal = SoundIn.ar(hardwareInput, inputGain);
-		frequency = Pitch.kr(in:trackedSignal, execFreq: 200.0, minFreq: 220.0, maxFreq: 1760, clar: 1);
-		synthSignal = SinOsc.ar(frequency);
-		frequency = Pitch.kr(in:frequency, execFreq: 200.0, minFreq: 220.0, maxFreq: 1760, clar: 1);
+		initFreq = Pitch.kr(in:trackedSignal, execFreq: 200.0, minFreq: 220.0, maxFreq: 20000, clar: 1);
+		frequencyMultiplier = frequencyMultiplier / 8;
+		initSine = SinOsc.ar(initFreq * frequencyMultiplier);
+		frequency = Pitch.kr(in:initSine, execFreq: 200.0, minFreq: 220.0, maxFreq: 20000, clar: 1);
 
 		envelope = Amplitude.kr(trackedSignal);
 
-		frequencyMultiplier = frequencyMultiplier / 8;
-
 		synthSignal = Formant.ar(
-		fundfreq: frequency * frequencyMultiplier,
-		formfreq: frequency * 3/2,
-		bwfreq: frequency * 9/8
+		fundfreq: frequency,
+		formfreq: frequency * 9/4,
+		bwfreq: frequency * 3/2
 		);
-
-		// synthSignal = synthSignal * subEnvelope;
 
 		synthSignal = synthSignal * envelope;
 
@@ -81,7 +78,7 @@ SynthDef.new(
 		0,
 		\outputBus,
 		0,
-		amp: 0.3,
+		amp: 0.05,
 		frequencyMultiplier:exprand(7, 13),
 	]);
 });
