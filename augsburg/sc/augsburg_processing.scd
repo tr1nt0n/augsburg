@@ -1,9 +1,9 @@
 ServerOptions.devices;
 
 (
-s.options.inDevice("Built-in Microph");
-s.options.outDevice("Built-in Output");
-//s.boot;
+Server.default.options.inDevice_("Scarlett 2i4 USB");
+Server.default.options.outDevice_("Scarlett 2i4 USB");
+s.boot;
 // s.meter;
 )
 
@@ -29,9 +29,10 @@ x = {
 SynthDef.new(
 	\chorale,
 	{
-		arg hardwareInput, inputGain=1, outputBus, amp=0, frequencyMultiplier=exprand(7, 13);
+		arg hardwareInput, inputGain=10, outputBus, amp=0, frequencyMultiplier=exprand(7, 13);
 		var trackedSignal, initFreq, initSine, frequency, envelope, synthSignal;
 
+		// hardwareInput = hardwareInput * 10;
 		trackedSignal = SoundIn.ar(hardwareInput, inputGain);
 		initFreq = Pitch.kr(in:trackedSignal, execFreq: 200.0, minFreq: 220.0, maxFreq: 20000, clar: 1);
 		frequencyMultiplier = frequencyMultiplier / 8;
@@ -68,7 +69,6 @@ SynthDef.new(
 
 // collection
 
-
 (
 
 4.collect({
@@ -78,7 +78,7 @@ SynthDef.new(
 		0,
 		\outputBus,
 		0,
-		amp: 0.05,
+		amp: 100,
 		frequencyMultiplier:exprand(7, 13),
 	]);
 });
